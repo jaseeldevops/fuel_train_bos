@@ -1,0 +1,134 @@
+.a {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.aA {
+  font-size: 1.3vw;
+  color: rgba(0, 0, 0, 0.417);
+  padding: 10vh 0;
+  font-size: 2vw;
+  text-align: center;
+  margin-bottom: 5vw;
+}
+.aB {
+  width: 70%;
+  object-fit: contain;
+  margin-bottom: 5vw;
+}
+.b {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10vw;
+}
+.bA {
+  width: 23vw;
+  background-color: white;
+  box-shadow: 0 1vw 2vw #00000052;
+  border-radius: 1vw;
+  padding: 2vw 4vw;
+}
+.bAa {
+  display: flex;
+  justify-content: center;
+  height: 4vw;
+  padding-top: 2vw;
+}
+.bAb {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.2vw;
+  padding-top: 0.4vw;
+}
+.bAc {
+  text-align: center;
+  font-size: 0.6vw;
+  font-weight: 500;
+}
+.bAd {
+  font-weight: bold;
+  font-size: 1.2vw;
+  padding-top: 2vw;
+}
+.bAe {
+  font-weight: 600;
+  font-size: 0.88vw;
+  padding-top: 1.4vw;
+}
+.bAf {
+  margin-top: 0.8vw;
+  width: 100%;
+  background-color: #fafafa;
+  padding: 0.8vw;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0.2vw;
+  font-size: 0.8vw;
+  border: 0.03vw solid rgba(128, 128, 128, 0.223);
+}
+.bAf:focus {
+  border: 0.03vw solid rgba(128, 128, 128, 0.5);
+  outline: none;
+}
+.bAg {
+  position: relative;
+}
+.bAgB {
+  position: absolute;
+  top: 1.4vw;
+  right: 0.5vw;
+  height: 1.4vw;
+  width: 1.4vw;
+  cursor: pointer;
+  background-image: url(../../assets/ic_eye.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.bAh {
+  background-color: #0372bc;
+  color: white;
+  padding: 0.8vw;
+  font-size: 0.88vw;
+  font-weight: 700;
+  text-align: center;
+  border-radius: 0.3vw;
+  margin-top: 1.5vw;
+  cursor: pointer;
+  /* width: 100%; */
+}
+.bAi {
+  color: red;
+  font-size: 0.8vw;
+}
+.bAj {
+  margin-top: 3vw;
+  background-image: url(../../assets/app_logo.png);
+  background-position: center;
+  height: 2.5vw;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+.c {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 37vw;
+  display: flex;
+  align-items: center;
+}

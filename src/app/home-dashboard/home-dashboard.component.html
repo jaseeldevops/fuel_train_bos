@@ -1,0 +1,464 @@
+<div class="body">
+  <!-- ///////////////////////////////////////////////////////////////////////// -->
+  <!-- ///////////////////////////// LEFTSIDE CONTAINER //////////////////////// -->
+  <!-- ///////////////////////////////////////////////////////////////////////// -->
+  <div class="priceBox">
+    <div class="h4 blue1">Today's Price</div>
+    <div
+      class="priceProductBox h3-bold"
+      [ngStyle]="{ color: it.color }"
+      *ngFor="let it of allTodayPrice"
+    >
+      <div>{{ it.product }}</div>
+      <div>₹ {{ it.price }}</div>
+    </div>
+    <div class="h4 blue1">Sales Summary</div>
+    <div class="salesSummaryTotalBox">
+      <div>Total Sales</div>
+      <div class="salesSummary-Price">₹{{ allSalesSummary.total }}</div>
+    </div>
+    <div
+      class="salesSummaryProductBox"
+      *ngFor="let it of allSalesSummary.products"
+    >
+      <div
+        class="salesSummaryProductox-icon"
+        [ngStyle]="{ background: it.color }"
+      >
+        {{ it.product }}
+      </div>
+      <div>
+        <div class="salesSummary-Price2">₹{{ it.price }}</div>
+        <div>{{ it.quantity }}</div>
+      </div>
+    </div>
+    <div class="h4 blue1">Device Status</div>
+    <div
+      class="deviceStatusEachBox"
+      style="background-image: url(../../assets/status/tank.svg)"
+    >
+      <div>
+        <div>Tank Status</div>
+        <div class="deviceStatusEachBox-line2">
+          <div>{{ allDeviceStatus.tank.online }} Online</div>
+          &nbsp;&nbsp;&nbsp;
+          <div style="color: red">
+            {{ allDeviceStatus.tank.offline }} Offline
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="iamPurple">Count</span> :
+        {{ allDeviceStatus.tank.count }}
+      </div>
+    </div>
+    <div
+      class="deviceStatusEachBox"
+      style="background-image: url(../../assets/status/nozzle.svg)"
+    >
+      <div>
+        <div>Nozzle Status</div>
+        <div class="deviceStatusEachBox-line2">
+          <div style="color: green">
+            {{ allDeviceStatus.nozzle.online }} Online
+          </div>
+          &nbsp;&nbsp;&nbsp;
+          <div style="color: red">
+            {{ allDeviceStatus.nozzle.online }} Offline
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="iamPurple">Count</span> :
+        {{ allDeviceStatus.nozzle.count }}
+      </div>
+    </div>
+    <div
+      class="deviceStatusEachBox"
+      style="background-image: url(../../assets/status/ups.svg)"
+    >
+      <div>
+        <div>UPS Status</div>
+        <div class="deviceStatusEachBox-line2">
+          <div style="color: green">
+            {{ allDeviceStatus.ups.online }} Online
+          </div>
+          &nbsp;&nbsp;&nbsp;
+          <div style="color: red">
+            {{ allDeviceStatus.ups.online }} Offline
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="iamPurple">Count</span> : {{ allDeviceStatus.ups.count }}
+      </div>
+    </div>
+    <div
+      class="deviceStatusEachBox"
+      style="background-image: url(../../assets/status/slave.svg)"
+    >
+      <div>
+        <div>Slave Status</div>
+        <div class="deviceStatusEachBox-line2">
+          <div style="color: green">
+            {{ allDeviceStatus.slave.online }} Online
+          </div>
+          &nbsp;&nbsp;&nbsp;
+          <div style="color: red">
+            {{ allDeviceStatus.slave.online }} Offline
+          </div>
+        </div>
+      </div>
+      <div>
+        <span class="iamPurple">Count</span> :
+        {{ allDeviceStatus.slave.count }}
+      </div>
+    </div>
+  </div>
+  <!-- ///////////////////////////////////////////////////////////////////////// -->
+  <!-- ///////////////////////////// CENTR CONTAINER /////////////////////////// -->
+  <!-- ///////////////////////////////////////////////////////////////////////// -->
+  <div class="centerBody">
+    <div class="centerBodyRow">
+      <div style="width: 49%">
+        <div class="h4 blue1">Product Inventory</div>
+        <div class="productInventoryBox">
+          <div
+            class="scrollArrowLeft"
+            (click)="scrollProductInventory(-1, 'productInventoryBody')"
+          ></div>
+          <div class="productInventoryBody" id="productInventoryBody">
+            <div
+              class="eachProductInventory"
+              *ngFor="let it of allProductInvenory"
+              [ngClass]="
+                it.persentageQuantity > 90
+                  ? 'eachProductInventory_10'
+                  : it.persentageQuantity > 80
+                  ? 'eachProductInventory_9'
+                  : it.persentageQuantity > 70
+                  ? 'eachProductInventory_8'
+                  : it.persentageQuantity > 60
+                  ? 'eachProductInventory_7'
+                  : it.persentageQuantity > 50
+                  ? 'eachProductInventory_6'
+                  : it.persentageQuantity > 40
+                  ? 'eachProductInventory_5'
+                  : it.persentageQuantity > 30
+                  ? 'eachProductInventory_4'
+                  : it.persentageQuantity > 20
+                  ? 'eachProductInventory_3'
+                  : it.persentageQuantity > 10
+                  ? 'eachProductInventory_2'
+                  : it.persentageQuantity > 0
+                  ? 'eachProductInventory_1'
+                  : 's3_bAbA'
+              "
+            >
+              <div style="color: #292d3f">{{ it.name }}</div>
+              <div [ngStyle]="{ color: it.color }">{{ it.product }}</div>
+              <div class="productInventoryBox-unit">{{ it.quantity }}</div>
+              <div>{{ it.capacity }}</div>
+            </div>
+          </div>
+          <div
+            class="scrollArrowRight"
+            (click)="scrollProductInventory(1, 'productInventoryBody')"
+          ></div>
+        </div>
+      </div>
+      <div style="width: 49%">
+        <div class="h4 blue1">Product Delivery</div>
+        <div class="productInventoryBox">
+          <div
+            class="scrollArrowLeft"
+            (click)="scrollProductInventory(-1, 'productDeliveryBody')"
+          ></div>
+          <div class="productInventoryBody" id="productDeliveryBody">
+            <div
+              class="productDeliveryBody"
+              *ngFor="let it of allProductDelivery"
+            >
+              <div [ngStyle]="{ color: it.color }">{{ it.product }}</div>
+              <div style="font-size: 1vw; font-weight: 500">
+                {{ it.distance }}
+              </div>
+            </div>
+          </div>
+          <div
+            class="scrollArrowRight"
+            (click)="scrollProductInventory(1, 'productDeliveryBody')"
+          ></div>
+        </div>
+      </div>
+    </div>
+    <div class="centerBodyRow">
+      <div style="width: 49%">
+        <div class="h4 blue1">Forecast vs Actual Sales</div>
+        <div class="productInventoryBox">
+          <div class="forcastBody">
+            <div class="forcastGraphLeftLabel">Days</div>
+            <div class="forcastGraphBackground">
+              <div
+                class="forcastGraphEachMargin"
+                *ngFor="let it of allForecastVsSales.daysSplit"
+              >
+                <div>{{ it }}</div>
+                <div class="forcastGraphEachLine"></div>
+              </div>
+            </div>
+            <div class="forcastGraphBody">
+              <div
+                class="forcastGraphEachBarSpace"
+                *ngFor="let it of allForecastVsSales.products"
+              >
+                <div
+                  class="forcastGraphEachBar"
+                  [style]="{
+                    height: it.value + '%',
+                    backgroundColor: it.color
+                  }"
+                ></div>
+                {{ it.product }}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="width: 49%">
+        <div class="h4 blue1">Alarm Status</div>
+        <div
+          class="productInventoryBox"
+          style="background-color: #f8f9ff; padding: 1vw"
+        >
+          <div style="width: 100%">
+            <div
+              style="
+                height: 6vw;
+                background: white;
+                border-radius: 0.5vw;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+              "
+            >
+              <img src="../../assets/ic_bell1.svg" width="12%" />
+              <div style="font-size: 1.3vw; padding: 0.5vw">Total Alarms</div>
+              <div style="font-size: 3vw; font-weight: 500; color: #7265ff">
+                {{ allAlarms.total }}
+              </div>
+            </div>
+            <div
+              style="
+                width: 100%;
+                display: flex;
+                padding-top: 1vw;
+                justify-content: space-between;
+              "
+            >
+              <div
+                style="
+                  width: 27%;
+                  background: white;
+                  border-radius: 0.5vw;
+                  padding: 0.6vw;
+                "
+              >
+                <img src="../../assets/ic_bell2.svg" width="20%" />
+                <div style="font-size: 2vw; text-align: right">
+                  {{ allAlarms.open }}
+                </div>
+                <div style="font-size: 1vw; color: #1149e5">Open Alarms</div>
+              </div>
+              <div
+                style="
+                  width: 27%;
+                  background: white;
+                  border-radius: 0.5vw;
+                  padding: 0.6vw;
+                "
+              >
+                <img src="../../assets/ic_bell3.svg" width="20%" />
+                <div style="font-size: 2vw; text-align: right">
+                  {{ allAlarms.high }}
+                </div>
+                <div style="font-size: 1vw; color: #00b54a">High Priority</div>
+              </div>
+              <div
+                style="
+                  width: 27%;
+                  background: white;
+                  border-radius: 0.5vw;
+                  padding: 0.6vw;
+                "
+              >
+                <img src="../../assets/ic_bell4.svg" width="20%" />
+                <div style="font-size: 2vw; text-align: right">
+                  {{ allAlarms.low }}
+                </div>
+                <div style="font-size: 1vw; color: #ff9933">Low Priority</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="centerBodyRow">
+      <div style="width: 100%">
+        <div class="h4 blue1">Product sale/inventory KL</div>
+        <div class="productInventoryBox">
+          <div class="g">
+            <div class="gA">
+              <div class="gAa">
+                <div
+                  class="gAaA"
+                  [class.gAaB]="salesInventoryTrendsSelectedType === 'Sales'"
+                  (click)="salesInventoryTrendsTypeChange('Sales')"
+                >
+                  Sales
+                </div>
+                <div
+                  class="gAaA"
+                  [class.gAaB]="
+                    salesInventoryTrendsSelectedType === 'Inventory'
+                  "
+                  (click)="salesInventoryTrendsTypeChange('Inventory')"
+                >
+                  Inventory
+                </div>
+              </div>
+              <div class="gAa">
+                <div
+                  class="gAaA"
+                  [class.gAaC]="it === salesInventoryTrendsSelectedDay"
+                  *ngFor="let it of salesInventoryTrendsDays"
+                  (click)="salesInventoryTrendsDayChange(it)"
+                >
+                  {{ it }}
+                </div>
+              </div>
+            </div>
+            <div class="gAb">
+              <div class="gAbA">Volume (KL)</div>
+              <canvas
+                baseChart
+                style="height: 8.5vw; width: 100%"
+                [type]="'line'"
+                [data]="lineChartData"
+                [options]="lineChartOptions"
+                [legend]="lineChartLegend"
+              >
+              </canvas>
+              <div class="gAe"></div>
+            </div>
+            <div class="gAd">Days</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="centerBodyRow">
+      <div style="width: 70%">
+        <div class="h4 blue1">Attendant Wise Sale</div>
+        <div class="attendenceSaleBox">
+          <div class="atteendedSaleTopSwitches">
+            <div class="atteendedSaleTopSwitchesEach_">All</div>
+            <div class="atteendedSaleTopSwitchesEach">Shift 01</div>
+          </div>
+          <div class="forcastBody">
+            <div class="forcastGraphBackground">
+              <div
+                class="forcastGraphEachMargin"
+                *ngFor="let it of allAttendantWiseSale.split"
+              >
+                <div>{{ it }}</div>
+                <div class="forcastGraphEachLine"></div>
+              </div>
+            </div>
+            <div class="forcastGraphBody">
+              <div
+                class="forcastGraphEachBarSpace"
+                *ngFor="let it of allAttendantWiseSale.values"
+              >
+                <div
+                  class="forcastGraphEachBar"
+                  [style]="{
+                    height: it.value + '%',
+                    backgroundColor: it.color
+                  }"
+                ></div>
+                {{ it.title }}
+              </div>
+            </div>
+          </div>
+          <div class="attendenceSaleFooter">
+            <div
+              class="attendenceSaleFooterEach"
+              *ngFor="let it of allAttendantWiseSale.categoty"
+            >
+              <div
+                class="attendenceSaleFooterEachIndicator"
+                [style]="{ background: it.color }"
+              ></div>
+              {{ it.title }}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="width: 28%">
+        <div class="h4 blue1">Product Profile</div>
+        <div class="productInventoryBox">
+          <div class="d">
+            <div class="dB">
+              <div class="dBa" *ngFor="let dt of productProfile.data">
+                <div [ngStyle]="{ background: dt.color }" class="dBaA"></div>
+                {{ dt.title }}
+              </div>
+            </div>
+            <div class="dC">
+              <div
+                class="dCa"
+                [ngClass]="{
+                  dCa_: productProfile.hovered === it.color
+                }"
+                (mouseover)="
+                  productProfile.hovered = it.color;
+                  productProfile.value = it.value;
+                  productProfile.title = it.title;
+                  productProfile.displayValue = it.displayValue
+                "
+                (mouseout)="productProfile.hovered = ''"
+                *ngFor="let it of productProfile.angle"
+                [ngStyle]="{
+                  transform: 'rotate(' + it.angle + 'deg)',
+                  'background-color': it.color
+                }"
+              ></div>
+              <div class="top">
+                {{ productProfile.displayValue }}
+                <div class="topA">{{ productProfile.title }}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- ///////////////////////////////////////////////////////////////////////// -->
+  <!-- //////////////////////////// RIGHTSIDE CONTAINER //////////////////////// -->
+  <!-- ///////////////////////////////////////////////////////////////////////// -->
+  <div class="nozzileBox">
+    <div class="h4 blue1">Nozzle Sales</div>
+    <div class="eachNozzileBox h2" *ngFor="let it of allNozzle">
+      <div class="eachNozzileBox-row">
+        <div class="h3-bold" [ngStyle]="{ color: it.color }">
+          {{ it.product }}
+        </div>
+        {{ it.number }}
+      </div>
+      <div class="eachNozzileBox-row">
+        <div class="eachNozzileBox-unitBox">{{ it.quantity }}</div>
+        <div class="eachNozzileBox-priceBox">{{ it.price }}</div>
+      </div>
+    </div>
+  </div>
+</div>

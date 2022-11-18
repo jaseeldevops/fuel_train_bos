@@ -1,0 +1,96 @@
+<div class="row1">
+  <div class="overviewContainer">
+    <div class="title1">OVERVIEW</div>
+    <div style="width: 100%">
+      <div class="overviewRow1">
+        <img src="../../../assets/ic_bell1.svg" width="12%" />
+        <div style="font-size: 1.3vw; padding: 0.5vw">Total Alarms</div>
+        <div style="font-size: 3vw; font-weight: 500; color: #7265ff">
+          {{ allAlarms.total }}
+        </div>
+      </div>
+      <div class="overviewRow2">
+        <div class="col1">
+          <img src="../../assets/ic_bell2.svg" width="22%" />
+          <div style="font-size: 2vw; padding: 0.4vw 0; text-align: right">
+            {{ allAlarms.open }}
+          </div>
+          <div style="font-size: 0.8vw; color: #1149e5">Open Alarms</div>
+        </div>
+        <div class="col1">
+          <img src="../../assets/ic_bell3.svg" width="22%" />
+          <div style="font-size: 2vw; padding: 0.4vw 0; text-align: right">
+            {{ allAlarms.high }}
+          </div>
+          <div style="font-size: 0.8vw; color: #00b54a">High Priority</div>
+        </div>
+        <div class="col1">
+          <img src="../../assets/ic_bell4.svg" width="22%" />
+          <div style="font-size: 2vw; padding: 0.4vw 0; text-align: right">
+            {{ allAlarms.low }}
+          </div>
+          <div style="font-size: 0.8vw; color: #ff9933">Low Priority</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="priorityContainer">
+    <div class="title1">ALARM BY PRIORITY</div>
+    <div class="priorityBody">
+      <div class="values" *ngFor="let it of [1, 1, 1]">
+        <div class="colorCode" [style]="{ background: 'red' }"></div>
+        Open Alarm
+      </div>
+    </div>
+  </div>
+  <div class="equipmentContainer">
+    <div class="title1">ALARM BY EQUIPMENT</div>
+    <div class="equipmentBody">
+      <div class="values" *ngFor="let it of [1, 1, 1]">
+        <div class="colorCode" [style]="{ background: 'red' }"></div>
+        Open Alarm
+      </div>
+    </div>
+  </div>
+</div>
+<div class="alarmTable">
+  <div class="header">
+    <div class="col1"># NO</div>
+    <div class="col2">ALARM TYPE</div>
+    <div class="col3">TOTAL</div>
+    <div class="col4">OPEN</div>
+    <div class="col5">HIGH PRIORITY</div>
+    <div class="col6">LOW PRIORITY</div>
+    <div class="col7">VIEW</div>
+  </div>
+  <div class="row" *ngFor="let it of allAlrarmTable">
+    <div class="col1">{{ it.no }}</div>
+    <div class="col2">{{ it.type }}</div>
+    <div class="col3 purple">{{ it.total }}</div>
+    <div class="col4 purple">{{ it.open }}</div>
+    <div class="col5 green">{{ it.highPriority }}</div>
+    <div class="col6 orange">{{ it.lowPriority }}</div>
+    <div class="col7">
+      <div class="cursor"></div>
+    </div>
+  </div>
+</div>
+<div class="alarmDetailPopup">
+  <div class="body">
+    <div class="header">
+      Alarm Details
+      <div class="closeIcon"></div>
+    </div>
+    <div class="detailTable">
+      <div class="header">
+        <div class="col1">Alarm ID</div>
+        <div class="col1">Occurrence Time</div>
+        <div class="col1">Normalized/Ack...</div>
+        <div class="col1">Device ID</div>
+        <div class="col1">Device</div>
+        <div class="col1">Priority</div>
+        <div class="col1">Description</div>
+      </div>
+    </div>
+  </div>
+</div>

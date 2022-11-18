@@ -1,0 +1,160 @@
+.text1 {
+  font-size: 0.9vw;
+  color: #2a416de7;
+  padding: 0.8vw;
+}
+.text2 {
+  font-size: 1.25vw;
+  color: #2a426d;
+}
+/* //////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////// */
+.contentBody {
+  background-color: white;
+  margin: 1vw;
+  padding: 1vw 0;
+  border-radius: 0.4vw;
+}
+.listBody {
+  display: flex;
+  flex-wrap: wrap;
+}
+.eachPump {
+  background-color: #f6fafe;
+  border-radius: 0.3vw;
+  border: 0.05vw solid #e5e8fac3;
+  
+  padding: 0.5vw;
+  width: 17.2%;
+  margin: 0.7vw;
+}
+.pumpRow1 {
+  display: flex;
+}
+.pumpProdectLine {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+.menuIcon {
+  min-width: 1vw;
+  height: 1vw;
+  margin-left: 0.5vw;
+  background-image: url(../../../assets/ic_menu.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+}
+.pumpStatusRow {
+  text-align: end;
+  font-size: 1.5vw;
+  padding: 0.2vw;
+}
+.pumpMidileLayer {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.pumpMidileLayerIcon {
+  min-width: 7vw;
+  width: 7vw;
+  height: 7vw;
+  padding: 0.5vw 1vw;
+  object-fit: contain;
+}
+.pumpTotal,
+.pumpQty,
+.pumpPrice {
+  width: 100%;
+  border-radius: 0.2vw;
+  background-color: #dee4ec;
+  padding: 0.2vw;
+  margin: 0.2vw;
+  font-size: 1vw;
+  text-align: end;
+  color: #2a426d;
+  font-weight: 500;
+  background-position: 0.5vw;
+  background-size: 0.75vw;
+  background-repeat: no-repeat;
+  background-image: url(../../../assets/ic_rs.svg);
+}
+.pumpQty {
+  background-size: 0.6vw;
+  background-image: url(../../../assets/ic_drop.svg);
+}
+.pumpPrice {
+  background-image: none;
+}
+.pumpLockStatusRow {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-top: 0.5vw;
+}
+.pumpLockStatusRow-download {
+  width: 0.8vw;
+  height: 0.8vw;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../../../assets/ic_download.svg);
+  cursor: pointer;
+}
+.pumpLockStatusRow-lock {
+  width: 0.6vw;
+  height: 0.8vw;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../../../assets/ic_lock.svg);
+  margin-left: 0.5vw;
+}
+.pumpLockStatusRow-locked {
+  width: 1vw;
+  height: 1vw;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../../../assets/ic_locked.svg);
+  margin-left: 0.3vw;
+}
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+.eachNozzle {
+  margin: 0.5vw;
+  border-radius: 0.3vw;
+  width: 18.8%;
+  height: 6vw;
+  display: flex;
+  background-color: #dee8f1;
+}
+.nozzileIcon {
+  min-width: 6vw;
+  background-color: #f6f6f6;
+  border-bottom-left-radius: 0.3vw;
+  border-top-left-radius: 0.3vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0.5vw;
+}
+.nozzileDetails {
+  padding: 0.7vw;
+  width: 100%;
+  font-weight: 500;
+}
+.nozzileRow2 {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.2vw 0;
+}
+.nozzileDesc {
+  font-size: 0.9vw;
+  color: #2a426d;
+}

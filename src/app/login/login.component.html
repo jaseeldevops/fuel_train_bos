@@ -1,0 +1,40 @@
+<div class="a">
+  <div class="aA">
+    Welcome back This is a smple exaple to test title of login page
+  </div>
+  <img class="aB" src="../../assets/background_fuel_station.png" />
+</div>
+<form class="b">
+  <div class="bA">
+    <div class="bAa">
+      <img [src]="companyDetails.logo" />
+    </div>
+    <div class="bAb">{{ companyDetails.name }}</div>
+    <div class="bAc">{{ companyDetails.slogan }}</div>
+    <div class="bAd">Login</div>
+    <div class="bAe">User Name</div>
+    <input class="bAf" (change)="setUserName($event)" />
+    <div class="bAe">Password</div>
+    <div class="bAg">
+      <input
+        class="bAf"
+        [type]="passwordTextType"
+        (change)="setUserPassword($event)"
+      />
+      <div
+        class="bAgB"
+        (click)="
+          passwordTextType === ''
+            ? (passwordTextType = 'password')
+            : (passwordTextType = '')
+        "
+      ></div>
+    </div>
+    <div (click)="onClickLogin()" class="bAh">Login</div>
+    <div class="bAi">{{ error }}</div>
+    <div class="bAj"></div>
+  </div>
+</form>
+<div class="c">
+  <img width="100%" src="../../assets/nozzle.png" />
+</div>

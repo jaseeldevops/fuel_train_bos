@@ -1,0 +1,225 @@
+.title1 {
+  color: #2a426d;
+  font-weight: 500;
+  font-size: 0.9vw;
+}
+/* /////////////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////// GRAPH LINE /////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////// */
+.row1 {
+  display: flex;
+  margin: 0.6vw;
+}
+/* //////////////////////////////// OVERVIEW CONTAINER /////////////////////////////// */
+.overviewContainer {
+  height: 18vw;
+  width: 30%;
+  margin: 0.5vw;
+  padding: 1vw;
+  background-color: white;
+  border-radius: 0.5vw;
+}
+.overviewRow1 {
+  height: 7vw;
+  background: white;
+  border-radius: 0.5vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 0.05vw solid #e5e8fa;
+  box-shadow: 0 0 0.6vw #7298ff20;
+  margin-top: 1vw;
+}
+.overviewRow2 {
+  width: 100%;
+  display: flex;
+  padding-top: 1vw;
+  justify-content: space-between;
+}
+.overviewRow2 .col1 {
+  width: 25%;
+  background: white;
+  border-radius: 0.5vw;
+  padding: 0.8vw;
+  border: 0.05vw solid #e5e8fa;
+  box-shadow: 0 0 0.6vw #7298ff20;
+}
+/* //////////////////////////////// PRIORITY CONTAINER /////////////////////////////// */
+.priorityContainer {
+  width: 30%;
+  height: 18vw;
+  margin: 0.5vw;
+  padding: 1vw;
+  background-color: white;
+  border-radius: 0.5vw;
+}
+.priorityBody {
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.priorityBody .values {
+  display: flex;
+  align-items: center;
+  font-size: 0.8vw;
+  color: #4f4f4f;
+}
+.priorityBody .colorCode {
+  width: 1.2vw;
+  height: 1vw;
+  margin: 0.45vw 0.6vw;
+  border-radius: 0.2vw;
+}
+/* /////////////////////////////// EQUIPMENT CONTAINER /////////////////////////////// */
+.equipmentContainer {
+  height: 18vw;
+  width: 40%;
+  margin: 0.5vw;
+  padding: 1vw;
+  background-color: white;
+  border-radius: 0.5vw;
+}
+.equipmentBody {
+  height: 95%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.equipmentBody .values {
+  display: flex;
+  align-items: center;
+  font-size: 0.8vw;
+  color: #4f4f4f;
+}
+.equipmentBody .colorCode {
+  width: 1.2vw;
+  height: 1vw;
+  margin: 0.45vw 1vw;
+  border-radius: 0.2vw;
+}
+/* /////////////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////// ALARM TABLE ////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////// */
+.alarmTable {
+  margin: 1.3vw;
+}
+.alarmTable .header {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 1vw;
+  background-color: white;
+  font-size: 0.8vw;
+  font-weight: 500;
+  color: #333333a9;
+  border-bottom: 0.08vw solid #dddfe1;
+  border-bottom-left-radius: 0.2vw;
+  border-bottom-right-radius: 0.2vw;
+}
+.alarmTable .col1 {
+  width: 10%;
+}
+.alarmTable .col2 {
+  width: 30%;
+}
+.alarmTable .col3 {
+  width: 8%;
+  text-align: center;
+}
+.alarmTable .col4 {
+  width: 8%;
+  text-align: center;
+}
+.alarmTable .col5 {
+  width: 8%;
+  text-align: center;
+}
+.alarmTable .col6 {
+  width: 8%;
+  text-align: center;
+}
+.alarmTable .col7 {
+  width: 8%;
+  display: flex;
+  justify-content: center;
+}
+.alarmTable .row {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 0.7vw 1vw;
+  background-color: white;
+  font-size: 1vw;
+  font-weight: 500;
+  color: #333333;
+  border-bottom: 0.05vw solid #dddfe1;
+}
+.alarmTable .purple {
+  color: #7265ff;
+  font-size: 1.2vw;
+}
+.alarmTable .green {
+  color: #00b54a;
+  font-size: 1.2vw;
+}
+.alarmTable .orange {
+  color: #ff9933;
+  font-size: 1.2vw;
+}
+.alarmTable .cursor {
+  width: 1.2vw;
+  height: 1.2vw;
+  background-image: url(../../../assets/ic_cursor.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+}
+.alarmTable .row:nth-child(odd) {
+  background-color: #f3f6f9;
+}
+/* /////////////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////// GRAPH LINE /////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////// */
+.alarmDetailPopup {
+  position: fixed;
+  top: 3.5vw;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #0000007d;
+}
+.alarmDetailPopup .body {
+  width: 60vw;
+  height: 70vh;
+  background-color: white;
+}
+.alarmDetailPopup .header {
+  background-color: #e1e2e5;
+  padding: 0.5vw 1vw;
+  font-size: 1.4vw;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.alarmDetailPopup .closeIcon {
+  width: 1.4vw;
+  height: 1.4vw;
+  background-image: url(../../../assets/ic_x.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  cursor: pointer;
+}
+.detailTable .header {
+  display: flex;
+}

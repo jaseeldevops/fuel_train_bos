@@ -1,0 +1,64 @@
+<div class="header">
+  <div class="title">Monitoring > Pump Status</div>
+  <div class="navBar">
+    <div
+      class="eachButton"
+      (click)="page = 'pump'"
+      [ngStyle]="{ color: page === 'pump' ? '#00649e' : '' }"
+    >
+      Pump Status
+      <div
+        [ngClass]="'buttonBottom ' + (page === 'pump' ? 'blueContainer1' : '')"
+      ></div>
+    </div>
+    <div
+      class="eachButton"
+      (click)="page = 'tank'"
+      [ngStyle]="{ color: page === 'tank' ? '#00649e' : '' }"
+    >
+      Tank Status
+      <div
+        [ngClass]="'buttonBottom ' + (page === 'tank' ? 'blueContainer1' : '')"
+      ></div>
+    </div>
+    <div
+      class="eachButton"
+      (click)="page = 'ups'"
+      [ngStyle]="{ color: page === 'ups' ? '#00649e' : '' }"
+    >
+      UPS Status
+      <div
+        [ngClass]="'buttonBottom ' + (page === 'ups' ? 'blueContainer1' : '')"
+      ></div>
+    </div>
+    <div
+      class="eachButton"
+      (click)="page = 'device'"
+      [ngStyle]="{ color: page === 'device' ? '#00649e' : '' }"
+    >
+      Device Status
+      <div
+        [ngClass]="
+          'buttonBottom ' + (page === 'device' ? 'blueContainer1' : '')
+        "
+      ></div>
+    </div>
+    <div
+      class="eachButton"
+      (click)="page = 'alarm'"
+      [ngStyle]="{ color: page === 'alarm' ? '#00649e' : '' }"
+    >
+      Alarm Status
+      <div
+        [ngClass]="'buttonBottom ' + (page === 'alarm' ? 'blueContainer1' : '')"
+      ></div>
+    </div>
+  </div>
+</div>
+<div class="contentBody">
+  <app-pump *ngIf="page === 'pump'"></app-pump>
+  <app-tank *ngIf="page === 'tank'"></app-tank>
+  <app-ups *ngIf="page === 'ups'"></app-ups>
+  <app-device *ngIf="page === 'device'"></app-device>
+  <app-alarm *ngIf="page === 'alarm'"></app-alarm>
+</div>

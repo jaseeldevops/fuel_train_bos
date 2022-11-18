@@ -1,0 +1,165 @@
+<!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////// HOME HEADER /////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="a">
+  <div class="aA">
+    <img height="100%" [src]="userData.logo" />
+  </div>
+  <div></div>
+  <div class="aB"></div>
+  <div class="aC">
+    <div
+      class="aCa"
+      style="background-image: url(../../assets/header/sos.svg)"
+      (click)="isSosPopup = true"
+    ></div>
+    <!-- Use bell_on.svg for unread notification -->
+    <div
+      class="aCa"
+      (click)="isNotificationPopup = true"
+      style="background-image: url(../../assets/header/bell.svg)"
+    ></div>
+    <div
+      class="aCa"
+      style="background-image: url(../../assets/header/person.svg)"
+    ></div>
+    <div
+      class="aCa"
+      style="background-image: url(../../assets/header/lang.svg)"
+    ></div>
+  </div>
+  <div class="aD">
+    <div class="aDa"></div>
+    <div class="aDb">
+      <div class="aDbA">Welcome</div>
+      <!-- For User Name -->
+      <div class="aDbC">{{ userData.name }}</div>
+    </div>
+    <!-- This image tag will taking rsponsibiliyu for profile picture -->
+    <img
+      class="aDc"
+      [src]="userData.photo"
+      (click)="isProfilePopup = !isProfilePopup"
+    />
+  </div>
+</div>
+<!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////// HOME BODY ///////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="b">
+  <!-- When the any icon in the sidebar is selected the following coponent will be called -->
+  <app-home-dashboard
+    [hidden]="drowerPath !== 'dashboard'"
+  ></app-home-dashboard>
+  <app-home-monitoring
+    [hidden]="drowerPath !== 'monitoring'"
+  ></app-home-monitoring>
+  <app-home-operations
+    [hidden]="drowerPath !== 'operations'"
+    [subTitles]="drowerIcon[drowerIndex].subTitles"
+  ></app-home-operations>
+  <app-home-reports [hidden]="drowerPath !== 'reports'"></app-home-reports>
+  <app-home-configuration
+    [hidden]="drowerPath !== 'configuration'"
+    [subTitles]="drowerIcon[drowerIndex].subTitles"
+  ></app-home-configuration>
+</div>
+<!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////// HOME DROWER ////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="c">
+  <div class="cA">
+    <div *ngFor="let ic of drowerIcon; let i = index">
+      <div
+        class="cAa"
+        [ngClass]="{ cAa_: drowerPath === ic.path }"
+        (click)="onDrowerIconClick(i)"
+        [ngStyle]="{
+          'background-image': 'url(../../assets/sidebar/' + ic.icon + '.svg)'
+        }"
+      >
+        {{ ic.title }}
+      </div>
+      <div [ngClass]="ic.subTitles ? 'cAb' : 'cAb__'">
+        <div
+          [ngClass]="subPath === it.path ? 'cAbA_' : 'cAbA'"
+          *ngFor="let it of ic?.subTitles; let k = index"
+          (click)="onDrowerSubPathClick(i, k)"
+        >
+          {{ it.title }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="cB"></div>
+</div>
+<!-- //////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////// PROFILE POPUP /////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////////// -->
+<div
+  class="d"
+  *ngIf="isProfilePopup"
+  (click)="isProfilePopup = !isProfilePopup"
+>
+  <div class="dA">
+    <div class="dAa">Change Password</div>
+    <div class="dAa" (click)="onClickLogout()">Logout</div>
+  </div>
+</div>
+<!-- //////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////// SOS POPUP ///////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="e" *ngIf="isSosPopup">
+  <div class="eA">
+    <div class="eAa">
+      <div class="eAaA">Confirmation!</div>
+      <div class="eAaB" (click)="isSosPopup = false"></div>
+    </div>
+    <div class="eAb">
+      <div class="eAbA">Do you want to stop all the pumps?</div>
+      <div class="eAbB">This will stop all the operation in forecourt area</div>
+    </div>
+    <div class="eAc">
+      <div class="eAcA" (click)="isSosPopup = false">CANCEL</div>
+      <div class="eAcB" (click)="(onClickSOSStopConfirm)">CONFIRM</div>
+    </div>
+  </div>
+</div>
+<!-- //////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////// NOTIFICATION POPUP ///////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////////// -->
+<div
+  class="fA"
+  *ngIf="isNotificationPopup"
+  (click)="isNotificationPopup = false"
+></div>
+<div [ngClass]="isNotificationPopup ? 'fB' : 'fB_'">
+  <div class="fBa">
+    Alarms
+    <div class="eAaB" (click)="isNotificationPopup = false"></div>
+  </div>
+  <div class="fBb">
+    <div class="fBbA" *ngFor="let it of allNotifications">
+      <div class="fBbAa"></div>
+      <div class="fBbAb">
+        <div class="fBbAbA">{{ it.title }}</div>
+        <div class="fBbAbB">
+          <div class="fBbAbBa">{{ it.time }}</div>
+          <div class="fBbAbBb">{{ it.acknowledge }}</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
