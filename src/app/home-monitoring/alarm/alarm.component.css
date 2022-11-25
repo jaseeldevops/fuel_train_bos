@@ -60,6 +60,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  position: relative;
 }
 .priorityBody .values {
   display: flex;
@@ -72,6 +73,28 @@
   height: 1vw;
   margin: 0.45vw 0.6vw;
   border-radius: 0.2vw;
+}
+.priorityBody .graphBody {
+  position: absolute;
+  top: 1vw;
+  right: 2vw;
+  width: 13vw;
+  height: 13vw;
+}
+.priorityBody .eachLine {
+  position: absolute;
+  top: calc(50% - 1vw);
+  height: 2vw;
+  width: 100%;
+  transform: rotate(10deg);
+  display: flex;
+  justify-content: flex-end;
+}
+.priorityBody .eachPoint {
+  background-color: red;
+  height: 2.2vw;
+  width: 2.2vw;
+  border-radius: 50%;
 }
 /* /////////////////////////////// EQUIPMENT CONTAINER /////////////////////////////// */
 .equipmentContainer {
@@ -87,6 +110,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 .equipmentBody .values {
   display: flex;
@@ -99,6 +123,27 @@
   height: 1vw;
   margin: 0.45vw 1vw;
   border-radius: 0.2vw;
+}
+.equipmentBody .graphBody {
+  position: absolute;
+  top: 1vw;
+  right: 2vw;
+  width: 13vw;
+  height: 13vw;
+}
+.equipmentBody .eachLine {
+  position: absolute;
+  top: calc(50% - 1vw);
+  height: 0.2vw;
+  width: 100%;
+  transform: rotate(10deg);
+  display: flex;
+  justify-content: flex-end;
+}
+.equipmentBody .eachPoint {
+  background-color: red;
+  height: 0.2vw;
+  width: 2.2vw;
 }
 /* /////////////////////////////////////////////////////////////////////////////////// */
 /* /////////////////////////////////////////////////////////////////////////////////// */
@@ -198,11 +243,11 @@
   background-color: #0000007d;
 }
 .alarmDetailPopup .body {
-  width: 60vw;
+  width: 70vw;
   height: 70vh;
   background-color: white;
 }
-.alarmDetailPopup .header {
+.alarmDetailPopup .popUpHeader {
   background-color: #e1e2e5;
   padding: 0.5vw 1vw;
   font-size: 1.4vw;
@@ -220,6 +265,119 @@
   background-position: center;
   cursor: pointer;
 }
+.detailTable {
+  padding: 0 0.8vw;
+  overflow: scroll;
+  height: 82%;
+  font-size: 0.9vw;
+}
 .detailTable .header {
   display: flex;
+  justify-content: space-between;
+  background-color: #f9f9f9;
+  margin: 0.25vw 0;
+}
+.detailTable .col {
+  padding: 1vw;
+  border-right: 0.1vw solid #e7e7e7;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.detailTable .col1 {
+  text-align: center;
+  width: 7%;
+}
+.detailTable .col2 {
+  width: 15%;
+}
+.detailTable .col3 {
+  width: 15%;
+}
+.detailTable .col4 {
+  width: 10%;
+}
+.detailTable .col5 {
+  width: 15%;
+}
+.detailTable .col6 {
+  width: 10%;
+}
+.detailTable .col7 {
+  width: 30%;
+}
+.detailTable .row {
+  display: flex;
+  justify-content: space-between;
+}
+.detailTable .row:nth-child(even) {
+  background-color: #f3f6f9;
+}
+.detailTable .rowCol {
+  padding: 0.6vw 1vw;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.popupFooter {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.3vw 5%;
+  border-top: 0.05vw solid #787878;
+  font-size: 0.8vw;
+}
+.popupFooter .leftBody {
+  display: flex;
+  align-items: center;
+}
+.popupFooter .t1 {
+  color: #24262992;
+  padding: 0.3vw;
+}
+.popupFooter .counter {
+  width: 2.5vw;
+  padding: 0.4vw;
+  border: 0.05vw solid #c6d5fb;
+  border-radius: 0.3vw;
+  font-weight: 500;
+}
+.popupFooter .rightBody {
+  display: flex;
+  align-items: center;
+  max-width: 40vw;
+}
+.popupFooter .next,
+.next_ {
+  width: 0.8vw;
+  height: 1vw;
+  text-align: center;
+  cursor: pointer;
+  justify-content: space-between;
+  background-image: url(../../../assets/ic_<.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.next_ {
+  transform: rotate(180deg);
+}
+.popupFooter .page {
+  width: 2vw;
+  height: 2vw;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popupFooter .selected {
+  width: 2vw;
+  height: 2vw;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #2290ff;
 }

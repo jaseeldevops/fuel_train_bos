@@ -10,14 +10,18 @@ export class HomeComponent implements OnInit {
 
   // This is the flag for showing the popup when the SOS button is clicked.
   isSosPopup = false;
+  // This is the flag for showing the logout confirm popup is visible or not
+  isLogoutConfirmPopup = false;
+  // This is varible is a object which will store the change password details
+  changePassword: any = null; // if it is null then it will not show the popup, if it is not null then it will show the popup
   // This is the flag for showing Wethhrt the notification POPUP is opened or not.
   isNotificationPopup = false;
   // This is the flag for showing the popup when the profile is clicked.
   isProfilePopup = false;
   // This is varible is indicate the path of home based on the selected one
-  drowerPath = 'monitoring';
+  drowerPath = 'reports';
   // This is varible is indicate which sidebar option is acive.(Note:- if you change to ops then default ops will shoe in home)
-  drowerIndex = 1;
+  drowerIndex = 3;
   subPath: any = '';
 
   ngOnInit(): void {
@@ -127,6 +131,10 @@ export class HomeComponent implements OnInit {
 
   // The following function will indicate what happene when the logout button is clicked
   onClickLogout = () => {};
+
+  onClickChangePassowrd = () => {
+    alert();
+  };
 
   // The following function will indicate what happene when the logout button is clicked
   userData = {

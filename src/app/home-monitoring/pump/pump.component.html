@@ -14,10 +14,17 @@
         <div class="menuIcon"></div>
       </div>
       <div class="pumpMidileLayer">
-        <img
+        <div
           class="pumpMidileLayerIcon"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgG_2oWUVpec_MEdUXcz5mBIshiGA-bJrBE7i1swanWw&s"
-        />
+          [style]="{
+            backgroundImage:
+              it.status === 'CALLING' || it.status === 'SALE END'
+                ? 'url(../../../assets/pump/calling.svg)'
+                : it.status === 'AUTHORISED'
+                ? 'url(../../../assets/pump/authorised.svg)'
+                : 'url(../../../assets/pump/idle.svg)'
+          }"
+        ></div>
         <div style="width: 35%">
           <div class="pumpTotal">{{ it.sale }}</div>
           <div class="pumpQty">{{ it.qty }}</div>
@@ -59,20 +66,36 @@
 <div class="contentBody">
   <div class="text1">NOZZLE STATUS</div>
   <div class="listBody">
-    <div class="eachNozzle" *ngFor="let it of allNozzleStatus">
-      <div class="nozzileIcon">
-        <img
-          width="100%"
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgG_2oWUVpec_MEdUXcz5mBIshiGA-bJrBE7i1swanWw&s"
-        />
-      </div>
+    <div
+      class="eachNozzle"
+      [style]="it.isLock ? { border: '0.12vw dashed #2a416d' } : {}"
+      *ngFor="let it of allNozzleStatus"
+    >
+      <div
+        class="nozzileIcon"
+        [ngClass]="
+          it.isLock ? 'lock' : it.status === 'FUELING' ? 'fueling' : ''
+        "
+      ></div>
       <div class="nozzileDetails">
-        <div class="text2">Nozzile 2</div>
+        <div class="text2" style="font-weight: 500">{{ it.title }}</div>
         <div class="nozzileRow2 text2">
-          <div>HSD</div>
-          <div>IDLE</div>
+          <div [style]="{ color: it.color }">{{ it.product }}</div>
+          <div
+            class="status"
+            [style]="
+              it.isLock
+                ? { color: '#00649E', fontSize: '.7vw' }
+                : {
+                    backgroundColor:
+                      it.status === 'STOP' ? '#B20303' : '#03b271'
+                  }
+            "
+          >
+            {{ it.isLock ? "PRESET INTERLOCK" : it.status }}
+          </div>
         </div>
-        <div class="nozzileDesc">DU 1/ Pump 1/ Tank 2</div>
+        <div class="nozzileDesc">{{ it.content }}</div>
       </div>
     </div>
   </div>

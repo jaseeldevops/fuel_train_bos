@@ -62,7 +62,7 @@
     [hidden]="drowerPath !== 'operations'"
     [subTitles]="drowerIcon[drowerIndex].subTitles"
   ></app-home-operations>
-  <app-home-reports [hidden]="drowerPath !== 'reports'"></app-home-reports>
+  <app-home-report [hidden]="drowerPath !== 'reports'"></app-home-report>
   <app-home-configuration
     [hidden]="drowerPath !== 'configuration'"
     [subTitles]="drowerIcon[drowerIndex].subTitles"
@@ -110,8 +110,10 @@
   (click)="isProfilePopup = !isProfilePopup"
 >
   <div class="dA">
-    <div class="dAa">Change Password</div>
-    <div class="dAa" (click)="onClickLogout()">Logout</div>
+    <div class="dAa" (click)="changePassword = { newPassword: '' }">
+      Change Password
+    </div>
+    <div class="dAa" (click)="isLogoutConfirmPopup = true">Logout</div>
   </div>
 </div>
 <!-- //////////////////////////////////////////////////////////////////////////////////////// -->
@@ -160,6 +162,43 @@
           <div class="fBbAbBb">{{ it.acknowledge }}</div>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+<!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////// LOGOUT CONFIRM POPUP /////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="g" *ngIf="isLogoutConfirmPopup">
+  <div class="gA">
+    <div class="gAa">
+      Confirm
+      <div class="gAaB" (click)="isLogoutConfirmPopup = false"></div>
+    </div>
+    <div class="gAb">Are you sure, do you want to logout?</div>
+    <div class="gAc">
+      <div class="gAcA" (click)="isLogoutConfirmPopup = false">CANCEL</div>
+      <div class="gAcB" (click)="onClickLogout()">CONFIRM</div>
+    </div>
+  </div>
+</div>
+<!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////// CHANGE PASSWORD POPUP ////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="g" *ngIf="changePassword !== null">
+  <div class="gA">
+    <div class="gAa">
+      Confirm
+      <div class="gAaB" (click)="changePassword = null"></div>
+    </div>
+    <div class="gAd">
+      User Name
+      <input class="gAdA" />
+      New Password
+      <input class="gAdA" type="password" />
+    </div>
+    <div class="gAc">
+      <div class="gAcA" (click)="changePassword = null">CANCEL</div>
+      <div class="gAcB" (click)="onClickChangePassowrd()">CONFIRM</div>
     </div>
   </div>
 </div>

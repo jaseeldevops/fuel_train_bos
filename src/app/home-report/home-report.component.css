@@ -1,0 +1,228 @@
+.body {
+  background-color: white;
+  height: calc(100vh - 3.5vw);
+}
+/* ///////////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////// */
+.reportHeader {
+  border-bottom: 0.03vw solid #a0b6d2;
+  background-color: #f5f5f5;
+}
+.aA {
+  display: flex;
+  justify-content: space-between;
+  height: 3.5vw;
+  padding: 0 0.8vw;
+}
+.aAa {
+  color: #021c3e;
+  font-size: 1.3vw;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+.aAa1 {
+  color: #021c3e;
+  font-size: 1.3vw;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+.aAa1a {
+  width: 1vw;
+  height: 1vw;
+  background-image: url(../../assets/ic_back.svg);
+  margin-left: 0.5vw;
+  margin-right: 1vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+.topBar_bAbA {
+  font-size: 0.8vw;
+  color: #707070;
+  margin: 0.2vw;
+}
+.topBar_bAbB {
+  margin: 0.2vw;
+  border: 0.04vw solid #e2e2e2;
+  border-radius: 0.2vw;
+  padding: 0.2vw 0.4vw;
+  font-size: 0.8vw;
+  color: #707070;
+}
+.topBar_bAbC {
+  margin: 0.2vw;
+  font-size: 0.7vw;
+  background-color: #0abb59;
+  border-radius: 0.2vw;
+  padding: 0.25vw 0.4vw;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.aAc {
+  display: flex;
+  align-items: center;
+}
+.aAcA {
+  width: 1.7vw;
+  height: 1.7vw;
+  background-image: url(../../assets/ic_download1.svg);
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+.aAcBa {
+  position: absolute;
+  right: 0;
+  top: 2vw;
+  border-radius: 0.4vw;
+  box-shadow: 0.2vw 0.2vw 0.4vw #0000003a;
+  width: 8vw;
+  height: 3vw;
+  background-color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 1vw;
+}
+.aAcBaA,
+.aAcBaB {
+  width: 2.5vw;
+  height: 2.5vw;
+  background-image: url(../../assets/ic_xls.svg);
+  margin-left: 0.5vw;
+  margin-right: 0.5vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+.aAcBaB {
+  background-image: url(../../assets/ic_pdf.svg);
+}
+.navBar {
+  display: flex;
+  color: #888888;
+  font-size: 1vw;
+  text-align: center;
+  margin-left: 0.6vw;
+}
+.eachButton {
+  cursor: pointer;
+  text-align: center;
+}
+.buttonBottom {
+  height: 0.25vw;
+  min-width: 7vw;
+  margin-top: 0.6vw;
+  border-top-left-radius: 0.2vw;
+  border-top-right-radius: 0.2vw;
+}
+.contentBody {
+  height: calc(100vh - 10vw);
+  overflow: auto;
+}
+.blueContainer1 {
+  font-weight: 500;
+  background-color: #069bf2;
+}
+/* ///////////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////// */
+.b {
+  max-height: calc(100vh - 10vw);
+  overflow: auto;
+  padding: 0.5vw;
+  display: flex;
+  flex-wrap: wrap;
+}
+.bA {
+  background-color: #e9f4ff;
+  border-radius: 0.5vw;
+  padding: 0.8vw;
+  padding-left: 1vw;
+  width: 30.6%;
+  margin: 0.3vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+.bAa {
+  width: 4vw;
+  height: 4vw;
+  border-radius: 0.5vw;
+  background-color: #c0e5f5;
+}
+.bAb {
+  width: 72%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.bAbA {
+  color: #575757;
+  font-weight: 500;
+  font-size: 1vw;
+}
+.bAbB {
+  color: #575757c8;
+  font-size: 0.8vw;
+}
+.bAc {
+  width: 0.8vw;
+  height: 1vw;
+  background-image: url(../../assets/ic_right1.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////// TABLE ////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+.c {
+  margin: 1vw;
+  align-items: center;
+  background-color: white;
+  border-radius: 0.5vw;
+  overflow: auto;
+}
+.cA {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  font-size: 1vw;
+  padding: 1vw 0.5vw;
+  border-bottom: 0.04vw solid #6b98d2be;
+  color: #3f6ca5;
+}
+.cB {
+  height: calc(100vh - 9vw);
+  overflow: auto;
+}
+.cBa {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9vw;
+  padding: 1vw 0.5vw;
+  /* border-bottom: 0.04vw solid #6b98d2be; */
+  color: #515151;
+}
+.cBa:nth-child(odd) {
+  background-color: #f3f6f9;
+}

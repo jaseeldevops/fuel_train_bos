@@ -1,1 +1,69 @@
-<p>ups works!</p>
+<div class="body">
+  <div class="each" *ngFor="let it of allUps">
+    <div class="row1">
+      <div
+        class="col1"    
+        [ngClass]="
+          it.charge === 100
+            ? '_100'
+            : it.charge > 90
+            ? '_90'
+            : it.charge > 80
+            ? '_80'
+            : it.charge > 70
+            ? '_70'
+            : it.charge > 60
+            ? '_60'
+            : it.charge > 50
+            ? '_50'
+            : it.charge > 40
+            ? '_40'
+            : it.charge > 30
+            ? '_30'
+            : it.charge > 20
+            ? '_20'
+            : it.charge > 10
+            ? '_10'
+            : ''
+        "
+      >
+        {{ it.title }}
+        <div class="upsPesentage">{{ it.charge }}%</div>
+      </div>
+      <div class="col2">
+        <div
+          class="status"
+          [style]="it.status === 'ONLINE' ? { color: '#0BD107' } : {}"
+        >
+          {{ it.status }}
+        </div>
+        <div class="detailsContainer">
+          <div class="eachDetail">
+            <div class="title">Load</div>
+            {{ it.load }}
+          </div>
+          <div class="eachDetail">
+            <div class="title">Temperature</div>
+            {{ it.temperature }}
+          </div>
+          <div class="eachDetail">
+            <div class="title">Input Frequency</div>
+            {{ it.inputFrequency }}
+          </div>
+          <div class="eachDetail">
+            <div class="title">Input Voltage</div>
+            {{ it.inputVoltage }}
+          </div>
+          <div class="eachDetail">
+            <div class="title">Out put Voltage</div>
+            {{ it.outputVoltage }}
+          </div>
+          <div class="eachDetail">
+            <div class="title">Battery Voltage</div>
+            {{ it.batteryVoltage }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

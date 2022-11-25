@@ -1,0 +1,128 @@
+<div class="body">
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ///////////////////////////////////// HEADER ////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <div
+    class="reportHeader"
+    [style]="selected !== null ? { background: 'white' } : {}"
+  >
+    <div class="aA">
+      <div class="aAa" *ngIf="selected === null">Reports</div>
+      <div class="aAa1" *ngIf="selected !== null">
+        <div class="aAa1a" (click)="selected = null"></div>
+        {{ selected.title }}
+      </div>
+      <div class="aAc" *ngIf="selected !== null">
+        <input
+          class="topBar_bAbB"
+          type="datetime-local"
+          id="time"
+          (change)="onChnageFilterDate($event)"
+        />
+        <div class="topBar_bAbC" (click)="onClickFilterSubmit()">Submit</div>
+        <div
+          class="aAcA"
+          (click)="selected.isExportTypeAlert = !selected.isExportTypeAlert"
+        >
+          <div class="aAcBa" *ngIf="selected.isExportTypeAlert">
+            <div class="aAcBaA"></div>
+            <div class="aAcBaB"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="navBar" *ngIf="selected === null">
+      <div
+        class="eachButton"
+        (click)="page = null"
+        [ngStyle]="page === null ? { fontWeight: 500, color: '#00649E' } : {}"
+      >
+        All Reports
+        <div
+          [ngClass]="'buttonBottom ' + (page === null ? 'blueContainer1' : '')"
+        ></div>
+      </div>
+      <div
+        class="eachButton"
+        (click)="page = i"
+        [ngStyle]="page === i ? { fontWeight: 500, color: '#00649E' } : {}"
+        *ngFor="let it of allReports; let i = index"
+      >
+        {{ it.title }}
+        <div
+          [ngClass]="'buttonBottom ' + (page === i ? 'blueContainer1' : '')"
+        ></div>
+      </div>
+    </div>
+  </div>
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <!-- //////////////////////////////////// OPTINONS ///////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <div class="b" *ngIf="selected === null">
+    <div
+      class="bA"
+      *ngFor="
+        let it of page === null ? margeAllReport() : allReports[page].list
+      "
+      (click)="onClickAny(it.id)"
+    >
+      <div class="bAa">
+        <img
+          width="100%"
+          *ngIf="it.icon !== ''"
+          height="100%"
+          [src]="it.icon"
+        />
+      </div>
+      <div class="bAb">
+        <div class="bAbA">{{ it.title }}</div>
+        <div class="bAbB">{{ it.description }}</div>
+      </div>
+      <div class="bAc"></div>
+    </div>
+  </div>
+
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////////////// TABLE ////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <div *ngIf="selected !== null">
+    <div class="c">
+      <div class="cB">
+        <div class="cA">
+          <div
+            *ngFor="let it of selected.tableConfig"
+            [ngStyle]="{
+              textAlign: it.textAlign,
+              minWidth: it.width - 1 + 'vw',
+              paddingRight: '.8vw'
+            }"
+          >
+            {{ it.label }}
+          </div>
+        </div>
+        <div class="cBa" *ngFor="let it of selected.data">
+          <div
+            *ngFor="let it1 of it; let i = index"
+            [ngStyle]="{
+              textAlign: selected.tableConfig[i].textAlign,
+              minWidth: selected.tableConfig[i].width - 1 + 'vw',
+              paddingRight: '.8vw'
+            }"
+          >
+            {{ it1 }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////// PAGE LOADER /////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="isLoading" *ngIf="isLoading"></div>

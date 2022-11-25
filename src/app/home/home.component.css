@@ -322,7 +322,7 @@
   padding: 1vw;
   border-radius: 0.5vw;
   display: flex;
-  margin: .5vw 0;
+  margin: 0.5vw 0;
 }
 .fBbAa {
   min-width: 3.5vw;
@@ -354,4 +354,91 @@
 .fBbAbBb {
   font-size: 0.8vw;
   color: #5b7abe;
+}
+
+/* /////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////// LOGOUT CONFIRM POPUP /////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////////////// */
+.g {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #0000006e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gA {
+  width: 25vw;
+  background-color: white;
+}
+.gAa {
+  font-size: 1.5vw;
+  padding: 0.3vw 1vw;
+  font-weight: 500;
+  display: flex;
+  color: #515151;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #eef1f5;
+}
+.gAaB {
+  width: 1vw;
+  height: 1vw;
+  background-image: url(../../assets/ic_x.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+.gAb {
+  font-size: 1.2vw;
+  font-weight: 400;
+  padding: 4vw 3vw;
+  text-align: center;
+}
+.gAc {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  border-top: 0.03vw solid #658cbf;
+}
+.gAcA,
+.gAcB {
+  margin: 0.5vw;
+  margin-left: 0;
+  width: 6vw;
+  text-align: center;
+  font-size: 1vw;
+  padding: 0.5vw;
+  color: white;
+  background-color: #515151;
+  cursor: pointer;
+}
+.gAcB {
+  background-color: #658cbf;
+}
+/* ////////////////////////////// CHANGE PASSWORD POPUP ////////////////////////////// */
+.gAd {
+  padding: 2vw;
+  display: flex;
+  flex-direction: column;
+  font-size: 1vw;
+  color: #515151;
+}
+.gAdA {
+  margin-top: 0.2vw;
+  margin-bottom: 0.5vw;
+  padding: 0.5vw;
+  background-color: #fafafa;
+  box-sizing: border-box;
+  border: 0.03vw solid rgba(128, 128, 128, 0.223);
+  border-radius: 0.2vw;
+}
+
+.gAdA:focus {
+  border: 0.03vw solid rgba(128, 128, 128, 0.5);
+  outline: none;
 }

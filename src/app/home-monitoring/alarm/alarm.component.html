@@ -37,18 +37,36 @@
   <div class="priorityContainer">
     <div class="title1">ALARM BY PRIORITY</div>
     <div class="priorityBody">
-      <div class="values" *ngFor="let it of [1, 1, 1]">
-        <div class="colorCode" [style]="{ background: 'red' }"></div>
-        Open Alarm
+      <div class="values" *ngFor="let it of allPriority">
+        <div class="colorCode" [style]="{ background: it.color }"></div>
+        {{ it.title }}
+      </div>
+      <div class="graphBody">
+        <div
+          class="eachLine"
+          *ngFor="let a of priorityGraphData; let i = index"
+          [style]="{ transform: 'rotate(' + i + 'deg)' }"
+        >
+          <div class="eachPoint" [style]="{ background: a }"></div>
+        </div>
       </div>
     </div>
   </div>
   <div class="equipmentContainer">
     <div class="title1">ALARM BY EQUIPMENT</div>
     <div class="equipmentBody">
-      <div class="values" *ngFor="let it of [1, 1, 1]">
-        <div class="colorCode" [style]="{ background: 'red' }"></div>
-        Open Alarm
+      <div class="values" *ngFor="let it of allEquipment">
+        <div class="colorCode" [style]="{ background: it.color }"></div>
+        {{ it.title }}
+      </div>
+      <div class="graphBody">
+        <div
+          class="eachLine"
+          *ngFor="let a of equipmentGraphData; let i = index"
+          [style]="{ transform: 'rotate(' + i + 'deg)' }"
+        >
+          <div class="eachPoint" [style]="{ background: a }"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -71,28 +89,127 @@
     <div class="col5 green">{{ it.highPriority }}</div>
     <div class="col6 orange">{{ it.lowPriority }}</div>
     <div class="col7">
-      <div class="cursor"></div>
+      <div class="cursor" (click)="onClickViewAlarm(it.no)"></div>
     </div>
   </div>
 </div>
-<div class="alarmDetailPopup">
+<div class="alarmDetailPopup" *ngIf="alertsDetailsTable !== null">
   <div class="body">
-    <div class="header">
+    <div class="popUpHeader">
       Alarm Details
-      <div class="closeIcon"></div>
+      <div class="closeIcon" (click)="alertsDetailsTable = null"></div>
     </div>
     <div class="detailTable">
       <div class="header">
-        <div class="col1">Alarm ID</div>
-        <div class="col1">Occurrence Time</div>
-        <div class="col1">Normalized/Ack...</div>
-        <div class="col1">Device ID</div>
-        <div class="col1">Device</div>
-        <div class="col1">Priority</div>
-        <div class="col1">Description</div>
+        <div class="col col1">Alarm ID</div>
+        <div class="col col2">Occurrence Time</div>
+        <div class="col col3">Normalized/Acknoledgment</div>
+        <div class="col col4">Device ID</div>
+        <div class="col col5">Device</div>
+        <div class="col col6">Priority</div>
+        <div class="col col7">Description</div>
+      </div>
+      <div class="row" *ngFor="let it of alertsDetailsTable.content">
+        <div class="rowCol col1">{{ it.id }}</div>
+        <div class="rowCol col2">{{ it.occurrenceTime }}</div>
+        <div class="rowCol col3">{{ it.normalizedTime }}</div>
+        <div class="rowCol col4">{{ it.deviceid }}</div>
+        <div class="rowCol col5">{{ it.device }}</div>
+        <div class="rowCol col6">{{ it.priority }}</div>
+        <div class="rowCol col7">{{ it.description }}</div>
+      </div>
+    </div>
+    <div class="popupFooter">
+      <div class="leftBody">
+        <div class="t1">SHOW:</div>
+        <input
+          type="number"
+          [value]="alertsDetailsTable.paging.showingItemsCount"
+          (change)="onChangeDetailTableCount($event)"
+          class="counter"
+        />
+        <div class="t1">ENTRIES&nbsp;&nbsp;</div>
+        Showing
+        {{
+          alertsDetailsTable.paging.page *
+            alertsDetailsTable.paging.showingItemsCount -
+            (alertsDetailsTable.paging.showingItemsCount - 1)
+        }}
+        to
+        {{
+          alertsDetailsTable.paging.page *
+            alertsDetailsTable.paging.showingItemsCount
+        }}
+        of {{ alertsDetailsTable.paging.totalItems }} entries
+      </div>
+      <div class="rightBody">
+        <div class="next"></div>
+        <div
+          class="page"
+          *ngIf="alertsDetailsTable.paging.page - 3 > 0"
+          (click)="
+            alertsDetailsTable.paging.page = alertsDetailsTable.paging.page - 3
+          "
+        >
+          {{ alertsDetailsTable.paging.page - 3 }}
+        </div>
+        <div
+          class="page"
+          *ngIf="alertsDetailsTable.paging.page - 2 > 0"
+          (click)="
+            alertsDetailsTable.paging.page = alertsDetailsTable.paging.page - 2
+          "
+        >
+          {{ alertsDetailsTable.paging.page - 2 }}
+        </div>
+        <div
+          class="page"
+          *ngIf="alertsDetailsTable.paging.page - 1 > 0"
+          (click)="
+            alertsDetailsTable.paging.page = alertsDetailsTable.paging.page - 1
+          "
+        >
+          {{ alertsDetailsTable.paging.page - 1 }}
+        </div>
+        <div class="selected">{{ alertsDetailsTable.paging.page }}</div>
+        <div
+          class="page"
+          *ngIf="
+            alertsDetailsTable.paging.page + 1 <=
+            alertsDetailsTable.paging.totalPage
+          "
+          (click)="
+            alertsDetailsTable.paging.page = alertsDetailsTable.paging.page + 1
+          "
+        >
+          {{ alertsDetailsTable.paging.page + 1 }}
+        </div>
+        <div
+          class="page"
+          *ngIf="
+            alertsDetailsTable.paging.page + 2 <=
+            alertsDetailsTable.paging.totalPage
+          "
+          (click)="
+            alertsDetailsTable.paging.page = alertsDetailsTable.paging.page + 2
+          "
+        >
+          {{ alertsDetailsTable.paging.page + 2 }}
+        </div>
+        <div
+          class="page"
+          *ngIf="
+            alertsDetailsTable.paging.page + 3 <=
+            alertsDetailsTable.paging.totalPage
+          "
+          (click)="
+            alertsDetailsTable.paging.page = alertsDetailsTable.paging.page + 3
+          "
+        >
+          {{ alertsDetailsTable.paging.page + 3 }}
+        </div>
+        <div class="next_"></div>
       </div>
     </div>
   </div>
 </div>
-
-

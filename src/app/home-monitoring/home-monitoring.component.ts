@@ -10,5 +10,5 @@ export class HomeMonitoringComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  page = 'alarm';
+  page = 'pump';
 }

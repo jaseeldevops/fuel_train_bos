@@ -143,30 +143,6 @@ export const allForecastVsSalesDummy = {
   ],
 };
 
-export const allAlarmsDummy = {
-  total: '300',
-  open: '100',
-  high: '150',
-  low: '50',
-};
-export const allAttendantWiseSaleDummy = {
-  split: ['10,000', '8,000', '6,000', '4,000', '2,000', '0'],
-  values: [
-    { title: 'XD', value: '21', color: 'red' },
-    { title: 'XD', value: '92', color: 'green' },
-    { title: 'XD', value: '22', color: 'orange' },
-    { title: 'XD', value: '82', color: 'yellow' },
-    { title: 'XD', value: '22', color: 'blue' },
-  ],
-  categoty: [
-    { title: 'Attendence 1', color: 'red' },
-    { title: 'Attendence 2', color: 'green' },
-    { title: 'Attendence 2', color: 'orange' },
-    { title: 'Attendence 2', color: 'yellow' },
-    { title: 'Attendence 2', color: 'blue' },
-  ],
-};
-
 export const allNozzleDummy = [
   {
     number: '01',
@@ -239,3 +215,28 @@ export const allNozzleDummy = [
     quantity: '145 Ltr',
   },
 ];
+
+export const allAlarmsDummy = {
+  total: '300',
+  open: '100',
+  high: '150',
+  low: '50',
+};
+
+export const allAttendantWiseSaleDummy = {
+  split: ['10,000', '8,000', '6,000', '4,000', '2,000', '0'],
+  values: [
+    { title: 'XD', value: '21', color: 'red' },
+    { title: 'XD', value: '92', color: 'green' },
+    { title: 'XD', value: '22', color: 'orange' },
+    { title: 'XD', value: '82', color: 'yellow' },
+    { title: 'XD', value: '22', color: 'blue' },
+  ],
+  categoty: [
+    { title: 'Attendence 1', color: 'red' },
+    { title: 'Attendence 2', color: 'green' },
+    { title: 'Attendence 2', color: 'orange' },
+    { title: 'Attendence 2', color: 'yellow' },
+    { title: 'Attendence 2', color: 'blue' },
+  ],
+};

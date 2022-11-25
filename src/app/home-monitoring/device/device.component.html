@@ -1,1 +1,520 @@
-<p>device works!</p>
+<div class="body">
+  <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+  <div class="each">
+    <div class="title1">PUMP / NOZZLE STATUS</div>
+    <div class="header">
+      <div
+        class="icon"
+        style="background-image: url(../../../assets/monitor/pump.svg)"
+      ></div>
+      <div class="total">
+        <div>Total</div>
+        <div style="font-size: 1.5vw">{{ data?.pumpNozzleStatus?.total }}</div>
+      </div>
+      <div class="graphBody">
+        <div class="graph">
+          <div
+            class="graphLine"
+            *ngFor="let it of [].constructor(360); let i = index"
+            [style]="{ transform: 'rotate(' + i + 'deg)' }"
+          >
+            <div
+              class="graphColor"
+              [style]="{
+                backgroundColor:
+                  i < 360 - data?.pumpNozzleStatus?.online * 3.6
+                    ? '#e1e7ee'
+                    : '#56A052'
+              }"
+            ></div>
+          </div>
+          <div class="graphValue">{{ data?.pumpNozzleStatus?.online }}%</div>
+        </div>
+        <div class="graphData">
+          <div>Online</div>
+          <div style="font-size: 1vw; color: #515151">
+            {{ data?.pumpNozzleStatus?.onlineValue }}
+          </div>
+        </div>
+      </div>
+      <div class="graphBody">
+        <div class="graph">
+          <div
+            class="graphLine"
+            *ngFor="let it of [].constructor(360); let i = index"
+            [style]="{ transform: 'rotate(' + i + 'deg)' }"
+          >
+            <div
+              class="graphColor"
+              [style]="{
+                backgroundColor:
+                  i < 360 - data?.pumpNozzleStatus?.offline * 3.6
+                    ? '#e1e7ee'
+                    : '#F55A5A'
+              }"
+            ></div>
+          </div>
+          <div class="graphValue">{{ data?.pumpNozzleStatus?.offline }}%</div>
+        </div>
+        <div class="graphData">
+          <div>Offline</div>
+          <div style="font-size: 1vw; color: #515151">
+            {{ data?.pumpNozzleStatus?.onlineValue }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list">
+      <div class="listHeader">
+        <div style="width: 33%">PUMP</div>
+        <div style="width: 33%">NOZZLE</div>
+        <div style="width: 25%; text-align: right">STATUS</div>
+      </div>
+      <div class="listRow" *ngFor="let it of data?.pumpNozzleStatus?.list">
+        <div style="width: 33%">{{ it.pump }}</div>
+        <div style="width: 33%">{{ it.nozzle }}</div>
+        <div
+          [style]="{
+            width: '25%',
+            textAlign: 'right',
+            color: setStatusColor(it.status)
+          }"
+        >
+          {{ it.status }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+  <div class="each">
+    <div class="title1">TANK/ ATG STATUS</div>
+    <div class="header">
+      <div
+        class="icon"
+        style="background-image: url(../../../assets/monitor/tank.svg)"
+      ></div>
+      <div class="total">
+        <div>Total</div>
+        <div style="font-size: 1.5vw">{{ data?.tankAtgStatus?.total }}</div>
+      </div>
+      <div class="graphBody">
+        <div class="graph">
+          <div
+            class="graphLine"
+            *ngFor="let it of [].constructor(360); let i = index"
+            [style]="{ transform: 'rotate(' + i + 'deg)' }"
+          >
+            <div
+              class="graphColor"
+              [style]="{
+                backgroundColor:
+                  i < 360 - data?.tankAtgStatus?.online * 3.6
+                    ? '#e1e7ee'
+                    : '#56A052'
+              }"
+            ></div>
+          </div>
+          <div class="graphValue">{{ data?.tankAtgStatus?.online }}%</div>
+        </div>
+        <div class="graphData">
+          <div>Online</div>
+          <div style="font-size: 1vw; color: #515151">
+            {{ data?.tankAtgStatus?.onlineValue }}
+          </div>
+        </div>
+      </div>
+      <div class="graphBody">
+        <div class="graph">
+          <div
+            class="graphLine"
+            *ngFor="let it of [].constructor(360); let i = index"
+            [style]="{ transform: 'rotate(' + i + 'deg)' }"
+          >
+            <div
+              class="graphColor"
+              [style]="{
+                backgroundColor:
+                  i < 360 - data?.tankAtgStatus?.offline * 3.6
+                    ? '#e1e7ee'
+                    : '#F55A5A'
+              }"
+            ></div>
+          </div>
+          <div class="graphValue">{{ data?.tankAtgStatus?.offline }}%</div>
+        </div>
+        <div class="graphData">
+          <div>Offline</div>
+          <div style="font-size: 1vw; color: #515151">
+            {{ data?.tankAtgStatus?.onlineValue }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list">
+      <div class="listHeader">
+        <div style="width: 33%">TANK</div>
+        <div style="width: 33%">ATG</div>
+        <div style="width: 25%; text-align: right">STATUS</div>
+      </div>
+      <div class="listRow" *ngFor="let it of data?.tankAtgStatus?.list">
+        <div style="width: 33%">{{ it.tank }}</div>
+        <div style="width: 33%">{{ it.atg }}</div>
+        <div
+          [style]="{
+            width: '25%',
+            textAlign: 'right',
+            color: setStatusColor(it.status)
+          }"
+        >
+          {{ it.status }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+  <div class="each">
+    <div class="title1">OTHER DEVICE STATUS</div>
+    <div class="header">
+      <div
+        class="icon"
+        style="background-image: url(../../../assets/monitor/other.svg)"
+      ></div>
+      <div class="total">
+        <div>Total</div>
+        <div style="font-size: 1.5vw">{{ data?.otherDeviceStatus?.total }}</div>
+      </div>
+      <div class="graphBody">
+        <div class="graph">
+          <div
+            class="graphLine"
+            *ngFor="let it of [].constructor(360); let i = index"
+            [style]="{ transform: 'rotate(' + i + 'deg)' }"
+          >
+            <div
+              class="graphColor"
+              [style]="{
+                backgroundColor:
+                  i < 360 - data?.otherDeviceStatus?.online * 3.6
+                    ? '#e1e7ee'
+                    : '#56A052'
+              }"
+            ></div>
+          </div>
+          <div class="graphValue">{{ data?.otherDeviceStatus?.online }}%</div>
+        </div>
+        <div class="graphData">
+          <div>Online</div>
+          <div style="font-size: 1vw; color: #515151">
+            {{ data?.otherDeviceStatus?.onlineValue }}
+          </div>
+        </div>
+      </div>
+      <div class="graphBody">
+        <div class="graph">
+          <div
+            class="graphLine"
+            *ngFor="let it of [].constructor(360); let i = index"
+            [style]="{ transform: 'rotate(' + i + 'deg)' }"
+          >
+            <div
+              class="graphColor"
+              [style]="{
+                backgroundColor:
+                  i < 360 - data?.otherDeviceStatus?.offline * 3.6
+                    ? '#e1e7ee'
+                    : '#F55A5A'
+              }"
+            ></div>
+          </div>
+          <div class="graphValue">{{ data?.otherDeviceStatus?.offline }}%</div>
+        </div>
+        <div class="graphData">
+          <div>Offline</div>
+          <div style="font-size: 1vw; color: #515151">
+            {{ data?.otherDeviceStatus?.onlineValue }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list">
+      <div class="listHeader">
+        <div style="width: 70%"></div>
+        <div style="width: 25%; text-align: right">STATUS</div>
+      </div>
+      <div class="listRow" *ngFor="let it of data?.otherDeviceStatus?.list">
+        <div style="width: 70%">{{ it.title }}</div>
+        <div
+          [style]="{
+            width: '25%',
+            textAlign: 'right',
+            color: setStatusColor(it.status)
+          }"
+        >
+          {{ it.status }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+  <div class="each">
+    <div class="title1">SLAVE STATUS</div>
+    <div class="header">
+      <div
+        class="icon"
+        style="background-image: url(../../../assets/monitor/slave.svg)"
+      ></div>
+      <div class="total">
+        <div>Total</div>
+        <div style="font-size: 1.5vw">{{ data?.slaveStatus?.total }}</div>
+      </div>
+      <div class="graphBody">
+        <div class="graph">
+          <div
+            class="graphLine"
+            *ngFor="let it of [].constructor(360); let i = index"
+            [style]="{ transform: 'rotate(' + i + 'deg)' }"
+          >
+            <div
+              class="graphColor"
+              [style]="{
+                backgroundColor:
+                  i < 360 - data?.slaveStatus?.online * 3.6
+                    ? '#e1e7ee'
+                    : '#56A052'
+              }"
+            ></div>
+          </div>
+          <div class="graphValue">{{ data?.slaveStatus?.online }}%</div>
+        </div>
+        <div class="graphData">
+          <div>Online</div>
+          <div style="font-size: 1vw; color: #515151">
+            {{ data?.slaveStatus?.onlineValue }}
+          </div>
+        </div>
+      </div>
+      <div class="graphBody">
+        <div class="graph">
+          <div
+            class="graphLine"
+            *ngFor="let it of [].constructor(360); let i = index"
+            [style]="{ transform: 'rotate(' + i + 'deg)' }"
+          >
+            <div
+              class="graphColor"
+              [style]="{
+                backgroundColor:
+                  i < 360 - data?.slaveStatus?.offline * 3.6
+                    ? '#e1e7ee'
+                    : '#F55A5A'
+              }"
+            ></div>
+          </div>
+          <div class="graphValue">{{ data?.slaveStatus?.offline }}%</div>
+        </div>
+        <div class="graphData">
+          <div>Offline</div>
+          <div style="font-size: 1vw; color: #515151">
+            {{ data?.slaveStatus?.onlineValue }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list">
+      <div class="listHeader">
+        <div style="width: 70%"></div>
+        <div style="width: 25%; text-align: right">STATUS</div>
+      </div>
+      <div class="listRow" *ngFor="let it of data?.slaveStatus?.list">
+        <div style="width: 70%">{{ it.title }}</div>
+        <div
+          [style]="{
+            width: '25%',
+            textAlign: 'right',
+            color: setStatusColor(it.status)
+          }"
+        >
+          {{ it.status }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
+  <div class="each">
+    <div class="title1">UPS STATUS</div>
+    <div class="header">
+      <div
+        class="icon"
+        style="background-image: url(../../../assets/monitor/ups.svg)"
+      ></div>
+      <div class="total">
+        <div>Total</div>
+        <div style="font-size: 1.5vw">{{ data?.upsStatus?.total }}</div>
+      </div>
+      <div class="graphBody">
+        <div class="graph">
+          <div
+            class="graphLine"
+            *ngFor="let it of [].constructor(360); let i = index"
+            [style]="{ transform: 'rotate(' + i + 'deg)' }"
+          >
+            <div
+              class="graphColor"
+              [style]="{
+                backgroundColor:
+                  i < 360 - data?.upsStatus?.online * 3.6
+                    ? '#e1e7ee'
+                    : '#56A052'
+              }"
+            ></div>
+          </div>
+          <div class="graphValue">{{ data?.upsStatus?.online }}%</div>
+        </div>
+        <div class="graphData">
+          <div>Online</div>
+          <div style="font-size: 1vw; color: #515151">
+            {{ data?.upsStatus?.onlineValue }}
+          </div>
+        </div>
+      </div>
+      <div class="graphBody">
+        <div class="graph">
+          <div
+            class="graphLine"
+            *ngFor="let it of [].constructor(360); let i = index"
+            [style]="{ transform: 'rotate(' + i + 'deg)' }"
+          >
+            <div
+              class="graphColor"
+              [style]="{
+                backgroundColor:
+                  i < 360 - data?.upsStatus?.offline * 3.6
+                    ? '#e1e7ee'
+                    : '#F55A5A'
+              }"
+            ></div>
+          </div>
+          <div class="graphValue">{{ data?.upsStatus?.offline }}%</div>
+        </div>
+        <div class="graphData">
+          <div>Offline</div>
+          <div style="font-size: 1vw; color: #515151">
+            {{ data?.upsStatus?.onlineValue }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list">
+      <div class="listHeader">
+        <div style="width: 70%"></div>
+        <div style="width: 25%; text-align: right">STATUS</div>
+      </div>
+      <div class="listRow" *ngFor="let it of data?.upsStatus?.list">
+        <div style="width: 70%">{{ it.ups }}</div>
+        <div
+          [style]="{
+            width: '25%',
+            textAlign: 'right',
+            color: setStatusColor(it.status)
+          }"
+        >
+          {{ it.status }}
+        </div>
+      </div>
+    </div>
+    <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+    <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+    <!-- //////////////////////////////////////////////////////////////////////////////////// -->
+    <div class="title1">INTEGRATION STATUS</div>
+    <div class="header">
+      <div
+        class="icon"
+        style="background-image: url(../../../assets/monitor/integration.svg)"
+      ></div>
+      <div class="total">
+        <div>Total</div>
+        <div style="font-size: 1.5vw">{{ data?.integrationStatus?.total }}</div>
+      </div>
+      <div class="graphBody">
+        <div class="graph">
+          <div
+            class="graphLine"
+            *ngFor="let it of [].constructor(360); let i = index"
+            [style]="{ transform: 'rotate(' + i + 'deg)' }"
+          >
+            <div
+              class="graphColor"
+              [style]="{
+                backgroundColor:
+                  i < 360 - data?.integrationStatus?.online * 3.6
+                    ? '#e1e7ee'
+                    : '#56A052'
+              }"
+            ></div>
+          </div>
+          <div class="graphValue">{{ data?.integrationStatus?.online }}%</div>
+        </div>
+        <div class="graphData">
+          <div>Online</div>
+          <div style="font-size: 1vw; color: #515151">
+            {{ data?.integrationStatus?.onlineValue }}
+          </div>
+        </div>
+      </div>
+      <div class="graphBody">
+        <div class="graph">
+          <div
+            class="graphLine"
+            *ngFor="let it of [].constructor(360); let i = index"
+            [style]="{ transform: 'rotate(' + i + 'deg)' }"
+          >
+            <div
+              class="graphColor"
+              [style]="{
+                backgroundColor:
+                  i < 360 - data?.integrationStatus?.offline * 3.6
+                    ? '#e1e7ee'
+                    : '#F55A5A'
+              }"
+            ></div>
+          </div>
+          <div class="graphValue">{{ data?.integrationStatus?.offline }}%</div>
+        </div>
+        <div class="graphData">
+          <div>Offline</div>
+          <div style="font-size: 1vw; color: #515151">
+            {{ data?.integrationStatus?.onlineValue }}
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="list">
+      <div class="listHeader">
+        <div style="width: 70%"></div>
+        <div style="width: 25%; text-align: right">STATUS</div>
+      </div>
+      <div class="listRow" *ngFor="let it of data?.integrationStatus?.list">
+        <div style="width: 70%">{{ it.title }}</div>
+        <div
+          [style]="{
+            width: '25%',
+            textAlign: 'right',
+            color: setStatusColor(it.status)
+          }"
+        >
+          {{ it.status }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,1 +1,86 @@
-<p>tank works!</p>
+<div class="body">
+  <div
+    class="eachTank"
+    *ngFor="let it of allTank"
+    [style]="it.isLock ? { borderColor: '#3F6CA5' } : {}"
+  >
+    <div
+      class="col1"
+      [ngClass]="
+        it.tankQty === 100
+          ? '_100'
+          : it.tankQty > 90
+          ? '_90'
+          : it.tankQty > 80
+          ? '_80'
+          : it.tankQty > 70
+          ? '_70'
+          : it.tankQty > 60
+          ? '_60'
+          : it.tankQty > 50
+          ? '_50'
+          : it.tankQty > 40
+          ? '_40'
+          : it.tankQty > 30
+          ? '_30'
+          : it.tankQty > 20
+          ? '_20'
+          : it.tankQty > 10
+          ? '_10'
+          : ''
+      "
+    >
+      <div class="title">
+        {{ it.title }} :&nbsp;
+        <div [style]="{ color: it.productColor }">{{ it.product }}</div>
+      </div>
+      <div class="tankPesentage">{{ it.tankQty }}%</div>
+      <div [ngClass]="it.isLock ? 'lockIcon_' : 'lockIcon'"></div>
+    </div>
+    <div class="col2">
+      <div class="statusTimeRow">
+        <div
+          class="status"
+          [style]="it.status === 'ONLINE' ? { color: '#0BD107' } : {}"
+        >
+          {{ it.status }}
+        </div>
+        <div class="date">{{ it.date }}</div>
+      </div>
+      <div class="eachDetailsContainer">
+        <div class="eachDetails">
+          <div class="title">Tank Capacity</div>
+          {{ it.tankCapacity }}
+        </div>
+        <div class="eachDetails">
+          <div class="title">Product Volume</div>
+          {{ it.productVolume }}
+        </div>
+        <div class="eachDetails">
+          <div class="title">Product Height</div>
+          {{ it.productHeight }}
+        </div>
+        <div class="eachDetails">
+          <div class="title">Ullage Space</div>
+          {{ it.ullageSpace }}
+        </div>
+        <div class="eachDetails">
+          <div class="title">Water Volume</div>
+          {{ it.waterVolume }}
+        </div>
+        <div class="eachDetails">
+          <div class="title">Temperature</div>
+          {{ it.temperature }}
+        </div>
+        <div class="eachDetails">
+          <div class="title">Density</div>
+          {{ it.density }}
+        </div>
+        <div class="eachDetails">
+          <div class="title">Density (tc)</div>
+          {{ it.densityTc }}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

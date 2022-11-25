@@ -1,5 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { allAlarmsDummy } from 'src/app/home-dashboard/dummy_data';
+import {
+  allAlarmsDummy,
+  allAlarmTableDemmy,
+  allEquipmentDummy,
+  allPriorityDummy,
+} from '../dummy_data';
+import { alertDetailsDummy } from '../dummy_data';
 
 @Component({
   selector: 'app-alarm',
@@ -9,50 +15,48 @@ import { allAlarmsDummy } from 'src/app/home-dashboard/dummy_data';
 export class AlarmComponent implements OnInit {
   constructor() {}
 
-  ngOnInit(): void {}
+  allAlarms: any = {};
+  allPriority: any = [];
+  allEquipment: any = [];
+  allAlrarmTable: any = [];
+  
+  ngOnInit(): void {
+    this.allAlarms = allAlarmsDummy;
+    this.allPriority = allPriorityDummy;
+    this.allEquipment = allEquipmentDummy;
+    this.allAlrarmTable = allAlarmTableDemmy;
+    // run this function after assigning the values to priority
+    this.setPriorityGraph();
+    // run this function after assigning the values to equipment
+    this.setEquipmentGraph();
+  }
 
-  allAlarms = allAlarmsDummy;
+  priorityGraphData: any = [];
+  setPriorityGraph = () => {
+    for (let i = 0; i < this.allPriority.length; i++)
+      for (let j = 0; j < this.allPriority[i].value * 3.6; j++)
+        this.priorityGraphData.push(this.allPriority[i].color);
+  };
 
-  allAlrarmTable = [
-    {
-      no: '01',
-      type: 'Irregular Totaliser Reading ',
-      total: '8',
-      open: '16',
-      highPriority: '58',
-      lowPriority: '21',
-    },
-    {
-      no: '02',
-      type: 'Totaliser Mismatch',
-      total: '8',
-      open: '36',
-      highPriority: '8',
-      lowPriority: '18',
-    },
-    {
-      no: '03',
-      type: 'Preset Validation',
-      total: '8',
-      open: '26',
-      highPriority: '8',
-      lowPriority: '8',
-    },
-    {
-      no: '04',
-      type: 'ATG Probe Communication Failure',
-      total: '8',
-      open: '6',
-      highPriority: '8',
-      lowPriority: '8',
-    },
-    {
-      no: '05',
-      type: 'Low Level',
-      total: '18',
-      open: '6',
-      highPriority: '18',
-      lowPriority: '28',
-    },
-  ];
+  equipmentGraphData: any = [];
+  setEquipmentGraph = () => {
+    for (let i = 0; i < this.allEquipment.length; i++)
+      for (let j = 0; j < this.allEquipment[i].value * 3.6; j++)
+        this.equipmentGraphData.push(this.allEquipment[i].color);
+  };
+
+  // keepThis value ;
+  priorityTotal = 0;
+
+  // When the this var is null it will hide the details popup
+  alertsDetailsTable: any = null;
+
+  onClickViewAlarm = (id: any) => {
+    alert(id);
+    this.alertsDetailsTable = alertDetailsDummy;
+  };
+
+  onChangeDetailTableCount = (e: any) => {
+    alert(e.target.value);
+  };
 }

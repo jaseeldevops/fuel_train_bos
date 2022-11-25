@@ -1,0 +1,85 @@
+.body {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0.8vw;
+}
+.each {
+  width: 30.5%;
+  margin: 0.3vw;
+  background-color: white;
+  padding: 1vw;
+  border-radius: 0.75vw;
+}
+.row1 {
+  display: flex;
+  justify-content: space-between;
+}
+.row1 .col1 {
+  width: 48%;
+  height: 12vw;
+  padding-left: 0.8vw;
+  font-size: 1vw;
+  font-weight: 500;
+  background-position: 0.8vw 2.5vw;
+  background-size: 65%;
+  background-repeat: no-repeat;
+  background-image: url(../../../assets/battery/00.png);
+}
+.row1 ._10 {
+  background-image: url(../../../assets/battery/10.png);
+}
+.row1 ._20 {
+  background-image: url(../../../assets/battery/20.png);
+}
+.row1 ._30 {
+  background-image: url(../../../assets/battery/30.png);
+}
+.row1 ._40 {
+  background-image: url(../../../assets/battery/40.png);
+}
+.row1 ._50 {
+  background-image: url(../../../assets/battery/50.png);
+}
+.row1 ._60 {
+  background-image: url(../../../assets/battery/60.png);
+}
+.row1 ._70 {
+  background-image: url(../../../assets/battery/70.png);
+}
+.row1 ._80 {
+  background-image: url(../../../assets/battery/80.png);
+}
+.row1 ._90 {
+  background-image: url(../../../assets/battery/90.png);
+}
+.row1 ._100 {
+  background-image: url(../../../assets/battery/100.png);
+}
+.col1 .upsPesentage {
+  text-align: center;
+  font-size: 1.75vw;
+  margin-top: 5vw;
+  margin-right: 3.4vw;
+}
+.row1 .col2 {
+  width: 48%;
+}
+.col2 .status {
+  font-size: 1.1vw;
+  font-weight: 500;
+  color: #d13b3b;
+}
+.col2 .detailsContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.col2 .eachDetail {
+  width: 48%;
+  font-size: 1.1vw;
+  padding: 0.5vw 0;
+}
+.col2 .title {
+  font-size: 0.8vw;
+  color: #879aa5;
+}
