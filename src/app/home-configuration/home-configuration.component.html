@@ -1,1 +1,6 @@
-<app-nav-page title="Configuration" [items]="subTitles"></app-nav-page>
+<app-nav-page
+  *ngIf="page === ''"
+  title="Configuration"
+  [items]="subTitles"
+  [onClick]="setPageIn"
+></app-nav-page>

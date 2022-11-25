@@ -24,17 +24,36 @@
   flex-wrap: wrap;
 }
 .card {
-  background-color: white;
-  border-radius: 0.3vw;
-  margin: 0.7vw;
-  padding: 1.5vw 1vw;
-  width: 46%;
+  width: 48%;
   font-weight: 500;
   font-size: 1.2vw;
   color: #406ca5;
   cursor: pointer;
+  margin: 0.7vw;
+}
+.underLine {
+  width: 0;
+  transition: 1s;
+  background-color: #006dfb;
+  height: 0.3vw;
+  border-bottom-left-radius: 0.3vw;
+  border-bottom-right-radius: 0.3vw;
+  margin-top: -0.2vw;
+}
+.card:hover .underLine {
+  transition: 0.5s;
+  width: 100%;
+}
+.cardContent {
+  border-radius: 0.3vw;
+  padding: 1.4vw 1vw;
+  padding-top: 1.7vw;
+  background-color: white;
   display: flex;
   justify-content: space-between;
+}
+.cardContent:hover {
+  background-color: #f5f9ff;
 }
 .cardArrow {
   width: 1vw;

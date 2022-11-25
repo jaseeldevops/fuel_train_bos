@@ -60,12 +60,12 @@
   ></app-home-monitoring>
   <app-home-operations
     [hidden]="drowerPath !== 'operations'"
-    [subTitles]="drowerIcon[drowerIndex].subTitles"
+    [page]="subPath"
   ></app-home-operations>
   <app-home-report [hidden]="drowerPath !== 'reports'"></app-home-report>
   <app-home-configuration
     [hidden]="drowerPath !== 'configuration'"
-    [subTitles]="drowerIcon[drowerIndex].subTitles"
+    [page]="subPath"
   ></app-home-configuration>
 </div>
 <!-- /////////////////////////////////////////////////////////////////////////////////////// -->

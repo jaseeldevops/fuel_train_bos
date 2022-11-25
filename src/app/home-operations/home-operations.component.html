@@ -1,1 +1,33 @@
-<app-nav-page title="Operations" [items]="subTitles"></app-nav-page>
+<app-nav-page
+  *ngIf="page === ''"
+  title="Operations"
+  [items]="subTitles"
+  [onClick]="setPageIn"
+></app-nav-page>
+<div class="body" *ngIf="page !== ''">
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ///////////////////////////////////// HEADER ////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <div class="reportHeader">
+    <div class="aA">
+      <div class="aAa1">
+        <div class="aAa1a" (click)="page = ''"></div>
+        Operations > {{ subTitle }}
+      </div>
+      <div class="aAc">
+        <div class="topBar_bAbC">Submit</div>
+      </div>
+    </div>
+    <div class="navBar">
+      <div
+        class="eachButton"
+        [ngStyle]="true ? { fontWeight: 500, color: '#00649E' } : {}"
+      >
+        Hallow
+        <div [ngClass]="'buttonBottom ' + (true ? 'blueContainer1' : '')"></div>
+      </div>
+    </div>
+  </div>
+</div>

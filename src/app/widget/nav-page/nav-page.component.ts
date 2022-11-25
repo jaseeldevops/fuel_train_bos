@@ -8,10 +8,15 @@ import { Component, Input, OnInit } from '@angular/core';
 export class NavPageComponent implements OnInit {
   @Input() title: any;
   @Input() items: any;
+  @Input() onClick: any;
   constructor() {}
 
-  ngOnInit(): void {
-    console.log(this.items);
-    
-  }
+  ngOnInit(): void {}
+
+  // The following function will decide what shoul happen when any of the sub option in the side bar is clicked
+  onSubPathClick = (it: any) => {
+    this.onClick(it);
+    let url = `home/${window.location.pathname.split('/')[2]}/${it.path}`;
+    window.history.replaceState('HOME', 'HOME', url);
+  };
 }

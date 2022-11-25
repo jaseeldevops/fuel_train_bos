@@ -2,8 +2,11 @@
   <div class="title">{{ title }}</div>
 </div>
 <div class="body">
-  <div class="card" *ngFor="let it of items">
-    {{ it.title }}
-    <div class="cardArrow"></div>
+  <div class="card" (click)="onSubPathClick(it)" *ngFor="let it of items">
+    <div class="cardContent">
+      {{ it.title }}
+      <div class="cardArrow"></div>
+    </div>
+    <div class="underLine"></div>
   </div>
 </div>
