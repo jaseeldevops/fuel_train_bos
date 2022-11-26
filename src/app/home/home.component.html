@@ -52,19 +52,17 @@
 <!-- /////////////////////////////////////////////////////////////////////////////////////// -->
 <div class="b">
   <!-- When the any icon in the sidebar is selected the following coponent will be called -->
-  <app-home-dashboard
-    [hidden]="drowerPath !== 'dashboard'"
-  ></app-home-dashboard>
+  <app-home-dashboard *ngIf="drowerPath === 'dashboard'"></app-home-dashboard>
   <app-home-monitoring
-    [hidden]="drowerPath !== 'monitoring'"
+    *ngIf="drowerPath === 'monitoring'"
   ></app-home-monitoring>
   <app-home-operations
-    [hidden]="drowerPath !== 'operations'"
+    *ngIf="drowerPath === 'operations'"
     [page]="subPath"
   ></app-home-operations>
-  <app-home-report [hidden]="drowerPath !== 'reports'"></app-home-report>
+  <app-home-report *ngIf="drowerPath === 'reports'"></app-home-report>
   <app-home-configuration
-    [hidden]="drowerPath !== 'configuration'"
+    *ngIf="drowerPath === 'configuration'"
     [page]="subPath"
   ></app-home-configuration>
 </div>

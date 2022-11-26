@@ -13,23 +13,21 @@ export class HomeOperationsComponent implements OnInit {
   subTitles: any =
     drowerIconList.find((it: any) => it.path === 'operations')?.subTitles ?? [];
 
-  subTitle: any = '';
-
   ngOnInit(): void {
     this.setPage();
   }
+
+  navCount = 0;
 
   // This function will open the page based on the URL
   setPage = () => {
     const path = window.location.pathname.split('/');
     if (path !== null) if (path.length > 3) this.page = path[3];
-    this.subTitle = this.subTitles.find(
-      (it: any) => it.path === this.page
-    )?.title;
+    this.navCount = 0;
   };
 
   setPageIn = (it: any) => {
     this.page = it.path;
-    this.subTitle = it.title;
+    this.navCount = 0;
   };
 }

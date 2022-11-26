@@ -4,3 +4,364 @@
   [items]="subTitles"
   [onClick]="setPageIn"
 ></app-nav-page>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////// HOS Exceptional Log ////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="body" *ngIf="page === 'hosExceptionalLog'">
+  <div class="header">
+    <div class="titile" (click)="page = ''">
+      Configurations > HOS Exceptional Log
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////// Site Configuration /////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="body" *ngIf="page === 'siteConfiguration'">
+  <div class="header">
+    <div class="titile" (click)="page = ''">
+      Configurations > Site Configuration
+    </div>
+    <div class="navRow">
+      <div class="navBar">
+        <div
+          [ngClass]="navCount === 0 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 0"
+        >
+          Site Details
+          <div
+            [ngClass]="navCount === 0 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 1 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 1"
+        >
+          Island Settings
+          <div
+            [ngClass]="navCount === 1 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 2 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 2"
+        >
+          Product Master
+          <div
+            [ngClass]="navCount === 2 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 3 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 3"
+        >
+          Product List
+          <div
+            [ngClass]="navCount === 3 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 4 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 4"
+        >
+          Grade List
+          <div
+            [ngClass]="navCount === 4 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 5 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 5"
+        >
+          Shift
+          <div
+            [ngClass]="navCount === 5 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////// Device Configuration //////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="body" *ngIf="page === 'deviceConfiguration'">
+  <div class="header">
+    <div class="titile" (click)="page = ''">
+      Configurations > Device Configuration
+    </div>
+    <div class="navRow">
+      <div class="navBar">
+        <div
+          [ngClass]="navCount === 0 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 0"
+        >
+          Tank Gauge
+          <div
+            [ngClass]="navCount === 0 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 1 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 1"
+        >
+          Console List
+          <div
+            [ngClass]="navCount === 1 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 2 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 2"
+        >
+          Tank List
+          <div
+            [ngClass]="navCount === 2 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 3 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 3"
+        >
+          Tank Configuration
+          <div
+            [ngClass]="navCount === 3 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 4 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 4"
+        >
+          Dispenser Configuration
+          <div
+            [ngClass]="navCount === 4 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 5 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 5"
+        >
+          UPS Configuration
+          <div
+            [ngClass]="navCount === 5 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 6 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 6"
+        >
+          Other Device
+          <div
+            [ngClass]="navCount === 6 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////// Software Configuration ///////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="body" *ngIf="page === 'softwareConfiguration'">
+  <div class="header">
+    <div class="titile" (click)="page = ''">
+      Configurations > Software Configuration
+    </div>
+    <div class="navRow">
+      <div class="navBar">
+        <div
+          [ngClass]="navCount === 0 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 0"
+        >
+          Logs
+          <div
+            [ngClass]="navCount === 0 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 1 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 1"
+        >
+          Parameter
+          <div
+            [ngClass]="navCount === 1 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 2 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 2"
+        >
+          Device Driver
+          <div
+            [ngClass]="navCount === 2 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 3 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 3"
+        >
+          Master Data Sync
+          <div
+            [ngClass]="navCount === 3 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 4 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 4"
+        >
+          Activate Config
+          <div
+            [ngClass]="navCount === 4 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 5 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 5"
+        >
+          Scheduler Config
+          <div
+            [ngClass]="navCount === 5 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 6 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 6"
+        >
+          Dip Chart Config
+          <div
+            [ngClass]="navCount === 6 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 7 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 7"
+        >
+          IP Config
+          <div
+            [ngClass]="navCount === 7 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////// User Management /////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////////// -->
+<div class="body" *ngIf="page === 'userManagement'">
+  <div class="header">
+    <div class="titile" (click)="page = ''">
+      Configurations > User Management
+    </div>
+    <div class="navRow">
+      <div class="navBar">
+        <div
+          [ngClass]="navCount === 0 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 0"
+        >
+          User Management
+          <div
+            [ngClass]="navCount === 0 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 1 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 1"
+        >
+          Role Master
+          <div
+            [ngClass]="navCount === 1 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 2 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 2"
+        >
+          Role Screen Mapping
+          <div
+            [ngClass]="navCount === 2 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////// Alarm & Interlock //////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////////// -->
+<div class="body" *ngIf="page === 'alarmInterlock'">
+  <div class="header">
+    <div class="titile" (click)="page = ''">
+      Configurations > Alarm & Interlock
+    </div>
+    <div class="navRow">
+      <div class="navBar">
+        <div
+          [ngClass]="navCount === 0 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 0"
+        >
+          Alarm
+          <div
+            [ngClass]="navCount === 0 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 1 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 1"
+        >
+          Pump interlock
+          <div
+            [ngClass]="navCount === 1 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 2 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 2"
+        >
+          Tank interlock
+          <div
+            [ngClass]="navCount === 2 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /////////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////// Maintenance /////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////////// -->
+<div class="body" *ngIf="page === 'maintenance'">
+  <div class="header">
+    <div class="titile" (click)="page = ''">Configurations > Maintenance</div>
+  </div>
+</div>
+<!-- /////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////// Log Viewer /////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////////// -->
+<div class="body" *ngIf="page === 'logViewer'">
+  <div class="header">
+    <div class="titile" (click)="page = ''">Configurations > Log Viewer</div>
+    <div class="navRow">
+      <div class="navBar">
+        <div
+          [ngClass]="navCount === 0 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 0"
+        >
+          BOS Log
+          <div
+            [ngClass]="navCount === 0 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 1 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 1"
+        >
+          FCC Log
+          <div
+            [ngClass]="navCount === 1 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

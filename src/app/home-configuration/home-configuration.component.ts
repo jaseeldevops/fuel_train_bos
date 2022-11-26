@@ -11,9 +11,10 @@ export class HomeConfigurationComponent implements OnInit {
   constructor() {}
 
   subTitles: any =
-    drowerIconList.find((it: any) => it.path === 'configuration')?.subTitles ?? [];
+    drowerIconList.find((it: any) => it.path === 'configuration')?.subTitles ??
+    [];
 
-  subTitle: any = '';
+  navCount = 0;
 
   ngOnInit(): void {
     this.setPage();
@@ -23,13 +24,11 @@ export class HomeConfigurationComponent implements OnInit {
   setPage = () => {
     const path = window.location.pathname.split('/');
     if (path !== null) if (path.length > 3) this.page = path[3];
-    this.subTitle = this.subTitles.find(
-      (it: any) => it.path === this.page
-    )?.title;
+    this.navCount = 0;
   };
 
   setPageIn = (it: any) => {
     this.page = it.path;
-    this.subTitle = it.title;
+    this.navCount = 0;
   };
 }

@@ -1,0 +1,62 @@
+.body {
+  background-color: white;
+  height: calc(100vh - 3.5vw);
+}
+/* ///////////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////// HEADER /////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////////// */
+.header {
+  border-bottom: 0.03vw solid #a0b6d2;
+}
+.header .titile {
+  padding: 0.8vw 1.2vw;
+  font-weight: 500;
+  font-size: 1.5vw;
+  color: #415365;
+  cursor: pointer;
+}
+.header .navRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1vw;
+}
+.header .navBar {
+  display: flex;
+  color: #888888;
+  font-size: 1vw;
+  text-align: center;
+  margin-left: 0.6vw;
+}
+.header .eachButton,
+.header .eachButton_ {
+  cursor: pointer;
+  text-align: center;
+  margin-right: 1.5vw;
+}
+.header .eachButton_ {
+  font-weight: 500;
+  color: #00649e;
+}
+.header .buttonBottom,
+.header .buttonBottom_ {
+  height: 0.25vw;
+  min-width: 5vw;
+  margin-top: 0.6vw;
+  border-top-left-radius: 0.2vw;
+  border-top-right-radius: 0.2vw;
+}
+.header .buttonBottom_ {
+  background-color: #069bf2;
+}
+/* .header .submit {
+    margin: 0.2vw;
+    font-size: 0.7vw;
+    background-color: #0abb59;
+    border-radius: 0.2vw;
+    padding: 0.25vw 0.4vw;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+  } */

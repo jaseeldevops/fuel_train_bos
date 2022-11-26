@@ -4,29 +4,189 @@
   [items]="subTitles"
   [onClick]="setPageIn"
 ></app-nav-page>
-<div class="body" *ngIf="page !== ''">
-  <!-- /////////////////////////////////////////////////////////////////////////////// -->
-  <!-- /////////////////////////////////////////////////////////////////////////////// -->
-  <!-- ///////////////////////////////////// HEADER ////////////////////////////////// -->
-  <!-- /////////////////////////////////////////////////////////////////////////////// -->
-  <!-- /////////////////////////////////////////////////////////////////////////////// -->
-  <div class="reportHeader">
-    <div class="aA">
-      <div class="aAa1">
-        <div class="aAa1a" (click)="page = ''"></div>
-        Operations > {{ subTitle }}
-      </div>
-      <div class="aAc">
-        <div class="topBar_bAbC">Submit</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////// EOD /////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="body" *ngIf="page === 'eod'">
+  <div class="header">
+    <div class="titile" (click)="page = ''">Operations > EOD</div>
+    <div class="navRow">
+      <div class="navBar">
+        <div
+          [ngClass]="navCount === 0 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 0"
+        >
+          Shift End
+          <div
+            [ngClass]="navCount === 0 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 1 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 1"
+        >
+          Day End
+          <div
+            [ngClass]="navCount === 1 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
       </div>
     </div>
-    <div class="navBar">
-      <div
-        class="eachButton"
-        [ngStyle]="true ? { fontWeight: 500, color: '#00649E' } : {}"
-      >
-        Hallow
-        <div [ngClass]="'buttonBottom ' + (true ? 'blueContainer1' : '')"></div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////// TT Recipients ///////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="body" *ngIf="page === 'ttRecipients'">
+  <div class="header">
+    <div class="titile" (click)="page = ''">Operations > TT Recipients</div>
+    <div class="navRow">
+      <div class="navBar">
+        <div
+          [ngClass]="navCount === 0 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 0"
+        >
+          Invoice
+          <div
+            [ngClass]="navCount === 0 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 1 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 1"
+        >
+          Delivery Checklist
+          <div
+            [ngClass]="navCount === 1 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 2 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 2"
+        >
+          Delivery
+          <div
+            [ngClass]="navCount === 2 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////// Payment Mode ////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="body" *ngIf="page === 'paymentMode'">
+  <div class="header">
+    <div class="titile" (click)="page = ''">Operations > Payment Mode</div>
+    <div class="navRow">
+      <div class="navBar">
+        <div
+          [ngClass]="navCount === 0 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 0"
+        >
+          Shift End
+          <div
+            [ngClass]="navCount === 0 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 1 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 1"
+        >
+          Day End
+          <div
+            [ngClass]="navCount === 1 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////// Controls //////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="body" *ngIf="page === 'controls'">
+  <div class="header">
+    <div class="titile" (click)="page = ''">Operations > Controls</div>
+    <div class="navRow">
+      <div class="navBar">
+        <div
+          [ngClass]="navCount === 0 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 0"
+        >
+          Pump Control
+          <div
+            [ngClass]="navCount === 0 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 1 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 1"
+        >
+          Tank Control
+          <div
+            [ngClass]="navCount === 1 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////// Price Change ////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="body" *ngIf="page === 'priceChange'">
+  <div class="header">
+    <div class="titile" (click)="page = ''">Operations > Price Change</div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////// Tank Density ///////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="body" *ngIf="page === 'tankDensity'">
+  <div class="header">
+    <div class="titile" (click)="page = ''">Operations > Tank Density</div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////// Monolith Configuration ///////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="body" *ngIf="page === 'monolithConfiguration'">
+  <div class="header">
+    <div class="titile" (click)="page = ''">
+      Operations > Monolith Configuration
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////// Customer Configuration ///////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="body" *ngIf="page === 'customerConfiguration'">
+  <div class="header">
+    <div class="titile" (click)="page = ''">
+      Operations > Customer Configuration
+    </div>
+    <div class="navRow">
+      <div class="navBar">
+        <div
+          [ngClass]="navCount === 0 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 0"
+        >
+          Customers
+          <div
+            [ngClass]="navCount === 0 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
+        <div
+          [ngClass]="navCount === 1 ? 'eachButton_' : 'eachButton'"
+          (click)="navCount = 1"
+        >
+          Customers Vehicle
+          <div
+            [ngClass]="navCount === 1 ? 'buttonBottom_' : 'buttonBottom'"
+          ></div>
+        </div>
       </div>
     </div>
   </div>

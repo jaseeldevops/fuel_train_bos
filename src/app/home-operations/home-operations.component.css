@@ -7,40 +7,50 @@
 /* ////////////////////////////////////////// HEADER /////////////////////////////////////// */
 /* ///////////////////////////////////////////////////////////////////////////////////////// */
 /* ///////////////////////////////////////////////////////////////////////////////////////// */
-.reportHeader {
+.header {
   border-bottom: 0.03vw solid #a0b6d2;
 }
-.aA {
-  display: flex;
-  justify-content: space-between;
-  height: 3.5vw;
-  padding: 0 0.8vw;
-}
-.aAa1 {
-  color: #021c3e;
-  font-size: 1.3vw;
+.header .titile {
+  padding: 0.8vw 1.2vw;
   font-weight: 500;
-  display: flex;
-  align-items: center;
-}
-.aAa1a {
-  width: 1vw;
-  height: 1vw;
-  background-image: url(../../assets/ic_back.svg);
-  margin-left: 0.5vw;
-  margin-right: 1vw;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
+  font-size: 1.5vw;
+  color: #415365;
   cursor: pointer;
 }
-.topBar_bAbA {
-  font-size: 0.8vw;
-  color: #707070;
-  margin: 0.2vw;
+.header .navRow {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 1vw;
 }
-
-.topBar_bAbC {
+.header .navBar {
+  display: flex;
+  color: #888888;
+  font-size: 1vw;
+  text-align: center;
+  margin-left: 0.6vw;
+}
+.header .eachButton,
+.header .eachButton_ {
+  cursor: pointer;
+  text-align: center;
+  margin-right: 1.5vw;
+}
+.header .eachButton_ {
+  font-weight: 500;
+  color: #00649e;
+}
+.header .buttonBottom,
+.header .buttonBottom_ {
+  height: 0.25vw;
+  min-width: 5vw;
+  margin-top: 0.6vw;
+  border-top-left-radius: 0.2vw;
+  border-top-right-radius: 0.2vw;
+}
+.header .buttonBottom_ {
+  background-color: #069bf2;
+}
+/* .header .submit {
   margin: 0.2vw;
   font-size: 0.7vw;
   background-color: #0abb59;
@@ -49,34 +59,4 @@
   color: white;
   font-weight: bold;
   cursor: pointer;
-}
-.aAc {
-  display: flex;
-  align-items: center;
-}
-.navBar {
-  display: flex;
-  color: #888888;
-  font-size: 1vw;
-  text-align: center;
-  margin-left: 0.6vw;
-}
-.eachButton {
-  cursor: pointer;
-  text-align: center;
-}
-.buttonBottom {
-  height: 0.25vw;
-  min-width: 7vw;
-  margin-top: 0.6vw;
-  border-top-left-radius: 0.2vw;
-  border-top-right-radius: 0.2vw;
-}
-.contentBody {
-  height: calc(100vh - 10vw);
-  overflow: auto;
-}
-.blueContainer1 {
-  font-weight: 500;
-  background-color: #069bf2;
-}
+} */
