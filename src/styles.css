@@ -38,6 +38,10 @@ input {
   font-size: 0.88vw;
   font-family: FiraSansCondensed;
 }
+textarea {
+  font-size: 0.88vw;
+  font-family: FiraSansCondensed;
+}
 input::placeholder {
   font-size: 0.88vw;
 }

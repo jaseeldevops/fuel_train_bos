@@ -20,6 +20,9 @@ import { DeviceComponent } from './home-monitoring/device/device.component';
 import { UpsComponent } from './home-monitoring/ups/ups.component';
 import { PumpComponent } from './home-monitoring/pump/pump.component';
 import { NavPageComponent } from './widget/nav-page/nav-page.component';
+import { HomeConfigurationBodyComponent } from './home-configuration/home-configuration-body/home-configuration-body.component';
+import { HomeOperationsBodyComponent } from './home-operations/home-operations-body/home-operations-body.component';
+import { TablePagingComponent } from './widget/table-paging/table-paging.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +40,9 @@ import { NavPageComponent } from './widget/nav-page/nav-page.component';
     UpsComponent,
     PumpComponent,
     NavPageComponent,
+    HomeConfigurationBodyComponent,
+    HomeOperationsBodyComponent,
+    TablePagingComponent,
   ],
   imports: [
     BrowserModule,

@@ -143,7 +143,14 @@
         of {{ alertsDetailsTable.paging.totalItems }} entries
       </div>
       <div class="rightBody">
-        <div class="next"></div>
+        <div
+          class="next"
+          (click)="
+            alertsDetailsTable.paging.page =
+              alertsDetailsTable.paging.page -
+              (alertsDetailsTable.paging.page > 1 ? 1 : 0)
+          "
+        ></div>
         <div
           class="page"
           *ngIf="alertsDetailsTable.paging.page - 3 > 0"
@@ -208,7 +215,17 @@
         >
           {{ alertsDetailsTable.paging.page + 3 }}
         </div>
-        <div class="next_"></div>
+        <div
+          class="next_"
+          (click)="
+            alertsDetailsTable.paging.page =
+              alertsDetailsTable.paging.page +
+              (alertsDetailsTable.paging.page <
+              alertsDetailsTable.paging.totalPage
+                ? 1
+                : 0)
+          "
+        ></div>
       </div>
     </div>
   </div>

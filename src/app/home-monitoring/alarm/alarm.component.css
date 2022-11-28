@@ -357,6 +357,7 @@
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
+  margin: 0 1vw;
 }
 .next_ {
   transform: rotate(180deg);

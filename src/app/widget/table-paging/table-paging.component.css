@@ -1,0 +1,45 @@
+.tableFooter {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin: 0 1vw;
+  padding: 1vw 0;
+  border-top: 0.08vw solid #dddfe1;
+  color: #707070;
+}
+.next,
+.next_ {
+  width: 0.8vw;
+  height: 1vw;
+  text-align: center;
+  cursor: pointer;
+  justify-content: space-between;
+  background-image: url(../../../assets/ic_<.svg);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0 1vw;
+}
+.next_ {
+  transform: rotate(180deg);
+}
+.page {
+  width: 2vw;
+  height: 2vw;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.selected {
+  width: 2vw;
+  height: 2vw;
+  cursor: pointer;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background-color: #2290ff;
+}

@@ -1,0 +1,653 @@
+<div class="tableBody" *ngIf="page === 'hosExceptionalLog'" style="height: 82%">
+  <div class="table">
+    <div class="header">
+      <div style="width: 30%">Wsdurl</div>
+      <div style="width: 15%">ErrorMsg</div>
+      <div style="width: 15%">Error Code</div>
+      <div style="width: 15%">is Timed Out</div>
+      <div style="width: 15%">EFFECTIVE FROM</div>
+    </div>
+    <div class="body">
+      <div
+        class="row"
+        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+      >
+        <div style="width: 30%">
+          https://spandan.indianoil.co.in/wsh/service/23232
+        </div>
+        <div style="width: 15%">ErrorMsg</div>
+        <div style="width: 15%">Error Code</div>
+        <div style="width: 15%">is Timed Out</div>
+        <div style="width: 15%">EFFECTIVE FROM</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'siteConfiguration' && navCount === 1">
+  <div class="table">
+    <div class="header">
+      <div style="width: 10%">ISLAND ID</div>
+      <div style="width: 20%">ISLAND NO</div>
+      <div style="width: 40%">ISLAND TYPE</div>
+      <div style="width: 10%">ACTION</div>
+    </div>
+    <div class="body">
+      <div
+        class="row"
+        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+      >
+        <div style="width: 10%">1</div>
+        <div style="width: 20%">2</div>
+        <div style="width: 40%">FOUR WHELLER</div>
+        <div style="width: 10%">Edit</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'siteConfiguration' && navCount === 2">
+  <div class="table">
+    <div class="header">
+      <div style="width: 10%">PRODUCT ID</div>
+      <div style="width: 20%">PRODUCT CODE</div>
+      <div style="width: 40%">PRODUCT NAME</div>
+      <div style="width: 10%">ACTION</div>
+    </div>
+    <div class="body">
+      <div
+        class="row"
+        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+      >
+        <div style="width: 10%">1</div>
+        <div style="width: 20%">2</div>
+        <div style="width: 40%">FOUR WHELLER</div>
+        <div style="width: 10%">Edit</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'siteConfiguration' && navCount === 3">
+  <div class="table">
+    <div class="header">
+      <div style="width: 12%">PRODUCT ID</div>
+      <div style="width: 12%">PRODUCT NAME</div>
+      <div style="width: 12%">PRODUCT CODE</div>
+      <div style="width: 12%">PRODUCT PRICE</div>
+      <div style="width: 12%">PRODUCT REORDER</div>
+      <div style="width: 12%">PRODUCT COLOUR</div>
+      <div style="width: 12%">ACTION</div>
+    </div>
+    <div class="body">
+      <div
+        class="row"
+        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+      >
+        <div style="width: 12%">PRODUCT ID</div>
+        <div style="width: 12%">PRODUCT NAME</div>
+        <div style="width: 12%">PRODUCT CODE</div>
+        <div style="width: 12%">PRODUCT PRICE</div>
+        <div style="width: 12%">PRODUCT REORDER</div>
+        <div style="width: 12%">PRODUCT COLOUR</div>
+        <div style="width: 12%">ACTION</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'siteConfiguration' && navCount === 4">
+  <div class="table">
+    <div class="header">
+      <div style="width: 9%">GRADE NO</div>
+      <div style="width: 9%">GRADE NAME</div>
+      <div style="width: 9%">GRADE CODE</div>
+      <div style="width: 9%">GRADE PRICE</div>
+      <div style="width: 9%">HIGH%</div>
+      <div style="width: 9%">LOW%</div>
+      <div style="width: 9%">GRADE UNIT</div>
+      <div style="width: 9%">LOW PRODUCT</div>
+      <div style="width: 9%">COLOUR GRADE</div>
+      <div style="width: 9%">ACTION</div>
+    </div>
+    <div class="body">
+      <div
+        class="row"
+        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+      >
+        <div style="width: 9%">GRADE NO</div>
+        <div style="width: 9%">GRADE NAME</div>
+        <div style="width: 9%">GRADE CODE</div>
+        <div style="width: 9%">GRADE PRICE</div>
+        <div style="width: 9%">HIGH%</div>
+        <div style="width: 9%">LOW%</div>
+        <div style="width: 9%">GRADE UNIT</div>
+        <div style="width: 9%">LOW PRODUCT</div>
+        <div style="width: 9%">COLOUR GRADE</div>
+        <div style="width: 9%">ACTION</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'siteConfiguration' && navCount === 5">
+  <div class="table">
+    <div class="header">
+      <div style="width: 12%">SHIFT NO</div>
+      <div style="width: 25%">SHIFT NAME</div>
+      <div style="width: 15%">START TIME</div>
+      <div style="width: 15%">END TIME</div>
+      <div style="width: 15%">ACTION</div>
+    </div>
+    <div class="body">
+      <div
+        class="row"
+        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+      >
+        <div style="width: 12%">SHIFT NO</div>
+        <div style="width: 25%">SHIFT NAME</div>
+        <div style="width: 15%">START TIME</div>
+        <div style="width: 15%">END TIME</div>
+        <div style="width: 15%">ACTION</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'deviceConfiguration' && navCount === 0">
+  <div class="table">
+    <div class="header">
+      <div style="width: 15%">GAUGE NO</div>
+      <div style="width: 15%">GAUGE MAKE</div>
+      <div style="width: 15%">GAUGR MODEL</div>
+      <div style="width: 15%">VERSION</div>
+      <div style="width: 15%">SERIAL NO</div>
+      <div style="width: 10%">ACTION</div>
+    </div>
+    <div class="body">
+      <div
+        class="row"
+        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+      >
+        <div style="width: 15%">GAUGE NO</div>
+        <div style="width: 15%">GAUGE MAKE</div>
+        <div style="width: 15%">GAUGR MODEL</div>
+        <div style="width: 15%">VERSION</div>
+        <div style="width: 15%">SERIAL NO</div>
+        <div style="width: 10%">ACTION</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'deviceConfiguration' && navCount === 1">
+  <div class="table">
+    <div class="header">
+      <div style="width: 12%">ATG NO</div>
+      <div style="width: 12%">CONSOLE NAME</div>
+      <div style="width: 12%">MAKE</div>
+      <div style="width: 12%">MODEL</div>
+      <div style="width: 12%">P VERSION</div>
+      <div style="width: 12%">END POINT</div>
+      <div style="width: 12%">AIP TIMEOUT</div>
+      <div style="width: 10%">ACTION</div>
+    </div>
+    <div class="body">
+      <div
+        class="row"
+        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+      >
+        <div style="width: 12%">ATG NO</div>
+        <div style="width: 12%">CONSOLE NAME</div>
+        <div style="width: 12%">MAKE</div>
+        <div style="width: 12%">MODEL</div>
+        <div style="width: 12%">P VERSION</div>
+        <div style="width: 12%">END POINT</div>
+        <div style="width: 12%">AIP TIMEOUT</div>
+        <div style="width: 10%">ACTION</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'deviceConfiguration' && navCount === 2">
+  <div class="table">
+    <div class="header">
+      <div style="width: 6%">TANK NO</div>
+      <div style="width: 10%">TANK PRODUCT</div>
+      <div style="width: 6%">TANK GUAGE</div>
+      <div style="width: 8%">GUAGE MAKE</div>
+      <div style="width: 8%">ATG CONSOLE</div>
+      <div style="width: 8%">HEIGHT (mm)</div>
+      <div style="width: 8%">CAPACITY (ltr)</div>
+      <div style="width: 10%">MIN PRODUCT LEVEL(mm)</div>
+      <div style="width: 10%">MAX PRODUCT LEVEL(mm)</div>
+      <div style="width: 10%">MAX WATER</div>
+      <div style="width: 8%">MAX TEMP ( in C )</div>
+      <div style="width: 8%">MIN TEMP ( in C )</div>
+      <div style="width: 8%">ACTION</div>
+    </div>
+    <div class="body">
+      <div
+        class="row"
+        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+      >
+        <div style="width: 6%">ACTION</div>
+        <div style="width: 10%">ACTION</div>
+        <div style="width: 6%">ACTION</div>
+        <div style="width: 8%">ACTION</div>
+        <div style="width: 8%">ACTION</div>
+        <div style="width: 8%">ACTION</div>
+        <div style="width: 8%">ACTION</div>
+        <div style="width: 10%">ACTION</div>
+        <div style="width: 10%">ACTION</div>
+        <div style="width: 10%">ACTION</div>
+        <div style="width: 8%">ACTION</div>
+        <div style="width: 8%">ACTION</div>
+        <div style="width: 8%">ACTION</div>
+        <div style="width: 8%">ACTION</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div
+  class="tableBody"
+  *ngIf="page === 'softwareConfiguration' && navCount === 1"
+>
+  <div class="table">
+    <div class="header">
+      <div style="width: 8%">SL NO</div>
+      <div style="width: 15%">PARAMETER</div>
+      <div style="width: 22%">VALUE</div>
+      <div style="width: 10%">FLAG</div>
+      <div style="width: 10%">wsSTATUS</div>
+      <div style="width: 10%">FLAG 2</div>
+      <div style="width: 8%">ACTION</div>
+    </div>
+    <div class="body">
+      <div
+        class="row"
+        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+      >
+        <div style="width: 8%">SL NO</div>
+        <div style="width: 15%">PARAMETER</div>
+        <div style="width: 22%">VALUE</div>
+        <div style="width: 10%">FLAG</div>
+        <div style="width: 10%">wsSTATUS</div>
+        <div style="width: 10%">FLAG 2</div>
+        <div style="width: 8%">ACTION</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
+</div>
+<div
+  class="tableBody"
+  *ngIf="page === 'softwareConfiguration' && navCount === 2"
+>
+  <div class="table">
+    <div class="header">
+      <div style="width: 8%">SL NO</div>
+      <div style="width: 8%">ID</div>
+      <div style="width: 18%">EQUIPMENT NAME</div>
+      <div style="width: 18%">EQUIPMENT MAKE</div>
+      <div style="width: 18%">EQUIPMENT MODEL</div>
+      <div style="width: 18%">Driver Version</div>
+      <div style="width: 18%">isENABLE</div>
+      <div style="width: 8%">ACTION</div>
+    </div>
+    <div class="body">
+      <div
+        class="row"
+        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+      >
+        <div style="width: 8%">SL NO</div>
+        <div style="width: 8%">ID</div>
+        <div style="width: 18%">EQUIPMENT NAME</div>
+        <div style="width: 18%">EQUIPMENT MAKE</div>
+        <div style="width: 18%">EQUIPMENT MODEL</div>
+        <div style="width: 18%">Driver Version</div>
+        <div style="width: 18%">isENABLE</div>
+        <div style="width: 8%">ACTION</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
+</div>
+<div
+  class="tableBody"
+  *ngIf="page === 'softwareConfiguration' && navCount === 4"
+>
+  <div class="table">
+    <div class="header">
+      <div style="width: 70%">CONFIGURATION</div>
+      <div style="width: 10%">RECORDS</div>
+      <div style="width: 10%">ACTION</div>
+    </div>
+    <div class="body">
+      <div
+        class="row"
+        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+      >
+        <div style="width: 70%">CONFIGURATION</div>
+        <div style="width: 10%">RECORDS</div>
+        <div style="width: 10%">ACTION</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
+</div>
+<div
+  class="tableBody"
+  *ngIf="page === 'softwareConfiguration' && navCount === 5"
+>
+  <div class="table">
+    <div class="header">
+      <div style="width: 10%">SL NO</div>
+      <div style="width: 13%">SCHEDULER NAME</div>
+      <div style="width: 13%">GOVERN TYPE</div>
+      <div style="width: 13%">GOVERN VALUE</div>
+      <div style="width: 13%">DAY/MONTH VALUE</div>
+      <div style="width: 13%">FAILURE PARAMS</div>
+      <div style="width: 13%">CRON EXPRESSION</div>
+      <div style="width: 10%">ACTION</div>
+    </div>
+    <div class="body">
+      <div
+        class="row"
+        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+      >
+        <div style="width: 10%">SL NO</div>
+        <div style="width: 13%">SCHEDULER NAME</div>
+        <div style="width: 13%">GOVERN TYPE</div>
+        <div style="width: 13%">GOVERN VALUE</div>
+        <div style="width: 13%">DAY/MONTH VALUE</div>
+        <div style="width: 13%">FAILURE PARAMS</div>
+        <div style="width: 13%">CRON EXPRESSION</div>
+        <div style="width: 10%">ACTION</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'userManagement' && navCount === 0">
+  <div class="table">
+    <div class="header">
+      <div style="width: 15%">ID</div>
+      <div style="width: 15%">FIRST NAME</div>
+      <div style="width: 15%">LAST NAME</div>
+      <div style="width: 15%">USER NAME</div>
+      <div style="width: 15%">ROLE</div>
+      <div style="width: 10%">ACTION</div>
+    </div>
+    <div class="body">
+      <div
+        class="row"
+        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+      >
+        <div style="width: 15%">GAUGE NO</div>
+        <div style="width: 15%">GAUGE MAKE</div>
+        <div style="width: 15%">GAUGR MODEL</div>
+        <div style="width: 15%">VERSION</div>
+        <div style="width: 15%">SERIAL NO</div>
+        <div style="width: 10%">ACTION</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'userManagement' && navCount === 1">
+  <div class="table">
+    <div class="header">
+      <div style="width: 20%">ID</div>
+      <div style="width: 20%">ROLE</div>
+      <div style="width: 20%">STATUS</div>
+      <div style="width: 15%">ACTION</div>
+    </div>
+    <div class="body">
+      <div
+        class="row"
+        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+      >
+        <div style="width: 20%">ID</div>
+        <div style="width: 20%">ROLE</div>
+        <div style="width: 20%">STATUS</div>
+        <div style="width: 15%">ACTION</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'userManagement' && navCount === 2">
+  <div class="table">
+    <div class="header">
+      <div style="width: 8%">SEQ NO</div>
+      <div style="width: 10%">ROLE DESC</div>
+      <div style="width: 15%">COMPONENT CODE</div>
+      <div style="width: 15%">COMPONENT NAME</div>
+      <div style="width: 15%">SCREEN CODE</div>
+      <div style="width: 15%">SCREEN NAME</div>
+      <div style="width: 10%">PERMISSION</div>
+      <div style="width: 8%">ACTION</div>
+    </div>
+    <div class="body">
+      <div
+        class="row"
+        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+      >
+        <div style="width: 8%">SEQ NO</div>
+        <div style="width: 10%">ROLE DESC</div>
+        <div style="width: 15%">COMPONENT CODE</div>
+        <div style="width: 15%">COMPONENT NAME</div>
+        <div style="width: 15%">SCREEN CODE</div>
+        <div style="width: 15%">SCREEN NAME</div>
+        <div style="width: 10%">PERMISSION</div>
+        <div style="width: 8%">ACTION</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'alarmInterlock' && navCount === 0">
+  <div class="table">
+    <div class="header">
+      <div style="width: 8%">ID</div>
+      <div style="width: 15%">FIRST</div>
+      <div style="width: 20%">LAST</div>
+      <div style="width: 10%">USER</div>
+      <div style="width: 10%">ROLE</div>
+      <div style="width: 10%">ROLE</div>
+      <div style="width: 10%">ROLE</div>
+      <div style="width: 8%">ACTION</div>
+    </div>
+    <div class="body">
+      <div
+        class="row"
+        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+      >
+        <div style="width: 8%">ID</div>
+        <div style="width: 15%">FIRST</div>
+        <div style="width: 20%">LAST</div>
+        <div style="width: 10%">USER</div>
+        <div style="width: 10%">ROLE</div>
+        <div style="width: 10%">ROLE</div>
+        <div style="width: 10%">ROLE</div>
+        <div style="width: 8%">ACTION</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- <div class="tableBody" *ngIf="page === 'siteConfiguration' && navCount === 0">
+  <div class="table">
+    <div class="header">
+      <div style="width: 30%">Wsdurl</div>
+      <div style="width: 15%">ErrorMsg</div>
+      <div style="width: 15%">Error Code</div>
+      <div style="width: 15%">is Timed Out</div>
+      <div style="width: 15%">EFFECTIVE FROM</div>
+    </div>
+    <div class="body">
+      <div
+        class="row"
+        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+      >
+        <div style="width: 30%">
+          https://spandan.indianoil.co.in/wsh/service/23232
+        </div>
+        <div style="width: 15%">ErrorMsg</div>
+        <div style="width: 15%">Error Code</div>
+        <div style="width: 15%">is Timed Out</div>
+        <div style="width: 15%">EFFECTIVE FROM</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'siteConfiguration  && navCount === 2'">
+  <div class="table">
+    <div class="header">
+      <div style="width: 30%">Wsdurl</div>
+      <div style="width: 15%">ErrorMsg</div>
+      <div style="width: 15%">Error Code</div>
+      <div style="width: 15%">is Timed Out</div>
+      <div style="width: 15%">EFFECTIVE FROM</div>
+    </div>
+    <div class="body">
+      <div
+        class="row"
+        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+      >
+        <div style="width: 30%">
+          https://spandan.indianoil.co.in/wsh/service/23232
+        </div>
+        <div style="width: 15%">ErrorMsg</div>
+        <div style="width: 15%">Error Code</div>
+        <div style="width: 15%">is Timed Out</div>
+        <div style="width: 15%">EFFECTIVE FROM</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
+</div> -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!-- <div class="siteBody">
+  <div class="form">
+    <div class="col1">
+      <div class="title">Site Details</div>
+      <div class="desc">
+        You can enter site id ,address sap code, delaer name and pincode details
+        here
+      </div>
+    </div>
+    <div class="col2">
+      <div class="col2Row">
+        <div class="eachTitle">Site ID</div>
+        <input placeholder="Type..." />
+      </div>
+      <div class="col2Row">
+        <div class="eachTitle">Sap Code</div>
+        <input placeholder="Type..." />
+      </div>
+      <div class="col2Row">
+        <div class="eachTitle">Site Name</div>
+        <input placeholder="Type..." />
+      </div>
+      <div class="col2Row">
+        <div class="eachTitle">Dealer Name</div>
+        <input placeholder="Type..." />
+      </div>
+      <div class="col2Row">
+        <div class="eachTitle">Address</div>
+        <textarea placeholder="Type..."></textarea>
+      </div>
+      <div class="col2Row">
+        <div class="eachTitle">City</div>
+        <input placeholder="Type..." />
+      </div>
+      <div class="col2Row">
+        <div class="eachTitle">Pin Code</div>
+        <input placeholder="Type..." />
+      </div>
+      <div class="col2Row">
+        <div class="eachTitle">Phone Number</div>
+        <input placeholder="Type..." />
+      </div>
+      <div class="col2Row">
+        <div class="eachTitle">Mobile Number</div>
+        <input placeholder="Type..." />
+      </div>
+      <div class="col2Row">
+        <div class="eachTitle">Email ID</div>
+        <input placeholder="Type..." />
+      </div>
+      <div class="col2Row">
+        <div class="eachTitle">RO SI Vender</div>
+        <input placeholder="Type..." />
+      </div>
+      <div class="col2Row">
+        <div class="eachTitle">RO ATG Vender</div>
+        <input placeholder="Type..." />
+      </div>
+      <div class="col2Row">
+        <div class="eachTitle">C5ommissioning Date</div>
+        <input style="width: 20%" type="date" />
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="cancel">CANCEL</div>
+    <div class="save">SAVE</div>
+  </div>
+</div> -->
+
+<!-- <div class="tableBody">
+  <div class="table">
+    <div class="header">
+      <div style="width: 10%">ISLAND ID</div>
+      <div style="width: 20%">ISLAND NO</div>
+      <div style="width: 40%">ISLAND TYPE</div>
+      <div style="width: 10%">ACTION</div>
+    </div>
+    <div class="body">
+      <div
+        class="row"
+        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+      >
+        <div style="width: 10%">1</div>
+        <div style="width: 20%">2</div>
+        <div style="width: 40%">FOUR WHELLER</div>
+        <div style="width: 10%">Edit</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
+</div> -->
