@@ -1,0 +1,198 @@
+/* //////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////// */
+.tableBody {
+  height: 77%;
+}
+.tableBody .table {
+  font-size: 1vw;
+  padding: 1vw;
+  height: 100%;
+}
+.tableBody .header {
+  color: #3f6ca5;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5vw;
+  border-bottom: 0.08vw solid #dddfe1;
+}
+.tableBody .body {
+  height: calc(96.53%);
+  overflow: auto;
+}
+.tableBody .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5vw;
+}
+.tableBody .row:nth-child(even) {
+  background-color: #f3f6f9;
+}
+/* ///////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////// */
+.actionClose {
+  background-color: #215eb1;
+  color: white;
+  border-radius: 0.3vw;
+  padding: 0.05vw 12%;
+  margin: 0 0.5vw;
+  cursor: pointer;
+}
+.actionRelead {
+  width: 1vw;
+  height: 1vw;
+  margin: 0 0.5vw;
+  background-image: url(../../../assets/ic_relead.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+.actionLike {
+  width: 1.2vw;
+  height: 1.2vw;
+  margin: 0 0.5vw;
+  background-image: url(../../../assets/ic_like.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.actionSelect {
+  width: 1vw;
+  height: 1vw;
+  margin: 0 0.5vw;
+  background-image: url(../../../assets/ic_select.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+.actionSelectAll {
+  width: 1vw;
+  height: 1vw;
+  margin: 0 0.5vw;
+  background-image: url(../../../assets/ic_select_all.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.actionBin {
+  width: 1vw;
+  height: 1vw;
+  margin: 0 0.5vw;
+  background-image: url(../../../assets/ic_bin.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+.actionBlueButton {
+  background-color: #215eb1;
+  color: white;
+  border-radius: 0.2vw;
+  padding: 0.2vw 10%;
+  margin: 0 0.5vw;
+  cursor: pointer;
+}
+.actionBlueBorderButton,
+.actionBlueBorderButton_ {
+  border: 0.08vw solid #215eb1;
+  color: #215eb1;
+  border-radius: 0.2vw;
+  padding: 0.1vw 10%;
+  margin: 0 0.5vw;
+  cursor: pointer;
+}
+.actionBlueBorderButton_ {
+  color: white;
+  background-color: #215eb1;
+}
+.actionTextButton {
+  margin: 0 0.5vw;
+  color: #215eb1;
+  cursor: pointer;
+  font-weight: 500;
+}
+.actionTextButton:hover {
+  text-shadow: 1px 1px 2px #215db144;
+}
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+.form1 {
+  width: 100%;
+}
+.form1 .header {
+  padding: 1vw 3vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.form1 .title1 {
+  color: #00649e;
+  font-size: 1vw;
+  padding: 0.2vw 0.4vw;
+}
+.form1 .input1 {
+  width: 14vw;
+  border: 0.08vw solid #949494af;
+  border-radius: 0.3vw;
+  padding: 0.2vw 1vw;
+  font-size: 1vw;
+  box-sizing: border-box;
+}
+.grrenButton {
+  background-color: #0abb59;
+  color: white;
+  font-weight: 500;
+  font-size: 1vw;
+  border-radius: 0.3vw;
+  padding: 0.35vw 0.6vw;
+  cursor: pointer;
+  margin: 0 1vw;
+}
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+.form3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+  height: calc(100vh - 7vw);
+}
+.form3 .row1 {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vw 0;
+  font-size: 1vw;
+}
+.form3 .col1 {
+  width: 30%;
+  text-align: end;
+}
+.form3 .col2 {
+  width: 60%;
+  border: 0.08vw solid #949494af;
+  border-radius: 0.3vw;
+  padding: 0.6vw 1vw;
+  font-size: 1vw;
+  box-sizing: border-box;
+}
+.form3 .row2 {
+  width: 60%;
+  margin-top: 5vh;
+  display: flex;
+  justify-content: flex-end;
+}
+.form3 .saveBtn {
+  background-color: #00649e;
+  color: white;
+  padding: 0.4vw 2vw;
+  font-size: 0.9vw;
+  border-radius: 0.3vw;
+  cursor: pointer;
+}

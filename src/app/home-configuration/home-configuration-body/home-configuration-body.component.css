@@ -1,75 +1,191 @@
-.siteBody {
+.form1 {
   height: calc(100% - 6vw);
   overflow: auto;
 }
-.siteBody .form {
+.form1 .form {
   padding: 2vw;
   display: flex;
   justify-content: space-between;
 }
-.siteBody .col1 {
+.form1 .col1 {
   width: 30%;
 }
-.siteBody .title {
+.form1 .title {
   font-size: 1.2vw;
   font-weight: 500;
 }
-.siteBody .desc {
+.form1 .desc {
   font-size: 1vw;
 }
-.siteBody .col2 {
+.form1 .warningBox1,
+.warningBox2 {
+  width: 100%;
+  height: 13vw;
+  background-image: url(../../../assets/img_warning1.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 0.5vw;
+}
+.form1 .warningBox2 {
+  background-image: url(../../../assets/img_warning2.svg);
+}
+.form1 .infoBox1,
+.infoBox2 {
+  width: 100%;
+  height: 13vw;
+  background-image: url(../../../assets/img_info.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  margin-top: 0.5vw;
+}
+.form1 .infoBox2 {
+  background-image: url(../../../assets/img_info1.svg);
+}
+.form1 .col2 {
   padding-top: 2vw;
   width: 60%;
 }
-.siteBody .col2Row {
+.form1 .col2Row {
   padding: 1vw 0;
   display: flex;
 }
-.siteBody .eachTitle {
+.form1 .eachTitle {
   min-width: 25%;
   margin-right: 5%;
-  font-size: 1.2vw;
+  font-size: 1vw;
   color: 500;
   padding-top: 0.2vw;
 }
-.siteBody input,
+.form1 input,
+select,
 textarea {
-  font-size: 1vw;
+  font-size: 0.9vw;
   width: 100%;
   border-radius: 0.3vw;
   border: 0.05vw solid #949494;
   padding: 0.4vw 0.7vw;
+  box-sizing: border-box;
 }
 input::placeholder {
-  font-size: 1vw;
+  font-size: 0.9vw;
 }
-.siteBody textarea {
+.form1 textarea {
   height: 4vw;
 }
-.siteBody .footer {
+.form1 .footer {
   display: flex;
   justify-content: flex-end;
   border-top: 0.1vw solid #2c2b2b;
 }
-.siteBody .cancel {
-  margin: 1.3vw;
+.form1 .cancel {
+  margin: 0.8vw 0;
+  margin-right: 2vw;
   width: 8vw;
-  font-size: 1.2vw;
+  font-size: 1vw;
   color: #406ca5;
   background-color: #abd6ef;
   border-radius: 0.3vw;
-  padding: 0.7vw;
+  padding: 0.6vw;
   text-align: center;
+  font-weight: 500;
 }
-.siteBody .save {
+.form1 .save {
   text-align: center;
-  margin: 1.3vw;
-  font-size: 1.2vw;
+  margin: 0.8vw 0;
+  margin-right: 2vw;
+  font-size: 1vw;
   width: 8vw;
   color: white;
   background-color: #406ca5;
   border-radius: 0.3vw;
-  padding: 0.7vw;
+  padding: 0.6vw;
+  font-weight: 500;
+}
+.form1 .blueInputBox {
+  background-color: #406ca5;
+  border-radius: 0.5vw;
+  padding: 1.2vw;
+  width: 100%;
+}
+.form1 .blueBoxBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 1.5vw;
+}
+.form1 .blueInputBox1 {
+  background-color: #406ca5;
+  border-radius: 0.5vw;
+  padding: 1.2vw 0.5vw;
+  width: 100%;
+  font-size: 1vw;
+}
+.form1 .button1,
+.button2 {
+  width: 8vw;
+  border-radius: 0.4vw;
+  border: 0.06vw solid #373737;
+  background-color: #fbf5ce;
+  padding: 0.4vw;
+  text-align: center;
+  cursor: pointer;
+  font-size: 0.9vw;
+}
+.form1 .button2 {
+  background-color: #d9edf8;
+}
+/* ///////////////////////////////////////////////////////////////////////////////////// */
+.form3 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: scroll;
+  height: calc(100vh - 7vw);
+}
+.form3 .row1 {
+  width: 50%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1vw 0;
+  font-size: 1vw;
+}
+.form3 .col1 {
+  width: 30%;
+  text-align: end;
+}
+.form3 .col2 {
+  width: 60%;
+  font-size: 1vw;
+  display: flex;
+  justify-content: space-between;
+}
+.form3 input {
+  font-size: 0.9vw;
+  border-radius: 0.3vw;
+  border: 0.05vw solid #949494;
+  padding: 0.4vw 0.7vw;
+  box-sizing: border-box;
+}
+.switchBtn,
+.switchBtn_ {
+  width: 4vw;
+  height: 2vw;
+  background-image: url(../../../assets/ic_switch.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+}
+.switchBtn_ {
+  background-image: url(../../../assets/ic_switch_on.svg);
+}
+.row2 {
+  display: flex;
+  justify-content: flex-end;
+  width: 60%;
+  padding-top: 10vh;
 }
 /* //////////////////////////////////////////////////////////////////////////// */
 /* //////////////////////////////////////////////////////////////////////////// */
@@ -100,4 +216,95 @@ input::placeholder {
 }
 .tableBody .row:nth-child(even) {
   background-color: #f3f6f9;
+}
+.tableBody .content {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/* ///////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////// */
+.tankConfigDashBoard {
+  background-color: #f3f6f9;
+  padding: 1vw;
+  margin: 0 1vw;
+  margin-top: 1.5vw;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.tankConfigDashBoard .col1 {
+  display: flex;
+  width: 50%;
+}
+.tankConfigDashBoard .col2 {
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+}
+.tankConfigDashBoard .input1 {
+  width: 10vw;
+  border: 0.08vw solid #949494af;
+  border-radius: 0.3vw;
+  padding: 0.2vw 1vw;
+  font-size: 1vw;
+  box-sizing: border-box;
+}
+/* ///////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////// */
+.actionTextButton {
+  margin: 0 0.5vw;
+  color: #215eb1;
+  cursor: pointer;
+  font-weight: 500;
+}
+.actionTextButton:hover {
+  text-shadow: 1px 1px 2px #215db144;
+}
+.actionBin {
+  width: 1vw;
+  height: 1vw;
+  margin: 0 0.5vw;
+  background-image: url(../../../assets/ic_bin.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+.actionColorBox {
+  border-radius: 0.3vw;
+  border: 0.05vw solid black;
+  width: 5vw;
+  height: 1.5vw;
+}
+.actionBlueButton {
+  background-color: #215eb1;
+  color: white;
+  border-radius: 0.2vw;
+  padding: 0.3vw 2vw;
+  margin: 0 0.5vw;
+  cursor: pointer;
+}
+.actionBlueButton1 {
+  background-color: #406ca5;
+  color: white;
+  border-radius: 0.2vw;
+  padding: 0.5vw 2vw;
+  margin: 0 0.5vw;
+  cursor: pointer;
+}
+.actionSyncButton {
+  background-color: #406ca5;
+  color: white;
+  border-radius: 0.2vw;
+  padding: 0.3vw 2vw;
+  background-image: url(../../../assets/ic_sync.svg);
+  background-position: 0.8vw;
+  background-repeat: no-repeat;
+  background-size: 1vw;
+  padding-left: 2.4vw;
+  cursor: pointer;
+  font-size: 1vw;
 }

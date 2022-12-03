@@ -23,6 +23,9 @@ import { NavPageComponent } from './widget/nav-page/nav-page.component';
 import { HomeConfigurationBodyComponent } from './home-configuration/home-configuration-body/home-configuration-body.component';
 import { HomeOperationsBodyComponent } from './home-operations/home-operations-body/home-operations-body.component';
 import { TablePagingComponent } from './widget/table-paging/table-paging.component';
+import { HomeConfigurationPopupsComponent } from './home-configuration/home-configuration-popups/home-configuration-popups.component';
+import { HomeOperationsPopupsComponent } from './home-operations/home-operations-popups/home-operations-popups.component';
+import { ToastComponent } from './widget/toast/toast.component';
 
 @NgModule({
   declarations: [
@@ -43,6 +46,9 @@ import { TablePagingComponent } from './widget/table-paging/table-paging.compone
     HomeConfigurationBodyComponent,
     HomeOperationsBodyComponent,
     TablePagingComponent,
+    HomeConfigurationPopupsComponent,
+    HomeOperationsPopupsComponent,
+    ToastComponent,
   ],
   imports: [
     BrowserModule,

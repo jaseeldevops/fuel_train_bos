@@ -20,6 +20,7 @@
 .header .navRow {
   display: flex;
   justify-content: space-between;
+  align-items: flex-start;
   padding: 0 1vw;
 }
 .header .navBar {
@@ -29,6 +30,12 @@
   text-align: center;
   margin-left: 0.6vw;
   margin-top: 0.5vw;
+}
+.header .options {
+  display: flex;
+  color: #888888;
+  font-size: 1vw;
+  margin-left: 0.6vw;
 }
 .header .eachButton,
 .header .eachButton_ {
@@ -61,3 +68,16 @@
     font-weight: bold;
     cursor: pointer;
   } */
+/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+.grrenButton {
+  background-color: #0abb59;
+  color: white;
+  font-weight: 500;
+  font-size: 1vw;
+  border-radius: 0.3vw;
+  padding: 0.3vw 0.6vw;
+  cursor: pointer;
+  margin: 0 1vw;
+}

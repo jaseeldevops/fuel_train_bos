@@ -77,6 +77,13 @@
           ></div>
         </div>
       </div>
+      <div class="options">
+        <div class="grrenButton" *ngIf="navCount === 1">+ Add New Island</div>
+        <div class="grrenButton" *ngIf="navCount === 2">+ Add New</div>
+        <div class="grrenButton" *ngIf="navCount === 3">+ Add Product</div>
+        <div class="grrenButton" *ngIf="navCount === 4">+ Add New Grade</div>
+        <div class="grrenButton" *ngIf="navCount === 5">+ Add New Shift</div>
+      </div>
     </div>
   </div>
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
@@ -151,6 +158,17 @@
             [ngClass]="navCount === 6 ? 'buttonBottom_' : 'buttonBottom'"
           ></div>
         </div>
+      </div>
+      <div class="options">
+        <div class="grrenButton" *ngIf="navCount === 0">+ Add New Gauge</div>
+        <div class="grrenButton" *ngIf="navCount === 1">+ Add New ATG</div>
+        <div class="grrenButton" *ngIf="navCount === 2">+ Add New Tank</div>
+        <div class="grrenButton" *ngIf="navCount === 3">+ Add Records</div>
+        <div class="grrenButton" *ngIf="navCount === 4">
+          Configure Dispenser
+        </div>
+        <div class="grrenButton" *ngIf="navCount === 5">+ Add New UPS</div>
+        <div class="grrenButton" *ngIf="navCount === 6">+ Add Device</div>
       </div>
     </div>
   </div>
@@ -236,6 +254,14 @@
           ></div>
         </div>
       </div>
+      <div class="options">
+        <div class="grrenButton" *ngIf="navCount === 1">+ Add Paramater</div>
+        <div class="grrenButton" *ngIf="navCount === 2">+ Add Device</div>
+        <div class="grrenButton" *ngIf="navCount === 4">Send Configuration</div>
+        <div class="grrenButton" style="background: red" *ngIf="navCount === 5">
+          Run Scheduler
+        </div>
+      </div>
     </div>
   </div>
   <!-- ///////////////////////////////////////////////////////////////////////////////////// -->
@@ -274,6 +300,12 @@
             [ngClass]="navCount === 2 ? 'buttonBottom_' : 'buttonBottom'"
           ></div>
         </div>
+      </div>
+      <div class="options">
+        <div class="grrenButton" *ngIf="navCount === 0">+ Add User</div>
+        <div class="grrenButton" *ngIf="navCount === 1">+ Add Role</div>
+        <select class="grrenButton" *ngIf="navCount === 2"></select>
+        <div class="grrenButton" *ngIf="navCount === 2">Get Details</div>
       </div>
     </div>
   </div>
@@ -314,6 +346,9 @@
           ></div>
         </div>
       </div>
+      <div class="options">
+        <div class="grrenButton" *ngIf="navCount === 0">Send Configuration</div>
+      </div>
     </div>
   </div>
   <!-- /////////////////////////////////////////////////////////////////////////////////// -->
@@ -348,10 +383,15 @@
           ></div>
         </div>
       </div>
+      <div class="options">
+        <div class="grrenButton">Open Log</div>
+      </div>
     </div>
   </div>
   <app-home-configuration-body
     [page]="page"
     [navCount]="navCount"
+    [data]="data"
   ></app-home-configuration-body>
 </div>
+<app-home-configuration-popups></app-home-configuration-popups>

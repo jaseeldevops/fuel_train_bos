@@ -1,3 +1,6 @@
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
 <div class="tableBody" *ngIf="page === 'hosExceptionalLog'" style="height: 82%">
   <div class="table">
     <div class="header">
@@ -8,558 +11,21 @@
       <div style="width: 15%">EFFECTIVE FROM</div>
     </div>
     <div class="body">
-      <div
-        class="row"
-        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-      >
-        <div style="width: 30%">
-          https://spandan.indianoil.co.in/wsh/service/23232
-        </div>
-        <div style="width: 15%">ErrorMsg</div>
-        <div style="width: 15%">Error Code</div>
-        <div style="width: 15%">is Timed Out</div>
-        <div style="width: 15%">EFFECTIVE FROM</div>
+      <div class="row" *ngFor="let it of data?.content">
+        <div style="width: 30%">{{ it.wsdurl }}</div>
+        <div style="width: 15%">{{ it.errorMsg }}</div>
+        <div style="width: 15%">{{ it.errorCode }}</div>
+        <div style="width: 15%">{{ it.isTimedOut }}</div>
+        <div style="width: 15%">{{ it.effectiveFrom }}</div>
       </div>
     </div>
   </div>
-  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
+  <app-table-paging [paging]="data?.paging"></app-table-paging>
 </div>
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<div class="tableBody" *ngIf="page === 'siteConfiguration' && navCount === 1">
-  <div class="table">
-    <div class="header">
-      <div style="width: 10%">ISLAND ID</div>
-      <div style="width: 20%">ISLAND NO</div>
-      <div style="width: 40%">ISLAND TYPE</div>
-      <div style="width: 10%">ACTION</div>
-    </div>
-    <div class="body">
-      <div
-        class="row"
-        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-      >
-        <div style="width: 10%">1</div>
-        <div style="width: 20%">2</div>
-        <div style="width: 40%">FOUR WHELLER</div>
-        <div style="width: 10%">Edit</div>
-      </div>
-    </div>
-  </div>
-  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
-</div>
-<div class="tableBody" *ngIf="page === 'siteConfiguration' && navCount === 2">
-  <div class="table">
-    <div class="header">
-      <div style="width: 10%">PRODUCT ID</div>
-      <div style="width: 20%">PRODUCT CODE</div>
-      <div style="width: 40%">PRODUCT NAME</div>
-      <div style="width: 10%">ACTION</div>
-    </div>
-    <div class="body">
-      <div
-        class="row"
-        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-      >
-        <div style="width: 10%">1</div>
-        <div style="width: 20%">2</div>
-        <div style="width: 40%">FOUR WHELLER</div>
-        <div style="width: 10%">Edit</div>
-      </div>
-    </div>
-  </div>
-  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
-</div>
-<div class="tableBody" *ngIf="page === 'siteConfiguration' && navCount === 3">
-  <div class="table">
-    <div class="header">
-      <div style="width: 12%">PRODUCT ID</div>
-      <div style="width: 12%">PRODUCT NAME</div>
-      <div style="width: 12%">PRODUCT CODE</div>
-      <div style="width: 12%">PRODUCT PRICE</div>
-      <div style="width: 12%">PRODUCT REORDER</div>
-      <div style="width: 12%">PRODUCT COLOUR</div>
-      <div style="width: 12%">ACTION</div>
-    </div>
-    <div class="body">
-      <div
-        class="row"
-        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-      >
-        <div style="width: 12%">PRODUCT ID</div>
-        <div style="width: 12%">PRODUCT NAME</div>
-        <div style="width: 12%">PRODUCT CODE</div>
-        <div style="width: 12%">PRODUCT PRICE</div>
-        <div style="width: 12%">PRODUCT REORDER</div>
-        <div style="width: 12%">PRODUCT COLOUR</div>
-        <div style="width: 12%">ACTION</div>
-      </div>
-    </div>
-  </div>
-  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
-</div>
-<div class="tableBody" *ngIf="page === 'siteConfiguration' && navCount === 4">
-  <div class="table">
-    <div class="header">
-      <div style="width: 9%">GRADE NO</div>
-      <div style="width: 9%">GRADE NAME</div>
-      <div style="width: 9%">GRADE CODE</div>
-      <div style="width: 9%">GRADE PRICE</div>
-      <div style="width: 9%">HIGH%</div>
-      <div style="width: 9%">LOW%</div>
-      <div style="width: 9%">GRADE UNIT</div>
-      <div style="width: 9%">LOW PRODUCT</div>
-      <div style="width: 9%">COLOUR GRADE</div>
-      <div style="width: 9%">ACTION</div>
-    </div>
-    <div class="body">
-      <div
-        class="row"
-        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-      >
-        <div style="width: 9%">GRADE NO</div>
-        <div style="width: 9%">GRADE NAME</div>
-        <div style="width: 9%">GRADE CODE</div>
-        <div style="width: 9%">GRADE PRICE</div>
-        <div style="width: 9%">HIGH%</div>
-        <div style="width: 9%">LOW%</div>
-        <div style="width: 9%">GRADE UNIT</div>
-        <div style="width: 9%">LOW PRODUCT</div>
-        <div style="width: 9%">COLOUR GRADE</div>
-        <div style="width: 9%">ACTION</div>
-      </div>
-    </div>
-  </div>
-  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
-</div>
-<div class="tableBody" *ngIf="page === 'siteConfiguration' && navCount === 5">
-  <div class="table">
-    <div class="header">
-      <div style="width: 12%">SHIFT NO</div>
-      <div style="width: 25%">SHIFT NAME</div>
-      <div style="width: 15%">START TIME</div>
-      <div style="width: 15%">END TIME</div>
-      <div style="width: 15%">ACTION</div>
-    </div>
-    <div class="body">
-      <div
-        class="row"
-        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-      >
-        <div style="width: 12%">SHIFT NO</div>
-        <div style="width: 25%">SHIFT NAME</div>
-        <div style="width: 15%">START TIME</div>
-        <div style="width: 15%">END TIME</div>
-        <div style="width: 15%">ACTION</div>
-      </div>
-    </div>
-  </div>
-  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
-</div>
-<!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<div class="tableBody" *ngIf="page === 'deviceConfiguration' && navCount === 0">
-  <div class="table">
-    <div class="header">
-      <div style="width: 15%">GAUGE NO</div>
-      <div style="width: 15%">GAUGE MAKE</div>
-      <div style="width: 15%">GAUGR MODEL</div>
-      <div style="width: 15%">VERSION</div>
-      <div style="width: 15%">SERIAL NO</div>
-      <div style="width: 10%">ACTION</div>
-    </div>
-    <div class="body">
-      <div
-        class="row"
-        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-      >
-        <div style="width: 15%">GAUGE NO</div>
-        <div style="width: 15%">GAUGE MAKE</div>
-        <div style="width: 15%">GAUGR MODEL</div>
-        <div style="width: 15%">VERSION</div>
-        <div style="width: 15%">SERIAL NO</div>
-        <div style="width: 10%">ACTION</div>
-      </div>
-    </div>
-  </div>
-  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
-</div>
-<div class="tableBody" *ngIf="page === 'deviceConfiguration' && navCount === 1">
-  <div class="table">
-    <div class="header">
-      <div style="width: 12%">ATG NO</div>
-      <div style="width: 12%">CONSOLE NAME</div>
-      <div style="width: 12%">MAKE</div>
-      <div style="width: 12%">MODEL</div>
-      <div style="width: 12%">P VERSION</div>
-      <div style="width: 12%">END POINT</div>
-      <div style="width: 12%">AIP TIMEOUT</div>
-      <div style="width: 10%">ACTION</div>
-    </div>
-    <div class="body">
-      <div
-        class="row"
-        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-      >
-        <div style="width: 12%">ATG NO</div>
-        <div style="width: 12%">CONSOLE NAME</div>
-        <div style="width: 12%">MAKE</div>
-        <div style="width: 12%">MODEL</div>
-        <div style="width: 12%">P VERSION</div>
-        <div style="width: 12%">END POINT</div>
-        <div style="width: 12%">AIP TIMEOUT</div>
-        <div style="width: 10%">ACTION</div>
-      </div>
-    </div>
-  </div>
-  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
-</div>
-<div class="tableBody" *ngIf="page === 'deviceConfiguration' && navCount === 2">
-  <div class="table">
-    <div class="header">
-      <div style="width: 6%">TANK NO</div>
-      <div style="width: 10%">TANK PRODUCT</div>
-      <div style="width: 6%">TANK GUAGE</div>
-      <div style="width: 8%">GUAGE MAKE</div>
-      <div style="width: 8%">ATG CONSOLE</div>
-      <div style="width: 8%">HEIGHT (mm)</div>
-      <div style="width: 8%">CAPACITY (ltr)</div>
-      <div style="width: 10%">MIN PRODUCT LEVEL(mm)</div>
-      <div style="width: 10%">MAX PRODUCT LEVEL(mm)</div>
-      <div style="width: 10%">MAX WATER</div>
-      <div style="width: 8%">MAX TEMP ( in C )</div>
-      <div style="width: 8%">MIN TEMP ( in C )</div>
-      <div style="width: 8%">ACTION</div>
-    </div>
-    <div class="body">
-      <div
-        class="row"
-        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-      >
-        <div style="width: 6%">ACTION</div>
-        <div style="width: 10%">ACTION</div>
-        <div style="width: 6%">ACTION</div>
-        <div style="width: 8%">ACTION</div>
-        <div style="width: 8%">ACTION</div>
-        <div style="width: 8%">ACTION</div>
-        <div style="width: 8%">ACTION</div>
-        <div style="width: 10%">ACTION</div>
-        <div style="width: 10%">ACTION</div>
-        <div style="width: 10%">ACTION</div>
-        <div style="width: 8%">ACTION</div>
-        <div style="width: 8%">ACTION</div>
-        <div style="width: 8%">ACTION</div>
-        <div style="width: 8%">ACTION</div>
-      </div>
-    </div>
-  </div>
-  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
-</div>
-<!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<div
-  class="tableBody"
-  *ngIf="page === 'softwareConfiguration' && navCount === 1"
->
-  <div class="table">
-    <div class="header">
-      <div style="width: 8%">SL NO</div>
-      <div style="width: 15%">PARAMETER</div>
-      <div style="width: 22%">VALUE</div>
-      <div style="width: 10%">FLAG</div>
-      <div style="width: 10%">wsSTATUS</div>
-      <div style="width: 10%">FLAG 2</div>
-      <div style="width: 8%">ACTION</div>
-    </div>
-    <div class="body">
-      <div
-        class="row"
-        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-      >
-        <div style="width: 8%">SL NO</div>
-        <div style="width: 15%">PARAMETER</div>
-        <div style="width: 22%">VALUE</div>
-        <div style="width: 10%">FLAG</div>
-        <div style="width: 10%">wsSTATUS</div>
-        <div style="width: 10%">FLAG 2</div>
-        <div style="width: 8%">ACTION</div>
-      </div>
-    </div>
-  </div>
-  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
-</div>
-<div
-  class="tableBody"
-  *ngIf="page === 'softwareConfiguration' && navCount === 2"
->
-  <div class="table">
-    <div class="header">
-      <div style="width: 8%">SL NO</div>
-      <div style="width: 8%">ID</div>
-      <div style="width: 18%">EQUIPMENT NAME</div>
-      <div style="width: 18%">EQUIPMENT MAKE</div>
-      <div style="width: 18%">EQUIPMENT MODEL</div>
-      <div style="width: 18%">Driver Version</div>
-      <div style="width: 18%">isENABLE</div>
-      <div style="width: 8%">ACTION</div>
-    </div>
-    <div class="body">
-      <div
-        class="row"
-        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-      >
-        <div style="width: 8%">SL NO</div>
-        <div style="width: 8%">ID</div>
-        <div style="width: 18%">EQUIPMENT NAME</div>
-        <div style="width: 18%">EQUIPMENT MAKE</div>
-        <div style="width: 18%">EQUIPMENT MODEL</div>
-        <div style="width: 18%">Driver Version</div>
-        <div style="width: 18%">isENABLE</div>
-        <div style="width: 8%">ACTION</div>
-      </div>
-    </div>
-  </div>
-  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
-</div>
-<div
-  class="tableBody"
-  *ngIf="page === 'softwareConfiguration' && navCount === 4"
->
-  <div class="table">
-    <div class="header">
-      <div style="width: 70%">CONFIGURATION</div>
-      <div style="width: 10%">RECORDS</div>
-      <div style="width: 10%">ACTION</div>
-    </div>
-    <div class="body">
-      <div
-        class="row"
-        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-      >
-        <div style="width: 70%">CONFIGURATION</div>
-        <div style="width: 10%">RECORDS</div>
-        <div style="width: 10%">ACTION</div>
-      </div>
-    </div>
-  </div>
-  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
-</div>
-<div
-  class="tableBody"
-  *ngIf="page === 'softwareConfiguration' && navCount === 5"
->
-  <div class="table">
-    <div class="header">
-      <div style="width: 10%">SL NO</div>
-      <div style="width: 13%">SCHEDULER NAME</div>
-      <div style="width: 13%">GOVERN TYPE</div>
-      <div style="width: 13%">GOVERN VALUE</div>
-      <div style="width: 13%">DAY/MONTH VALUE</div>
-      <div style="width: 13%">FAILURE PARAMS</div>
-      <div style="width: 13%">CRON EXPRESSION</div>
-      <div style="width: 10%">ACTION</div>
-    </div>
-    <div class="body">
-      <div
-        class="row"
-        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-      >
-        <div style="width: 10%">SL NO</div>
-        <div style="width: 13%">SCHEDULER NAME</div>
-        <div style="width: 13%">GOVERN TYPE</div>
-        <div style="width: 13%">GOVERN VALUE</div>
-        <div style="width: 13%">DAY/MONTH VALUE</div>
-        <div style="width: 13%">FAILURE PARAMS</div>
-        <div style="width: 13%">CRON EXPRESSION</div>
-        <div style="width: 10%">ACTION</div>
-      </div>
-    </div>
-  </div>
-  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
-</div>
-<!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<div class="tableBody" *ngIf="page === 'userManagement' && navCount === 0">
-  <div class="table">
-    <div class="header">
-      <div style="width: 15%">ID</div>
-      <div style="width: 15%">FIRST NAME</div>
-      <div style="width: 15%">LAST NAME</div>
-      <div style="width: 15%">USER NAME</div>
-      <div style="width: 15%">ROLE</div>
-      <div style="width: 10%">ACTION</div>
-    </div>
-    <div class="body">
-      <div
-        class="row"
-        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-      >
-        <div style="width: 15%">GAUGE NO</div>
-        <div style="width: 15%">GAUGE MAKE</div>
-        <div style="width: 15%">GAUGR MODEL</div>
-        <div style="width: 15%">VERSION</div>
-        <div style="width: 15%">SERIAL NO</div>
-        <div style="width: 10%">ACTION</div>
-      </div>
-    </div>
-  </div>
-  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
-</div>
-<div class="tableBody" *ngIf="page === 'userManagement' && navCount === 1">
-  <div class="table">
-    <div class="header">
-      <div style="width: 20%">ID</div>
-      <div style="width: 20%">ROLE</div>
-      <div style="width: 20%">STATUS</div>
-      <div style="width: 15%">ACTION</div>
-    </div>
-    <div class="body">
-      <div
-        class="row"
-        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-      >
-        <div style="width: 20%">ID</div>
-        <div style="width: 20%">ROLE</div>
-        <div style="width: 20%">STATUS</div>
-        <div style="width: 15%">ACTION</div>
-      </div>
-    </div>
-  </div>
-  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
-</div>
-<div class="tableBody" *ngIf="page === 'userManagement' && navCount === 2">
-  <div class="table">
-    <div class="header">
-      <div style="width: 8%">SEQ NO</div>
-      <div style="width: 10%">ROLE DESC</div>
-      <div style="width: 15%">COMPONENT CODE</div>
-      <div style="width: 15%">COMPONENT NAME</div>
-      <div style="width: 15%">SCREEN CODE</div>
-      <div style="width: 15%">SCREEN NAME</div>
-      <div style="width: 10%">PERMISSION</div>
-      <div style="width: 8%">ACTION</div>
-    </div>
-    <div class="body">
-      <div
-        class="row"
-        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-      >
-        <div style="width: 8%">SEQ NO</div>
-        <div style="width: 10%">ROLE DESC</div>
-        <div style="width: 15%">COMPONENT CODE</div>
-        <div style="width: 15%">COMPONENT NAME</div>
-        <div style="width: 15%">SCREEN CODE</div>
-        <div style="width: 15%">SCREEN NAME</div>
-        <div style="width: 10%">PERMISSION</div>
-        <div style="width: 8%">ACTION</div>
-      </div>
-    </div>
-  </div>
-  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
-</div>
-<!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<div class="tableBody" *ngIf="page === 'alarmInterlock' && navCount === 0">
-  <div class="table">
-    <div class="header">
-      <div style="width: 8%">ID</div>
-      <div style="width: 15%">FIRST</div>
-      <div style="width: 20%">LAST</div>
-      <div style="width: 10%">USER</div>
-      <div style="width: 10%">ROLE</div>
-      <div style="width: 10%">ROLE</div>
-      <div style="width: 10%">ROLE</div>
-      <div style="width: 8%">ACTION</div>
-    </div>
-    <div class="body">
-      <div
-        class="row"
-        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-      >
-        <div style="width: 8%">ID</div>
-        <div style="width: 15%">FIRST</div>
-        <div style="width: 20%">LAST</div>
-        <div style="width: 10%">USER</div>
-        <div style="width: 10%">ROLE</div>
-        <div style="width: 10%">ROLE</div>
-        <div style="width: 10%">ROLE</div>
-        <div style="width: 8%">ACTION</div>
-      </div>
-    </div>
-  </div>
-  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
-</div>
-<!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<!-- <div class="tableBody" *ngIf="page === 'siteConfiguration' && navCount === 0">
-  <div class="table">
-    <div class="header">
-      <div style="width: 30%">Wsdurl</div>
-      <div style="width: 15%">ErrorMsg</div>
-      <div style="width: 15%">Error Code</div>
-      <div style="width: 15%">is Timed Out</div>
-      <div style="width: 15%">EFFECTIVE FROM</div>
-    </div>
-    <div class="body">
-      <div
-        class="row"
-        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-      >
-        <div style="width: 30%">
-          https://spandan.indianoil.co.in/wsh/service/23232
-        </div>
-        <div style="width: 15%">ErrorMsg</div>
-        <div style="width: 15%">Error Code</div>
-        <div style="width: 15%">is Timed Out</div>
-        <div style="width: 15%">EFFECTIVE FROM</div>
-      </div>
-    </div>
-  </div>
-  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
-</div>
-<div class="tableBody" *ngIf="page === 'siteConfiguration  && navCount === 2'">
-  <div class="table">
-    <div class="header">
-      <div style="width: 30%">Wsdurl</div>
-      <div style="width: 15%">ErrorMsg</div>
-      <div style="width: 15%">Error Code</div>
-      <div style="width: 15%">is Timed Out</div>
-      <div style="width: 15%">EFFECTIVE FROM</div>
-    </div>
-    <div class="body">
-      <div
-        class="row"
-        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-      >
-        <div style="width: 30%">
-          https://spandan.indianoil.co.in/wsh/service/23232
-        </div>
-        <div style="width: 15%">ErrorMsg</div>
-        <div style="width: 15%">Error Code</div>
-        <div style="width: 15%">is Timed Out</div>
-        <div style="width: 15%">EFFECTIVE FROM</div>
-      </div>
-    </div>
-  </div>
-  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
-</div> -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!--  -->
-<!-- <div class="siteBody">
+<div class="form1" *ngIf="page === 'siteConfiguration' && navCount === 0">
   <div class="form">
     <div class="col1">
       <div class="title">Site Details</div>
@@ -618,7 +84,7 @@
         <input placeholder="Type..." />
       </div>
       <div class="col2Row">
-        <div class="eachTitle">C5ommissioning Date</div>
+        <div class="eachTitle">Commissioning Date</div>
         <input style="width: 20%" type="date" />
       </div>
     </div>
@@ -627,27 +93,1165 @@
     <div class="cancel">CANCEL</div>
     <div class="save">SAVE</div>
   </div>
-</div> -->
-
-<!-- <div class="tableBody">
+</div>
+<div class="tableBody" *ngIf="page === 'siteConfiguration' && navCount === 1">
   <div class="table">
     <div class="header">
       <div style="width: 10%">ISLAND ID</div>
       <div style="width: 20%">ISLAND NO</div>
       <div style="width: 40%">ISLAND TYPE</div>
-      <div style="width: 10%">ACTION</div>
+      <div style="width: 10%; display: flex; justify-content: center">
+        ACTION
+      </div>
     </div>
     <div class="body">
-      <div
-        class="row"
-        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
-      >
-        <div style="width: 10%">1</div>
-        <div style="width: 20%">2</div>
-        <div style="width: 40%">FOUR WHELLER</div>
-        <div style="width: 10%">Edit</div>
+      <div class="row" *ngFor="let it of data?.islandSettings?.content">
+        <div class="content" style="width: 10%">{{ it?.islandId }}</div>
+        <div class="content" style="width: 20%">{{ it?.islandNo }}</div>
+        <div class="content" style="width: 40%">{{ it?.islandType }}</div>
+        <div
+          class="content"
+          style="width: 10%; display: flex; justify-content: center"
+        >
+          <div
+            class="actionTextButton"
+            (click)="onClickSiteConfigurationIslandSettingsEdit(it)"
+          >
+            Edit
+          </div>
+          <div
+            class="actionBin"
+            (click)="onClickSiteConfigurationIslandSettingsBin(it)"
+          ></div>
+        </div>
       </div>
     </div>
   </div>
-  <app-table-paging [paging]="islandSettings.paging"></app-table-paging>
-</div> -->
+  <app-table-paging [paging]="data?.islandSettings?.paging"></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'siteConfiguration' && navCount === 2">
+  <div class="table">
+    <div class="header">
+      <div style="width: 10%">PRODUCT ID</div>
+      <div style="width: 20%">PRODUCT CODE</div>
+      <div style="width: 40%">PRODUCT NAME</div>
+      <div style="width: 10%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.productMaster?.content">
+        <div class="content" style="width: 10%">{{ it?.productId }}</div>
+        <div class="content" style="width: 20%">{{ it?.productCode }}</div>
+        <div class="content" style="width: 40%">{{ it?.productName }}</div>
+        <div
+          class="content"
+          style="width: 10%; display: flex; justify-content: center"
+        >
+          <div
+            class="actionTextButton"
+            (click)="onClickSiteConfigurationProductMasterEdit(it)"
+          >
+            Edit
+          </div>
+          <div
+            class="actionBin"
+            (click)="onClickSiteConfigurationProductMasterBin(it)"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.productMaster?.paging"></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'siteConfiguration' && navCount === 3">
+  <div class="table">
+    <div class="header">
+      <div style="width: 12%">PRODUCT ID</div>
+      <div style="width: 12%">PRODUCT NAME</div>
+      <div style="width: 12%">PRODUCT CODE</div>
+      <div style="width: 12%">PRODUCT PRICE</div>
+      <div style="width: 12%">PRODUCT REORDER</div>
+      <div style="width: 12%">PRODUCT COLOUR</div>
+      <div style="width: 12%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.productList?.content">
+        <div class="content" style="width: 12%">{{ it?.productId }}</div>
+        <div class="content" style="width: 12%">{{ it?.productName }}</div>
+        <div class="content" style="width: 12%">{{ it?.productCode }}</div>
+        <div class="content" style="width: 12%">{{ it?.productPrice }}</div>
+        <div class="content" style="width: 12%">{{ it?.productReorder }}</div>
+        <div style="width: 12%; display: flex">
+          <div
+            class="actionColorBox"
+            [style]="{ background: it?.productColour }"
+          ></div>
+        </div>
+        <div style="width: 12%; display: flex; justify-content: center">
+          <div
+            class="actionTextButton"
+            (click)="onClickSiteConfigurationProductListEdit(it)"
+          >
+            Edit
+          </div>
+          <div
+            class="actionBin"
+            (click)="onClickSiteConfigurationProductListBin(it)"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.productList?.paging"></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'siteConfiguration' && navCount === 4">
+  <div class="table">
+    <div class="header">
+      <div style="width: 9%">GRADE NO</div>
+      <div style="width: 9%">GRADE NAME</div>
+      <div style="width: 9%">GRADE CODE</div>
+      <div style="width: 9%">GRADE PRICE</div>
+      <div style="width: 9%">HIGH%</div>
+      <div style="width: 9%">LOW%</div>
+      <div style="width: 9%">GRADE UNIT</div>
+      <div style="width: 9%">LOW PRODUCT</div>
+      <div style="width: 9%">COLOUR GRADE</div>
+      <div style="width: 9%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.gradeList?.content">
+        <div class="content" style="width: 9%">{{ it?.gradeNo }}</div>
+        <div class="content" style="width: 9%">{{ it?.gradeName }}</div>
+        <div class="content" style="width: 9%">{{ it?.gradeCode }}</div>
+        <div class="content" style="width: 9%">{{ it?.gradePrice }}</div>
+        <div class="content" style="width: 9%">{{ it?.high }}</div>
+        <div class="content" style="width: 9%">{{ it?.low }}</div>
+        <div class="content" style="width: 9%">{{ it?.gradeUnit }}</div>
+        <div class="content" style="width: 9%">{{ it?.lowProduct }}</div>
+        <div style="width: 9%; display: flex">
+          <div
+            class="actionColorBox"
+            [style]="{ background: it?.colourGrade }"
+          ></div>
+        </div>
+        <div style="width: 9%; display: flex; justify-content: center">
+          <div
+            class="actionTextButton"
+            (click)="onClickSiteConfigurationGradeListEdit(it)"
+          >
+            Edit
+          </div>
+          <div
+            class="actionBin"
+            (click)="onClickSiteConfigurationGradeListBin(it)"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.gradeList?.paging"></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'siteConfiguration' && navCount === 5">
+  <div class="table">
+    <div class="header">
+      <div style="width: 12%">SHIFT NO</div>
+      <div style="width: 25%">SHIFT NAME</div>
+      <div style="width: 15%">START TIME</div>
+      <div style="width: 15%">END TIME</div>
+      <div style="width: 15%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.shift?.content">
+        <div class="content" style="width: 12%">{{ it?.shiftNo }}</div>
+        <div class="content" style="width: 25%">{{ it?.shiftName }}</div>
+        <div class="content" style="width: 15%">{{ it?.startTime }}</div>
+        <div class="content" style="width: 15%">{{ it?.endTime }}</div>
+        <div style="width: 15%; display: flex; justify-content: center">
+          <div
+            class="actionTextButton"
+            (click)="onClickSiteConfigurationShiftEdit(it)"
+          >
+            Edit
+          </div>
+          <div
+            class="actionBin"
+            (click)="onClickSiteConfigurationShiftBin(it)"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.shift?.paging"></app-table-paging>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'deviceConfiguration' && navCount === 0">
+  <div class="table">
+    <div class="header">
+      <div style="width: 15%">GAUGE NO</div>
+      <div style="width: 15%">GAUGE MAKE</div>
+      <div style="width: 15%">GAUGR MODEL</div>
+      <div style="width: 15%">VERSION</div>
+      <div style="width: 15%">SERIAL NO</div>
+      <div style="width: 10%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.tankGauge?.content">
+        <div class="content" style="width: 15%">{{ it?.gaugeNo }}</div>
+        <div class="content" style="width: 15%">{{ it?.gaugeMake }}</div>
+        <div class="content" style="width: 15%">{{ it?.gaugrModel }}</div>
+        <div class="content" style="width: 15%">{{ it?.version }}</div>
+        <div class="content" style="width: 15%">{{ it?.serialNo }}</div>
+        <div style="width: 10%; display: flex; justify-content: center">
+          <div
+            class="actionTextButton"
+            (click)="onClickDeviceConfigurationTankGaugeEdit(it)"
+          >
+            Edit
+          </div>
+          <div
+            class="actionBin"
+            (click)="onClickDeviceConfigurationTankGaugeBin(it)"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.tankGauge?.paging"></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'deviceConfiguration' && navCount === 1">
+  <div class="table">
+    <div class="header">
+      <div style="width: 12%">ATG NO</div>
+      <div style="width: 12%">CONSOLE NAME</div>
+      <div style="width: 12%">MAKE</div>
+      <div style="width: 12%">MODEL</div>
+      <div style="width: 12%">P VERSION</div>
+      <div style="width: 12%">END POINT</div>
+      <div style="width: 12%">AIP TIMEOUT</div>
+      <div style="width: 10%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.consoleList?.content">
+        <div class="content" style="width: 12%">{{ it?.atgNo }}</div>
+        <div class="content" style="width: 12%">{{ it?.consoleName }}</div>
+        <div class="content" style="width: 12%">{{ it?.make }}</div>
+        <div class="content" style="width: 12%">{{ it?.model }}</div>
+        <div class="content" style="width: 12%">{{ it?.pVersion }}</div>
+        <div class="content" style="width: 12%">{{ it?.endPoint }}</div>
+        <div class="content" style="width: 12%">{{ it?.aipTimeout }}</div>
+        <div style="width: 10%; display: flex; justify-content: center">
+          <div
+            class="actionTextButton"
+            (click)="onClickDeviceConfigurationConsoleListEdit(it)"
+          >
+            Edit
+          </div>
+          <div
+            class="actionBin"
+            (click)="onClickDeviceConfigurationConsoleListBin(it)"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.consoleList?.paging"></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'deviceConfiguration' && navCount === 2">
+  <div class="table">
+    <div class="header">
+      <div style="width: 15%">GAUGE NO</div>
+      <div style="width: 15%">GAUGE MAKE</div>
+      <div style="width: 15%">GAUGR MODEL</div>
+      <div style="width: 15%">VERSION</div>
+      <div style="width: 15%">SERIAL NO</div>
+      <div style="width: 8%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.tankList?.content">
+        <div class="content" style="width: 15%">{{ it?.gaugeNo }}</div>
+        <div class="content" style="width: 15%">{{ it?.gaugeMake }}</div>
+        <div class="content" style="width: 15%">{{ it?.gaugrModel }}</div>
+        <div class="content" style="width: 15%">{{ it?.version }}</div>
+        <div class="content" style="width: 15%">{{ it?.serialNo }}</div>
+        <div style="width: 8%; display: flex; justify-content: center">
+          <div
+            class="actionTextButton"
+            (click)="onClickDeviceConfigurationTankListEdit(it)"
+          >
+            Edit
+          </div>
+          <div
+            class="actionBin"
+            (click)="onClickDeviceConfigurationTankListBin(it)"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.tankList?.paging"></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'deviceConfiguration' && navCount === 3">
+  <div class="tankConfigDashBoard">
+    <div class="col1">
+      <select class="input1">
+        <option hidden>Select Tank no</option>
+      </select>
+      <div
+        class="actionBlueButton"
+        (click)="onClickDeviceConfigurationTankConfigurationGetDetails()"
+      >
+        Get Details
+      </div>
+    </div>
+    <div class="col2">
+      <div
+        class="actionBlueButton"
+        (click)="
+          onClickDeviceConfigurationTankConfigurationGenerateStrappingTable()
+        "
+      >
+        Generate Strapping Table
+      </div>
+      <div
+        class="actionBlueButton"
+        (click)="onClickDeviceConfigurationTankConfigurationSendToFcc()"
+      >
+        Send to FCC
+      </div>
+    </div>
+  </div>
+  <div class="table" style="height: '88%'">
+    <div class="header">
+      <div style="width: 20%">SEQ NO</div>
+      <div style="width: 20%">TANK NO</div>
+      <div style="width: 20%">HEIGHT</div>
+      <div style="width: 20%">VOLUME</div>
+      <div style="width: 8%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.tankConfiguration?.content">
+        <div class="content" style="width: 20%">{{ it?.seqNo }}</div>
+        <div class="content" style="width: 20%">{{ it?.tankNo }}</div>
+        <div class="content" style="width: 20%">{{ it?.height }}</div>
+        <div class="content" style="width: 20%">{{ it?.volume }}</div>
+        <div style="width: 8%; display: flex; justify-content: center">
+          <div
+            class="actionTextButton"
+            (click)="onClickDeviceConfigurationTankConfigurationEdit(it)"
+          >
+            Edit
+          </div>
+          <div
+            class="actionBin"
+            (click)="onClickDeviceConfigurationTankConfigurationBin(it)"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging
+    [paging]="data?.tankConfiguration?.paging"
+  ></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'deviceConfiguration' && navCount === 4">
+  <div class="table">
+    <div class="header">
+      <div style="width: 8%">DU NO</div>
+      <div style="width: 8%">DU MAKER</div>
+      <div style="width: 10%">DU MODEL</div>
+      <div style="width: 10%">ISLAND</div>
+      <div style="width: 8%">PUMP NO</div>
+      <div style="width: 8%">END POINT</div>
+      <div style="width: 8%">NOZZLE NO</div>
+      <div style="width: 8%">TANK</div>
+      <div style="width: 8%">GRADER NO</div>
+      <div style="width: 8%">GRADE CODE</div>
+      <div style="width: 10%">GRADE COLOUR</div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.dispenserConfiguration?.content">
+        <div class="content" style="width: 8%">{{ it?.duNo }}</div>
+        <div class="content" style="width: 8%">{{ it?.duMaker }}</div>
+        <div class="content" style="width: 10%">
+          {{ it?.duModel }}
+        </div>
+        <div class="content" style="width: 10%">{{ it?.island }}</div>
+        <div class="content" style="width: 8%">{{ it?.pumpNo }}</div>
+        <div class="content" style="width: 8%">{{ it?.endPoint }}</div>
+        <div class="content" style="width: 8%">{{ it?.nozzleNo }}</div>
+        <div class="content" style="width: 8%">{{ it?.tank }}</div>
+        <div class="content" style="width: 8%">{{ it?.graderNo }}</div>
+        <div class="content" style="width: 8%">{{ it?.gradeCode }}</div>
+        <div class="content" style="width: 10%; display: flex">
+          <div
+            class="actionColorBox"
+            [style]="{ background: it?.gradeColour }"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging
+    [paging]="data?.dispenserConfiguration?.paging"
+  ></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'deviceConfiguration' && navCount === 5">
+  <div class="table">
+    <div class="header">
+      <div style="width: 8%">ID</div>
+      <div style="width: 12%">UPS NO</div>
+      <div style="width: 12%">UPS MAKE</div>
+      <div style="width: 12%">UPS MODEL</div>
+      <div style="width: 12%">UPS VERSION</div>
+      <div style="width: 12%">CAPACITY</div>
+      <div style="width: 12%">END POINT</div>
+      <div style="width: 8%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.upsConfiguration?.content">
+        <div class="content" style="width: 8%">{{ it?.id }}</div>
+        <div class="content" style="width: 12%">{{ it?.upsNo }}</div>
+        <div class="content" style="width: 12%">{{ it?.upsMake }}</div>
+        <div class="content" style="width: 12%">{{ it?.upsModel }}</div>
+        <div class="content" style="width: 12%">{{ it?.upsVersion }}</div>
+        <div class="content" style="width: 12%">{{ it?.capacity }}</div>
+        <div class="content" style="width: 12%">{{ it?.endPoint }}</div>
+        <div style="width: 8%; display: flex; justify-content: center">
+          <div
+            class="actionTextButton"
+            (click)="onClickDeviceConfigurationUpsConfigurationEdit(it)"
+          >
+            Edit
+          </div>
+          <div
+            class="actionBin"
+            (click)="onClickDeviceConfigurationUpsConfigurationBin(it)"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging
+    [paging]="data?.upsConfiguration?.paging"
+  ></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'deviceConfiguration' && navCount === 6">
+  <div class="table">
+    <div class="header">
+      <div style="width: 20%">ID</div>
+      <div style="width: 20%">EQUIPMENT TYPE</div>
+      <div style="width: 20%">DEVICE MAKE</div>
+      <div style="width: 20%">DEVICE MODEL</div>
+      <div style="width: 8%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.otherDevice?.content">
+        <div class="content" style="width: 20%">ID</div>
+        <div class="content" style="width: 20%">EQUIPMENT TYPE</div>
+        <div class="content" style="width: 20%">DEVICE MAKE</div>
+        <div class="content" style="width: 20%">DEVICE MODEL</div>
+        <div style="width: 8%; display: flex; justify-content: center">
+          <div
+            class="actionTextButton"
+            (click)="onClickDeviceConfigurationOtherDeviceEdit(it)"
+          >
+            Edit
+          </div>
+          <div
+            class="actionBin"
+            (click)="onClickDeviceConfigurationOtherDeviceBin(it)"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.otherDevice?.paging"></app-table-paging>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="form1" *ngIf="page === 'softwareConfiguration' && navCount === 0">
+  <div class="form" style="padding-bottom: 0">
+    <div class="col1">
+      <div class="title">Version Details</div>
+    </div>
+    <div class="col2">
+      <div class="col2Row">
+        <div class="eachTitle">FCC Version :</div>
+        <input placeholder="Type..." />
+      </div>
+      <div class="col2Row">
+        <div class="eachTitle">BOS Version :</div>
+        <input placeholder="Type..." />
+      </div>
+    </div>
+  </div>
+  <div class="footer" style="border: none">
+    <div class="save">Fetch Version</div>
+  </div>
+  <div class="form" style="padding-bottom: 0">
+    <div class="col1">
+      <div class="title">FCC Log Settings</div>
+    </div>
+    <div class="col2">
+      <div class="col2Row">
+        <div class="eachTitle">FCC Current Log Level :</div>
+        <input placeholder="Type..." />
+      </div>
+      <div class="col2Row">
+        <div class="eachTitle">Select New Log Level :</div>
+        <input placeholder="Type..." />
+      </div>
+    </div>
+  </div>
+  <div class="footer" style="border: none">
+    <div class="save">Activate</div>
+    <div class="save">Delete Logs</div>
+  </div>
+  <div class="form" style="padding-bottom: 0">
+    <div class="col1">
+      <div class="title">BOS Log Settings</div>
+    </div>
+    <div class="col2">
+      <div class="col2Row">
+        <div class="eachTitle">BOS Current Log Level :</div>
+        <input placeholder="Type..." />
+      </div>
+      <div class="col2Row">
+        <div class="eachTitle">Select New Log Level :</div>
+        <input placeholder="Type..." />
+      </div>
+    </div>
+  </div>
+  <div class="footer" style="border: none">
+    <div class="save">Activate</div>
+  </div>
+</div>
+<div
+  class="tableBody"
+  *ngIf="page === 'softwareConfiguration' && navCount === 1"
+>
+  <div class="table">
+    <div class="header">
+      <div style="width: 8%">SL NO</div>
+      <div style="width: 15%">PARAMETER</div>
+      <div style="width: 22%">VALUE</div>
+      <div style="width: 10%">FLAG</div>
+      <div style="width: 10%">wsSTATUS</div>
+      <div style="width: 10%">FLAG 2</div>
+      <div style="width: 8%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.paramater?.content">
+        <div class="content" style="width: 8%">{{ it?.slNo }}</div>
+        <div class="content" style="width: 15%">{{ it?.parameter }}</div>
+        <div class="content" style="width: 22%">{{ it?.value }}</div>
+        <div class="content" style="width: 10%">{{ it?.flag }}</div>
+        <div class="content" style="width: 10%">{{ it?.wsstatus }}</div>
+        <div class="content" style="width: 10%">{{ it?.flag2 }}</div>
+        <div style="width: 8%; display: flex; justify-content: center">
+          <div
+            class="actionTextButton"
+            (click)="onClickSoftwareConfigurationParameterEdit(it)"
+          >
+            Edit
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.paramater?.paging"></app-table-paging>
+</div>
+<div
+  class="tableBody"
+  *ngIf="page === 'softwareConfiguration' && navCount === 2"
+>
+  <div class="table">
+    <div class="header">
+      <div style="width: 8%">SL NO</div>
+      <div style="width: 8%">ID</div>
+      <div style="width: 18%">EQUIPMENT NAME</div>
+      <div style="width: 18%">EQUIPMENT MAKE</div>
+      <div style="width: 18%">EQUIPMENT MODEL</div>
+      <div style="width: 18%">Driver Version</div>
+      <div style="width: 18%">isENABLE</div>
+      <div style="width: 8%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.deviceDriver?.content">
+        <div style="width: 8%">{{ it?.slNo }}</div>
+        <div style="width: 8%">{{ it?.id }}</div>
+        <div style="width: 18%">{{ it?.equipmentName }}</div>
+        <div style="width: 18%">{{ it?.equipmentMake }}</div>
+        <div style="width: 18%">{{ it?.equipmentModel }}</div>
+        <div style="width: 18%">{{ it?.driverVersion }}</div>
+        <div style="width: 18%">{{ it?.isenable }}</div>
+        <div style="width: 8%; display: flex; justify-content: center">
+          <div
+            class="actionTextButton"
+            (click)="onClickSoftwareConfigurationDeviceDriverEdit(it)"
+          >
+            Edit
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.deviceDriver?.paging"></app-table-paging>
+</div>
+<div class="form1" *ngIf="page === 'softwareConfiguration' && navCount === 3">
+  <div class="form" style="padding-bottom: 0">
+    <div class="col1" style="width: 46%">
+      <div class="title">Master Data Sync with HOS</div>
+      <div class="warningBox1"></div>
+    </div>
+    <div class="col2" style="width: 45%">
+      <div class="col2Row">
+        <div class="blueInputBox1">
+          <div style="display: flex; color: white">
+            <div style="width: 70%; padding: 0.3vw 1vw">MASTER DATA</div>
+            <div style="width: 30%; padding: 0.3vw 1vw">COUNT</div>
+          </div>
+          <div
+            [style]="{
+              display: 'flex',
+              background: i % 2 === 0 ? 'white' : '#F3F6F9'
+            }"
+            *ngFor="let it of [1, 1, 1]; let i = index"
+          >
+            <div style="width: 70%; padding: 0.3vw 1vw">MASTER DATA</div>
+            <div style="width: 30%; padding: 0.3vw 1vw">COUNT</div>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex">
+        <div class="actionSyncButton">SYNC</div>
+      </div>
+    </div>
+  </div>
+  <div class="form" style="padding-bottom: 0">
+    <div class="col1" style="width: 46%">
+      <div class="title">Master Data Sync with FCC</div>
+      <div class="warningBox2"></div>
+    </div>
+    <div class="col2" style="width: 45%">
+      <div class="col2Row">
+        <div class="blueInputBox">
+          <input placeholder="IP Address" />
+          <div class="blueBoxBottom">
+            <div></div>
+            <div class="button1">SAVE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div
+  class="tableBody"
+  *ngIf="page === 'softwareConfiguration' && navCount === 4"
+>
+  <div class="table">
+    <div class="header">
+      <div style="width: 70%">CONFIGURATION</div>
+      <div style="width: 10%">RECORDS</div>
+      <div style="width: 10%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.activeConfig?.content">
+        <div style="width: 70%">{{ it?.configuration }}</div>
+        <div style="width: 10%">{{ it?.records }}</div>
+        <div style="width: 10%; display: flex; justify-content: center">
+          <div
+            class="actionBlueButton"
+            (click)="onClickSoftwareConfigurationActivateConfigSelect(it)"
+            [style]="it.status === 'SELECTED' ? { background: '#92A1C5' } : {}"
+          >
+            {{ it.status !== "SELECTED" ? "SELECTED" : "SELECT" }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.activeConfig?.paging"></app-table-paging>
+</div>
+<div
+  class="tableBody"
+  *ngIf="page === 'softwareConfiguration' && navCount === 5"
+>
+  <div class="table">
+    <div class="header">
+      <div style="width: 10%">SL NO</div>
+      <div style="width: 13%">SCHEDULER NAME</div>
+      <div style="width: 13%">GOVERN TYPE</div>
+      <div style="width: 13%">GOVERN VALUE</div>
+      <div style="width: 13%">DAY/MONTH VALUE</div>
+      <div style="width: 13%">FAILURE PARAMS</div>
+      <div style="width: 13%">CRON EXPRESSION</div>
+      <div style="width: 8%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.schedulerConfig?.content">
+        <div style="width: 10%">{{ it?.slNo }}</div>
+        <div style="width: 13%">{{ it?.schedulerName }}</div>
+        <div style="width: 13%">{{ it?.governType }}</div>
+        <div style="width: 13%">{{ it?.governValue }}</div>
+        <div style="width: 13%">{{ it?.dayMonthValue }}</div>
+        <div style="width: 13%">{{ it?.failureParams }}</div>
+        <div style="width: 13%">{{ it?.cronExpression }}</div>
+        <div style="width: 8%; display: flex; justify-content: center">
+          <div
+            class="actionTextButton"
+            (click)="onClickSoftwareConfigurationSchedulerConfigEdit(it)"
+          >
+            Edit
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.schedulerConfig?.paging"></app-table-paging>
+</div>
+<div class="form1" *ngIf="page === 'softwareConfiguration' && navCount === 6">
+  <div class="form" style="padding-bottom: 0">
+    <div class="col1">
+      <div class="title">Export Dip Chart Config</div>
+    </div>
+    <div class="col2">
+      <div class="col2Row">
+        <div class="eachTitle"></div>
+        <div class="blueInputBox">
+          <select></select>
+          <div class="blueBoxBottom">
+            <div style="display: flex; align-items: center">
+              <div class="button2">Choose File</div>
+              <div style="color: white; font-size: 0.9vw">
+                &nbsp;&nbsp;No file Chosen
+              </div>
+            </div>
+            <div class="button1">Upload</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form" style="padding-bottom: 0">
+    <div class="col1">
+      <div class="title">Import Dip Chart Config based on tank Capacity</div>
+    </div>
+    <div class="col2">
+      <div class="col2Row">
+        <div class="eachTitle"></div>
+        <div class="blueInputBox">
+          <select></select>
+          <div class="blueBoxBottom">
+            <div></div>
+            <div class="button1">Import</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form" style="padding-bottom: 0">
+    <div class="col1">
+      <div class="title">Import Dip Chart Config based on tank Capacity</div>
+    </div>
+    <div class="col2">
+      <div class="col2Row">
+        <div class="eachTitle"></div>
+        <div class="blueInputBox">
+          <select></select>
+          <div class="blueBoxBottom">
+            <div></div>
+            <div class="button1">Import</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="form1" *ngIf="page === 'softwareConfiguration' && navCount === 7">
+  <div class="form" style="padding-bottom: 0">
+    <div class="col1">
+      <div class="title">Ip Configuration</div>
+    </div>
+    <div class="col2">
+      <div class="col2Row">
+        <div class="eachTitle"></div>
+        <div class="blueInputBox">
+          <input placeholder="IP Address" />
+          <div class="blueBoxBottom">
+            <div></div>
+            <div class="button1">SAVE</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'userManagement' && navCount === 0">
+  <div class="table">
+    <div class="header">
+      <div style="width: 15%">ID</div>
+      <div style="width: 15%">FIRST NAME</div>
+      <div style="width: 15%">LAST NAME</div>
+      <div style="width: 15%">USER NAME</div>
+      <div style="width: 15%">ROLE</div>
+      <div style="width: 8%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.userManagement?.content">
+        <div style="width: 15%">{{ it?.id }}</div>
+        <div style="width: 15%">{{ it?.firstName }}</div>
+        <div style="width: 15%">{{ it?.lastName }}</div>
+        <div style="width: 15%">{{ it?.userName }}</div>
+        <div style="width: 15%">{{ it?.role }}</div>
+        <div style="width: 8%; display: flex; justify-content: center">
+          <div
+            class="actionBin"
+            (click)="onClickUserManagementUserManagementBin(it)"
+          ></div>
+          <div
+            class="actionTextButton"
+            (click)="onClickUserManagementUserManagementEdit(it)"
+          >
+            Edit
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.userManagement?.paging"></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'userManagement' && navCount === 1">
+  <div class="table">
+    <div class="header">
+      <div style="width: 20%">ID</div>
+      <div style="width: 20%">ROLE</div>
+      <div style="width: 20%">STATUS</div>
+      <div style="width: 8%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.roleMaster?.content">
+        <div style="width: 20%">{{ it?.id }}</div>
+        <div style="width: 20%">{{ it?.role }}</div>
+        <div style="width: 20%">{{ it?.status }}</div>
+        <div style="width: 8%; display: flex; justify-content: center">
+          <div
+            class="actionBin"
+            (click)="onClickUserManagementRoleMasterBin(it)"
+          ></div>
+          <div
+            class="actionTextButton"
+            (click)="onClickUserManagementRoleMasterEdit(it)"
+          >
+            Edit
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.roleMaster?.paging"></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'userManagement' && navCount === 2">
+  <div class="table">
+    <div class="header">
+      <div style="width: 8%">SEQ NO</div>
+      <div style="width: 10%">ROLE DESC</div>
+      <div style="width: 15%">COMPONENT CODE</div>
+      <div style="width: 15%">COMPONENT NAME</div>
+      <div style="width: 15%">SCREEN CODE</div>
+      <div style="width: 15%">SCREEN NAME</div>
+      <div style="width: 10%">PERMISSION</div>
+      <div style="width: 8%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.roleScreenMapping?.content">
+        <div style="width: 8%">{{ it?.seqNo }}</div>
+        <div style="width: 10%">{{ it?.roleDesc }}</div>
+        <div style="width: 15%">{{ it?.componentCode }}</div>
+        <div style="width: 15%">{{ it?.componentName }}</div>
+        <div style="width: 15%">{{ it?.screenCode }}</div>
+        <div style="width: 15%">{{ it?.screenName }}</div>
+        <div style="width: 10%">{{ it?.permission }}</div>
+        <div style="width: 8%; display: flex; justify-content: center">
+          <div
+            class="actionTextButton"
+            (click)="onClickUserManagementRoleScreenMappingEdit(it)"
+          >
+            Edit
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging
+    [paging]="data?.roleScreenMapping?.paging"
+  ></app-table-paging>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'alarmInterlock' && navCount === 0">
+  <div class="table">
+    <div class="header">
+      <div style="width: 8%">ALARM ID</div>
+      <div style="width: 15%">ALARM PRIORITY</div>
+      <div style="width: 20%">DESCRIPTION</div>
+      <div style="width: 10%">ALARM ENABLE</div>
+      <div style="width: 10%">ALARM VALUE</div>
+      <div style="width: 10%">EQUIPMENT ID</div>
+      <div style="width: 10%">ALARM ALERT</div>
+      <div style="width: 8%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.alarm?.content">
+        <div style="width: 8%">{{ it?.alarmId }}</div>
+        <div style="width: 15%">{{ it?.alarmPriority }}</div>
+        <div style="width: 20%">{{ it?.description }}</div>
+        <div style="width: 10%">{{ it?.alarmEnable }}</div>
+        <div style="width: 10%">{{ it?.alarmValue }}</div>
+        <div style="width: 10%">{{ it?.equipmentId }}</div>
+        <div style="width: 10%">{{ it?.alarmAlert }}</div>
+        <div style="width: 8%; display: flex; justify-content: center">
+          <div
+            class="actionTextButton"
+            (click)="onClickalarmInterlockAlarmEdit(it)"
+          >
+            Edit
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.alarm?.paging"></app-table-paging>
+</div>
+<div class="form3" *ngIf="page === 'alarmInterlock' && navCount === 1">
+  <div class="row1">
+    <div class="col1">Select Pump * :</div>
+    <div class="col2">
+      <select style="width: 30%"></select>
+    </div>
+  </div>
+  <div class="row1" style="padding-bottom: 0">
+    <div class="col1"></div>
+    <div class="col2">
+      <div style="width: 30%"></div>
+      <div style="width: 30%">Hours</div>
+      <div style="width: 30%">Time</div>
+    </div>
+  </div>
+  <div class="row1" style="padding-top: 0.5vw">
+    <div class="col1">Pump Test Lock:</div>
+    <div class="col2">
+      <div style="width: 30%">
+        <div class="switchBtn"></div>
+      </div>
+      <input placeholder="Value" style="width: 30%" /><input
+        placeholder="Value"
+        style="width: 30%"
+      />
+    </div>
+  </div>
+  <div class="row1">
+    <div class="col1">No Print No Delivery :</div>
+    <div class="col2">
+      <div style="width: 30%">
+        <div class="switchBtn"></div>
+      </div>
+      <input placeholder="Value" style="width: 30%" />
+      <div style="width: 30%"></div>
+    </div>
+  </div>
+  <div class="row1">
+    <div class="col1">Preset Mismatch :</div>
+    <div class="col2">
+      <div style="width: 30%">
+        <div class="switchBtn_"></div>
+      </div>
+      <input placeholder="Value" style="width: 30%" />
+      <div style="width: 30%"></div>
+    </div>
+  </div>
+  <div class="row2">
+    <div class="actionBlueButton1">Save Interlock</div>
+  </div>
+</div>
+
+<div class="form3" *ngIf="page === 'alarmInterlock' && navCount === 2">
+  <div class="row1">
+    <div class="col1">Select Tank * :</div>
+    <div class="col2">
+      <select style="width: 30%"></select>
+    </div>
+  </div>
+  <div class="row1" style="padding-top: 0.5vw">
+    <div class="col1">ATG Communication Lock:</div>
+    <div class="col2">
+      <div style="width: 30%">
+        <div class="switchBtn"></div>
+      </div>
+      <input placeholder="Value" style="width: 30%" />
+      <div style="width: 30%"></div>
+    </div>
+  </div>
+  <div class="row1">
+    <div class="col1">TT Receipt Lock :</div>
+    <div class="col2">
+      <div style="width: 30%">
+        <div class="switchBtn"></div>
+      </div>
+      <input placeholder="Value" style="width: 30%" />
+      <div style="width: 30%"></div>
+    </div>
+  </div>
+  <div class="row1">
+    <div class="col1">Decantation Start Lock :</div>
+    <div class="col2">
+      <div style="width: 30%">
+        <div class="switchBtn_"></div>
+      </div>
+      <input placeholder="Value" style="width: 30%" />
+      <div style="width: 30%"></div>
+    </div>
+  </div>
+  <div class="row1">
+    <div class="col1">Tabk Product Low level Lock :</div>
+    <div class="col2">
+      <div style="width: 30%">
+        <div class="switchBtn_"></div>
+      </div>
+      <input placeholder="Value" style="width: 30%" />
+      <div style="width: 30%"></div>
+    </div>
+  </div>
+  <div class="row1">
+    <div class="col1">Tank Water High Level Lock :</div>
+    <div class="col2">
+      <div style="width: 30%">
+        <div class="switchBtn_"></div>
+      </div>
+      <input placeholder="Value" style="width: 30%" />
+      <div style="width: 30%"></div>
+    </div>
+  </div>
+  <div class="row2">
+    <div class="actionBlueButton1">Save Interlock</div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="form1" *ngIf="page === 'maintenance'" style="height: 93.6%">
+  <div class="form" style="padding-bottom: 0">
+    <div class="col1" style="width: 46%">
+      <div class="title">Master Data Sync with HOS</div>
+      <div class="infoBox1"></div>
+    </div>
+    <div class="col2" style="width: 45%">
+      <div class="col2Row">
+        <div class="blueInputBox">
+          <div class="blueBoxBottom" style="padding-top: 0">
+            <div style="display: flex; align-items: center">
+              <div style="color: white; font-size: 0.9vw">
+                Export BOS configuration
+              </div>
+            </div>
+            <div class="button1">Export</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form" style="padding-bottom: 0">
+    <div class="col1" style="width: 46%">
+      <br />
+      <div class="infoBox2"></div>
+    </div>
+    <div class="col2" style="width: 45%">
+      <div class="col2Row">
+        <div class="blueInputBox">
+          <div class="blueBoxBottom" style="padding-top: 0">
+            <div style="display: flex; align-items: center">
+              <div style="color: white; font-size: 0.9vw">
+                Import BOS configuration&nbsp;
+              </div>
+              <div class="button2">Choose File</div>
+              <div style="color: white; font-size: 0.9vw">
+                &nbsp;&nbsp;No file Chosen
+              </div>
+            </div>
+            <div class="button1">UPLOAD</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="form" style="padding-bottom: 0">
+    <div class="col1" style="width: 46%">
+      <div class="title">Archive</div>
+    </div>
+    <div class="col2" style="width: 45%">
+      <div class="col2Row">
+        <div class="blueInputBox">
+          <select></select>
+          <div class="blueBoxBottom">
+            <div></div>
+            <div style="display: flex">
+              <div class="button2">BACKUP</div>
+              &nbsp;&nbsp;
+              <div class="button1">ACHIVE & CLEAN</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

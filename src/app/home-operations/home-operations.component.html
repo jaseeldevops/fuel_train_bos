@@ -31,6 +31,7 @@
           ></div>
         </div>
       </div>
+      <div *ngIf="navCount === 1" class="grrenButton">+ Start Day</div>
     </div>
   </div>
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
@@ -68,33 +69,24 @@
           ></div>
         </div>
       </div>
+      <div class="options" *ngIf="navCount === 0">
+        <div class="grrenButton" (click)="popup = { path: 'manualInvoice' }">
+          + Create Manual Invoice
+        </div>
+      </div>
     </div>
   </div>
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
   <!-- ///////////////////////////////// Payment Mode ////////////////////////////////// -->
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
   <div *ngIf="page === 'paymentMode'" class="header">
-    <div class="titile" (click)="page = ''">Operations > Payment Mode</div>
-    <div class="navRow">
-      <div class="navBar">
-        <div
-          [ngClass]="navCount === 0 ? 'eachButton_' : 'eachButton'"
-          (click)="navCount = 0"
-        >
-          Shift End
-          <div
-            [ngClass]="navCount === 0 ? 'buttonBottom_' : 'buttonBottom'"
-          ></div>
-        </div>
-        <div
-          [ngClass]="navCount === 1 ? 'eachButton_' : 'eachButton'"
-          (click)="navCount = 1"
-        >
-          Day End
-          <div
-            [ngClass]="navCount === 1 ? 'buttonBottom_' : 'buttonBottom'"
-          ></div>
-        </div>
+    <div
+      style="display: flex; justify-content: space-between; align-items: center"
+    >
+      <div class="titile" (click)="page = ''">Operations > Payment Mode</div>
+      <div class="options">
+        <input class="navCalender" type="date" />
+        <div class="grrenButton">Fetch Transaction</div>
       </div>
     </div>
   </div>
@@ -124,13 +116,30 @@
           ></div>
         </div>
       </div>
+      <div
+        class="grrenButton"
+        (click)="
+          navCount === 0
+            ? (popup = { path: 'pumpControl' })
+            : (popup = { path: 'tankControl' })
+        "
+      >
+        {{ navCount === 0 ? "Pump Control" : "Tank Control" }}
+      </div>
     </div>
   </div>
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
   <!-- ///////////////////////////////// Price Change ////////////////////////////////// -->
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
   <div *ngIf="page === 'priceChange'" class="header">
-    <div class="titile" (click)="page = ''">Operations > Price Change</div>
+    <div
+      style="display: flex; justify-content: space-between; align-items: center"
+    >
+      <div class="titile" (click)="page = ''">Operations > Price Change</div>
+      <div class="grrenButton" (click)="popup = { path: 'chnageProdectPrice' }">
+        Change Prodect Price
+      </div>
+    </div>
   </div>
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
   <!-- ////////////////////////////////// Tank Density ///////////////////////////////// -->
@@ -174,7 +183,26 @@
           ></div>
         </div>
       </div>
+      <div
+        class="grrenButton"
+        (click)="
+          navCount === 0
+            ? (popup = { path: 'addCustomer' })
+            : (popup = { path: 'addVehicle' })
+        "
+      >
+        {{ navCount === 0 ? "Add Customer" : "Add Vehicle" }}
+      </div>
     </div>
   </div>
-  <app-home-operations-body></app-home-operations-body>
+  <app-home-operations-body
+    [page]="page"
+    [navCount]="navCount"
+    [data]="data"
+    [setPopup]="setPopup"
+  ></app-home-operations-body>
 </div>
+<app-home-operations-popups
+  [popup]="popup"
+  [closePopUp]="closePopUp"
+></app-home-operations-popups>

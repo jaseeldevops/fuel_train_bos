@@ -74,7 +74,13 @@ export class HomeComponent implements OnInit {
   };
 
   // The following function will indicate what happene when the logout button is clicked
-  onClickLogout = () => {};
+  onClickLogout = () => {
+    this.toast = {
+      title: 'Succusfully',
+      content: 'You are susseccfully logged out',
+      color: '#c20204',
+    };
+  };
 
   onClickChangePassowrd = () => {
     alert();
@@ -87,4 +93,5 @@ export class HomeComponent implements OnInit {
     photo:
       'https://i.pinimg.com/280x280_RS/e4/86/86/e4868681b6e2cc4ce83c3b9a5d010b6c.jpg',
   };
+  toast: any = null;
 }

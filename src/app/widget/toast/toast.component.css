@@ -1,0 +1,64 @@
+.toast,
+.toast_ {
+  transition: 0.4s;
+  right: 5vw;
+  top: 3vw;
+  height: 4vw;
+  max-width: 30vw;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  box-shadow: 0 0 0.8vw #00000045;
+  border-radius: 0.4vw;
+  padding: 0.8vw;
+}
+.toast_ {
+  transition: 0.2s;
+  right: -30vw;
+}
+.line {
+  min-width: 0.4vw;
+  height: 100%;
+  background: #027bc4;
+  border-radius: 0.2vw;
+}
+.icon {
+  min-width: 1.9vw;
+  height: 1.9vw;
+  margin: 0.7vw;
+  border-radius: 50%;
+  background: #027bc4;
+  color: white;
+  font-weight: 500;
+  font-size: 1vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.contentBox {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.titile {
+  font-weight: 500;
+  font-size: 1.1vw;
+  padding-bottom: 0.3vw;
+}
+.desc {
+  color: #707070;
+  font-size: 1vw;
+}
+.closeBtn {
+  width: 1.3vw;
+  height: 1.3vw;
+  background-image: url(../../../assets/ic_x.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin: 0.5vw;
+  margin-left: 2vw;
+  cursor: pointer;
+}

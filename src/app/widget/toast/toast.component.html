@@ -1,0 +1,9 @@
+<div [ngClass]="msg === null ? 'toast_' : 'toast'">
+  <div class="line" [ngStyle]="{ background: msg?.color }"></div>
+  <div class="icon" [ngStyle]="{ background: msg?.color }">!</div>
+  <div class="contentBox">
+    <div class="titile">{{ msg?.title }}</div>
+    <div class="desc">{{ msg?.content }}</div>
+  </div>
+  <div class="closeBtn" (click)="msg = null"></div>
+</div>

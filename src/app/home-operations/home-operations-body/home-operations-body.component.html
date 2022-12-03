@@ -1,1 +1,536 @@
-<p>home-operations-body works!</p>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'eod' && navCount === 0">
+  <div class="table">
+    <div class="header">
+      <div style="width: 10%"># ID</div>
+      <div style="width: 10%">SHIFT NO</div>
+      <div style="width: 10%">DAY NO</div>
+      <div style="width: 15%">OPEN TIME</div>
+      <div style="width: 15%">CLOSE TIME</div>
+      <div style="width: 10%">STATUS</div>
+      <div style="width: 10%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.shiftEnd?.content">
+        <div style="width: 10%">{{ it?.id }}</div>
+        <div style="width: 10%">{{ it?.shiftNo }}</div>
+        <div style="width: 10%">{{ it?.dayNo }}</div>
+        <div style="width: 15%">{{ it?.openTime }}</div>
+        <div style="width: 15%">{{ it?.closeTime }}</div>
+        <div
+          style="width: 10%"
+          [style]="{ color: it?.status === 'Open' ? '#0ABB59' : '#BB0A0A' }"
+        >
+          {{ it?.status }}
+        </div>
+        <div style="width: 10%; display: flex; justify-content: center">
+          <div
+            [ngClass]="it.status === 'Open' ? 'actionClose' : ''"
+            (click)="onClickEodShiftEndClose(it)"
+          >
+            {{ it.status === "Open" ? "Close" : "-" }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.dayEnd?.paging"></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'eod' && navCount === 1">
+  <div class="table">
+    <div class="header">
+      <div style="width: 20%"># DAY ID</div>
+      <div style="width: 20%">OPEN DATE & TIME</div>
+      <div style="width: 20%">CLOSE DATE & TIME</div>
+      <div style="width: 20%">STATUS</div>
+      <div style="width: 10%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.dayEnd?.content">
+        <div style="width: 20%">{{ it.dayId }}</div>
+        <div style="width: 20%">{{ it.openDateTime }}</div>
+        <div style="width: 20%">{{ it.closeDateTime }}</div>
+        <div
+          style="width: 20%"
+          [style]="{ color: it?.status === 'Open' ? '#0ABB59' : '#BB0A0A' }"
+        >
+          {{ it.status }}
+        </div>
+        <div style="width: 10%; display: flex; justify-content: center">
+          <div
+            [ngClass]="it.status === 'Open' ? 'actionClose' : ''"
+            (click)="onClickEodDayEndClose(it)"
+          >
+            {{ it.status === "Open" ? "Close" : "-" }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.dayEnd?.paging"></app-table-paging>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'ttRecipients' && navCount === 0">
+  <div class="table">
+    <div class="header">
+      <div style="width: 10%"># INV ID</div>
+      <div style="width: 10%">INVOICE NO</div>
+      <div style="width: 10%">INVOICE DATE</div>
+      <div style="width: 15%">TT NUMBER</div>
+      <div style="width: 15%">SUPPLIER POINT</div>
+      <div style="width: 10%">INVOICE QTY ( ltr)</div>
+      <div style="width: 10%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.invoice?.content">
+        <div style="width: 10%">{{ it?.invId }}</div>
+        <div style="width: 10%">{{ it?.invoiceNo }}</div>
+        <div style="width: 10%">{{ it?.invoiceDate }}</div>
+        <div style="width: 15%">{{ it?.ttNumber }}</div>
+        <div style="width: 15%">{{ it?.supplierPoint }}</div>
+        <div style="width: 10%">{{ it?.invoiceQty }}</div>
+        <div style="width: 10%; display: flex; justify-content: center">
+          <div
+            class="actionRelead"
+            (click)="onClickTtRecipientsInvoiceReload(it)"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.invoice?.paging"></app-table-paging>
+</div>
+<div class="form1" *ngIf="page === 'ttRecipients' && navCount === 1">
+  <div class="header">
+    <div>
+      <div class="title1">Invoice Number*</div>
+      <select class="input1"></select>
+    </div>
+    <div>
+      <div class="title1">Tank*</div>
+      <select class="input1"></select>
+    </div>
+    <div>
+      <div class="title1">Driver Name</div>
+      <input class="input1" />
+    </div>
+    <div>
+      <div class="title1">Ro Staff Name</div>
+      <input class="input1" />
+    </div>
+    <div class="grrenButton">Save Invoice</div>
+  </div>
+</div>
+<div
+  class="tableBody"
+  *ngIf="page === 'ttRecipients' && navCount === 1"
+  style="height: 75%"
+>
+  <div class="table">
+    <div class="header">
+      <div style="width: 8%">Check List</div>
+      <div style="width: 80%"></div>
+      <div
+        style="
+          width: 8%;
+          display: flex;
+          justify-content: center;
+          cursor: pointer;
+        "
+        (click)="onClickTtRecipientsDeliveryChecklestSelectAll()"
+      >
+        <div class="actionSelectAll"></div>
+        Checked All
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.deliveryChecklist">
+        <div style="width: 8%">{{ it.id }}</div>
+        <div style="width: 80%">{{ it.content }}</div>
+        <div style="width: 8%; display: flex; justify-content: center">
+          <div
+            class="actionBlueButton"
+            [style]="it.status === 'CHECKED' ? { background: '#0abb59' } : {}"
+            (click)="onClickTtRecipientsDeliveryChecklestCheck(it)"
+          >
+            {{ it.status }}
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="tableBody" *ngIf="page === 'ttRecipients' && navCount === 2">
+  <div class="table">
+    <div class="header">
+      <div style="width: 6%">Delivery ID</div>
+      <div style="width: 6%">TANK NO</div>
+      <div style="width: 10%">START TIME</div>
+      <div style="width: 10%">END TIME</div>
+      <div style="width: 10%">START VOLUME</div>
+      <div style="width: 10%">END VOLUME</div>
+      <div style="width: 10%">START LEVEL</div>
+      <div style="width: 10%">END Level</div>
+      <div style="width: 10%">NET VOLUME</div>
+      <div style="width: 6%">STATUS</div>
+      <div style="width: 6%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.delivery?.content">
+        <div style="width: 6%">{{ it?.deliveryId }}</div>
+        <div style="width: 6%">{{ it?.tankNo }}</div>
+        <div style="width: 10%">{{ it?.startTime }}</div>
+        <div style="width: 10%">{{ it?.endTime }}</div>
+        <div style="width: 10%">{{ it?.startVolume }}</div>
+        <div style="width: 10%">{{ it?.endVolume }}</div>
+        <div style="width: 10%">{{ it?.startLevel }}</div>
+        <div style="width: 10%">{{ it?.endLevel }}</div>
+        <div style="width: 10%">{{ it?.netVolume }}</div>
+        <div style="width: 6%">
+          <div class="actionLike"></div>
+        </div>
+        <div style="width: 6%; display: flex; justify-content: center">
+          <div
+            class="actionSelect"
+            (click)="onClickTtRecipientsDeliverySelect(it)"
+          ></div>
+          <div
+            class="actionRelead"
+            (click)="onClickTtRecipientsDeliveryReload(it)"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.delivery?.paging"></app-table-paging>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'paymentMode'" style="height: 82%">
+  <div class="table">
+    <div class="header">
+      <div style="width: 8%">TRANS ID</div>
+      <div style="width: 6%">TRANS DATE</div>
+      <div style="width: 6%">PUMP</div>
+      <div style="width: 6%">NOZZLE</div>
+      <div style="width: 6%">PRODUCT</div>
+      <div style="width: 6%">PRICE</div>
+      <div style="width: 6%">VOLUME</div>
+      <div style="width: 6%">AMOUNT</div>
+      <div style="width: 6%">START TIME</div>
+      <div style="width: 6%">END TIME</div>
+      <div style="width: 8%">PAYMENT TYPE</div>
+      <div style="width: 8%; display: flex; justify-content: center">
+        TRANSACTION
+      </div>
+      <div style="width: 10%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.content">
+        <div style="width: 8%">{{ it?.transId }}</div>
+        <div style="width: 6%">{{ it?.transDate }}</div>
+        <div style="width: 6%">{{ it?.pump }}</div>
+        <div style="width: 6%">{{ it?.nozzle }}</div>
+        <div style="width: 6%">{{ it?.product }}</div>
+        <div style="width: 6%">{{ it?.price }}</div>
+        <div style="width: 6%">{{ it?.volume }}</div>
+        <div style="width: 6%">{{ it?.amount }}</div>
+        <div style="width: 6%">{{ it?.startTime }}</div>
+        <div style="width: 6%">{{ it?.endTime }}</div>
+        <div style="width: 8%">{{ it?.paymentType }}</div>
+        <div style="width: 8%; display: flex; justify-content: center">
+          <div
+            [ngClass]="
+              it?.transaction === 'TESTING'
+                ? 'actionBlueBorderButton_'
+                : 'actionBlueBorderButton'
+            "
+            (click)="onClickPaymentModeTesting(it)"
+          >
+            Testing
+          </div>
+        </div>
+        <div style="width: 10%; display: flex; justify-content: center">
+          <div
+            class="actionBlueButton"
+            (click)="setPopup({ path: 'changeMop' })"
+          >
+            Change MOP
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.paging"></app-table-paging>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'controls' && navCount === 0">
+  <div class="table">
+    <div class="header">
+      <div style="width: 8%">ID</div>
+      <div style="width: 8%">PUMP NO</div>
+      <div style="width: 8%">NOZZLE NO</div>
+      <div style="width: 10%">MODE</div>
+      <div style="width: 10%">PUMP MODE</div>
+      <div style="width: 10%">PRESET TYPE</div>
+      <div style="width: 10%">PRESET VALUE</div>
+      <div style="width: 10%">PRESET MOP</div>
+      <div style="width: 10%">CREATED BY</div>
+      <div style="width: 10%">CREATED DATE</div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.pumpControl?.content">
+        <div style="width: 8%">{{ it?.id }}</div>
+        <div style="width: 8%">{{ it?.pumpNo }}</div>
+        <div style="width: 8%">{{ it?.nozzleNo }}</div>
+        <div style="width: 10%">{{ it?.mode }}</div>
+        <div style="width: 10%">{{ it?.pumpMode }}</div>
+        <div style="width: 10%">{{ it?.presetType }}</div>
+        <div style="width: 10%">{{ it?.presetValue }}</div>
+        <div style="width: 10%">{{ it?.presetMop }}</div>
+        <div style="width: 10%">{{ it?.createdBy }}</div>
+        <div style="width: 10%">{{ it?.createdDate }}</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.pumpControl?.paging"></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'controls' && navCount === 1">
+  <div class="table">
+    <div class="header">
+      <div style="width: 12%">ID</div>
+      <div style="width: 12%">TANK NO</div>
+      <div style="width: 20%">MODE</div>
+      <div style="width: 12%">CREATED BY</div>
+      <div style="width: 12%">CREATED DATE</div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.tankControll?.content">
+        <div style="width: 12%">{{ it?.id }}</div>
+        <div style="width: 12%">{{ it?.tankNo }}</div>
+        <div style="width: 20%">{{ it?.mode }}</div>
+        <div style="width: 12%">{{ it?.createdBy }}</div>
+        <div style="width: 12%">{{ it?.createdDate }}</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.tankControll?.paging"></app-table-paging>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'priceChange'" style="height: 82%">
+  <div class="table">
+    <div class="header">
+      <div style="width: 6%">ID</div>
+      <div style="width: 8%">GRADE NO</div>
+      <div style="width: 8%">GRADE NAME</div>
+      <div style="width: 10%">CURRENT PRICE</div>
+      <div style="width: 8%">NEW PRICE</div>
+      <div style="width: 10%">EFFECTIVE FROM</div>
+      <div style="width: 10%">EFFECTIVE TO</div>
+      <div style="width: 6%">STATUS</div>
+      <div style="width: 10%">PERFORMED BY</div>
+      <div style="width: 10%">PERFORMED ON</div>
+      <div style="width: 6%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.content">
+        <div style="width: 6%">{{ it?.id }}</div>
+        <div style="width: 8%">{{ it?.gradeNo }}</div>
+        <div style="width: 8%">{{ it?.gradeName }}</div>
+        <div style="width: 10%">{{ it?.currentPrice }}</div>
+        <div style="width: 8%">{{ it?.newPrice }}</div>
+        <div style="width: 10%">{{ it?.effectiveFrom }}</div>
+        <div style="width: 10%">{{ it?.effectiveTo }}</div>
+        <div style="width: 6%">{{ it?.status }}</div>
+        <div style="width: 10%">{{ it?.performedBy }}</div>
+        <div style="width: 10%">{{ it?.performedOn }}</div>
+        <div style="width: 6%; display: flex; justify-content: center">
+          <div
+            class="actionTextButton"
+            (click)="setPopup({ path: 'chnageProdectPrice' })"
+          >
+            Chnage
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.paging"></app-table-paging>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'tankDensity'" style="height: 82%">
+  <div class="table">
+    <div class="header">
+      <div style="width: 6%">TANK NO</div>
+      <div style="width: 12%">PRODUCT CODE</div>
+      <div style="width: 12%">PRODUCT NAME</div>
+      <div style="width: 12%">DATE & TIME</div>
+      <div style="width: 12%">DENSITY (Kg/m3)</div>
+      <div style="width: 12%">TEMPERATURE</div>
+      <div style="width: 12%">DENSITY @ 15 Deg C</div>
+      <div style="width: 6%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.content">
+        <div style="width: 6%">{{ it?.tankNo }}</div>
+        <div style="width: 12%">{{ it?.productCode }}</div>
+        <div style="width: 12%">{{ it?.productName }}</div>
+        <div style="width: 12%">{{ it?.dateTime }}</div>
+        <div style="width: 12%">{{ it?.density }}</div>
+        <div style="width: 12%">{{ it?.temperature }}</div>
+        <div style="width: 12%">{{ it?.densityAtC }}</div>
+        <div style="width: 6%; display: flex; justify-content: center">
+          <div class="actionTextButton" (click)="onClickankDensitySave(it)">
+            SAVE
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.paging"></app-table-paging>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="form3" *ngIf="page === 'monolithConfiguration'">
+  <div class="row1">
+    <div class="col1">Monolith Device :</div>
+    <select class="col2" placeholder="Message here">
+      <option hidden>Select Device</option>
+      <option *ngFor="let it of [1, 1, 1]">Device 1</option>
+    </select>
+  </div>
+  <div class="row1">
+    <div class="col1">Message (Display 01)</div>
+    <input class="col2" placeholder="Message here" />
+  </div>
+  <div class="row1">
+    <div class="col1">Message (Display 02)</div>
+    <input class="col2" placeholder="Message here" />
+  </div>
+  <div class="row1">
+    <div class="col1">Message (Display 03)</div>
+    <input class="col2" placeholder="Message here" />
+  </div>
+  <div class="row1">
+    <div class="col1">Message (Display 04)</div>
+    <input class="col2" placeholder="Message here" />
+  </div>
+  <div class="row2">
+    <div class="saveBtn">Save</div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div
+  class="tableBody"
+  *ngIf="page === 'customerConfiguration' && navCount === 0"
+>
+  <div class="table">
+    <div class="header">
+      <div style="width: 6%">ID</div>
+      <div style="width: 8%">CODE</div>
+      <div style="width: 12%">NAME</div>
+      <div style="width: 12%">CONTACT PERSON</div>
+      <div style="width: 12%">CONTACT NUMBER</div>
+      <div style="width: 12%">GST NUMBER</div>
+      <div style="width: 20%">ADDRESS</div>
+      <div style="width: 6%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.customers?.content">
+        <div style="width: 6%">{{ it?.id }}</div>
+        <div style="width: 8%">{{ it?.code }}</div>
+        <div style="width: 12%">{{ it?.name }}</div>
+        <div style="width: 12%">{{ it?.contactPerson }}</div>
+        <div style="width: 12%">{{ it?.contactNumber }}</div>
+        <div style="width: 12%">{{ it?.gstNumber }}</div>
+        <div style="width: 20%">{{ it?.address }}</div>
+        <div style="width: 6%; display: flex; justify-content: center">
+          <div
+            class="actionTextButton"
+            (click)="setPopup({ path: 'addCustomer' })"
+          >
+            Edit
+          </div>
+          <div
+            class="actionBin"
+            (click)="onClickcustomerConfigurationCustomerDelete(it)"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.customers?.paging"></app-table-paging>
+</div>
+<div
+  class="tableBody"
+  *ngIf="page === 'customerConfiguration' && navCount === 1"
+>
+  <div class="table">
+    <div class="header">
+      <div style="width: 6%">ID</div>
+      <div style="width: 8%">CODE</div>
+      <div style="width: 12%">NAME</div>
+      <div style="width: 12%">VEHICLE NUMBER</div>
+      <div style="width: 12%">VEHICLE TYPE</div>
+      <div style="width: 12%">RF ID TAG NUMBER</div>
+      <div style="width: 10%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.customersVechicle?.content">
+        <div style="width: 6%">{{ it?.id }}</div>
+        <div style="width: 8%">{{ it?.code }}</div>
+        <div style="width: 12%">{{ it?.name }}</div>
+        <div style="width: 12%">{{ it?.vehicleNumber }}</div>
+        <div style="width: 12%">{{ it?.vehicleType }}</div>
+        <div style="width: 12%">{{ it?.rfIdTagNumber }}</div>
+        <div style="width: 6%; display: flex; justify-content: center">
+          <div
+            class="actionTextButton"
+            (click)="setPopup({ path: 'addVehicle' })"
+          >
+            Edit
+          </div>
+          <div
+            class="actionBin"
+            (click)="onClickcustomerConfigurationCustomerVehicleDelete(it)"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging
+    [paging]="data?.customersVechicle?.paging"
+  ></app-table-paging>
+</div>

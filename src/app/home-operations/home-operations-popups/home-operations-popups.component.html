@@ -1,0 +1,281 @@
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////// MANUAL INVOICE ///////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div
+  class="drawer"
+  [style]="!(popup?.path === 'manualInvoice') ? { visibility: 'hidden' } : {}"
+>
+  <div class="dummyBody" (click)="closePopUp()"></div>
+  <div [ngClass]="popup?.path === 'manualInvoice' ? 'body_' : 'body'">
+    <div class="header1">
+      Manual Invoice
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="listBody">
+      <div class="listHeader">
+        <div>
+          <div class="label1">Invoice Number*</div>
+          <input style="width: 10vw" />
+        </div>
+        <input type="date" style="width: 10vw" />
+        <div>
+          <div class="label1">TT Number*</div>
+          <input style="width: 6vw" />
+        </div>
+        <div>
+          <div class="label1">Supply Point*</div>
+          <input />
+        </div>
+      </div>
+      <div class="tableHeader">
+        <div class="headerCol1">Comp No</div>
+        <div class="headerCol2">Product</div>
+        <div class="headerCol3">INV QTY (Ltr)</div>
+      </div>
+      <div class="tableRow" *ngFor="let it of [1, 1, 1]">
+        <div class="rowCol1"><select style="width: 100%"></select></div>
+        <div class="rowCol2"><select style="width: 100%"></select></div>
+        <div class="rowCol3">
+          <input placeholder="0.00" style="width: 100%" />
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">CREATE</div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////// CHNAGE MOP /////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div class="popup" *ngIf="popup?.path === 'changeMop'">
+  <div class="body">
+    <div class="header1">
+      Change MOP
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="content">
+      <div class="label1">Transaction ID</div>
+      <input style="width: 25vw; margin-bottom: 1vw" />
+      <div class="label1">Current MOP</div>
+      <input style="width: 25vw; margin-bottom: 1vw" />
+      <div class="label1">New MOP</div>
+      <select style="width: 25vw; margin-bottom: 1vw"></select>
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">CREATE</div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////// TANK CONTROL ////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div class="popup" *ngIf="popup?.path === 'pumpControl'">
+  <div class="body">
+    <div class="header1">
+      Pump Control
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="content">
+      <div class="label1">Select Pump</div>
+      <select style="width: 25vw; margin-bottom: 1vw"></select>
+      <div class="label1">Select Nozzle</div>
+      <select style="width: 25vw; margin-bottom: 1vw"></select>
+      <div class="label1">Select Operation *</div>
+      <select style="width: 25vw; margin-bottom: 1vw"></select>
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">CREATE</div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////// PUMP CONTROL ////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div class="popup" *ngIf="popup?.path === 'tankControl'">
+  <div class="body">
+    <div class="header1">
+      Tank Control
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="content">
+      <div class="label1">Select Tank</div>
+      <select style="width: 25vw; margin-bottom: 1vw"></select>
+      <div class="label1">Select Operation *</div>
+      <select style="width: 25vw; margin-bottom: 1vw"></select>
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">CREATE</div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////// CHNAGE PRODECT PRICE /////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div class="popup" *ngIf="popup?.path === 'chnageProdectPrice'">
+  <div class="body">
+    <div class="header1">
+      Change Prodect Price
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="content">
+      <div style="display: flex">
+        <div>
+          <div class="label1">Select Product</div>
+          <select style="width: 25vw; margin-bottom: 1vw"></select>
+        </div>
+        <div style="margin-left: 3vw">
+          <div class="label1">Select Grade</div>
+          <input style="width: 10vw; margin-bottom: 1vw" />
+        </div>
+      </div>
+      <div style="display: flex">
+        <div>
+          <div class="label1">Old Price</div>
+          <input style="width: 11vw; margin-bottom: 1vw" />
+        </div>
+        <div style="margin-left: 3vw">
+          <div class="label1">New Price</div>
+          <input style="width: 11vw; margin-bottom: 1vw" />
+        </div>
+        <div style="margin-left: 3vw">
+          <div class="label1">Change Type</div>
+          <div class="switchBtn1">
+            <div class="selected">Immediate</div>
+            <div class="_selected">Scheduled</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">CREATE</div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////// ADD CUSTOMER ////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div
+  class="drawer"
+  [style]="!(popup?.path === 'addCustomer') ? { visibility: 'hidden' } : {}"
+>
+  <div class="dummyBody" (click)="closePopUp()"></div>
+  <div
+    [ngClass]="popup?.path === 'addCustomer' ? 'body_' : 'body'"
+    style="min-width: 32%"
+  >
+    <div class="header1">
+      Add Customer
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="listBody">
+      <div style="background: #eeeeee; padding: 0.3vw 1vw">
+        BASIC INFORMATION
+      </div>
+      <div style="padding: 1vw 1.5vw">
+        <div class="label1">Customer ID</div>
+        <input
+          style="width: 100%; margin-bottom: 1vw"
+          placeholder="Enter Customer ID"
+        />
+        <div class="label1">Customer Code</div>
+        <input
+          style="width: 100%; margin-bottom: 1vw"
+          placeholder="Enter Customer Code"
+        />
+        <div class="label1">Customer Name</div>
+        <input
+          style="width: 100%; margin-bottom: 1vw"
+          placeholder="Enter Customer Name"
+        />
+      </div>
+      <div style="background: #eeeeee; padding: 0.3vw 1vw">
+        OTHER INFORMATION
+      </div>
+      <div style="padding: 1vw 1.5vw">
+        <div class="label1">Contact Person</div>
+        <input
+          style="width: 100%; margin-bottom: 1vw"
+          placeholder="Enter contact person name here"
+        />
+        <div class="label1">Contact Number</div>
+        <input
+          style="width: 100%; margin-bottom: 1vw"
+          placeholder="Enter contact number here"
+        />
+        <div class="label1">GST Number</div>
+        <input
+          style="width: 100%; margin-bottom: 1vw"
+          placeholder="Enter GST number here"
+        />
+        <div class="label1">Address</div>
+        <textarea
+          style="width: 100%; margin-bottom: 1vw"
+          placeholder="Enter address here"
+        ></textarea>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">ADD</div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////// ADD VEHICLE /////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div class="popup" *ngIf="popup?.path === 'addVehicle'">
+  <div class="body">
+    <div class="header1">
+      Change Prodect Price
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="content">
+      <div style="display: flex">
+        <div>
+          <div class="label1">Customer Code*</div>
+          <select style="width: 16vw; margin-bottom: 1vw"></select>
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Customer Name</div>
+          <input style="width: 16vw; margin-bottom: 1vw" />
+        </div>
+      </div>
+      <div style="display: flex">
+        <div>
+          <div class="label1">Vehicle Number</div>
+          <input style="width: 16vw; margin-bottom: 1vw" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Vehicle Type</div>
+          <input style="width: 16vw; margin-bottom: 1vw" />
+        </div>
+      </div>
+      <div class="label1">RF ID Tag Number</div>
+      <input style="width: 16vw" />
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">ADD</div>
+    </div>
+  </div>
+</div>
