@@ -77,12 +77,46 @@
           ></div>
         </div>
       </div>
-      <div class="options">
-        <div class="grrenButton" *ngIf="navCount === 1">+ Add New Island</div>
-        <div class="grrenButton" *ngIf="navCount === 2">+ Add New</div>
-        <div class="grrenButton" *ngIf="navCount === 3">+ Add Product</div>
-        <div class="grrenButton" *ngIf="navCount === 4">+ Add New Grade</div>
-        <div class="grrenButton" *ngIf="navCount === 5">+ Add New Shift</div>
+      <div class="options" style="align-items: center">
+        <div
+          class="grrenButton"
+          (click)="popup = { path: 'addNewIsland' }"
+          *ngIf="navCount === 1"
+        >
+          + Add New Island
+        </div>
+        <div
+          class="grrenButton"
+          *ngIf="navCount === 2"
+          (click)="popup = { path: 'addMasterProduct' }"
+        >
+          + Add New
+        </div>
+        <div
+          class="grrenButton"
+          *ngIf="navCount === 3"
+          (click)="popup = { path: 'addProduct' }"
+        >
+          + Add Product
+        </div>
+        <div
+          class="grrenButton"
+          *ngIf="navCount === 4"
+          (click)="popup = { path: 'addMasterProduct' }"
+        >
+          + Add New Grade
+        </div>
+        <div class="switchBtn1" *ngIf="navCount === 5">
+          <div class="selected">Automatic</div>
+          <div class="_selected">Manual</div>
+        </div>
+        <div
+          class="grrenButton"
+          *ngIf="navCount === 5"
+          (click)="popup = { path: 'addNewShift' }"
+        >
+          + Add New Shift
+        </div>
       </div>
     </div>
   </div>
@@ -160,15 +194,55 @@
         </div>
       </div>
       <div class="options">
-        <div class="grrenButton" *ngIf="navCount === 0">+ Add New Gauge</div>
-        <div class="grrenButton" *ngIf="navCount === 1">+ Add New ATG</div>
-        <div class="grrenButton" *ngIf="navCount === 2">+ Add New Tank</div>
-        <div class="grrenButton" *ngIf="navCount === 3">+ Add Records</div>
-        <div class="grrenButton" *ngIf="navCount === 4">
+        <div
+          class="grrenButton"
+          *ngIf="navCount === 0"
+          (click)="popup = { path: 'addNewGauge' }"
+        >
+          + Add New Gauge
+        </div>
+        <div
+          class="grrenButton"
+          *ngIf="navCount === 1"
+          (click)="popup = { path: 'addNewATG' }"
+        >
+          + Add New ATG
+        </div>
+        <div
+          class="grrenButton"
+          *ngIf="navCount === 2"
+          (click)="popup = { path: 'addNewTank' }"
+        >
+          + Add New Tank
+        </div>
+        <div
+          class="grrenButton"
+          *ngIf="navCount === 3"
+          (click)="popup = { path: 'addRecords' }"
+        >
+          + Add Records
+        </div>
+        <div
+          class="grrenButton"
+          *ngIf="navCount === 4"
+          (click)="popup = { path: 'configureDispenser' }"
+        >
           Configure Dispenser
         </div>
-        <div class="grrenButton" *ngIf="navCount === 5">+ Add New UPS</div>
-        <div class="grrenButton" *ngIf="navCount === 6">+ Add Device</div>
+        <div
+          class="grrenButton"
+          *ngIf="navCount === 5"
+          (click)="popup = { path: 'addNewUPS' }"
+        >
+          + Add New UPS
+        </div>
+        <div
+          class="grrenButton"
+          *ngIf="navCount === 6"
+          (click)="popup = { path: 'addDevice' }"
+        >
+          + Add Device
+        </div>
       </div>
     </div>
   </div>
@@ -255,8 +329,20 @@
         </div>
       </div>
       <div class="options">
-        <div class="grrenButton" *ngIf="navCount === 1">+ Add Paramater</div>
-        <div class="grrenButton" *ngIf="navCount === 2">+ Add Device</div>
+        <div
+          class="grrenButton"
+          *ngIf="navCount === 1"
+          (click)="popup = { path: 'addParameter' }"
+        >
+          + Add Paramater
+        </div>
+        <div
+          class="grrenButton"
+          *ngIf="navCount === 2"
+          (click)="popup = { path: 'addDeviceDriver' }"
+        >
+          + Add Device
+        </div>
         <div class="grrenButton" *ngIf="navCount === 4">Send Configuration</div>
         <div class="grrenButton" style="background: red" *ngIf="navCount === 5">
           Run Scheduler
@@ -302,9 +388,23 @@
         </div>
       </div>
       <div class="options">
-        <div class="grrenButton" *ngIf="navCount === 0">+ Add User</div>
-        <div class="grrenButton" *ngIf="navCount === 1">+ Add Role</div>
-        <select class="grrenButton" *ngIf="navCount === 2"></select>
+        <div
+          class="grrenButton"
+          *ngIf="navCount === 0"
+          (click)="popup = { path: 'addUser' }"
+        >
+          + Add User
+        </div>
+        <div
+          class="grrenButton"
+          *ngIf="navCount === 1"
+          (click)="popup = { path: 'addRole' }"
+        >
+          + Add Role
+        </div>
+        <select *ngIf="navCount === 2" style="min-width: 12vw">
+          <option hidden>Select role Id</option>
+        </select>
         <div class="grrenButton" *ngIf="navCount === 2">Get Details</div>
       </div>
     </div>
@@ -394,4 +494,7 @@
     [data]="data"
   ></app-home-configuration-body>
 </div>
-<app-home-configuration-popups></app-home-configuration-popups>
+<app-home-configuration-popups
+  [popup]="popup"
+  [closePopUp]="closePopUp"
+></app-home-configuration-popups>

@@ -110,6 +110,7 @@ textarea {
   color: white;
   font-size: 0.9vw;
   align-items: center;
+  cursor: pointer;
 }
 .switchBtn1 .selected {
   border-radius: 1vw;

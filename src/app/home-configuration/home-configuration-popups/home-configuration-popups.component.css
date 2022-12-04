@@ -1,3 +1,94 @@
+.closeBtn {
+  width: 1vw;
+  height: 1vw;
+  background-image: url(../../../assets/ic_x.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+}
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #f5f6f9;
+  padding: 0.6vw 2vw;
+  font-size: 1vw;
+  font-weight: 500;
+  border-top: 0.06vw solid #d4d4d4;
+}
+.canceBtn {
+  border-radius: 0.3vw;
+  background-color: #abd6ef;
+  color: #00649e;
+  padding: 0.5vw 2vw;
+  cursor: pointer;
+  margin-right: 1vw;
+}
+.createBtn {
+  border-radius: 0.3vw;
+  background-color: #00649e;
+  color: white;
+  padding: 0.5vw 2vw;
+  cursor: pointer;
+}
+.header1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6vw 1vw;
+  background-color: #e1e2e5;
+  color: #415365;
+  font-weight: 500;
+  font-size: 1.4vw;
+}
+.label1 {
+  font-size: 1vw;
+  color: #00649e;
+  padding-bottom: 0.3vw;
+  padding-left: 0.3vw;
+}
+.grenButton {
+  background-color: #0abb59;
+  color: white;
+  font-weight: 500;
+  font-size: 1vw;
+  border-radius: 0.3vw;
+  padding: 0.3vw 0.6vw;
+  cursor: pointer;
+  margin: 0 1vw;
+}
+.blueButton {
+  background-color: #406ca5;
+  color: white;
+  border-radius: 0.2vw;
+  padding: 0.5vw 2vw;
+  margin: 0 0.5vw;
+  cursor: pointer;
+}
+.actionTextButton {
+  margin: 0 0.5vw;
+  color: #215eb1;
+  cursor: pointer;
+  font-weight: 500;
+}
+.actionTextButton:hover {
+  text-shadow: 1px 1px 2px #215db144;
+}
+.actionBin {
+  width: 1vw;
+  height: 1vw;
+  margin: 0 0.5vw;
+  background-image: url(../../../assets/ic_bin.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+}
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
 .drawer {
   position: fixed;
   top: 0;
@@ -7,18 +98,216 @@
   display: flex;
   background-color: #00000066;
 }
-.dummyBody {
-  width: 60%;
+.drawer .dummyBody {
+  width: 100%;
   height: 100%;
 }
-.body {
-  width: 40%;
+.drawer .body,
+.body_ {
+  transition: 0.4s;
+  margin-right: -45%;
+  min-width: 45%;
   height: 100%;
   background-color: white;
+  display: flex;
+  flex-direction: column;
 }
-.header {
+.drawer .body_ {
+  margin-right: 0;
+}
+select {
+  border: 0.08vw solid #949494af;
+  border-radius: 0.3vw;
+  padding: 0.3vw 0.5vw;
+  font-size: 1vw;
+  box-sizing: border-box;
+  font-size: 1vw;
+}
+input {
+  border: 0.08vw solid #949494af;
+  border-radius: 0.3vw;
+  padding: 0.38vw 0.6vw;
+  font-size: 1vw;
+  box-sizing: border-box;
+  font-size: 1vw;
+}
+textarea {
+  border: 0.08vw solid #949494af;
+  border-radius: 0.3vw;
+  padding: 0.38vw 1vw;
+  font-size: 1vw;
+  box-sizing: border-box;
+  font-size: 1vw;
+}
+.dotedBox1 {
+  border-radius: 0.4vw;
+  border: 0.07vw dashed #406ca5;
+  padding: 0.6vw 1vw;
+  box-sizing: border-box;
+  font-size: 0.88vw;
+  width: 50%;
+}
+.dotedBox1:nth-child(2) {
+  margin-left: 1vw;
+}
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+.drawer .listBody {
+  height: 100%;
+  overflow: auto;
+}
+.drawer .listHeader {
+  background-color: #f5f6f9;
+  padding: 1.2vw 1.8vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 1vw;
+}
+.drawer .tableHeader {
+  display: flex;
+}
+.drawer .headerCol1,
+.headerCol2,
+.headerCol3 {
+  border: 0.04vw solid white;
+  background-color: #5d7887;
+  width: 15%;
+  padding: 0.6vw 1vw;
+  color: white;
+  font-size: 1vw;
+}
+.drawer .headerCol2 {
+  width: 62%;
+}
+.drawer .headerCol3 {
+  width: 23%;
+}
+.drawer .tableRow {
+  display: flex;
+}
+.drawer .tableRow:nth-child(odd) {
+  background-color: #e8eff6;
+}
+.drawer .rowCol1,
+.rowCol2,
+.rowCol3 {
+  border: 0.04vw solid #ffffff00;
+  width: 15%;
+  padding: 0.4vw 1vw;
+  color: white;
+}
+.drawer .rowCol2 {
+  width: 62%;
+}
+.drawer .rowCol3 {
+  width: 23%;
+}
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+.popup {
+  position: fixed;
+  top: 3.5vw;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #00000066;
+}
+.popup .body {
+  background-color: white;
+  margin-bottom: 5vw;
+  margin-right: 3vw;
+}
+.popup .content {
+  padding: 1.2vw;
+}
+.popupHeader {
+  padding: 1vw;
+  padding-bottom: 0;
+  border-bottom: 0.08vw solid #707070;
+  display: flex;
+  justify-content: flex-start;
+}
+.popupHeaderBody {
+  display: flex;
+  font-size: 1.1vw;
+  background-color: #f1f8ff;
+  border-top-left-radius: 0.6vw;
+  border-top-right-radius: 0.6vw;
+  position: relative;
+}
+.popupHeaderElement,
+.popupHeaderElement_ {
+  padding: 0.4vw 1vw;
+  cursor: pointer;
+}
+.popupHeaderElement_ {
+  background-color: #00649e;
+  color: white;
+}
+.popupTable {
+  padding: 1vw;
+  padding-top: 0;
+}
+.popupTable .header {
+  display: flex;
+  font-size: 0.9vw;
+  margin-bottom: 0.2vw;
+}
+.popupTable .el {
+  padding: 0.5vw 0.8vw;
+  background-color: #f9f9f9;
+  border-right: 0.08vw solid #d1d1d1;
+}
+.popupTable .tableContent {
+  height: calc(100vh - 45vw);
+  overflow: scroll;
+}
+.popupTable .row {
+  display: flex;
+  font-size: 0.9vw;
+}
+.popupTable .row:nth-child(odd) {
+  background-color: #f3f6f9;
+}
+.popupTable .rowEl {
+  padding: 0.5vw 0.8vw;
+  border-right: 0.08vw solid #d1d1d100;
+}
+.addNozzleEachRow {
+  background: white;
+  border-radius: 0.2vw;
+  padding: 0.3vw 1vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.5vw;
+  font-size: 0.9vw;
+}
+.addNozzleEachRow select {
+  padding: 0.2vw 0.5vw;
+  width: 10vw;
+  font-size: 0.8vw;
+}
+.addNozzleEachRow input {
+  padding: 0.25vw 0.5vw;
+  width: 9vw;
+  font-size: 0.8vw;
+}
+.addNozzleRadio,
+.addNozzleRadio_ {
+  width: 0.5vw;
+  height: 0.5vw;
+  border-radius: 50%;
+  border: 0.08vw solid #00649e;
+  cursor: pointer;
+}
+.addNozzleRadio_ {
+  background-color: #00649e;
 }

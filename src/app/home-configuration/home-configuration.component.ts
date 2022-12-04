@@ -28,6 +28,10 @@ export class HomeConfigurationComponent implements OnInit {
   data: any = null;
   isLoading = false;
 
+  popup: any = null;
+  closePopUp: any = () => (this.popup = null);
+  setPopup: any = (it: any) => (this.popup = it);
+
   ngOnInit(): void {
     this.setPage();
   }

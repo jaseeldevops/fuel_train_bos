@@ -81,3 +81,32 @@
   cursor: pointer;
   margin: 0 1vw;
 }
+.switchBtn1 {
+  background-color: #b6b9c1;
+  border-radius: 1vw;
+  height: 2vw;
+  display: flex;
+  color: white;
+  font-size: 0.9vw;
+  align-items: center;
+  cursor: pointer;
+}
+.switchBtn1 .selected {
+  border-radius: 1vw;
+  background-color: #00649e;
+  height: 2vw;
+  display: flex;
+  align-items: center;
+  padding: 0 0.8vw;
+}
+.switchBtn1 ._selected {
+  padding: 0 0.8vw;
+}
+select {
+  border: 0.08vw solid #949494af;
+  border-radius: 0.3vw;
+  padding: 0.3vw 0.5vw;
+  font-size: 1vw;
+  box-sizing: border-box;
+  font-size: 1vw;
+}

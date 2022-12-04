@@ -1,14 +1,1043 @@
 <!-- ///////////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////// -->
-<!-- //////////////////////////////// MANUAL INVOICE ///////////////////////////// -->
+<!-- ////////////////////////////// ADD NEW ISLAND /////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////// -->
-<div class="drawer">
-  <div class="dummyBody"></div>
+<div class="popup" *ngIf="popup?.path === 'addNewIsland'">
   <div class="body">
-    <div class="header">
-      Manual Invoice
-      <div class="closeBtn"></div>
+    <div class="header1">
+      Add New Island
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="content">
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">ID</div>
+          <input style="width: 7vw" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Island Number</div>
+          <input style="width: 7vw" />
+        </div>
+      </div>
+      <div class="label1">Island Type</div>
+      <input style="width: 25vw" placeholder="Enter Island type here" />
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">ADD</div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////// ADD NEW PRODECT ////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div class="popup" *ngIf="popup?.path === 'addMasterProduct'">
+  <div class="body">
+    <div class="header1">
+      Add New Product
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="content">
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">Product No</div>
+          <input style="width: 7vw" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Product Code</div>
+          <input style="width: 10vw" placeholder="Enter Product Code" />
+        </div>
+      </div>
+      <div class="label1">Product Name</div>
+      <input style="width: 25vw" placeholder="Enter Product Name" />
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">ADD</div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////// ADD NEW PRODECT ////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div class="popup" *ngIf="popup?.path === 'addProduct'">
+  <div class="body">
+    <div class="header1">
+      Add Product
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="content">
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">Product Type*</div>
+          <select style="width: 19vw"></select>
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Product Number*</div>
+          <input style="width: 10vw" placeholder="Enter Product Code" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Grade Code</div>
+          <input style="width: 8vw" placeholder="Enter Product Code" />
+        </div>
+      </div>
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">Product Price</div>
+          <select style="width: 9vw"></select>
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Product Reorder</div>
+          <input style="width: 9vw" placeholder="Enter Product Code" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Select Product Color</div>
+          <input style="width: 9vw" placeholder="Enter Product Code" />
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">ADD</div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////// ADD NEW SHIFT ////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div class="popup" *ngIf="popup?.path === 'addNewShift'">
+  <div class="body">
+    <div class="header1">
+      Add New Shift
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="content">
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">Shift No*</div>
+          <select style="width: 6vw"></select>
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Shift Name</div>
+          <input style="width: 20vw" placeholder="Enter Shift Name" />
+        </div>
+      </div>
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">Start Time</div>
+          <input style="width: 9vw" type="time" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">End Time</div>
+          <input style="width: 9vw" type="time" />
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">ADD</div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////// ADD NEW GAUGE /////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div class="popup" *ngIf="popup?.path === 'addNewGauge'">
+  <div class="body">
+    <div class="header1">
+      Add New Gauge
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="content">
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">Gauge No.</div>
+          <input style="width: 6vw" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Gauge Make*</div>
+          <select style="width: 24vw">
+            <option hidden>Select Make</option>
+          </select>
+        </div>
+      </div>
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">Gauge Model*</div>
+          <select style="width: 15vw"></select>
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Gauge Version</div>
+          <select style="width: 15vw">
+            <option hidden>Select</option>
+          </select>
+        </div>
+      </div>
+      <div class="label1">Serial No</div>
+      <input style="width: 15vw" placeholder="Enter Seriral No" />
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">ADD</div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////// ADD NEW ATG //////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div class="popup" *ngIf="popup?.path === 'addNewATG'">
+  <div class="body">
+    <div class="header1">
+      Add New ATG
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="content">
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">ATG No.</div>
+          <input style="width: 6vw" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Console Name</div>
+          <input style="width: 26vw" placeholder="Enter console name here." />
+        </div>
+      </div>
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">Console Make</div>
+          <select style="width: 16vw"></select>
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Console Model</div>
+          <select style="width: 16vw">
+            <option hidden>Select</option>
+          </select>
+        </div>
+      </div>
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">Console Version</div>
+          <select style="width: 16vw"></select>
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">End Point</div>
+          <input style="width: 8vw" placeholder="Enter value here" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">AIP Timeout</div>
+          <input style="width: 8vw" placeholder="Enter value here" />
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">ADD</div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////// ADD NEW TANK /////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div class="popup" *ngIf="popup?.path === 'addNewTank'">
+  <div class="body">
+    <div class="header1">
+      Add New Tank
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="content">
+      <div style="display: flex; margin-bottom: 1.2vw">
+        <div>
+          <div class="label1">Shift No*</div>
+          <select style="width: 7vw"></select>
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Product</div>
+          <select style="width: 18vw"></select>
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Gauge Make*</div>
+          <select style="width: 18vw"></select>
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">ATG Console</div>
+          <select style="width: 18vw"></select>
+        </div>
+      </div>
+      <div style="display: flex; margin-bottom: 1.2vw">
+        <div>
+          <div class="label1">Tank Diameter(mm)*</div>
+          <input style="width: 12vw" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Tank Capacity(ltr)*</div>
+          <input style="width: 12vw" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Max Level(mm)*</div>
+          <input style="width: 12vw" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Min Level(mm)*</div>
+          <input style="width: 12vw" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Max Water Level*</div>
+          <input style="width: 12vw" />
+        </div>
+      </div>
+      <div style="display: flex; margin-bottom: 1.2vw">
+        <div>
+          <div class="label1">Max Temparature*</div>
+          <input style="width: 12vw" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Min Temparature*</div>
+          <input style="width: 12vw" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Overfill Value</div>
+          <input style="width: 12vw" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Delivery Needed</div>
+          <input style="width: 12vw" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Delivery Delay</div>
+          <input style="width: 12vw" />
+        </div>
+      </div>
+      <div style="display: flex; margin-bottom: 1vw">
+        <div class="dotedBox1">
+          Calibaration
+          <div style="display: flex; margin-top: 1vw">
+            <div style="margin-left: 1vw">
+              <div class="label1">Coefficient A</div>
+              <input style="width: 13vw" />
+            </div>
+            <div style="margin-left: 1vw">
+              <div class="label1">Coefficient B</div>
+              <input style="width: 13vw" />
+            </div>
+          </div>
+        </div>
+        <div class="dotedBox1">
+          Calibaration
+          <div style="display: flex; margin-top: 1vw">
+            <div style="margin-left: 1vw">
+              <div class="label1">Leavel</div>
+              <input style="width: 13vw" />
+            </div>
+            <div style="margin-left: 1vw">
+              <div class="label1">Water</div>
+              <input style="width: 13vw" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div style="display: flex; margin-bottom: 1vw">
+        <div class="dotedBox1">
+          Tilt Parameter
+          <div style="margin-top: 1vw">
+            <div class="label1">Coefficient A</div>
+            <input style="width: 28vw" />
+          </div>
+        </div>
+        <div class="dotedBox1">
+          Density
+          <div style="display: flex; margin-top: 1vw">
+            <div style="margin-left: 1vw">
+              <div class="label1">Density 1</div>
+              <input style="width: 13vw" />
+            </div>
+            <div style="margin-left: 1vw">
+              <div class="label1">Density 2</div>
+              <input style="width: 13vw" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">ADD</div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////// ADD NEW RECORD /////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div class="popup" *ngIf="popup?.path === 'addRecords'">
+  <div class="body">
+    <div class="header1">
+      Add New Record
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="content">
+      <div style="display: flex; margin-bottom: 1.2vw">
+        <div>
+          <div class="label1">Shift No*</div>
+          <input style="width: 7vw" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Tank No*</div>
+          <select style="width: 10vw"></select>
+        </div>
+      </div>
+      <div style="display: flex; margin-bottom: 1.2vw">
+        <div>
+          <div class="label1">Height*</div>
+          <input style="width: 18vw" placeholder="Enter tank height here" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Volume*</div>
+          <input style="width: 18vw" placeholder="Enter tank volume here" />
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">ADD</div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////// ADD NEW TANK //////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div class="popup" *ngIf="popup?.path === 'configureDispenser'">
+  <div class="body">
+    <div class="header1">
+      Configure Dispenser
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="popupHeader">
+      <div class="popupHeaderBody">
+        <div
+          [ngClass]="
+            popup?.page === 'dispensers' || !popup?.page
+              ? 'popupHeaderElement_'
+              : 'popupHeaderElement'
+          "
+          (click)="popup.page = 'dispensers'"
+          style="border-top-left-radius: 0.6vw"
+        >
+          DISPENSERS
+        </div>
+        <div
+          [ngClass]="
+            popup?.page === 'pumps'
+              ? 'popupHeaderElement_'
+              : 'popupHeaderElement'
+          "
+          (click)="popup.page = 'pumps'"
+        >
+          PUMPS
+        </div>
+        <div
+          [ngClass]="
+            popup?.page === 'nozzles'
+              ? 'popupHeaderElement_'
+              : 'popupHeaderElement'
+          "
+          (click)="popup.page = 'nozzles'"
+          style="border-top-right-radius: 0.6vw"
+        >
+          NOZZLES
+        </div>
+      </div>
+    </div>
+    <div style="display: flex; justify-content: flex-end; padding: 0.8vw">
+      <div class="grenButton" (click)="popup.addDispenser = {}">
+        {{
+          popup?.page === "nozzles"
+            ? "+ ADD NOZZLES"
+            : popup?.page === "pumps"
+            ? "+ ADD PUMPS"
+            : "+ ADD DISPENSER"
+        }}
+      </div>
+    </div>
+    <div
+      class="popupTable"
+      *ngIf="popup?.page === 'dispensers' || !popup?.page"
+    >
+      <div class="header">
+        <div class="el" style="width: 3vw">DU ID</div>
+        <div class="el" style="width: 3vw">DU NO</div>
+        <div class="el" style="width: 6vw">DU Make ID</div>
+        <div class="el" style="width: 5vw">DU Type</div>
+        <div class="el" style="width: 5vw">DU Version</div>
+        <div class="el" style="width: 10vw">DU Model</div>
+        <div class="el" style="width: 8vw">DU Serial No</div>
+        <div class="el" style="width: 6vw; border: none; text-align: center">
+          Acton
+        </div>
+      </div>
+      <div class="tableContent">
+        <div class="row" *ngFor="let it of [1, 1, 1, 1]">
+          <div class="rowEl" style="width: 3vw">DU ID</div>
+          <div class="rowEl" style="width: 3vw">DU NO</div>
+          <div class="rowEl" style="width: 6vw">DU Make ID</div>
+          <div class="rowEl" style="width: 5vw">DU Type</div>
+          <div class="rowEl" style="width: 5vw">DU Version</div>
+          <div class="rowEl" style="width: 10vw">DU Model</div>
+          <div class="rowEl" style="width: 8vw">DU Serial No</div>
+          <div
+            class="rowEl"
+            style="width: 6vw; display: flex; justify-content: center"
+          >
+            <div class="actionTextButton">Edit</div>
+            <div class="actionBin"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popupTable" *ngIf="popup?.page === 'pumps'">
+      <div class="header">
+        <div class="el" style="width: 2.5vw">DU NO</div>
+        <div class="el" style="width: 3.5vw">Pump No</div>
+        <div class="el" style="width: 5vw">Model</div>
+        <div class="el" style="width: 3.5vw">Phy Addr</div>
+        <div class="el" style="width: 4.5vw">Price DP</div>
+        <div class="el" style="width: 4.5vw">AMT DP</div>
+        <div class="el" style="width: 4.5vw">Vol DP</div>
+        <div class="el" style="width: 4.5vw">Mtr DP</div>
+        <div class="el" style="width: 5vw">Phy Opt Addr</div>
+        <div class="el" style="width: 5vw; border: none; text-align: center">
+          Acton
+        </div>
+      </div>
+      <div class="tableContent">
+        <div class="row" *ngFor="let it of [1, 1, 1, 1]">
+          <div class="rowEl" style="width: 2.5vw">DU NO</div>
+          <div class="rowEl" style="width: 3.5vw">Pump No</div>
+          <div class="rowEl" style="width: 5vw">Model</div>
+          <div class="rowEl" style="width: 3.5vw">Phy Addr</div>
+          <div class="rowEl" style="width: 4.5vw">Price DP</div>
+          <div class="rowEl" style="width: 4.5vw">AMT DP</div>
+          <div class="rowEl" style="width: 4.5vw">Vol DP</div>
+          <div class="rowEl" style="width: 4.5vw">Mtr DP</div>
+          <div class="rowEl" style="width: 5vw">Phy Opt Addr</div>
+          <div
+            class="rowEl"
+            style="width: 5vw; display: flex; justify-content: center"
+          >
+            <div class="actionTextButton">Edit</div>
+            <div class="actionBin"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="popupTable" *ngIf="popup?.page === 'nozzles'">
+      <div class="header">
+        <div class="el" style="width: 3vw">DU NO</div>
+        <div class="el" style="width: 4vw">Pump No</div>
+        <div class="el" style="width: 8vw">Global Nozzle No</div>
+        <div class="el" style="width: 5vw">Nozzle No</div>
+        <div class="el" style="width: 7vw">Grade No</div>
+        <div class="el" style="width: 5vw">Grade</div>
+        <div class="el" style="width: 5vw">Tank</div>
+        <div class="el" style="width: 7vw; border: none; text-align: center">
+          Acton
+        </div>
+      </div>
+      <div class="tableContent">
+        <div class="row" *ngFor="let it of [1, 1, 1, 1]">
+          <div class="rowEl" style="width: 3vw">DU NO</div>
+          <div class="rowEl" style="width: 4vw">Pump No</div>
+          <div class="rowEl" style="width: 8vw">Global Nozzle No</div>
+          <div class="rowEl" style="width: 5vw">Nozzle No</div>
+          <div class="rowEl" style="width: 7vw">Grade No</div>
+          <div class="rowEl" style="width: 5vw">Grade</div>
+          <div class="rowEl" style="width: 5vw">Tank</div>
+          <div
+            class="rowEl"
+            style="width: 7vw; display: flex; justify-content: center"
+          >
+            <div class="actionTextButton">Edit</div>
+            <div class="actionBin"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div *ngIf="popup?.addDispenser">
+      <div
+        style="padding: 0.8vw 2vw; background: #f1f8ff"
+        *ngIf="popup?.page === 'dispensers' || !popup?.page"
+      >
+        <div style="display: flex; margin-bottom: 1.2vw">
+          <div>
+            <div class="label1">DU No</div>
+            <input style="width: 6vw" />
+          </div>
+          <div style="margin-left: 1vw">
+            <div class="label1">DU Make</div>
+            <select style="width: 16vw">
+              <option hidden>Select make</option>
+            </select>
+          </div>
+          <div style="margin-left: 1vw">
+            <div class="label1">DU Model</div>
+            <select style="width: 16vw">
+              <option hidden>Select model</option>
+            </select>
+          </div>
+          <div style="margin-left: 1vw">
+            <div class="label1">DU Version</div>
+            <select style="width: 16vw">
+              <option hidden>Select version</option>
+            </select>
+          </div>
+        </div>
+        <div style="display: flex; margin-bottom: 1.2vw">
+          <div style="width: 6vw"></div>
+          <div style="margin-left: 1vw">
+            <div class="label1">DU Serial No</div>
+            <input style="width: 16vw" placeholder="Enter serial number" />
+          </div>
+          <div style="margin-left: 1vw">
+            <div class="label1">DU Island Number</div>
+            <select style="width: 16vw">
+              <option hidden>Select slave ID</option>
+            </select>
+          </div>
+          <div style="margin-left: 1vw">
+            <div class="label1">Slave ID</div>
+            <select style="width: 16vw">
+              <option hidden>Select slave ID</option>
+            </select>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: flex-end">
+          <div class="blueButton">ADD</div>
+        </div>
+      </div>
+      <div
+        style="padding: 0.8vw 2vw; background: #f1f8ff"
+        *ngIf="popup?.page === 'pumps'"
+      >
+        <div style="display: flex; margin-bottom: 1.2vw">
+          <div>
+            <div class="label1">Select DU Number</div>
+            <select style="width: 12vw">
+              <option hidden>Select make</option>
+            </select>
+          </div>
+          <div style="margin-left: 1vw">
+            <div class="label1">Protocol</div>
+            <select style="width: 13vw">
+              <option hidden>Select protocol</option>
+            </select>
+          </div>
+          <div style="margin-left: 1vw">
+            <div class="label1">Pump No</div>
+            <input style="width: 6vw" />
+          </div>
+          <div style="margin-left: 1vw">
+            <div class="label1">Physical Address</div>
+            <input style="width: 11vw" placeholder="Enter Address" />
+          </div>
+          <div style="margin-left: 1vw">
+            <div class="label1">Optional Address</div>
+            <input style="width: 11vw" placeholder="Enter Address" />
+          </div>
+        </div>
+        <div style="display: flex; margin-bottom: 1.2vw">
+          <div>
+            <div class="label1">Pump Mode</div>
+            <select style="width: 12vw">
+              <option hidden>Enter Address</option>
+            </select>
+          </div>
+          <div style="margin-left: 1vw">
+            <div class="label1">Volume DP</div>
+            <input style="width: 13vw" placeholder="Enter value" />
+          </div>
+          <div style="margin-left: 1vw">
+            <div class="label1">Amount DP</div>
+            <input style="width: 6vw" placeholder="Enter value" />
+          </div>
+          <div style="margin-left: 1vw">
+            <div class="label1">Price DP</div>
+            <input style="width: 11vw" placeholder="Enter value" />
+          </div>
+          <div style="margin-left: 1vw">
+            <div class="label1">Meter DP</div>
+            <input style="width: 11vw" placeholder="Enter  value" />
+          </div>
+        </div>
+        <div style="display: flex; justify-content: flex-end">
+          <div class="blueButton">ADD</div>
+        </div>
+      </div>
+      <div
+        style="padding: 0.8vw 2vw; background: #f1f8ff"
+        *ngIf="popup?.page === 'nozzles'"
+      >
+        <div style="display: flex; margin-bottom: 1.2vw">
+          <div style="min-width: 14vw">
+            <div class="label1">Select DU</div>
+            <select style="width: 14vw; margin-bottom: 1.2vw">
+              <option hidden>Select DU</option>
+            </select>
+            <div class="label1">Select Pump</div>
+            <select style="width: 14vw">
+              <option hidden>Select Pump</option>
+            </select>
+          </div>
+          <div style="width: 100%; margin-left: 3vw; margin-top: 1.5vw">
+            <div class="addNozzleEachRow">
+              <div class="addNozzleRadio_"></div>
+              Nozzle 1
+              <input placeholder="Physical ID" />
+              <select>
+                <option hidden>Select Grade</option>
+              </select>
+              <select>
+                <option hidden>Select Tank</option>
+              </select>
+            </div>
+            <div class="addNozzleEachRow">
+              <div class="addNozzleRadio"></div>
+              Nozzle 1
+              <input placeholder="Physical ID" />
+              <select>
+                <option hidden>Select Grade</option>
+              </select>
+              <select>
+                <option hidden>Select Tank</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div style="display: flex; justify-content: flex-end">
+          <div class="blueButton">ADD</div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">SAVE</div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////// ADD NEW UPS //////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div class="popup" *ngIf="popup?.path === 'addNewUPS'">
+  <div class="body">
+    <div class="header1">
+      Add New UPS
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="content">
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">UPS No*</div>
+          <input style="width: 6vw" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">UPS Make</div>
+          <select style="width: 24vw" placeholder="Enter Shift Name">
+            <option hidden>Select Make</option>
+          </select>
+        </div>
+      </div>
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">UPS Model</div>
+          <select style="width: 15vw">
+            <option hidden>Select Model</option>
+          </select>
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">UPS Version</div>
+          <select style="width: 15vw">
+            <option hidden>Select Version</option>
+          </select>
+        </div>
+      </div>
+      <div style="display: flex">
+        <div>
+          <div class="label1">Capacity</div>
+          <input style="width: 15vw" placeholder="Enter Capacity" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">End Point</div>
+          <input style="width: 15vw" placeholder="Enter end point value" />
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">ADD</div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////// ADD NEW DEVICE /////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div class="popup" *ngIf="popup?.path === 'addDevice'">
+  <div class="body">
+    <div class="header1">
+      Add New Device
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="content">
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">Equipment Type*</div>
+          <select style="width: 18vw">
+            <option hidden>Select options</option>
+          </select>
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Address*</div>
+          <input style="width: 18vw" placeholder="Enter address" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Comport ID*</div>
+          <input style="width: 18vw" placeholder="Enter comport id " />
+        </div>
+      </div>
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">Make*</div>
+          <select style="width: 18vw" placeholder="Enter">
+            <option hidden>Select make</option>
+          </select>
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Device Make</div>
+          <select style="width: 18vw" placeholder="Enter">
+            <option hidden>Select device make</option>
+          </select>
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Device Model</div>
+          <select style="width: 8.5vw" placeholder="Enter">
+            <option hidden></option>
+            Select model
+          </select>
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Firmware version</div>
+          <select style="width: 8.5vw" placeholder="Enter">
+            <option hidden>Select version</option>
+          </select>
+        </div>
+      </div>
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">Serial No</div>
+          <input style="width: 18vw" placeholder="Enter ent point value" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Parent Device ID</div>
+          <input style="width: 8.5vw" placeholder="Enter parent id" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Device Type ID</div>
+          <input style="width: 8.5vw" placeholder="Enter type id" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Slave ID</div>
+          <select style="width: 18vw">
+            <option hidden>Select Slave</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">ADD</div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////// ADD PARAMETER /////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div class="popup" *ngIf="popup?.path === 'addParameter'">
+  <div class="body">
+    <div class="header1">
+      Add Parameter
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="content">
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">Sl No</div>
+          <input style="width: 10vw" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Parameter</div>
+          <input style="width: 30vw" placeholder="Enter paramater name here" />
+        </div>
+      </div>
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">Value</div>
+          <input style="width: 20vw" placeholder="Enter value" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Flag</div>
+          <input style="width: 20vw" placeholder="Enter flag" />
+        </div>
+      </div>
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">WsStatus</div>
+          <input style="width: 20vw" placeholder="Enter status" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Flag2</div>
+          <input style="width: 20vw" placeholder="Enter flag" />
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">ADD</div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////// ADD DEVICE DRIVER ///////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div class="popup" *ngIf="popup?.path === 'addDeviceDriver'">
+  <div class="body">
+    <div class="header1">
+      Add Device Driver
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="content">
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">Sq ID</div>
+          <input style="width: 10vw" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Equipment Make</div>
+          <input style="width: 30vw" placeholder="Enter here" />
+        </div>
+      </div>
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">Equipment Model</div>
+          <input style="width: 20vw" placeholder="Enter equipment model" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Version</div>
+          <input style="width: 20vw" placeholder="Enter version" />
+        </div>
+      </div>
+      <div class="label1">is Enabled</div>
+      <input style="width: 20vw" placeholder="if enabled enter 1" />
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">ADD</div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////// ADD USER ///////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div class="popup" *ngIf="popup?.path === 'addUser'">
+  <div class="body">
+    <div class="header1">
+      Add User
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="content">
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">First Name</div>
+          <input style="width: 20vw" placeholder="Enter first name" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Last Name</div>
+          <input style="width: 20vw" placeholder="Enter last name" />
+        </div>
+      </div>
+      <div class="label1">User Role</div>
+      <select style="width: 20vw; margin-bottom: 1vw">
+        <option hidden>Select user role</option>
+      </select>
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">User Name*</div>
+          <input style="width: 13vw" placeholder="Enter user name" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Password</div>
+          <input style="width: 13vw" placeholder="Set password for login" />
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">ADD</div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////// ADD ROLE ///////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div class="popup" *ngIf="popup?.path === 'addRole'">
+  <div class="body">
+    <div class="header1">
+      Add Role
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="content">
+      <div style="display: flex; margin-bottom: 1vw">
+        <div>
+          <div class="label1">Role ID</div>
+          <input style="width: 6vw" placeholder="Enter id" />
+        </div>
+        <div style="margin-left: 1vw">
+          <div class="label1">Role Name</div>
+          <input style="width: 20vw" placeholder="Enter role name" />
+        </div>
+      </div>
+      <div class="label1">Role Status</div>
+      <select style="width: 20vw">
+        <option hidden>Select role status</option>
+      </select>
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">ADD</div>
     </div>
   </div>
 </div>
