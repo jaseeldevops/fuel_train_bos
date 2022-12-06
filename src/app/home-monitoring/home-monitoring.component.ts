@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 export class HomeMonitoringComponent implements OnInit {
   constructor() {}
 
+  isLoading = false;
+
   ngOnInit(): void {}
 
   page = 'pump';

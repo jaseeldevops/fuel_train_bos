@@ -9,6 +9,7 @@ import { drowerIconList } from './store';
 export class HomeComponent implements OnInit {
   constructor() {}
 
+  isLoading = false;
   // This is the flag for showing the popup when the SOS button is clicked.
   isSosPopup = false;
   // This is the flag for showing the logout confirm popup is visible or not

@@ -53,3 +53,16 @@ select {
 button {
   border: none;
 }
+
+.isLoading {
+  position: fixed;
+  top: 3.5vw;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ffffff;
+  background-size: 5vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url(./assets/ic_loader.gif);
+}

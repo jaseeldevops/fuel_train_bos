@@ -20,6 +20,8 @@ import {
 export class HomeDashboardComponent implements OnInit {
   constructor() {}
 
+  isLoading = false;
+
   ngOnInit(): void {
     this.setProductProfile();
   }
