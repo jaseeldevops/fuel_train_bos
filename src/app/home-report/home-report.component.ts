@@ -20,8 +20,8 @@ export class HomeReportComponent implements OnInit {
   }
 
   // values for the filter is stored inside the filterBody
-  filterDate: any = '';
-  onChnageFilterDate = (e: any) => (this.filterDate = e.target.value);
+  filterDate: any = { from: '', to: '' };
+  onChnageFilterDate = (from: any, to: any) => (this.filterDate = { from, to });
   onClickFilterSubmit = () => {
     // TODO: You can write Your filter code here
     // If any value is a empty string that means all is selected

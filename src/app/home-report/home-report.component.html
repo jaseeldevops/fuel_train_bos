@@ -15,12 +15,7 @@
         Reports > {{ selected.title }}
       </div>
       <div class="aAc" *ngIf="selected !== null">
-        <input
-          class="topBar_bAbB"
-          type="datetime-local"
-          id="time"
-          (change)="onChnageFilterDate($event)"
-        />
+        <app-date-picker [onChange]="onChnageFilterDate"></app-date-picker>
         <div class="topBar_bAbC" (click)="onClickFilterSubmit()">Submit</div>
         <div
           class="aAcA"

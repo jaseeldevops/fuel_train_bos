@@ -26,6 +26,7 @@ import { TablePagingComponent } from './widget/table-paging/table-paging.compone
 import { HomeConfigurationPopupsComponent } from './home-configuration/home-configuration-popups/home-configuration-popups.component';
 import { HomeOperationsPopupsComponent } from './home-operations/home-operations-popups/home-operations-popups.component';
 import { ToastComponent } from './widget/toast/toast.component';
+import { DatePickerComponent } from './widget/date-picker/date-picker.component';
 
 @NgModule({
   declarations: [
@@ -49,6 +50,7 @@ import { ToastComponent } from './widget/toast/toast.component';
     HomeConfigurationPopupsComponent,
     HomeOperationsPopupsComponent,
     ToastComponent,
+    DatePickerComponent,
   ],
   imports: [
     BrowserModule,

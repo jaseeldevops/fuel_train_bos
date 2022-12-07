@@ -1,0 +1,127 @@
+.inputBox {
+  border: 0.05vw solid #e2e2e2;
+  border-radius: 0.3vw;
+  color: #406ca5;
+  font-weight: 500;
+  padding: 0.3vw 1vw;
+  padding-right: 2.2vw;
+  background-color: #f9fbff;
+  background-image: url(./assets/calender.svg);
+  background-position: calc(100% - 0.7vw);
+  background-repeat: no-repeat;
+  background-size: 1vw;
+  box-sizing: border-box;
+  cursor: pointer;
+  font-size: 0.8vw;
+}
+.fullScreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.calender {
+  position: absolute;
+  left: 18vw;
+  background-color: white;
+  box-shadow: 0.3vw 0.7vw 0.8vw #00000052;
+  z-index: 1;
+  display: flex;
+}
+/* /////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////// */
+.gridCalender {
+  width: 16vw;
+  background-color: white;
+  box-shadow: 0.2vw 0 0.5vw #00000015;
+  box-sizing: border-box;
+  padding: 1vw 1.5vw;
+}
+.monthRow {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 500;
+  font-size: 1.2vw;
+  align-items: center;
+}
+.arrow1 {
+  width: 0.8vw;
+  height: 0.8vw;
+  background-size: 0.4vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.monthRow .left {
+  background-image: url(./assets/left.svg);
+}
+.monthRow .right {
+  background-image: url(./assets/right.svg);
+}
+.weekRow {
+  display: flex;
+  color: #707070;
+  font-size: 0.8vw;
+  padding: 0.8vw 0;
+  border-bottom: 0.06vw solid #707070;
+}
+.weekRow .col {
+  width: calc(100% / 7);
+  text-align: center;
+}
+.dayGrid {
+  font-size: 0.9vw;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0.8vw 0;
+}
+.day,
+.day_,
+.day__ {
+  margin: 0.2vw 0;
+  width: calc(100% / 7);
+  text-align: center;
+  box-sizing: border-box;
+  padding: 0.1vw;
+}
+.day_ {
+  background-color: #406ca5;
+  border-radius: 0.4vw;
+  color: white;
+}
+.day__ {
+  background-color: #6a789a52;
+}
+/* /////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////// */
+/* /////////////////////////////////////////////////////////////////////////// */
+.counterPicker {
+  width: 15vw;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.counterPicker .row {
+  display: flex;
+  align-items: center;
+  font-size: 1.4vw;
+  font-weight: 500;
+}
+.arrow2 {
+  width: 1vw;
+  height: 1vw;
+  background-size: 0.8vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.counterPicker .top {
+  background-image: url(./assets/top.svg);
+}
+.counterPicker .bottom {
+  background-image: url(./assets/bottom.svg);
+}

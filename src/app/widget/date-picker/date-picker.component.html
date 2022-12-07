@@ -1,0 +1,183 @@
+<div class="inputBox" (click)="isOpened = true">
+  {{ fromDate.day }} {{ fromDate.monthWord.slice(0, 3) }} {{ fromDate.year }}
+  {{ fromDate.hh }}:{{ fromDate.mm }} to {{ toDate.day }}
+  {{ toDate.monthWord.slice(0, 3) }} {{ toDate.year }} {{ toDate.hh }}:{{
+    toDate.mm
+  }}
+</div>
+<div class="fullScreen" *ngIf="isOpened" (click)="close()"></div>
+<div class="calender" *ngIf="isOpened">
+  <div class="gridCalender">
+    <div style="color: #707070; font-size: 0.9vw">From</div>
+    <div class="monthRow">
+      <div class="arrow1 left" (click)="previousMonthFrom()"></div>
+      {{ fromDate.monthWord }} {{ fromDate.year }}
+      <div class="arrow1 right" (click)="nextMonthFrom()"></div>
+    </div>
+    <div class="weekRow">
+      <div class="col">Sun</div>
+      <div class="col">Mon</div>
+      <div class="col">Tue</div>
+      <div class="col">Wed</div>
+      <div class="col">Thu</div>
+      <div class="col">Fri</div>
+      <div class="col">Sat</div>
+    </div>
+    <div class="dayGrid">
+      <div
+        class="day"
+        [ngClass]="it.selected ? 'day_' : ''"
+        [style]="it.view ? { cursor: 'pointer' } : {}"
+        *ngFor="let it of fromCalender"
+        (click)="onClickDayFrom(it)"
+      >
+        {{ it.view ? it.value : "" }}
+      </div>
+    </div>
+  </div>
+  <div class="gridCalender">
+    <div style="color: #707070; font-size: 0.9vw">To</div>
+    <div class="monthRow">
+      <div class="arrow1 left" (click)="previousMonthTo()"></div>
+      {{ toDate.monthWord }} {{ toDate.year }}
+      <div class="arrow1 right" (click)="nextMonthTo()"></div>
+    </div>
+    <div class="weekRow">
+      <div class="col">Sun</div>
+      <div class="col">Mon</div>
+      <div class="col">Tue</div>
+      <div class="col">Wed</div>
+      <div class="col">Thu</div>
+      <div class="col">Fri</div>
+      <div class="col">Sat</div>
+    </div>
+    <div class="dayGrid">
+      <div
+        class="day"
+        [ngClass]="it.selected ? 'day_' : ''"
+        [style]="it.view ? { cursor: 'pointer' } : {}"
+        *ngFor="let it of toCalender"
+        (click)="onClickDayTo(it)"
+      >
+        {{ it.view ? it.value : "" }}
+      </div>
+    </div>
+  </div>
+  <div class="counterPicker">
+    <div class="row">
+      <div>
+        <div style="color: #707070; font-size: 0.8vw">From</div>
+        <div style="font-size: 0.85vw">
+          <span style="color: #00649e; font-size: 1vw">{{ fromDate.day }}</span>
+          {{ fromDate.monthWord.slice(0, 3) }} {{ fromDate.year }}
+        </div>
+      </div>
+      &nbsp; &nbsp;
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <div
+          class="arrow2 top"
+          (click)="fromDate.hh !== 0 ? (fromDate.hh = fromDate.hh - 1) : ''"
+        ></div>
+        {{ fromDate.hh }}
+        <div
+          class="arrow2 bottom"
+          (click)="fromDate.hh !== 32 ? (fromDate.hh = fromDate.hh + 1) : ''"
+        ></div>
+      </div>
+      :
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <div
+          class="arrow2 top"
+          (click)="fromDate.mm !== 0 ? (fromDate.mm = fromDate.mm - 1) : ''"
+        ></div>
+        {{ fromDate.mm }}
+        <div
+          class="arrow2 bottom"
+          (click)="fromDate.mm !== 59 ? (fromDate.mm = fromDate.mm + 1) : ''"
+        ></div>
+      </div>
+      :
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <div
+          class="arrow2 top"
+          (click)="fromDate.ss !== 0 ? (fromDate.ss = fromDate.ss - 1) : ''"
+        ></div>
+        {{ fromDate.ss }}
+        <div
+          class="arrow2 bottom"
+          (click)="fromDate.ss !== 59 ? (fromDate.ss = fromDate.ss + 1) : ''"
+        ></div>
+      </div>
+    </div>
+    <div
+      style="height: 0.05vw; background: #7070704a; width: 80%; margin: 1vw"
+    ></div>
+    <div class="row">
+      <div>
+        <div style="color: #707070; font-size: 0.8vw">To</div>
+        <div style="font-size: 0.85vw">
+          <span style="color: #00649e; font-size: 1vw">{{ toDate.day }}</span>
+          {{ toDate.monthWord.slice(0, 3) }} {{ toDate.year }}
+        </div>
+      </div>
+      &nbsp; &nbsp;
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <div
+          class="arrow2 top"
+          (click)="toDate.hh !== 0 ? (toDate.hh = toDate.hh - 1) : ''"
+        ></div>
+        {{ toDate.hh }}
+        <div
+          class="arrow2 bottom"
+          (click)="toDate.hh !== 23 ? (toDate.hh = toDate.hh + 1) : ''"
+        ></div>
+      </div>
+      :
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <div
+          class="arrow2 top"
+          (click)="toDate.mm !== 0 ? (toDate.mm = toDate.mm - 1) : ''"
+        ></div>
+        {{ toDate.mm }}
+        <div
+          class="arrow2 bottom"
+          (click)="toDate.mm !== 59 ? (toDate.mm = toDate.mm + 1) : ''"
+        ></div>
+      </div>
+      :
+      <div style="display: flex; flex-direction: column; align-items: center">
+        <div
+          class="arrow2 top"
+          (click)="toDate.ss !== 0 ? (toDate.ss = toDate.ss - 1) : ''"
+        ></div>
+        {{ toDate.ss }}
+        <div
+          class="arrow2 bottom"
+          (click)="toDate.ss !== 59 ? (toDate.ss = toDate.ss + 1) : ''"
+        ></div>
+      </div>
+    </div>
+    <div
+      style="
+        display: flex;
+        justify-content: flex-end;
+        width: 80%;
+        margin-top: 1.4vw;
+      "
+    >
+      <div
+        style="
+          color: white;
+          font-size: 0.9vw;
+          background: #00649e;
+          padding: 0.2vw 1vw;
+          border-radius: 0.3vw;
+          cursor: pointer;
+        "
+        (click)="submit()"
+      >
+        UPDATE
+      </div>
+    </div>
+  </div>
+</div>
