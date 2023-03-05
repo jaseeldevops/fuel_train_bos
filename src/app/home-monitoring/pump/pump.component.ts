@@ -13,4 +13,6 @@ export class PumpComponent implements OnInit {
 
   allPumpStatus = allPumpStatusDummy;
   allNozzleStatus = allNozzleStatusDummy;
+
+  pumpStatusMenuSelected: any = null;
 }

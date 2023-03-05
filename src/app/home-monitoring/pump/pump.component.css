@@ -48,6 +48,7 @@
   background-position: center;
   background-size: contain;
   cursor: pointer;
+  position: relative;
 }
 .pumpStatusRow {
   text-align: end;
@@ -177,4 +178,81 @@
 .nozzileDesc {
   font-size: 0.88vw;
   color: #2a426d;
+}
+/* //////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////// */
+.pumpOperationPopup {
+  position: absolute;
+  right: 1vw;
+  top: 1vw;
+  background-color: white;
+  padding: 0.6vw;
+  border-radius: 0.5vw;
+  box-shadow: 0.2vw 0.2vw 0.5vw rgba(128, 128, 128, 0.443);
+  font-size: 0.7vw;
+  color: #868686;
+}
+.pumpOperationPopupEach {
+  padding: 0.2vw 0;
+  width: 6vw;
+  padding-left: 1.5vw;
+  background-image: url(../../../assets/ic_play.svg);
+  background-repeat: no-repeat;
+  background-size: 0.9vw 0.9vw;
+  background-position: 0.3vw;
+}
+.pumpOperationPopupEach:nth-child(2) {
+  background-image: url(../../../assets/ic_stop.svg);
+  background-size: 0.7vw 0.7vw;
+}
+.pumpOperationPopupEach:nth-child(4) {
+  background-image: url(../../../assets/ic_play_all.svg);
+}
+.pumpOperationPopupEach:nth-child(5) {
+  background-image: url(../../../assets/ic_stop_all.svg);
+  background-size: 0.7vw 0.7vw;
+}
+.pumpOperationPopupEach:nth-child(7) {
+  background-image: url(../../../assets/ic_block.svg);
+  background-size: 0.7vw 0.7vw;
+}
+.pumpOperationPopupEach:nth-child(8) {
+  background-image: url(../../../assets/ic_maintance.svg);
+  background-size: 0.7vw 0.7vw;
+}
+.pumpOperationPopupEach:nth-child(10) {
+  background-image: url(../../../assets/ic_active.svg);
+  background-size: 0.7vw 0.7vw;
+}
+.pumpOperationPopupEach:nth-child(11) {
+  background-image: url(../../../assets/ic_lock2.svg);
+  background-size: 0.7vw 0.7vw;
+}
+.pumpOperationPopupEach:nth-child(12) {
+  background-image: url(../../../assets/ic_present.svg);
+  background-size: 0.7vw 0.7vw;
+}
+.pumpOperationPopupEach:nth-child(13) {
+  background-image: url(../../../assets/ic_athorize.svg);
+  background-size: 0.7vw 0.7vw;
+}
+.pumpOperationPopupEach:nth-child(14) {
+  background-image: url(../../../assets/ic_mode_change.svg);
+  background-size: 0.7vw 0.7vw;
+}
+.pumpOperationPopupLine {
+  margin: 0.1vw 0;
+  height: 0.01vw;
+  background-color: #699effa4;
+  width: 100%;
+}
+.pumpOperationPopupBlank {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #2a416d3a;
 }

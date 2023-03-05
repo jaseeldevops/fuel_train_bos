@@ -8,6 +8,14 @@ export const drowerIconList = [
     fullTitle: 'Dashboard',
   },
   {
+    // this title is to show in thr side bar
+    title: 'Calender',
+    icon: 'calender',
+    path: 'calender',
+    // this title is to show the top title of the selected
+    fullTitle: 'Calender',
+  },
+  {
     title: 'Monitoring',
     icon: 'monitoring',
     path: 'monitoring',
@@ -33,6 +41,36 @@ export const drowerIconList = [
     title: 'Reports',
     icon: 'reports',
     path: 'reports',
+    fullTitle: '',
+  },
+  {
+    title: 'Purchase',
+    icon: 'purchase',
+    path: 'purchase',
+    fullTitle: '',
+  },
+  {
+    title: 'Expenses',
+    icon: 'expenses',
+    path: 'expenses',
+    fullTitle: '',
+  },
+  {
+    title: 'Inventory',
+    icon: 'inventory',
+    path: 'inventory',
+    fullTitle: '',
+  },
+  {
+    title: 'Cash & Bank',
+    icon: 'cashAndBank',
+    path: 'cashAndBank',
+    fullTitle: '',
+  },
+  {
+    title: 'Staff Master',
+    icon: 'staffMaster',
+    path: 'staffMaster',
     fullTitle: '',
   },
   {

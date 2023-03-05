@@ -53,6 +53,7 @@
 <div class="b">
   <!-- When the any icon in the sidebar is selected the following coponent will be called -->
   <app-home-dashboard *ngIf="drowerPath === 'dashboard'"></app-home-dashboard>
+  <app-home-calender *ngIf="drowerPath === 'calender'"></app-home-calender>
   <app-home-monitoring
     *ngIf="drowerPath === 'monitoring'"
   ></app-home-monitoring>
@@ -61,6 +62,15 @@
     [page]="subPath"
   ></app-home-operations>
   <app-home-report *ngIf="drowerPath === 'reports'"></app-home-report>
+  <app-home-purchase *ngIf="drowerPath === 'purchase'"></app-home-purchase>
+  <app-home-expenses *ngIf="drowerPath === 'expenses'"></app-home-expenses>
+  <app-home-inventory *ngIf="drowerPath === 'inventory'"></app-home-inventory>
+  <app-home-cash-and-bank
+    *ngIf="drowerPath === 'cashAndBank'"
+  ></app-home-cash-and-bank>
+  <app-home-staff-master
+    *ngIf="drowerPath === 'staffMaster'"
+  ></app-home-staff-master>
   <app-home-configuration
     *ngIf="drowerPath === 'configuration'"
     [page]="subPath"

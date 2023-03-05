@@ -1,7 +1,7 @@
-<div class="header">
+<div class="header" *ngIf="type !== 'nav'">
   <div class="title">{{ title }}</div>
 </div>
-<div class="body">
+<div class="body" *ngIf="type !== 'nav'">
   <div class="card" (click)="onSubPathClick(it)" *ngFor="let it of items">
     <div class="cardContent">
       {{ it.title }}
@@ -10,3 +10,4 @@
     <div class="underLine"></div>
   </div>
 </div>
+<div class="filterBody" *ngIf="type === 'nav'"></div>

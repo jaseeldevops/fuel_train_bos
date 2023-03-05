@@ -1,0 +1,46 @@
+<app-nav-page  [type]="'nav'"></app-nav-page>
+<div class="tableBody">
+  <div class="table">
+    <div class="header">
+      <div></div>
+      <div style="width: 6%"></div>
+      <div style="width: 20%">STAF NAME</div>
+      <div style="width: 12%">EMPLOYEE#</div>
+      <div style="width: 12%">JOINING DATE</div>
+      <div style="width: 12%">PHONE NUMBER</div>
+      <div style="width: 12%">EMAIL</div>
+      <div style="width: 12%">SYSTEM USER</div>
+      <div style="width: 12%">STATUS</div>
+      <div></div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allStaff?.content">
+        <div></div>
+        <div class="content" style="width: 6%">
+          <img
+            [src]="it?.image"
+            style="
+              object-fit: cover;
+              border-radius: 50%;
+              width: 2vw;
+              height: 2vw;
+              padding-left: 1vw;
+            "
+          />
+        </div>
+        <div class="content" style="width: 20%">
+          {{ it?.name }}
+          <div style="font-size: 0.8vw; color: gray">{{ it?.type }}</div>
+        </div>
+        <div class="content" style="width: 12%">{{ it?.empId }}</div>
+        <div class="content" style="width: 12%">{{ it?.joiningDate }}</div>
+        <div class="content" style="width: 12%">{{ it?.phone }}</div>
+        <div class="content" style="width: 12%">{{ it?.email }}</div>
+        <div class="content" style="width: 12%">{{ it?.isSystemUser }}</div>
+        <div class="content" style="width: 12%">{{ it?.status }}</div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allStaff?.paging"></app-table-paging>
+</div>

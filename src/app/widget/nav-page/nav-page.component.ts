@@ -9,6 +9,7 @@ export class NavPageComponent implements OnInit {
   @Input() title: any;
   @Input() items: any;
   @Input() onClick: any;
+  @Input() type: any;
   constructor() {}
 
   ngOnInit(): void {}

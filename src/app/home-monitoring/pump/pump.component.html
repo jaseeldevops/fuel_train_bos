@@ -11,7 +11,38 @@
           <div>{{ it.title }}</div>
           <div [style]="{ color: it.color }">{{ it.product }}</div>
         </div>
-        <div class="menuIcon"></div>
+        <div
+          class="menuIcon"
+          (click)="
+            pumpStatusMenuSelected === null
+              ? (pumpStatusMenuSelected = it)
+              : (pumpStatusMenuSelected = null)
+          "
+        >
+          <div
+            class="pumpOperationPopupBlank"
+            *ngIf="pumpStatusMenuSelected?.id === it.id"
+          ></div>
+          <div
+            class="pumpOperationPopup"
+            *ngIf="pumpStatusMenuSelected?.id === it.id"
+          >
+            <div class="pumpOperationPopupEach">Start</div>
+            <div class="pumpOperationPopupEach">Stop</div>
+            <div class="pumpOperationPopupLine"></div>
+            <div class="pumpOperationPopupEach">Start All</div>
+            <div class="pumpOperationPopupEach">Stop All</div>
+            <div class="pumpOperationPopupLine"></div>
+            <div class="pumpOperationPopupEach">Block</div>
+            <div class="pumpOperationPopupEach">Under maintance</div>
+            <div class="pumpOperationPopupLine"></div>
+            <div class="pumpOperationPopupEach">Active</div>
+            <div class="pumpOperationPopupEach">Lock</div>
+            <div class="pumpOperationPopupEach">Preset</div>
+            <div class="pumpOperationPopupEach">Authorize</div>
+            <div class="pumpOperationPopupEach">Pump mode change</div>
+          </div>
+        </div>
       </div>
       <div class="pumpMidileLayer">
         <div

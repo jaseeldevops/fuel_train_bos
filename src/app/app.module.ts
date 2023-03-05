@@ -27,6 +27,12 @@ import { HomeConfigurationPopupsComponent } from './home-configuration/home-conf
 import { HomeOperationsPopupsComponent } from './home-operations/home-operations-popups/home-operations-popups.component';
 import { ToastComponent } from './widget/toast/toast.component';
 import { DatePickerComponent } from './widget/date-picker/date-picker.component';
+import { HomeCalenderComponent } from './home-calender/home-calender.component';
+import { HomeCashAndBankComponent } from './home-cash-and-bank/home-cash-and-bank.component';
+import { HomePurchaseComponent } from './home-purchase/home-purchase.component';
+import { HomeExpensesComponent } from './home-expenses/home-expenses.component';
+import { HomeStaffMasterComponent } from './home-staff-master/home-staff-master.component';
+import { HomeInventoryComponent } from './home-inventory/home-inventory.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +57,12 @@ import { DatePickerComponent } from './widget/date-picker/date-picker.component'
     HomeOperationsPopupsComponent,
     ToastComponent,
     DatePickerComponent,
+    HomeCalenderComponent,
+    HomeCashAndBankComponent,
+    HomePurchaseComponent,
+    HomeExpensesComponent,
+    HomeStaffMasterComponent,
+    HomeInventoryComponent,
   ],
   imports: [
     BrowserModule,
