@@ -1,0 +1,118 @@
+.pageTitle {
+  background-color: white;
+  border-bottom: 0.1vw solid #7070705d;
+  padding: 0.5vw 1vw;
+  font-size: 1.4vw;
+  font-weight: 500;
+}
+.navHeader {
+  display: flex;
+  justify-content: flex-end;
+  border-bottom: 0.1vw solid #7070705d;
+}
+.button1 {
+  font-size: 1.3vw;
+  color: #406ca5;
+  background-color: white;
+  font-weight: 500;
+  padding: 0.4vw 1.5vw;
+  margin: 0.6vw 0.6vw;
+  border-radius: 0.2vw;
+  border: 0.1vw solid #7070705d;
+  cursor: pointer;
+}
+.button2 {
+  font-size: 1.3vw;
+  color: white;
+  background-color: #406ca5;
+  font-weight: 500;
+  padding: 0.4vw 1.5vw;
+  margin: 0.6vw 0.6vw;
+  border-radius: 0.2vw;
+  border: 0.1vw solid #7070705d;
+  cursor: pointer;
+}
+.body {
+  max-height: calc(100vh - 10vw);
+  overflow: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 2vw 10vw;
+  box-sizing: border-box;
+}
+.card {
+  width: 94%;
+  margin: 0.8vw;
+  background-color: white;
+  border: 0.1vw solid #7070705d;
+  border-radius: 0.5vw;
+}
+.card:hover {
+  box-shadow: 0 0 1vw #57a0ffbf;
+}
+.cardBody {
+  padding: 1vw;
+  border-bottom: 0.1vw solid #7070705d;
+}
+.cardHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0.5vw;
+}
+.accountName {
+  font-size: 1.3vw;
+  color: #406ca5;
+  font-weight: 500;
+}
+.accountLogo {
+}
+.balanceLabel {
+  text-align: center;
+  font-size: 1.2vw;
+  color: #323232;
+}
+.balance {
+  font-weight: bold;
+  font-size: 1.3vw;
+  text-align: center;
+  color: #323232;
+  padding: 0.2vw 0;
+}
+.lastEntry {
+  text-align: center;
+  font-size: 1vw;
+  color: #323232;
+  padding-bottom: 1vw;
+}
+.cardBottom {
+  background-color: #b7b7b776;
+  padding: 0.3vw 0.8vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1vw;
+  color: #707070;
+}
+.cardBin {
+  width: 1.8vw;
+  height: 1.8vw;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../../assets/ic_bin1.svg);
+  cursor: pointer;
+  margin: 0 0.3vw;
+}
+.cardEdit {
+  width: 1.8vw;
+  height: 1.8vw;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../../assets/ic_edit.svg);
+  cursor: pointer;
+  margin: 0 0.3vw;
+}

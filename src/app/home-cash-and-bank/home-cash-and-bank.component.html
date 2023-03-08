@@ -1,1 +1,26 @@
-<p>home-cash-and-bank works!</p>
+<div class="pageTitle">CASH & BANK</div>
+<div class="navHeader">
+  <div class="button1">PCD Tracking</div>
+  <div class="button1">Funt Transfer</div>
+  <div class="button2">+ New Account</div>
+</div>
+<div class="body">
+  <div class="card" *ngFor="let it of allBanks">
+    <div class="cardBody">
+      <div class="cardHeader">
+        <div class="accountName">{{ it.name }}</div>
+        <div class="accountLogo"></div>
+      </div>
+      <div class="balanceLabel">Balance</div>
+      <div class="balance">{{ it.balance }}</div>
+      <div class="lastEntry">Last entry: {{ it.lastEntry }}</div>
+    </div>
+    <div class="cardBottom">
+      {{ it.type }}
+      <div style="display: flex">
+        <div class="cardBin"></div>
+        <div class="cardEdit"></div>
+      </div>
+    </div>
+  </div>
+</div>
