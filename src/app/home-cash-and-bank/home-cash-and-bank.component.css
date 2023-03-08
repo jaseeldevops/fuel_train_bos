@@ -116,3 +116,102 @@
   cursor: pointer;
   margin: 0 0.3vw;
 }
+/* ///////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////// */
+
+.popup1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #3232322e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.popup1Body {
+  background-color: white;
+  width: 55vw;
+  box-shadow: 0 0 1vw rgba(0, 0, 0, 0.161);
+}
+.popup1Header {
+  font-weight: 500;
+  font-size: 1.3vw;
+  padding: 0.4vw 1vw;
+  color: #123347;
+  background-color: #e1e2e5;
+  border-bottom: 0.1vw solid #7070706a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.popup1Close {
+  width: 1.1vw;
+  height: 1.1vw;
+  cursor: pointer;
+  background-image: url(../../assets/ic_x.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.popup1Desc {
+  padding: 0.6vw 1vw;
+  font-size: 0.88vw;
+  color: #123347;
+}
+.popup1ContentBody {
+  padding: 0.8vw 0;
+}
+.popup1ContentRow {
+  display: flex;
+  justify-content: space-between;
+}
+.popup1InputLabel {
+  width: 100%;
+  margin: 0.3vw 1vw;
+  font-size: 0.8vw;
+  color: #2d4c86;
+}
+.popup1Input {
+  margin: 0 1vw;
+  margin-bottom: 1vw;
+  width: 100%;
+  border-radius: 0.3vw;
+  border: 0.1vw solid #c5c6ca;
+  color: #123347;
+  font-size: 0.88vw;
+  padding: 0.3vw;
+}
+.popup1Footer {
+  padding: 0.4vw 1vw;
+  border-top: 0.1vw solid #7070706a;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+.popup1CancelBtn {
+  font-size: 1vw;
+  padding: 0.4vw;
+  min-width: 6vw;
+  text-align: center;
+  background-color: #c6d5fb;
+  border-radius: 0.3vw;
+  color: #406ca5;
+  font-size: 400;
+  cursor: pointer;
+}
+.popup1SaveBtn {
+  background-color: #406ca5;
+  font-size: 1vw;
+  padding: 0.4vw;
+  min-width: 6vw;
+  text-align: center;
+  font-size: 400;
+  color: white;
+  border-radius: 0.3vw;
+  margin: 0 0.8vw;
+  cursor: pointer;
+}

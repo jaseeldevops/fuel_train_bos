@@ -10,6 +10,8 @@ export class HomeCashAndBankComponent implements OnInit {
   constructor() {}
 
   allBanks: any = allDummyCashAndBank;
+  addAccount: any = null;
+  addFundTransfer: any = null;
 
   ngOnInit(): void {}
 }

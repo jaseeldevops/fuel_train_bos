@@ -1,8 +1,8 @@
 <div class="pageTitle">CASH & BANK</div>
 <div class="navHeader">
   <div class="button1">PCD Tracking</div>
-  <div class="button1">Funt Transfer</div>
-  <div class="button2">+ New Account</div>
+  <div class="button1" (click)="addFundTransfer = {}">Funt Transfer</div>
+  <div class="button2" (click)="addAccount = {}">+ New Account</div>
 </div>
 <div class="body">
   <div class="card" *ngFor="let it of allBanks">
@@ -21,6 +21,107 @@
         <div class="cardBin"></div>
         <div class="cardEdit"></div>
       </div>
+    </div>
+  </div>
+</div>
+<div class="popup1" *ngIf="addAccount !== null">
+  <div class="popup1Body">
+    <div class="popup1Header">
+      New Account
+      <div class="popup1Close" (click)="addAccount = null"></div>
+    </div>
+    <div class="popup1Desc">
+      Setup a new cash or bank account here for yopur bussiness on buzzSmart
+    </div>
+    <div class="popup1ContentBody">
+      <div class="popup1ContentRow">
+        <div class="popup1InputLabel">Account type</div>
+        <div class="popup1InputLabel">Select Bank*</div>
+      </div>
+      <div class="popup1ContentRow">
+        <select class="popup1Input">
+          <option>Select account type</option>
+        </select>
+        <select class="popup1Input"></select>
+      </div>
+      <div class="popup1ContentRow">
+        <div class="popup1InputLabel">Account Holder*</div>
+        <div class="popup1InputLabel">Account Number*</div>
+      </div>
+      <div class="popup1ContentRow">
+        <input
+          class="popup1Input"
+          placeholder="Enter account holder name here"
+        />
+        <input class="popup1Input" placeholder="Enter account number here" />
+      </div>
+      <div class="popup1ContentRow">
+        <div class="popup1InputLabel">Branch*</div>
+        <div class="popup1InputLabel">IBAN/IFSC*</div>
+        <div class="popup1InputLabel">Account Balance</div>
+        <div class="popup1InputLabel">As On</div>
+      </div>
+      <div class="popup1ContentRow">
+        <input class="popup1Input" />
+        <input class="popup1Input" placeholder="Enter IFSC/IBAN" />
+        <input class="popup1Input" placeholder="0.00" type="number" />
+        <input class="popup1Input" type="date" />
+      </div>
+    </div>
+    <div class="popup1Footer">
+      <div class="popup1CancelBtn" (click)="addAccount = null">CANCEL</div>
+      <div class="popup1SaveBtn">SAVE</div>
+    </div>
+  </div>
+</div>
+<div class="popup1" *ngIf="addFundTransfer !== null">
+  <div class="popup1Body">
+    <div class="popup1Header">
+      Transfer Money
+      <div class="popup1Close" (click)="addFundTransfer = null"></div>
+    </div>
+    <div class="popup1Desc">
+      Record the transfer of money between your bank and cash or credit
+      accounts.
+    </div>
+    <div class="popup1ContentBody">
+      <div class="popup1ContentRow">
+        <div class="popup1InputLabel">Paid from Account*</div>
+        <div class="popup1InputLabel">Paid into Account*</div>
+      </div>
+      <div class="popup1ContentRow">
+        <select class="popup1Input">
+          <option>Select account type</option>
+        </select>
+        <select class="popup1Input"></select>
+      </div>
+      <div class="popup1ContentRow">
+        <div class="popup1InputLabel">Amount Transferred*</div>
+        <div class="popup1InputLabel">Transfer Method*</div>
+        <div class="popup1InputLabel">As On</div>
+        <div class="popup1InputLabel"></div>
+      </div>
+      <div class="popup1ContentRow">
+        <input class="popup1Input" />
+        <input class="popup1Input" placeholder="Enter IFSC/IBAN" />
+        <input class="popup1Input" type="date" />
+        <div style="width: 100%; margin: 0 1.5vw"></div>
+      </div>
+      <div class="popup1ContentRow">
+        <div class="popup1InputLabel">Reference</div>
+        <div class="popup1InputLabel">Description</div>
+      </div>
+      <div class="popup1ContentRow">
+        <input
+          class="popup1Input"
+          placeholder="Enter account holder name here"
+        />
+        <input class="popup1Input" placeholder="Enter account number here" />
+      </div>
+    </div>
+    <div class="popup1Footer">
+      <div class="popup1CancelBtn" (click)="addFundTransfer = null">CANCEL</div>
+      <div class="popup1SaveBtn">SAVE</div>
     </div>
   </div>
 </div>
