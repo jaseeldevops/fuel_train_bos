@@ -4,6 +4,17 @@
   padding: 0.5vw 1vw;
   font-size: 1.4vw;
   font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+.arrowBack {
+  width: 1.2vw;
+  height: 1.2vw;
+  background-size: contain;
+  background-image: url(../../assets/ic_arrow1.svg);
+  background-position: center;
+  cursor: pointer;
+  margin-right: 0.6vw;
 }
 .navHeader {
   display: flex;
@@ -68,6 +79,9 @@
   font-weight: 500;
 }
 .accountLogo {
+  height: 2vw;
+  width: 2vw;
+  object-fit: contain;
 }
 .balanceLabel {
   text-align: center;
@@ -215,3 +229,84 @@
   margin: 0 0.8vw;
   cursor: pointer;
 }
+/* ////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////// */
+.tableNavBar {
+  height: 3.2vw;
+  border-bottom: 0.1vw solid #7070705d;
+  display: flex;
+  align-items: flex-end;
+}
+.tableNavBarEach,
+.tableNavBarEach_ {
+  color: #888888;
+  font-size: 1vw;
+  padding: 0 0.3vw;
+  cursor: pointer;
+  text-align: center;
+}
+.tableNavBarEach_ {
+  color: #00649e;
+}
+.tableNavBarEachBottonLine,
+.tableNavBarEachBottonLine_ {
+  height: 0.3vw;
+  border-top-left-radius: 0.5vw;
+  border-top-right-radius: 0.5vw;
+  margin-top: 0.6vw;
+  min-width: 5.5vw;
+}
+.tableNavBarEachBottonLine_ {
+  background-color: #069bf2;
+}
+.tableBody {
+  height: calc(100vh - 14vw);
+  background-color: white;
+}
+.tableBody .table {
+  font-size: 1vw;
+  padding: 0.5vw 1.5vw;
+  height: 100%;
+  box-sizing: border-box;
+}
+.tableBody .header {
+  color: #3f6ca5;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5vw;
+  border-bottom: 0.08vw solid #dddfe1;
+}
+.tableBody .contentBody {
+  height: calc(96.53%);
+  overflow: auto;
+}
+.tableBody .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5vw;
+}
+.tableBody .row:nth-child(even) {
+  background-color: #f3f6f9;
+}
+.tableBody .content {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.actionArrow {
+  width: 1.2vw;
+  height: 1.2vw;
+  background-image: url(../../assets/ic_arrow.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  margin-left: 1vw;
+  cursor: pointer;
+}
+/* ///////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////// */

@@ -1,42 +1,249 @@
-<div class="pageTitle">CASH & BANK</div>
-<div class="navHeader">
-  <div class="button1">PCD Tracking</div>
-  <div class="button1" (click)="addFundTransfer = {}">Funt Transfer</div>
-  <div class="button2" (click)="addAccount = {}">+ New Account</div>
-</div>
-<div class="body">
-  <div class="card" *ngFor="let it of allBanks">
-    <div class="cardBody">
-      <div class="cardHeader">
-        <div class="accountName">{{ it.name }}</div>
-        <div class="accountLogo"></div>
-      </div>
-      <div class="balanceLabel">Balance</div>
-      <div class="balance">{{ it.balance }}</div>
-      <div class="lastEntry">Last entry: {{ it.lastEntry }}</div>
+<div *ngIf="chequeList !== null">
+  <div class="pageTitle">
+    <div class="arrowBack" (click)="chequeList = null"></div>
+    CHEQUE LIST
+  </div>
+  <div class="tableNavBar">
+    <div
+      [ngClass]="chequeListPage === 0 ? 'tableNavBarEach_' : 'tableNavBarEach'"
+      (click)="onclickAllcheck()"
+    >
+      All Cheques
+      <div
+        [ngClass]="
+          chequeListPage === 0
+            ? 'tableNavBarEachBottonLine_'
+            : 'tableNavBarEachBottonLine'
+        "
+      ></div>
     </div>
-    <div class="cardBottom">
-      {{ it.type }}
-      <div style="display: flex">
-        <div class="cardBin"></div>
-        <div class="cardEdit"></div>
+    <div
+      [ngClass]="chequeListPage === 1 ? 'tableNavBarEach_' : 'tableNavBarEach'"
+      (click)="onclickOutward()"
+    >
+      Outward
+      <div
+        [ngClass]="
+          chequeListPage === 1
+            ? 'tableNavBarEachBottonLine_'
+            : 'tableNavBarEachBottonLine'
+        "
+      ></div>
+    </div>
+    <div
+      [ngClass]="chequeListPage === 2 ? 'tableNavBarEach_' : 'tableNavBarEach'"
+      (click)="onclickInward()"
+    >
+      Inward
+      <div
+        [ngClass]="
+          chequeListPage === 2
+            ? 'tableNavBarEachBottonLine_'
+            : 'tableNavBarEachBottonLine'
+        "
+      ></div>
+    </div>
+  </div>
+  <div class="tableBody">
+    <div class="table">
+      <div class="header">
+        <div style="width: 6%"></div>
+        <div style="width: 20%">PARTY NAME</div>
+        <div style="width: 10%">DUE DATE #</div>
+        <div style="width: 12%">BANK ACCOUNT</div>
+        <div style="width: 10%">PHONE NUMBER</div>
+        <div style="width: 10%">TRANSACTION</div>
+        <div style="width: 10%">REFERENCE</div>
+        <div style="width: 10%">AMOUNT</div>
+        <div style="width: 8%">ACTIONS</div>
+      </div>
+      <div class="contentBody">
+        <div class="row" *ngFor="let it of chequeList?.content ?? []">
+          <div class="content" style="width: 6%; padding-left: 1vw">
+            <img
+              [src]="
+                it?.transaction === 'Outward'
+                  ? '../../assets/ic_outward.svg'
+                  : '../../assets/ic_inward.svg'
+              "
+              style="object-fit: contain; height: 3vw"
+            />
+          </div>
+          <div class="content" style="width: 20%">
+            {{ it.patryName }}
+            <div style="color: #595d68a2">{{ it?.transaction }}</div>
+          </div>
+          <div class="content" style="width: 10%">{{ it.dueDate }}</div>
+          <div class="content" style="width: 12%">{{ it.bankAccount }}</div>
+          <div class="content" style="width: 10%">{{ it.phoneNumber }}</div>
+          <div class="content" style="width: 10%">{{ it.transactionId }}</div>
+          <div class="content" style="width: 10%">{{ it.reference }}</div>
+          <div class="content" style="width: 10%">{{ it.amount }}</div>
+          <div class="content" style="width: 8%">
+            <div class="actionArrow" (click)="onClickCheque(it.id)"></div>
+          </div>
+        </div>
+      </div>
+      <app-table-paging [paging]="chequeList?.paging"></app-table-paging>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////// -->
+<div *ngIf="chequeList === null">
+  <div class="pageTitle">CASH & BANK</div>
+  <div class="navHeader">
+    <div class="button1" (click)="onclickAllcheck()">PCD Tracking</div>
+    <div class="button1" (click)="addFundTransfer = {}">Funt Transfer</div>
+    <div class="button2" (click)="addAccount = {}">+ New Account</div>
+  </div>
+  <div class="body">
+    <div class="card" *ngFor="let it of allBanks">
+      <div class="cardBody">
+        <div class="cardHeader">
+          <div class="accountName">{{ it.name }}</div>
+          <img class="accountLogo" [src]="it.logo" />
+        </div>
+        <div class="balanceLabel">Balance</div>
+        <div class="balance">{{ it.balance }}</div>
+        <div class="lastEntry">Last entry: {{ it.lastEntry }}</div>
+      </div>
+      <div class="cardBottom">
+        {{ it.type }}
+        <div style="display: flex">
+          <div class="cardBin"></div>
+          <div class="cardEdit"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="popup1" *ngIf="addAccount !== null">
+    <div class="popup1Body">
+      <div class="popup1Header">
+        New Account
+        <div class="popup1Close" (click)="addAccount = null"></div>
+      </div>
+      <div class="popup1Desc">
+        Setup a new cash or bank account here for yopur bussiness on buzzSmart
+      </div>
+      <div class="popup1ContentBody">
+        <div class="popup1ContentRow">
+          <div class="popup1InputLabel">Account type</div>
+          <div class="popup1InputLabel">Select Bank*</div>
+        </div>
+        <div class="popup1ContentRow">
+          <select class="popup1Input">
+            <option>Select account type</option>
+          </select>
+          <select class="popup1Input"></select>
+        </div>
+        <div class="popup1ContentRow">
+          <div class="popup1InputLabel">Account Holder*</div>
+          <div class="popup1InputLabel">Account Number*</div>
+        </div>
+        <div class="popup1ContentRow">
+          <input
+            class="popup1Input"
+            placeholder="Enter account holder name here"
+          />
+          <input class="popup1Input" placeholder="Enter account number here" />
+        </div>
+        <div class="popup1ContentRow">
+          <div class="popup1InputLabel">Branch*</div>
+          <div class="popup1InputLabel">IBAN/IFSC*</div>
+          <div class="popup1InputLabel">Account Balance</div>
+          <div class="popup1InputLabel">As On</div>
+        </div>
+        <div class="popup1ContentRow">
+          <input class="popup1Input" />
+          <input class="popup1Input" placeholder="Enter IFSC/IBAN" />
+          <input class="popup1Input" placeholder="0.00" type="number" />
+          <input class="popup1Input" type="date" />
+        </div>
+      </div>
+      <div class="popup1Footer">
+        <div class="popup1CancelBtn" (click)="addAccount = null">CANCEL</div>
+        <div class="popup1SaveBtn" (click)="onClickSaveNewAccount()">SAVE</div>
+      </div>
+    </div>
+  </div>
+  <div class="popup1" *ngIf="addFundTransfer !== null">
+    <div class="popup1Body">
+      <div class="popup1Header">
+        Transfer Money
+        <div class="popup1Close" (click)="addFundTransfer = null"></div>
+      </div>
+      <div class="popup1Desc">
+        Record the transfer of money between your bank and cash or credit
+        accounts.
+      </div>
+      <div class="popup1ContentBody">
+        <div class="popup1ContentRow">
+          <div class="popup1InputLabel">Paid from Account*</div>
+          <div class="popup1InputLabel">Paid into Account*</div>
+        </div>
+        <div class="popup1ContentRow">
+          <select class="popup1Input">
+            <option>Select account type</option>
+          </select>
+          <select class="popup1Input"></select>
+        </div>
+        <div class="popup1ContentRow">
+          <div class="popup1InputLabel">Amount Transferred*</div>
+          <div class="popup1InputLabel">Transfer Method*</div>
+          <div class="popup1InputLabel">As On</div>
+          <div class="popup1InputLabel"></div>
+        </div>
+        <div class="popup1ContentRow">
+          <input class="popup1Input" />
+          <input class="popup1Input" placeholder="Enter IFSC/IBAN" />
+          <input class="popup1Input" type="date" />
+          <div style="width: 100%; margin: 0 1.5vw"></div>
+        </div>
+        <div class="popup1ContentRow">
+          <div class="popup1InputLabel">Reference</div>
+          <div class="popup1InputLabel">Description</div>
+        </div>
+        <div class="popup1ContentRow">
+          <input
+            class="popup1Input"
+            placeholder="Enter account holder name here"
+          />
+          <input class="popup1Input" placeholder="Enter account number here" />
+        </div>
+      </div>
+      <div class="popup1Footer">
+        <div class="popup1CancelBtn" (click)="addFundTransfer = null">
+          CANCEL
+        </div>
+        <div class="popup1SaveBtn" (click)="onClickSaveFundTransfer()">
+          SAVE
+        </div>
       </div>
     </div>
   </div>
 </div>
-<div class="popup1" *ngIf="addAccount !== null">
+<!-- ////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////// -->
+<div class="popup1" *ngIf="selectedCheque !== null">
   <div class="popup1Body">
     <div class="popup1Header">
-      New Account
-      <div class="popup1Close" (click)="addAccount = null"></div>
+      Conquer Technologies
+      <div class="popup1Close" (click)="selectedCheque = null"></div>
     </div>
-    <div class="popup1Desc">
-      Setup a new cash or bank account here for yopur bussiness on buzzSmart
-    </div>
+    <div class="popup1Desc">Update cheque status</div>
     <div class="popup1ContentBody">
       <div class="popup1ContentRow">
-        <div class="popup1InputLabel">Account type</div>
-        <div class="popup1InputLabel">Select Bank*</div>
+        <div class="popup1InputLabel">Bank Account</div>
+        <div class="popup1InputLabel">Party Name</div>
       </div>
       <div class="popup1ContentRow">
         <select class="popup1Input">
@@ -45,83 +252,34 @@
         <select class="popup1Input"></select>
       </div>
       <div class="popup1ContentRow">
-        <div class="popup1InputLabel">Account Holder*</div>
-        <div class="popup1InputLabel">Account Number*</div>
+        <div style="display: flex; margin: 0; width: 112%">
+          <div class="popup1InputLabel">Cheque Amount</div>
+          <div class="popup1InputLabel">Date</div>
+        </div>
+        <div class="popup1InputLabel">Payment Note</div>
       </div>
       <div class="popup1ContentRow">
+        <div style="display: flex; margin: 0; width: 112%">
+          <input class="popup1Input" />
+          <input class="popup1Input" type="date" />
+        </div>
         <input
           class="popup1Input"
-          placeholder="Enter account holder name here"
+          placeholder="Enter the description for this transaction"
         />
-        <input class="popup1Input" placeholder="Enter account number here" />
       </div>
       <div class="popup1ContentRow">
-        <div class="popup1InputLabel">Branch*</div>
-        <div class="popup1InputLabel">IBAN/IFSC*</div>
-        <div class="popup1InputLabel">Account Balance</div>
-        <div class="popup1InputLabel">As On</div>
-      </div>
-      <div class="popup1ContentRow">
-        <input class="popup1Input" />
-        <input class="popup1Input" placeholder="Enter IFSC/IBAN" />
-        <input class="popup1Input" placeholder="0.00" type="number" />
-        <input class="popup1Input" type="date" />
-      </div>
-    </div>
-    <div class="popup1Footer">
-      <div class="popup1CancelBtn" (click)="addAccount = null">CANCEL</div>
-      <div class="popup1SaveBtn">SAVE</div>
-    </div>
-  </div>
-</div>
-<div class="popup1" *ngIf="addFundTransfer !== null">
-  <div class="popup1Body">
-    <div class="popup1Header">
-      Transfer Money
-      <div class="popup1Close" (click)="addFundTransfer = null"></div>
-    </div>
-    <div class="popup1Desc">
-      Record the transfer of money between your bank and cash or credit
-      accounts.
-    </div>
-    <div class="popup1ContentBody">
-      <div class="popup1ContentRow">
-        <div class="popup1InputLabel">Paid from Account*</div>
-        <div class="popup1InputLabel">Paid into Account*</div>
-      </div>
-      <div class="popup1ContentRow">
-        <select class="popup1Input">
-          <option>Select account type</option>
-        </select>
-        <select class="popup1Input"></select>
-      </div>
-      <div class="popup1ContentRow">
-        <div class="popup1InputLabel">Amount Transferred*</div>
-        <div class="popup1InputLabel">Transfer Method*</div>
-        <div class="popup1InputLabel">As On</div>
+        <div class="popup1InputLabel">Action</div>
         <div class="popup1InputLabel"></div>
       </div>
       <div class="popup1ContentRow">
-        <input class="popup1Input" />
-        <input class="popup1Input" placeholder="Enter IFSC/IBAN" />
-        <input class="popup1Input" type="date" />
-        <div style="width: 100%; margin: 0 1.5vw"></div>
-      </div>
-      <div class="popup1ContentRow">
-        <div class="popup1InputLabel">Reference</div>
-        <div class="popup1InputLabel">Description</div>
-      </div>
-      <div class="popup1ContentRow">
-        <input
-          class="popup1Input"
-          placeholder="Enter account holder name here"
-        />
-        <input class="popup1Input" placeholder="Enter account number here" />
+        <select class="popup1Input"></select>
+        <div class="popup1InputLabel"></div>
       </div>
     </div>
     <div class="popup1Footer">
-      <div class="popup1CancelBtn" (click)="addFundTransfer = null">CANCEL</div>
-      <div class="popup1SaveBtn">SAVE</div>
+      <div class="popup1CancelBtn" (click)="selectedCheque = null">CANCEL</div>
+      <div class="popup1SaveBtn" (click)="onClickSaveCheque()">SAVE</div>
     </div>
   </div>
 </div>

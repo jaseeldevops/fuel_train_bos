@@ -3,13 +3,12 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-home-calender',
   templateUrl: './home-calender.component.html',
-  styleUrls: ['./home-calender.component.css']
+  styleUrls: ['./home-calender.component.css'],
 })
 export class HomeCalenderComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  days = ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'];
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

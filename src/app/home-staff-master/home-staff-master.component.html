@@ -1,4 +1,28 @@
-<app-nav-page  [type]="'nav'"></app-nav-page>
+<div class="pageTitle">STAFF MASTER</div>
+<div class="tableNavBar">
+  <div
+    [ngClass]="page === 0 ? 'tableNavBarEach_' : 'tableNavBarEach'"
+    (click)="onclickAllStaffMaster()"
+  >
+    Staff Master
+    <div
+      [ngClass]="
+        page === 0 ? 'tableNavBarEachBottonLine_' : 'tableNavBarEachBottonLine'
+      "
+    ></div>
+  </div>
+  <div
+    [ngClass]="page === 1 ? 'tableNavBarEach_' : 'tableNavBarEach'"
+    (click)="onclickAllSalaryMaster()"
+  >
+    Salary Master
+    <div
+      [ngClass]="
+        page === 1 ? 'tableNavBarEachBottonLine_' : 'tableNavBarEachBottonLine'
+      "
+    ></div>
+  </div>
+</div>
 <div class="tableBody">
   <div class="table">
     <div class="header">
