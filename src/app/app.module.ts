@@ -33,6 +33,8 @@ import { HomePurchaseComponent } from './home-purchase/home-purchase.component';
 import { HomeExpensesComponent } from './home-expenses/home-expenses.component';
 import { HomeStaffMasterComponent } from './home-staff-master/home-staff-master.component';
 import { HomeInventoryComponent } from './home-inventory/home-inventory.component';
+import { CStoreComponent } from './home-dashboard/c-store/c-store.component';
+import { ForecortComponent } from './home-dashboard/forecort/forecort.component';
 
 @NgModule({
   declarations: [
@@ -63,6 +65,8 @@ import { HomeInventoryComponent } from './home-inventory/home-inventory.componen
     HomeExpensesComponent,
     HomeStaffMasterComponent,
     HomeInventoryComponent,
+    CStoreComponent,
+    ForecortComponent,
   ],
   imports: [
     BrowserModule,

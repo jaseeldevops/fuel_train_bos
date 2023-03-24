@@ -1,0 +1,175 @@
+<div class="body">
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////////   RIGHT SIDE   /////////////////////////////// -->
+  <div class="col1">
+    <div class="col1_row1">
+      <div class="col1_row1_card">
+        <div class="col1_row1_card_icon"></div>
+        <div class="col1_row1_card_content">
+          <div class="col1_row1_card_title">Today Sale</div>
+          <div class="col1_row1_card_value">8,26,312,50</div>
+        </div>
+      </div>
+      <div class="col1_row1_card">
+        <div class="col1_row1_card_icon_1"></div>
+        <div class="col1_row1_card_content">
+          <div class="col1_row1_card_title">Walk in Customers</div>
+          <div class="col1_row1_card_value">8,26,312,50</div>
+        </div>
+      </div>
+      <div class="col1_row1_card">
+        <div class="col1_row1_card_icon_2"></div>
+        <div class="col1_row1_card_content">
+          <div class="col1_row1_card_title">Avg Units</div>
+          <div class="col1_row1_card_value">8,26,312,50</div>
+        </div>
+      </div>
+      <div class="col1_row1_card">
+        <div class="col1_row1_card_icon_3"></div>
+        <div class="col1_row1_card_content">
+          <div class="col1_row1_card_title">Avg Tran Value</div>
+          <div class="col1_row1_card_value">8,26,312,50</div>
+        </div>
+      </div>
+    </div>
+    <div class="col1_row2">
+      <div class="title1">Sales Performing (Revenue Vs Transactions)</div>
+    </div>
+    <div class="col1_row3">
+      <div class="title1">Total Customers & Visitors</div>
+    </div>
+    <div class="col1_row4">
+      <div class="title1">Category wise sales value and volume</div>
+    </div>
+    <div class="col1_row5">
+      <div class="title1">Category wise stock</div>
+      <div class="vrBarGraph">
+        <div class="vrBarGraphBg">
+          <div class="vrBarGraphRow">
+            <div class="vrBarGraphRow"></div>
+            <div class="vrBarGraphRow"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////////   RIGHT SIDE   /////////////////////////////// -->
+  <div class="col2">
+    <div class="col2_row1">
+      <div class="col2_row1_card">
+        <div class="co21_row1_card_icon"></div>
+        <div class="col1_2ow1_card_content">
+          <div class="col2_row1_card_title">Total Customers</div>
+          <div class="col2_row1_card_value">5124</div>
+        </div>
+      </div>
+      <div class="col2_row1_card">
+        <div class="co21_row1_card_icon_1"></div>
+        <div class="col1_2ow1_card_content">
+          <div class="col2_row1_card_title">Reg Customer</div>
+          <div class="col2_row1_card_value">5124</div>
+        </div>
+      </div>
+      <div class="col2_row1_card">
+        <div class="co21_row1_card_icon_2"></div>
+        <div class="col1_2ow1_card_content">
+          <div class="col2_row1_card_title">Returned Customer</div>
+          <div class="col2_row1_card_value">5124</div>
+        </div>
+      </div>
+    </div>
+    <div class="col2_row2">
+      <div class="col2_row2_card">
+        <div class="title1">MOP wise sales</div>
+        <div class="pieChart">
+          <div *ngFor="let it of mopWiseSale; index as k">
+            <div
+              class="pieChartLine"
+              *ngFor="let it1 of makeArryForPie(mopWiseSale, k)"
+              [ngStyle]="{
+                transform: 'rotate(' + it1.v + 'deg)',
+                width: k === pieChardSelected ? '3.8vw' : ''
+              }"
+            >
+              <div
+                class="pieChartValue"
+                (mouseenter)="pieChardSelected = k"
+                [ngStyle]="{
+                  background: it1.c,
+                  width: k === pieChardSelected ? '1.5vw' : ''
+                }"
+              ></div>
+            </div>
+          </div>
+          <div class="pieChartSelectedValue">
+            {{ mopWiseSale[pieChardSelected].value }}%<br />{{
+              mopWiseSale[pieChardSelected].title
+            }}
+          </div>
+        </div>
+        <div class="pieChartValues">
+          <div
+            *ngFor="let it of mopWiseSale"
+            style="display: flex; align-items: center"
+          >
+            <div class="pieChartValueTitle">CASH</div>
+            <div
+              class="pieChartValueColor"
+              [ngStyle]="{ background: it.color }"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div class="col2_row2_card">
+        <div class="title1">Purchase status</div>
+        <div class="hrBarGraph">
+          <div class="bar">
+            <div class="valuBar"></div>
+          </div>
+          <div class="valueContainer">
+            <div class="value">35.2%</div>
+            <div class="title">Paid</div>
+          </div>
+        </div>
+        <div class="hrBarGraph">
+          <div class="bar">
+            <div class="valuBar"></div>
+          </div>
+          <div class="valueContainer">
+            <div class="value">35.2%</div>
+            <div class="title">Paid</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col2_row3">
+      <div class="title1">Low Stock Items</div>
+      <div class="prodectList">
+        <div class="eachProdect" *ngFor="let it of [1, 1, 1, 1, 1, 1]">
+          <div class="prodectImage"></div>
+          <div class="prodectName">I Phone 13 Pro Max 128GB</div>
+          <div class="prodectStatus">3 PCS</div>
+        </div>
+      </div>
+    </div>
+    <div class="col2_row4">
+      <div class="title1">Trending Items</div>
+      <div class="prodectList">
+        <div class="eachProdect" *ngFor="let it of [1, 1, 1, 1, 1, 1]">
+          <div class="prodectImage"></div>
+          <div class="prodectName">I Phone 13 Pro Max 128GB</div>
+          <div class="prodectStatus">3 PCS</div>
+        </div>
+      </div>
+    </div>
+    <br />
+  </div>
+</div>
