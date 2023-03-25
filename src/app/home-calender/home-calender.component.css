@@ -12,3 +12,398 @@
 /* //////////////////////////      TABLE      //////////////////////// */
 /* /////////////////////////////////////////////////////////////////// */
 /* /////////////////////////////////////////////////////////////////// */
+.body {
+  height: calc(100vh - 6.3vw);
+  overflow: scroll;
+  padding: 0.8vw 1.5vw;
+}
+.bodyHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.bodyTitle {
+  font-size: 1.5vw;
+  font-weight: 500;
+}
+.bodyTitleDesc {
+  font-size: 1vw;
+}
+.monthChangeButton {
+  display: flex;
+}
+.monthPrevButton,
+.monthNextButton {
+  width: 1.6vw;
+  height: 2.2vw;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-image: url(../../assets/calender/arrowLeft.svg);
+  cursor: pointer;
+}
+.monthNextButton {
+  margin-left: 0.4vw;
+  background-image: url(../../assets/calender/arrowRight.svg);
+}
+/* ///////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////// */
+.calenderAll {
+  width: 100%;
+  margin-top: 0.8vw;
+  border-radius: 1vw;
+  background-color: white;
+  box-shadow: 0 0 1vw #00000034;
+}
+.calenderHeader {
+  height: 3vw;
+  display: flex;
+  align-items: center;
+  font-size: 1vw;
+  font-weight: 500;
+  text-align: center;
+  border-top-left-radius: 1vw;
+  border-top-right-radius: 1vw;
+  background-color: #c6d5fb;
+}
+.calenderHeaderEach {
+  width: 100%;
+}
+.calenderBody {
+  display: flex;
+  flex-wrap: wrap;
+}
+.calenderCell {
+  height: 8vw;
+  width: calc(100% / 7);
+  padding: 0.2vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+  border: 0.05vw solid #70707072;
+  cursor: pointer;
+}
+.calenderCell:nth-child(7n) {
+  border-right-color: transparent;
+}
+.calenderCell:nth-child(7n + 1) {
+  border-left-color: transparent;
+}
+.calenderCell:nth-child(n + 36) {
+  border-bottom-color: transparent;
+}
+.calenderDay {
+  min-width: 1.8vw;
+  font-size: 1vw;
+  text-align: center;
+  font-weight: 500;
+  padding: 0.3vw 0;
+  border-radius: 50%;
+  margin-right: 0.6vw;
+  margin-top: 0.1vw;
+}
+.CalenderEvent {
+  height: 1.6vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.25vw 0;
+  margin-right: 2.5vw;
+  border-radius: 0.3vw;
+  background-color: #f1ebfb;
+  border-left: 0.4vw solid #8145b1;
+  padding: 0 0.5vw;
+  font-size: 0.7vw;
+}
+
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////// */
+.drower {
+  transition: 0.5s;
+  right: -100vw;
+  position: fixed;
+  top: 0vw;
+  bottom: 0vw;
+  width: 45vw;
+  background-color: transparent;
+}
+.drower_ {
+  transition: 0.5s;
+  right: 0vw;
+  position: fixed;
+  top: 0vw;
+  bottom: 0vw;
+  width: 45vw;
+  background-color: white;
+}
+.drowerBg,
+.drowerBg_ {
+  right: -100vw;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100vw;
+  background-color: transparent;
+}
+.drowerBg_ {
+  transition: background-color 1s;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+.drowerHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.7vw 0.97vw;
+  border-bottom: 0.08vw solid #d7dadd;
+}
+.drowerHeadera {
+  font-weight: bold;
+  font-size: 1.4vw;
+  padding-bottom: 0vw;
+  color: #123347;
+}
+.drowerHeaderb {
+  width: 2vw;
+  height: 2vw;
+  background-image: url(../../assets/ic_x.svg);
+  background-repeat: no-repeat;
+  background-size: 1vw;
+  background-position: center;
+  cursor: pointer;
+}
+.drowerHeaderb:hover {
+  border-radius: 50%;
+  background-color: #00000010;
+}
+/* ///////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////// */
+.drowerBody {
+  height: calc(100vh - 7vw);
+  overflow: auto;
+}
+.hclGaBa {
+  display: flex;
+}
+.hclGaBaA {
+  display: flex;
+  align-items: center;
+  height: 3.59vw;
+  max-width: 15.63vw;
+  padding: 0vw 0.97vw;
+  color: #31363f;
+  background-color: #e7edfd;
+  margin-top: 0.63vw;
+  margin-left: 0.63vw;
+  border-radius: 0.22vw;
+}
+.hclGaBaB {
+  height: 3vw;
+  width: 3vw;
+  border-radius: 50%;
+  margin-right: 0.8vw;
+}
+.hclGaBaD {
+  font-size: 1.13vw;
+  font-weight: 500;
+}
+.hclGaBaE {
+  font-size: 0.75vw;
+}
+/* ///////////////////////////////////////////////////////////////// */
+.hclGaBb {
+  margin-top: 0.5vw;
+  padding: 0.45vw 0.97vw;
+  font-size: 0.95vw;
+  background-color: #c6d5fb;
+}
+.hclGaBc {
+  color: #333333;
+  font-size: 0.88vw;
+  height: 2.19vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0vw 0.97vw;
+}
+.hclGaBcA {
+  width: 40%;
+}
+.hclGaBcB {
+  width: 10%;
+}
+.hclGaBcC {
+  width: 18%;
+}
+.hclGaBcD {
+  width: 12%;
+}
+.hclGaBcE {
+  width: 15%;
+  text-align: end;
+}
+.hclGaBd {
+  font-size: 0.88vw;
+  height: 2.81vw;
+  display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0vw 0.97vw;
+}
+.hclGaBd:nth-child(even) {
+  background-color: #f3f6f6;
+}
+.hclGaBdA {
+  color: #2d4c86;
+}
+.hclGaBdB {
+  color: #615f5f;
+}
+.hclGaBdC {
+  color: #2d4c86;
+}
+.hclGaBdD {
+  color: #615f5f;
+}
+.hclGaBdE {
+  color: #615f5f;
+}
+/* ///////////////////////////////////////////////////////////////// */
+.hclGaBe {
+  border-top: 0.03vw solid #dcdbdb;
+  padding-top: 1vw;
+  padding-bottom: 2vw;
+  padding-right: 0.45vw;
+  display: flex;
+  justify-content: flex-end;
+}
+.hclGaBeA {
+  background-color: #eaf6f4;
+  padding: 0.45vw;
+  width: 70%;
+  border-radius: 0.22vw;
+  display: flex;
+  justify-content: space-between;
+}
+.hclGaBeB {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+.hclGaBeC {
+  font-size: 0.88vw;
+  color: #999999;
+  font-weight: 500;
+  padding-bottom: 0.1vw;
+}
+.hclGaBeD {
+  font-size: 1.25vw;
+  color: #17191e;
+  font-weight: bold;
+}
+.hclGaBeD_ {
+  font-size: 1.25vw;
+  color: #127704;
+  font-weight: bold;
+}
+/* ///////////////////////////////////////////////////////////////// */
+.hclGaBg {
+  color: #333333;
+  font-size: 0.88vw;
+  height: 2.19vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0vw 0.97vw;
+}
+.hclGaBgA {
+  width: 30%;
+}
+.hclGaBgB {
+  width: 15%;
+}
+.hclGaBgC {
+  width: 15%;
+}
+.hclGaBgD {
+  width: 15%;
+}
+.hclGaBgE {
+  width: 15%;
+}
+.hclGaBh {
+  font-size: 0.88vw;
+  height: 2.81vw;
+  display: flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0vw 0.97vw;
+}
+.hclGaBh:nth-child(even) {
+  background-color: #f3f6f6;
+}
+.hclGaBhA {
+  color: #2d4c86;
+}
+.hclGaBhB {
+  color: #615f5f;
+}
+.hclGaBhC {
+  color: #615f5f;
+}
+.hclGaBhD {
+  color: #2d4c86;
+}
+.hclGaBhE {
+  color: #615f5f;
+}
+.hclGaBi {
+  display: flex;
+  justify-content: flex-end;
+}
+.hclGaBiA {
+  padding: 0.45vw;
+  margin-top: 1vw;
+  margin-right: 0.45vw;
+  margin-bottom: 2vw;
+  border-radius: 0.22vw;
+  min-width: 35%;
+  background-color: #f9eee8;
+  text-align: end;
+}
+.hclGaBiB {
+  font-size: 0.88vw;
+  color: #999999;
+  font-weight: 500;
+  padding-bottom: 0.1vw;
+}
+.hclGaBiC {
+  font-size: 1.25vw;
+  color: #e73535;
+  font-weight: 500;
+}
+/* ///////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////// */
+.drowerFooter {
+  display: flex;
+  justify-content: end;
+  border-top: 0.03vw solid #dcdbdb;
+}
+.drowerFooterOk {
+  background-color: #2d4c86;
+  color: white;
+  padding: 0.56vw 2.53vw;
+  font-size: 0.88vw;
+  margin-right: 1.66vw;
+  margin-top: 0.84vw;
+  border-radius: 0.19vw;
+}
