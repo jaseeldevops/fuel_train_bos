@@ -43,15 +43,87 @@
     </div>
     <div class="col1_row4">
       <div class="title1">Category wise sales value and volume</div>
+      <div class="vrBarGraph">
+        <div class="vrBarGraphBg">
+          <div class="vrBarGraphRow">
+            <div class="vrBarGraphRowValue">18000</div>
+            <div class="vrBarGraphRowLine"></div>
+          </div>
+          <div class="vrBarGraphRow">
+            <div class="vrBarGraphRowValue">12000</div>
+            <div class="vrBarGraphRowLine"></div>
+          </div>
+          <div class="vrBarGraphRow">
+            <div class="vrBarGraphRowValue">6000</div>
+            <div class="vrBarGraphRowLine"></div>
+          </div>
+          <div class="vrBarGraphRow">
+            <div class="vrBarGraphRowValue">0</div>
+            <div class="vrBarGraphRowLine"></div>
+          </div>
+        </div>
+        <div class="vrBarGraphContent">
+          <div
+            class="vrBarGraphContentEach"
+            *ngFor="let it of catogoryWaysSales"
+          >
+            <div
+              class="vrBarGraphContentBar"
+              [ngStyle]="{ height: it.value + '%', width: '1vw' }"
+            ></div>
+          </div>
+        </div>
+      </div>
+      <div class="vrBarGraphHrValues">
+        <div class="vrBarGraphHrValueEach" *ngFor="let it of catogoryWaysSales">
+          {{ it?.title }}
+        </div>
+      </div>
     </div>
     <div class="col1_row5">
       <div class="title1">Category wise stock</div>
       <div class="vrBarGraph">
         <div class="vrBarGraphBg">
           <div class="vrBarGraphRow">
-            <div class="vrBarGraphRow"></div>
-            <div class="vrBarGraphRow"></div>
+            <div class="vrBarGraphRowValue">18000</div>
+            <div class="vrBarGraphRowLine"></div>
           </div>
+          <div class="vrBarGraphRow">
+            <div class="vrBarGraphRowValue">12000</div>
+            <div class="vrBarGraphRowLine"></div>
+          </div>
+          <div class="vrBarGraphRow">
+            <div class="vrBarGraphRowValue">6000</div>
+            <div class="vrBarGraphRowLine"></div>
+          </div>
+          <div class="vrBarGraphRow">
+            <div class="vrBarGraphRowValue">0</div>
+            <div class="vrBarGraphRowLine"></div>
+          </div>
+        </div>
+        <div class="vrBarGraphContent">
+          <div
+            class="vrBarGraphContentEach"
+            *ngFor="let it of catogoryWaysStocks"
+          >
+            <div
+              class="vrBarGraphContentBar"
+              [ngStyle]="{ height: it.value + '%', background: it.color }"
+            >
+              <div
+                class="vrBarGraphContentBarIn"
+                [ngStyle]="{ height: it.valueIn + '%', background: it.color }"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="vrBarGraphHrValues">
+        <div
+          class="vrBarGraphHrValueEach"
+          *ngFor="let it of catogoryWaysStocks"
+        >
+          {{ it?.title }}
         </div>
       </div>
     </div>
@@ -153,20 +225,30 @@
     <div class="col2_row3">
       <div class="title1">Low Stock Items</div>
       <div class="prodectList">
-        <div class="eachProdect" *ngFor="let it of [1, 1, 1, 1, 1, 1]">
-          <div class="prodectImage"></div>
-          <div class="prodectName">I Phone 13 Pro Max 128GB</div>
-          <div class="prodectStatus">3 PCS</div>
+        <div class="eachProdect" *ngFor="let it of lowSlockItems">
+          <img class="prodectImage" [src]="it.img" />
+          <div class="prodectName">{{ it?.name }}</div>
+          <div
+            class="prodectStatus"
+            [ngStyle]="{ color: it.textColor, background: it.bgColor }"
+          >
+            {{ it?.qty }}
+          </div>
         </div>
       </div>
     </div>
     <div class="col2_row4">
       <div class="title1">Trending Items</div>
       <div class="prodectList">
-        <div class="eachProdect" *ngFor="let it of [1, 1, 1, 1, 1, 1]">
-          <div class="prodectImage"></div>
-          <div class="prodectName">I Phone 13 Pro Max 128GB</div>
-          <div class="prodectStatus">3 PCS</div>
+        <div class="eachProdect" *ngFor="let it of lowSlockItems">
+          <img class="prodectImage" [src]="it.img" />
+          <div class="prodectName">{{ it?.name }}</div>
+          <div
+            class="prodectStatus"
+            [ngStyle]="{ color: it.textColor, background: it.bgColor }"
+          >
+            {{ it?.qty }}
+          </div>
         </div>
       </div>
     </div>
