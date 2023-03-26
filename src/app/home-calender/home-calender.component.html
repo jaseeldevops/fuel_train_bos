@@ -26,7 +26,11 @@
           <div
             class="calenderDay"
             [ngStyle]="
-              it.today ? { background: '#298844', color: 'white' } : {}
+              it.today
+                ? { background: '#298844', color: 'white' }
+                : it.thisMonth
+                ? {}
+                : { color: 'gray' }
             "
           >
             {{ it.day }}

@@ -22,9 +22,9 @@ export class HomeComponent implements OnInit {
   isProfilePopup = false;
   // This is varible is indicate the path of home based on the selected one
   // drowerPath = 'dashboard';
-  drowerPath = 'calender';
+  drowerPath = 'purchase';
   // This is varible is indicate which sidebar option is acive.(Note:- if you change to ops then default ops will shoe in home)
-  drowerIndex = 1;
+  drowerIndex = 5;
   // drowerIndex = 0;
   subPath: any = '';
 

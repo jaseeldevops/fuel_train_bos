@@ -1,1 +1,11 @@
-<p>home-purchase works!</p>
+<div class="pageTitle">DASHBOARD</div>
+<div class="navBar">
+  <div [ngClass]="page === 0 ? 'navBarEach_' : 'navBarEach'" (click)="page = 0">
+    Forecort area
+    <div [ngClass]="page === 0 ? 'navBarEachLine_' : 'navBarEachLine'"></div>
+  </div>
+  <div [ngClass]="page === 1 ? 'navBarEach_' : 'navBarEach'" (click)="page = 1">
+    C - Store area
+    <div [ngClass]="page === 1 ? 'navBarEachLine_' : 'navBarEachLine'"></div>
+  </div>
+</div>

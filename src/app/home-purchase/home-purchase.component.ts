@@ -3,13 +3,12 @@ import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-home-purchase',
   templateUrl: './home-purchase.component.html',
-  styleUrls: ['./home-purchase.component.css']
+  styleUrls: ['./home-purchase.component.css'],
 })
 export class HomePurchaseComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
+  ngOnInit(): void {}
 
-  ngOnInit(): void {
-  }
-
+  page: any = 0;
 }
