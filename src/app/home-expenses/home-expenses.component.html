@@ -1,1 +1,32 @@
-<p>home-expenses works!</p>
+<div class="pageTitle">EXPENSE ENTRIES</div>
+<div class="navBar">
+  <div class="navBarEach_">
+    Expense Entries
+    <div class="navBarEachLine_"></div>
+  </div>
+</div>
+<div class="tableBody">
+  <div class="table">
+    <div class="header">
+      <div style="width: 12%">INVOICE #</div>
+      <div style="width: 12%">DATE</div>
+      <div style="width: 18%">EXPENSE CATEGORY</div>
+      <div style="width: 18%">EXPENSE DETAILS</div>
+      <div style="width: 15%">PAID FROM</div>
+      <div style="width: 10%; text-align: right">AMOUNT</div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allExpenses?.content">
+        <div class="content" style="width: 12%">{{ it?.invoice }}</div>
+        <div class="content" style="width: 12%">{{ it?.date }}</div>
+        <div class="content" style="width: 18%">{{ it?.expenseCategory }}</div>
+        <div class="content" style="width: 18%">{{ it?.expenseDetails }}</div>
+        <div class="content" style="width: 15%">{{ it?.paidFrom }}</div>
+        <div class="content" style="width: 10%; text-align: right">
+          {{ it?.amount }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allExpenses?.paging"></app-table-paging>
+</div>

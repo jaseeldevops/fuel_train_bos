@@ -27,7 +27,7 @@
     padding: 0 0.5vw;
     cursor: pointer;
     text-align: center;
-    width: 7vw;
+    min-width: 7vw;
   }
   .navBarEach_ {
     color: #00649e;
@@ -48,3 +48,41 @@
   /* //////////////////////////////////////////////////////////////////////////////////////////// */
   /* //////////////////////////////////////////////////////////////////////////////////////////// */
   /* //////////////////////////////////////////////////////////////////////////////////////////// */
+  .tableBody {
+    height: calc(100vh - 13vw);
+    background-color: white;
+  }
+  .tableBody .table {
+    font-size: 1vw;
+    padding: 0.5vw 1.5vw;
+    height: 100%;
+    box-sizing: border-box;
+  }
+  .tableBody .header {
+    color: #3f6ca5;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5vw;
+    border-bottom: 0.08vw solid #dddfe1;
+  }
+  .tableBody .body {
+    height: calc(96.53%);
+    overflow: auto;
+  }
+  .tableBody .row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5vw;
+  }
+  .tableBody .row:nth-child(even) {
+    background-color: #f3f6f9;
+  }
+  .tableBody .content {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  /* ///////////////////////////////////////////////////////////////////////// */
+  /* ///////////////////////////////////////////////////////////////////////// */
+  /* ///////////////////////////////////////////////////////////////////////// */
+  

@@ -1,11 +1,67 @@
-<div class="pageTitle">DASHBOARD</div>
+<div class="pageTitle">PURCHASE</div>
 <div class="navBar">
   <div [ngClass]="page === 0 ? 'navBarEach_' : 'navBarEach'" (click)="page = 0">
-    Forecort area
+    Purchase Orders
     <div [ngClass]="page === 0 ? 'navBarEachLine_' : 'navBarEachLine'"></div>
   </div>
   <div [ngClass]="page === 1 ? 'navBarEach_' : 'navBarEach'" (click)="page = 1">
-    C - Store area
+    Goods Received Note
     <div [ngClass]="page === 1 ? 'navBarEachLine_' : 'navBarEachLine'"></div>
   </div>
+</div>
+<div class="tableBody" *ngIf="page === 0">
+  <div class="table">
+    <div class="header">
+      <div style="width: 8%">PON#</div>
+      <div style="width: 10%">DATE</div>
+      <div style="width: 30%">SUPPLIER</div>
+      <div style="width: 15%; text-align: right">TOTAL</div>
+      <div style="width: 12%; text-align: right">ACTION</div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allPurchaseOrder?.content">
+        <div class="content" style="width: 8%">{{ it?.pon }}</div>
+        <div class="content" style="width: 10%">{{ it?.date }}</div>
+        <div class="content" style="width: 30%">{{ it?.supplier }}</div>
+        <div class="content" style="width: 15%; text-align: right">
+          {{ it?.total }}
+        </div>
+        <div class="content" style="width: 12%; text-align: right">
+          {{ it?.action }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allPurchaseOrder?.paging"></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 1">
+  <div class="table">
+    <div class="header">
+      <div style="width: 10%">GRN#</div>
+      <div style="width: 10%">DATE</div>
+      <div style="width: 22%">SUPPLIER</div>
+      <div style="width: 10%">INVOICE #</div>
+      <div style="width: 12%; text-align: right">TOTAL</div>
+      <div style="width: 12%; text-align: right">AMOUND DUE</div>
+      <div style="width: 8%; text-align: right">STATUS</div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allGoodsNotes?.content">
+        <div class="content" style="width: 10%">{{ it?.grn }}</div>
+        <div class="content" style="width: 10%">{{ it?.date }}</div>
+        <div class="content" style="width: 22%">{{ it?.supplier }}</div>
+        <div class="content" style="width: 10%">{{ it?.invoice }}</div>
+        <div class="content" style="width: 12%; text-align: right">
+          {{ it?.total }}
+        </div>
+        <div class="content" style="width: 12%; text-align: right">
+          {{ it?.amountDue }}
+        </div>
+        <div class="content" style="width: 8%; text-align: right">
+          {{ it?.status }}
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allGoodsNotes?.paging"></app-table-paging>
 </div>
