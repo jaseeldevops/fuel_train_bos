@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeDashboardComponent implements OnInit {
   constructor() {}
 
-  page = 1;
+  page = 0;
 
   ngOnInit(): void {
   }
