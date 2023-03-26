@@ -66,3 +66,8 @@ button {
   background-repeat: no-repeat;
   background-image: url(./assets/ic_loader.gif);
 }
+
+.defaultInput {
+  border: 0.1vw solid #8080807d;
+  border-radius: 0.3vw;
+}

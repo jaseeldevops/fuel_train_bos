@@ -3,11 +3,13 @@ import { allMaintenanceDummy } from '../home-configuration/dummy_data';
 import { drowerIconList } from '../home/store';
 import {
   allControlsDummy,
+  allcStoreTransationDummy,
   allCustomerConfigurationDummy,
   allEodDummy,
   allMonolithConfigurationDummy,
   allPaymentModeDummy,
   allPriceChangeDummy,
+  allSupplierConfigurationDummy,
   allTankDensityDummy,
   allTtRecipientsDummy,
 } from './dummy_data';
@@ -80,6 +82,12 @@ export class HomeOperationsComponent implements OnInit {
         break;
       case 'customerConfiguration':
         this.data = allCustomerConfigurationDummy;
+        break;
+      case 'supplierConfiguration':
+        this.data = allSupplierConfigurationDummy;
+        break;
+      case 'cStoreTransation':
+        this.data = allcStoreTransationDummy;
         break;
       default:
         break;

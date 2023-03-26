@@ -195,6 +195,53 @@
       </div>
     </div>
   </div>
+  <!-- ///////////////////////////////////////////////////////////////////////////////// -->
+  <!-- //////////////////////////// SUPPLIER Configuration ///////////////////////////// -->
+  <!-- ///////////////////////////////////////////////////////////////////////////////// -->
+  <div *ngIf="page === 'supplierConfiguration'" class="header">
+    <div class="titile" (click)="page = ''">
+      Operations > Supplier Configuration
+    </div>
+    <div class="navRow">
+      <div class="navBar">
+        <div class="eachButton_">
+          Suppliers
+          <div class="buttonBottom_"></div>
+        </div>
+      </div>
+      <div style="display: flex">
+        <input placeholder="Search a supplier" class="defaultInput" />
+        <div class="downloadButton"></div>
+        <div class="grrenButton" (click)="popup = { path: 'addSupplier' }">
+          Add Supplier
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- ///////////////////////////////////////////////////////////////////////////////// -->
+  <!-- //////////////////////////// SUPPLIER Configuration ///////////////////////////// -->
+  <!-- ///////////////////////////////////////////////////////////////////////////////// -->
+  <div *ngIf="page === 'cStoreTransation'" class="header">
+    <div class="titile" (click)="page = ''">
+      Operations > C-Store Transactions
+    </div>
+    <div class="navRow">
+      <div class="navBar">
+        <div class="eachButton_">
+          Invoice List
+          <div class="buttonBottom_"></div>
+        </div>
+      </div>
+      <div style="display: flex">
+        <input placeholder="Search an invoice" class="defaultInput" />
+        <div class="downloadButton"></div>
+      </div>
+    </div>
+  </div>
+  <!-- /////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- /////////////////////////////////////////////////////////////////////////////////// -->
   <app-home-operations-body
     [page]="page"
     [navCount]="navCount"
@@ -203,8 +250,8 @@
   ></app-home-operations-body>
 </div>
 <app-home-operations-popups
-    [popup]="popup"
-    [closePopUp]="closePopUp"
+  [popup]="popup"
+  [closePopUp]="closePopUp"
 ></app-home-operations-popups>
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////// PAGE LOADER /////////////////////////////// -->

@@ -35,6 +35,8 @@ export const drowerIconList = [
       { title: 'Tank Density', path: 'tankDensity' },
       { title: 'Monolith Configuration', path: 'monolithConfiguration' },
       { title: 'Customer Configuration', path: 'customerConfiguration' },
+      { title: 'Supplier Configuration', path: 'supplierConfiguration' },
+      { title: 'C-Store Transation', path: 'cStoreTransation' },
     ],
   },
   {

@@ -78,12 +78,14 @@ export const allTtRecipientsDummy = {
   deliveryChecklist: [
     {
       id: '01',
-      content: 'Only one tank-truck is being decanted at the retail outlet at a given the Time ',
+      content:
+        'Only one tank-truck is being decanted at the retail outlet at a given the Time ',
       status: 'CHECKED',
     },
     {
       id: '02',
-      content: 'Tank truck is positioned in the demarcated area and area is cordoned off ',
+      content:
+        'Tank truck is positioned in the demarcated area and area is cordoned off ',
       status: 'CHECK',
     },
   ],
@@ -269,4 +271,40 @@ export const allCustomerConfigurationDummy = {
       },
     ],
   },
+};
+export const allSupplierConfigurationDummy = {
+  paging: {
+    page: 1,
+    totalItems: 3000,
+    showingItemsCount: 10,
+    totalPage: 10,
+  },
+  content: [
+    {
+      id: 'test',
+      name: 'test',
+      contactPerson: 'test',
+      contactNumber: 'test',
+      gstNumber: 'test',
+      status: 'test',
+    },
+  ],
+};
+export const allcStoreTransationDummy = {
+  paging: {
+    page: 1,
+    totalItems: 3000,
+    showingItemsCount: 10,
+    totalPage: 10,
+  },
+  content: [
+    {
+      transactionId: 'INV656',
+      date: '13 APR 2022',
+      customer: 'Joan Ortiz',
+      contactNumber: '95125412542',
+      total: 'USD 1,21,323',
+      status: 'PAID',
+    },
+  ],
 };

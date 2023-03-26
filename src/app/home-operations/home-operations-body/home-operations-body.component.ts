@@ -27,4 +27,5 @@ export class HomeOperationsBodyComponent implements OnInit {
   onClickankDensitySave = (item: any) => {};
   onClickcustomerConfigurationCustomerDelete = (item: any) => {};
   onClickcustomerConfigurationCustomerVehicleDelete = (item: any) => {};
+  onClickSuplierConfigurationCustomerDelete = (item: any) => {};
 }

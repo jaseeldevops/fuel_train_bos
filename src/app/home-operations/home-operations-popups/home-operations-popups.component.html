@@ -279,3 +279,85 @@
     </div>
   </div>
 </div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////// ADD SUPPLIER ////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div
+  class="drawer"
+  [style]="!(popup?.path === 'addSupplier') ? { visibility: 'hidden' } : {}"
+>
+  <div class="dummyBody" (click)="closePopUp()"></div>
+  <div
+    [ngClass]="popup?.path === 'addSupplier' ? 'body_' : 'body'"
+    style="min-width: 32%"
+  >
+    <div class="header1">
+      Add Supplier
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="listBody">
+      <div style="background: #eeeeee; padding: 0.3vw 1vw">
+        BASIC INFORMATION
+      </div>
+      <div style="padding: 1vw 1.5vw">
+        <div class="label1">Supplier ID</div>
+        <input
+          style="width: 100%; margin-bottom: 1vw"
+          placeholder="Enter Supplier ID"
+        />
+        <div class="label1">Supplier Name</div>
+        <input
+          style="width: 100%; margin-bottom: 1vw"
+          placeholder="Enter Supplier Name"
+        />
+      </div>
+      <div style="background: #eeeeee; padding: 0.3vw 1vw">
+        OTHER INFORMATION
+      </div>
+      <div style="padding: 1vw 1.5vw">
+        <div class="label1">Contact Person</div>
+        <input
+          style="width: 100%; margin-bottom: 1vw"
+          placeholder="Enter contact person name here"
+        />
+        <div class="label1">Contact Number</div>
+        <input
+          style="width: 100%; margin-bottom: 1vw"
+          placeholder="Enter contact number here"
+        />
+        <div class="label1">GST Number</div>
+        <input
+          style="width: 100%; margin-bottom: 1vw"
+          placeholder="Enter GST number here"
+        />
+        <div class="label1">Address</div>
+        <textarea
+          style="width: 100%; margin-bottom: 1vw"
+          placeholder="Enter address here"
+        ></textarea>
+        <div style="display: flex; justify-content: space-between">
+          <div class="label1" style="width: 48%">PIN Code</div>
+          <div class="label1" style="width: 48%">Status</div>
+        </div>
+        <div style="display: flex; justify-content: space-between">
+          <input
+            style="width: 48%; margin-bottom: 1vw"
+            placeholder="PIN Code"
+          />
+          <select style="width: 48%; margin-bottom: 1vw">
+            <option hidden>Select status</option>
+            <option>Online</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="canceBtn" (click)="closePopUp()">CANCEL</div>
+      <div class="createBtn">ADD</div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->

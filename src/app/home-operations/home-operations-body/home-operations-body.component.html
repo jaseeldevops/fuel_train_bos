@@ -534,3 +534,73 @@
     [paging]="data?.customersVechicle?.paging"
   ></app-table-paging>
 </div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div
+  class="tableBody"
+  *ngIf="page === 'supplierConfiguration' && navCount === 0"
+>
+  <div class="table">
+    <div class="header">
+      <div style="width: 5%">ID</div>
+      <div style="width: 15%">SUPPLIER NAME</div>
+      <div style="width: 15%">CONTACT PERSON</div>
+      <div style="width: 15%">PHONE NUMBER</div>
+      <div style="width: 15%">GST NUMBER</div>
+      <div style="width: 10%">STATUS</div>
+      <div style="width: 6%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.content">
+        <div style="width: 5%">{{ it?.id }}</div>
+        <div style="width: 15%">{{ it?.name }}</div>
+        <div style="width: 15%">{{ it?.contactPerson }}</div>
+        <div style="width: 15%">{{ it?.contactNumber }}</div>
+        <div style="width: 15%">{{ it?.gstNumber }}</div>
+        <div style="width: 10%">{{ it?.status }}</div>
+        <div style="width: 6%; display: flex; justify-content: center">
+          <div
+            class="actionTextButton"
+            (click)="setPopup({ path: 'addSupplier' })"
+          >
+            Edit
+          </div>
+          <div
+            class="actionBin"
+            (click)="onClickSuplierConfigurationCustomerDelete(it)"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.paging"></app-table-paging>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'cStoreTransation' && navCount === 0">
+  <div class="table">
+    <div class="header">
+      <div style="width: 10%">Transaction ID</div>
+      <div style="width: 10%">DATE</div>
+      <div style="width: 20%">CUSTOMER</div>
+      <div style="width: 15%">PHONE NUMBER</div>
+      <div style="width: 15%">TOTAL</div>
+      <div style="width: 10%">STATUS</div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.content">
+        <div style="width: 10%">{{ it?.transactionId }}</div>
+        <div style="width: 10%">{{ it?.date }}</div>
+        <div style="width: 20%">{{ it?.customer }}</div>
+        <div style="width: 15%">{{ it?.contactNumber }}</div>
+        <div style="width: 15%">{{ it?.total }}</div>
+        <div style="width: 10%">{{ it?.status }}</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.paging"></app-table-paging>
+</div>
