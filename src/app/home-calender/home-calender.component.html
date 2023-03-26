@@ -20,7 +20,7 @@
       <div
         class="calenderCell"
         *ngFor="let it of allDays?.content"
-        (click)="salectedDay = {}"
+        (click)="onClickDay()"
       >
         <div style="display: flex; justify-content: flex-end">
           <div
@@ -59,16 +59,16 @@
 <div [ngClass]="salectedDay === null ? 'drowerBg' : 'drowerBg_'"></div>
 <div [ngClass]="salectedDay === null ? 'drower' : 'drower_'">
   <div class="drowerHeader">
-    <div class="drowerHeadera">{{ "5th July, Tuesday" }}</div>
+    <div class="drowerHeadera">{{ salectedDay?.title }}</div>
     <div class="drowerHeaderb" (click)="salectedDay = null"></div>
   </div>
   <div class="drowerBody">
     <div class="hclGaBa">
-      <div class="hclGaBaA" *ngFor="let it of [1, 1, 1]">
-        <img class="hclGaBaB" alt="er" src="{d.image}" />
+      <div class="hclGaBaA" *ngFor="let it of salectedDay?.events">
+        <img class="hclGaBaB" alt="er" [src]="it.img" *ngIf="it.img !== ''" />
         <div>
-          <div class="hclGaBaD">Sdfdr</div>
-          <div class="hclGaBaE">Birthday</div>
+          <div class="hclGaBaD">{{ it?.title }}</div>
+          <div class="hclGaBaE">{{ it?.desc }}</div>
         </div>
       </div>
     </div>
@@ -81,23 +81,23 @@
       <div class="hclGaBcD">Reference</div>
       <div class="hclGaBcE">Amount</div>
     </div>
-    <div class="hclGaBd" *ngFor="let it of [{}, {}]">
-      <div class="hclGaBcA hclGaBdA">{{ "it?.party" }}</div>
-      <div class="hclGaBcB hclGaBdB">{{ "it?.mode" }}</div>
-      <div class="hclGaBcC hclGaBdC">{{ "it?.bank" }}</div>
-      <div class="hclGaBcD hclGaBdD">{{ "it?.reference" }}</div>
-      <div class="hclGaBcE hclGaBdE">{{ "it?.amount" }}</div>
+    <div class="hclGaBd" *ngFor="let it of salectedDay?.paymentTobeMade">
+      <div class="hclGaBcA hclGaBdA">{{ it?.party }}</div>
+      <div class="hclGaBcB hclGaBdB">{{ it?.mode }}</div>
+      <div class="hclGaBcC hclGaBdC">{{ it?.bank }}</div>
+      <div class="hclGaBcD hclGaBdD">{{ it?.reference }}</div>
+      <div class="hclGaBcE hclGaBdE">{{ it?.amount }}</div>
     </div>
     <!-- ///////////////////////////////////////////////////////////// -->
     <div class="hclGaBe">
       <div class="hclGaBeA">
         <div class="hclGaBeB">
           <div class="hclGaBeC">Account Balance</div>
-          <div class="hclGaBeD">INR 123331312</div>
+          <div class="hclGaBeD">{{ salectedDay?.accountBalance }}</div>
         </div>
         <div class="hclGaBeB">
           <div class="hclGaBeC">Total to be paid</div>
-          <div class="hclGaBeD_">INR 1232323</div>
+          <div class="hclGaBeD_">{{ salectedDay?.toBePaid }}</div>
         </div>
       </div>
     </div>
@@ -111,17 +111,17 @@
       <div class="hclGaBgD">Reference</div>
       <div class="hclGaBgE">Amount</div>
     </div>
-    <div class="hclGaBh" *ngFor="let it of [{}, {}]">
-      <div class="hclGaBgA hclGaBhA">{{ "it.customer_name" }}</div>
-      <div class="hclGaBgB hclGaBhB">{{ "it.customer_phone" }}</div>
-      <div class="hclGaBgC hclGaBhC">{{ "it.due_date" }}</div>
-      <div class="hclGaBgD hclGaBhD">{{ "it.invoice_no" }}</div>
-      <div class="hclGaBgE hclGaBhE">{{ "it.balance_amount" }}</div>
+    <div class="hclGaBh" *ngFor="let it of salectedDay?.paymentTobeCollected">
+      <div class="hclGaBgA hclGaBhA">{{ it.customer_name }}</div>
+      <div class="hclGaBgB hclGaBhB">{{ it.customer_phone }}</div>
+      <div class="hclGaBgC hclGaBhC">{{ it.due_date }}</div>
+      <div class="hclGaBgD hclGaBhD">{{ it.invoice_no }}</div>
+      <div class="hclGaBgE hclGaBhE">{{ it.balance_amount }}</div>
     </div>
     <div class="hclGaBi">
       <div class="hclGaBiA">
         <div class="hclGaBiB">Total to be collected</div>
-        <div class="hclGaBiC">INR 12131212</div>
+        <div class="hclGaBiC">{{ salectedDay?.toBeCollected }}</div>
       </div>
     </div>
     <!-- ///////////////////////////////////////////////////////////// -->

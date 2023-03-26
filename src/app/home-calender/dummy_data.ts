@@ -269,3 +269,89 @@ export const allDummyCalenderCells = {
     },
   ],
 };
+
+export const dummyCalenderDaydetails = {
+  title: '5th July, Tuesday',
+  events: [
+    {
+      title: 'Gaurav Krishna',
+      desc: 'Birth Day',
+      img: 'https://qph.cf2.quoracdn.net/main-qimg-217015358349186e0e382cb15c5d7c63-lq',
+    },
+    {
+      title: 'International Women’s Day',
+      desc: 'Special Day',
+      img: '',
+    },
+  ],
+  paymentTobeMade: [
+    {
+      party: 'Conquer Technologies Pvt Ltd',
+      mode: 'Cheque',
+      bank: 'HDFC Bank 0045',
+      reference: '#00056',
+      amount: '256,700.00',
+    },
+    {
+      party: 'Rahul Commerce India Ltd',
+      mode: 'Cheque',
+      bank: 'HDFC Bank 0045',
+      reference: '#00057',
+      amount: '334,560.00',
+    },
+  ],
+  paymentTobeCollected: [
+    {
+      customer_name: 'John Mathew Mathan',
+      customer_phone: '9756765453',
+      due_date: 'Today',
+      invoice_no: 'INV22-0675',
+      balance_amount: '256,700.00',
+    },
+    {
+      customer_name: 'SK Ramanaidu',
+      customer_phone: '9765676540',
+      due_date: 'Today',
+      invoice_no: 'INV22-0675',
+      balance_amount: '334,560.00',
+    },
+    {
+      customer_name: 'John Mathew Mathan',
+      customer_phone: '9343887675',
+      due_date: 'Yesterday',
+      invoice_no: 'INV22-0675',
+      balance_amount: '256,700.00',
+    },
+    {
+      customer_name: 'SK Ramanaidu',
+      customer_phone: '9987887676',
+      due_date: 'Yesterday',
+      invoice_no: 'INV22-0765',
+      balance_amount: '334,560.00',
+    },
+    {
+      customer_name: 'John Mathew Mathan',
+      customer_phone: '9844455654',
+      due_date: '4 Days ago',
+      invoice_no: 'INV22-0675',
+      balance_amount: '256,700.00',
+    },
+    {
+      customer_name: 'SK Ramanaidu',
+      customer_phone: '7503600800',
+      due_date: '7 Days ago',
+      invoice_no: 'INV22-0765',
+      balance_amount: '334,560.00',
+    },
+    {
+      customer_name: 'John Mathew Mathan',
+      customer_phone: '7987009889',
+      due_date: '42 Days ago',
+      invoice_no: 'INV22-0675',
+      balance_amount: '256,700.00',
+    },
+  ],
+  accountBalance: 'INR 699,990.00',
+  toBePaid: 'INR 591,260.00',
+  toBeCollected: 'INR 13,91,260.00',
+};

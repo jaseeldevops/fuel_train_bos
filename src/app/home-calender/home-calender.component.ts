@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { allDummyCalenderCells } from './dummy_data';
+import { allDummyCalenderCells, dummyCalenderDaydetails } from './dummy_data';
 
 @Component({
   selector: 'app-home-calender',
@@ -17,6 +17,10 @@ export class HomeCalenderComponent implements OnInit {
 
   onClickNextMonth = () => {};
   onClickPrevMonth = () => {};
+
+  onClickDay = () => {
+    this.salectedDay = dummyCalenderDaydetails;
+  };
 
   ngOnInit(): void {}
 }
