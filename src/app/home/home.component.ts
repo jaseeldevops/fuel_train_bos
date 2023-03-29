@@ -21,11 +21,11 @@ export class HomeComponent implements OnInit {
   // This is the flag for showing the popup when the profile is clicked.
   isProfilePopup = false;
   // This is varible is indicate the path of home based on the selected one
-  drowerPath = 'dashboard';
-  // drowerPath = 'purchase';
+  // drowerPath = 'dashboard';
+  drowerPath = 'purchase';
   // This is varible is indicate which sidebar option is acive.(Note:- if you change to ops then default ops will shoe in home)
-  drowerIndex = 0;
-  // drowerIndex = 5;
+  // drowerIndex = 0;
+  drowerIndex = 5;
   subPath: any = '';
 
   ngOnInit(): void {

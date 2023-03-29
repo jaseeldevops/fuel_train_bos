@@ -15,4 +15,9 @@ export class HomePurchaseComponent implements OnInit {
   allGoodsNotes: any = dummyGoodsRecivedNotes;
 
   page: any = 0;
+  addPurchase: any = null;
+
+  onClickNewPurchase = () => {
+    this.addPurchase = {};
+  };
 }
