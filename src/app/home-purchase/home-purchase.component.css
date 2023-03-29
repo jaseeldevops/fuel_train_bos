@@ -104,9 +104,9 @@
   font-weight: 500;
   font-size: 1vw;
   border-radius: 0.3vw;
-  padding: 0.3vw 0.6vw;
+  padding: 0.5vw 1vw;
   cursor: pointer;
-  margin: 0 1vw;
+  margin: 0 0.5vw;
 }
 .downloadButton {
   width: 2vw;
@@ -173,5 +173,19 @@
 }
 .formTableRow:nth-child(even) {
   background-color: white;
+}
+.formFooterBar {
+  margin: 1vw;
+  display: flex;
+  justify-content: flex-end;
+}
+.formDelete {
+  width: 2vw;
+  height: 2vw;
+  background-position: center;
+  background-size: 1.2vw;
+  background-repeat: no-repeat;
+  background-image: url(../../assets/ic_bin12.svg);
+  cursor: pointer;
 }
 /* <--END--> ADD PURCHASE FORM */

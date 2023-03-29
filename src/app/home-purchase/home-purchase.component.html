@@ -1,12 +1,14 @@
 <div class="pageTitle">
   <div
-    *ngIf="addPurchase !== null"
-    (click)="addPurchase = null"
+    *ngIf="addPurchase !== null || addPurchaseOrder !== null"
+    (click)="addPurchase = null; addPurchaseOrder = null"
     class="arrowBack"
   ></div>
-  {{ addPurchase !== null ? "NEW " : "" }}PURCHASE
+  {{ addPurchase !== null ? "NEW " : "" }}PURCHASE{{
+    addPurchaseOrder !== null ? " ORDER " : ""
+  }}
 </div>
-<div *ngIf="addPurchase === null">
+<div *ngIf="addPurchase === null && addPurchaseOrder === null">
   <div style="display: flex; justify-content: space-between">
     <div class="navBar">
       <div
@@ -31,7 +33,7 @@
     <div class="navButtonBar">
       <div class="downloadButton"></div>
       <div class="blueButton" (click)="onClickNewPurchase()">
-        + New Purchase
+        {{ page === 0 ? "+ Purchase Order" : "+ New Purchase" }}
       </div>
     </div>
   </div>
@@ -92,6 +94,168 @@
     <app-table-paging [paging]="allGoodsNotes?.paging"></app-table-paging>
   </div>
 </div>
+<!-- /////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////// -->
+<!-- PURCHASE ORDER FORM -->
+<div class="formLayout" *ngIf="addPurchaseOrder !== null">
+  <div
+    class="formHeaderBox"
+    style="display: flex; justify-content: space-between; align-items: center"
+  >
+    <div style="width: 16%">
+      <div>Supplier*</div>
+      <input
+        class="defaultInput"
+        placeholder="Search for a supplier"
+        style="width: 100%"
+      />
+    </div>
+    <div style="width: 10%">
+      <div>&nbsp;</div>
+      <input class="defaultInput" style="width: 100%" type="date" />
+    </div>
+    <div style="width: 10%">
+      <div>Deliver by</div>
+      <input class="defaultInput" style="width: 100%" type="date" />
+    </div>
+
+    <div style="width: 16%">
+      <div>Paid From Account*</div>
+      <input
+        class="defaultInput"
+        placeholder="Search for a supplier"
+        style="width: 100%"
+      />
+    </div>
+    <div style="width: 16%">
+      <div>Payment Method*</div>
+      <input
+        class="defaultInput"
+        placeholder="Search for a supplier"
+        style="width: 100%"
+      />
+    </div>
+
+    <div style="width: 10%">
+      <div>Payment Date*</div>
+      <input class="defaultInput" type="date" style="width: 100%" />
+    </div>
+    <div style="width: 16%">
+      <div>Reference*</div>
+      <input
+        class="defaultInput"
+        placeholder="Search for a supplier"
+        style="width: 100%"
+      />
+    </div>
+  </div>
+  <div class="formTableHeader">
+    <div class="value" style="width: 3%"></div>
+    <div class="value" style="width: 40%">Product</div>
+    <div class="value" style="width: 10%">Qty</div>
+    <div class="value" style="width: 10%">Cost</div>
+    <div class="value" style="width: 10%">Branch Price</div>
+    <div class="value" style="width: 12%">Tax Slab</div>
+    <div class="value" style="width: 15%">Total</div>
+  </div>
+  <div class="formTableBody">
+    <div class="formTableRow" *ngFor="let it of [{}, {}]">
+      <div class="value formDelete" style="width: 3%"></div>
+      <div class="value" style="width: 40%">
+        <select class="defaultSelect" style="width: 100%">
+          <option>SELECT PRODUCT</option>
+        </select>
+      </div>
+      <div class="value" style="width: 10%">
+        <input
+          class="defaultInput"
+          placeholder="0.00"
+          style="width: 100%; text-align: right"
+        />
+      </div>
+      <div class="value" style="width: 10%">
+        <input
+          class="defaultInput"
+          placeholder="0.00"
+          style="width: 100%; text-align: right"
+        />
+      </div>
+      <div class="value" style="width: 10%">
+        <input
+          class="defaultInput"
+          placeholder="0.00"
+          style="width: 100%; text-align: right"
+        />
+      </div>
+      <div class="value" style="width: 12%">
+        <select class="defaultSelect" style="width: 100%">
+          <option>No Tax</option>
+        </select>
+      </div>
+      <div class="value" style="width: 15%; padding: 0.5vw">89,800.00</div>
+    </div>
+  </div>
+  <div
+    class="formHeaderBox"
+    style="display: flex; justify-content: space-between"
+  >
+    <div style="width: 44%">
+      <div style="width: 100%">
+        <div>Delivery Address</div>
+        <textarea
+          class="defaultInput"
+          style="width: 100%; height: 5vw"
+          placeholder="Address..."
+        ></textarea>
+      </div>
+      <br />
+      <div style="width: 100%">
+        <div>Purchase Note</div>
+        <textarea
+          class="defaultInput"
+          style="width: 100%"
+          placeholder="Enter notes here"
+        ></textarea>
+      </div>
+    </div>
+    <div style="width: 35%; line-height: 3vw">
+      <br />
+      <div style="width: 100%; display: flex; justify-content: space-between">
+        <div>Subtotal</div>
+        <div>1,19,700.00</div>
+      </div>
+      <div style="width: 100%; display: flex; justify-content: space-between">
+        <div>Tax</div>
+        <div>1,19,700.00</div>
+      </div>
+      <div
+        style="
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          font-size: 1vw;
+        "
+      >
+        <div>Total</div>
+        <div>1,19,700.00</div>
+      </div>
+    </div>
+  </div>
+  <div class="formFooterBar">
+    <div class="blueButton">SAVE & PRINT</div>
+    <div class="blueButton">CLOSE</div>
+  </div>
+</div>
+
+<!-- /////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////// -->
+<!-- PURCHASE FORM -->
 <div class="formLayout" *ngIf="addPurchase !== null">
   <div
     class="formHeaderBox"
@@ -228,5 +392,9 @@
         <div>1,19,700.00</div>
       </div>
     </div>
+  </div>
+  <div class="formFooterBar">
+    <div class="blueButton">SAVE & PRINT</div>
+    <div class="blueButton">CLOSE</div>
   </div>
 </div>
