@@ -1,32 +1,199 @@
-<div class="pageTitle">EXPENSE ENTRIES</div>
-<div class="navBar">
-  <div class="navBarEach_">
-    Expense Entries
-    <div class="navBarEachLine_"></div>
-  </div>
+<div class="pageTitle">
+  <div
+    *ngIf="addExpense !== null"
+    (click)="addExpense = null"
+    class="arrowBack"
+  ></div>
+  {{ addExpense !== null ? "EXPENSE ENTRIES " : "NEW EXPENSE" }}
 </div>
-<div class="tableBody">
-  <div class="table">
-    <div class="header">
-      <div style="width: 12%">INVOICE #</div>
-      <div style="width: 12%">DATE</div>
-      <div style="width: 18%">EXPENSE CATEGORY</div>
-      <div style="width: 18%">EXPENSE DETAILS</div>
-      <div style="width: 15%">PAID FROM</div>
-      <div style="width: 10%; text-align: right">AMOUNT</div>
+<div *ngIf="addExpense === null">
+  <div class="navBarLayout">
+    <div class="navBar">
+      <div class="navBarEach_">
+        Expense Entries
+        <div class="navBarEachLine_"></div>
+      </div>
     </div>
-    <div class="body">
-      <div class="row" *ngFor="let it of allExpenses?.content">
-        <div class="content" style="width: 12%">{{ it?.invoice }}</div>
-        <div class="content" style="width: 12%">{{ it?.date }}</div>
-        <div class="content" style="width: 18%">{{ it?.expenseCategory }}</div>
-        <div class="content" style="width: 18%">{{ it?.expenseDetails }}</div>
-        <div class="content" style="width: 15%">{{ it?.paidFrom }}</div>
-        <div class="content" style="width: 10%; text-align: right">
-          {{ it?.amount }}
+    <div class="navButtonBar">
+      <div class="downloadButton"></div>
+      <div class="blueButton" (click)="addExpense = {}">+ New Expense</div>
+    </div>
+  </div>
+  <div class="tableBody">
+    <div class="table">
+      <div class="header">
+        <div style="width: 12%">INVOICE #</div>
+        <div style="width: 12%">DATE</div>
+        <div style="width: 18%">EXPENSE CATEGORY</div>
+        <div style="width: 18%">EXPENSE DETAILS</div>
+        <div style="width: 15%">PAID FROM</div>
+        <div style="width: 10%; text-align: right">AMOUNT</div>
+      </div>
+      <div class="body">
+        <div class="row" *ngFor="let it of allExpenses?.content">
+          <div class="content" style="width: 12%">{{ it?.invoice }}</div>
+          <div class="content" style="width: 12%">{{ it?.date }}</div>
+          <div class="content" style="width: 18%">
+            {{ it?.expenseCategory }}
+          </div>
+          <div class="content" style="width: 18%">{{ it?.expenseDetails }}</div>
+          <div class="content" style="width: 15%">{{ it?.paidFrom }}</div>
+          <div class="content" style="width: 10%; text-align: right">
+            {{ it?.amount }}
+          </div>
         </div>
       </div>
     </div>
+    <app-table-paging [paging]="allExpenses?.paging"></app-table-paging>
   </div>
-  <app-table-paging [paging]="allExpenses?.paging"></app-table-paging>
+</div>
+
+<!-- /////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////// -->
+<!-- PURCHASE FORM -->
+<div class="formLayout" *ngIf="addExpense !== null">
+  <div
+    class="formHeaderBox"
+    style="display: flex; justify-content: space-between; align-items: center"
+  >
+    <div style="width: 10%">
+      <div>Expense #</div>
+      <input class="defaultInput" style="width: 100%" />
+    </div>
+    <div style="width: 15%">
+      <div>Expense Head*</div>
+      <select class="defaultInput" style="width: 100%">
+        <option>Search for a supplier</option>
+      </select>
+    </div>
+    <div style="width: 10%">
+      <div>Date</div>
+      <input
+        class="defaultInput"
+        placeholder="Search for a supplier"
+        style="width: 100%"
+        type="date"
+      />
+    </div>
+    <div style="width: 15%">
+      <div>Paid From Account*</div>
+      <select class="defaultInput" style="width: 100%">
+        <option>Select Account</option>
+      </select>
+    </div>
+    <div style="width: 15%">
+      <div>Payment Method*</div>
+      <select class="defaultInput" style="width: 100%">
+        <option>Select Payment Method</option>
+      </select>
+    </div>
+    <div style="width: 10%">
+      <div>Payment Date*</div>
+      <input class="defaultInput" type="date" style="width: 100%" />
+    </div>
+    <div style="width: 15%">
+      <div>Reference</div>
+      <input class="defaultInput" style="width: 100%" />
+    </div>
+  </div>
+  <div class="formTableHeader">
+    <div class="value" style="width: 3%"></div>
+    <div class="value" style="width: 30%">Expense Item*</div>
+    <div class="value" style="width: 10%">Qty</div>
+    <div class="value" style="width: 10%">Price / Rate*</div>
+    <div class="value" style="width: 10%">Tax Slab</div>
+    <div class="value" style="width: 10%">Tax Treatment</div>
+    <div class="value" style="width: 10%">Input Type</div>
+    <div class="value" style="width: 10%; text-align: right">Tax Amount</div>
+    <div class="value" style="width: 10%; text-align: right">Total</div>
+  </div>
+  <div class="formTableBody">
+    <div class="formTableRow" *ngFor="let it of [{}, {}]">
+      <div class="value" style="width: 3%"></div>
+      <div class="value" style="width: 30%">
+        <select class="defaultSelect" style="width: 100%">
+          <option>SELECT PRODUCT</option>
+        </select>
+      </div>
+      <div class="value" style="width: 10%">
+        <input
+          class="defaultInput"
+          placeholder="0.00"
+          style="width: 100%; text-align: right"
+        />
+      </div>
+      <div class="value" style="width: 10%">
+        <input
+          class="defaultInput"
+          placeholder="0.00"
+          style="width: 100%; text-align: right"
+        />
+      </div>
+      <div class="value" style="width: 10%">
+        <select class="defaultSelect" style="width: 100%">
+          <option>No Tax</option>
+        </select>
+      </div>
+      <div class="value" style="width: 10%">
+        <select class="defaultSelect" style="width: 100%">
+          <option>Inclusive</option>
+          <option>Exclusive</option>
+        </select>
+      </div>
+      <div class="value" style="width: 10%; padding: 0.5vw">
+        <select class="defaultSelect" style="width: 100%">
+          <option>No Tax</option>
+        </select>
+      </div>
+      <div class="value" style="width: 10%; padding: 0.5vw; text-align: right">
+        89,800.00
+      </div>
+      <div class="value" style="width: 10%; padding: 0.5vw; text-align: right">
+        89,800.00
+      </div>
+    </div>
+  </div>
+  <div
+    class="formHeaderBox"
+    style="display: flex; justify-content: space-between"
+  >
+    <div style="width: 44%">
+      <div style="width: 100%">
+        <div>Expense Note</div>
+        <textarea
+          class="defaultInput"
+          style="width: 100%"
+          placeholder="Enter notes here"
+        ></textarea>
+      </div>
+    </div>
+    <div style="width: 35%; line-height: 3vw">
+      <div style="width: 100%; display: flex; justify-content: space-between">
+        <div>Subtotal</div>
+        <div>1,19,700.00</div>
+      </div>
+      <div style="width: 100%; display: flex; justify-content: space-between">
+        <div>Tax</div>
+        <div>1,19,700.00</div>
+      </div>
+      <div
+        style="
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          font-size: 1vw;
+        "
+      >
+        <div>Total</div>
+        <div>1,19,700.00</div>
+      </div>
+    </div>
+  </div>
+  <div class="formFooterBar">
+    <div class="blueButton">SAVE & PRINT</div>
+    <div class="blueButton">CLOSE</div>
+  </div>
 </div>

@@ -11,5 +11,7 @@ export class HomeExpensesComponent implements OnInit {
 
   allExpenses: any = dummyExpenseList;
 
+  addExpense: any = null;
+
   ngOnInit(): void {}
 }
