@@ -35,13 +35,13 @@
   border-top-left-radius: 0.5vw;
   border-top-right-radius: 0.5vw;
   margin-top: 0.6vw;
-  min-width: 5.5vw;
+  min-width: 7vw;
 }
 .tableNavBarEachBottonLine_ {
   background-color: #069bf2;
 }
 .tableBody {
-  height: calc(100vh - 11.2vw);
+  height: calc(100vh - 13.4vw);
   background-color: white;
 }
 .tableBody .table {

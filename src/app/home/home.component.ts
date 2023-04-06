@@ -22,10 +22,10 @@ export class HomeComponent implements OnInit {
   isProfilePopup = false;
   // This is varible is indicate the path of home based on the selected one
   // drowerPath = 'dashboard';
-  drowerPath = 'expenses';
+  drowerPath = 'configuration';
   // This is varible is indicate which sidebar option is acive.(Note:- if you change to ops then default ops will shoe in home)
   // drowerIndex = 0;
-  drowerIndex = 6;
+  drowerIndex = 10;
   subPath: any = '';
 
   ngOnInit(): void {

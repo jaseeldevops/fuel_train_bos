@@ -1255,3 +1255,155 @@
     </div>
   </div>
 </div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'masterSettings' && navCount === 0">
+  <div class="table">
+    <div class="header">
+      <div style="width: 8%">ALARM ID</div>
+      <div style="width: 15%">ALARM PRIORITY</div>
+      <div style="width: 20%">DESCRIPTION</div>
+      <div style="width: 10%">ALARM ENABLE</div>
+      <div style="width: 10%">ALARM VALUE</div>
+      <div style="width: 10%">EQUIPMENT ID</div>
+      <div style="width: 10%">ALARM ALERT</div>
+      <div style="width: 8%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.alarm?.content">
+        <div style="width: 8%">{{ it?.alarmId }}</div>
+        <div style="width: 15%">{{ it?.alarmPriority }}</div>
+        <div style="width: 20%">{{ it?.description }}</div>
+        <div style="width: 10%">{{ it?.alarmEnable }}</div>
+        <div style="width: 10%">{{ it?.alarmValue }}</div>
+        <div style="width: 10%">{{ it?.equipmentId }}</div>
+        <div style="width: 10%">{{ it?.alarmAlert }}</div>
+        <div style="width: 8%; display: flex; justify-content: center">
+          <div
+            class="actionTextButton"
+            (click)="onClickalarmInterlockAlarmEdit(it)"
+          >
+            Edit
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="data?.alarm?.paging"></app-table-paging>
+</div>
+<div class="form3" *ngIf="page === 'alarmInterlock' && navCount === 1">
+  <div class="row1">
+    <div class="col1">Select Pump * :</div>
+    <div class="col2">
+      <select style="width: 30%"></select>
+    </div>
+  </div>
+  <div class="row1" style="padding-bottom: 0">
+    <div class="col1"></div>
+    <div class="col2">
+      <div style="width: 30%"></div>
+      <div style="width: 30%">Hours</div>
+      <div style="width: 30%">Time</div>
+    </div>
+  </div>
+  <div class="row1" style="padding-top: 0.5vw">
+    <div class="col1">Pump Test Lock:</div>
+    <div class="col2">
+      <div style="width: 30%">
+        <div class="switchBtn"></div>
+      </div>
+      <input placeholder="Value" style="width: 30%" /><input
+        placeholder="Value"
+        style="width: 30%"
+      />
+    </div>
+  </div>
+  <div class="row1">
+    <div class="col1">No Print No Delivery :</div>
+    <div class="col2">
+      <div style="width: 30%">
+        <div class="switchBtn"></div>
+      </div>
+      <input placeholder="Value" style="width: 30%" />
+      <div style="width: 30%"></div>
+    </div>
+  </div>
+  <div class="row1">
+    <div class="col1">Preset Mismatch :</div>
+    <div class="col2">
+      <div style="width: 30%">
+        <div class="switchBtn_"></div>
+      </div>
+      <input placeholder="Value" style="width: 30%" />
+      <div style="width: 30%"></div>
+    </div>
+  </div>
+  <div class="row2">
+    <div class="actionBlueButton1">Save Interlock</div>
+  </div>
+</div>
+
+<div class="form3" *ngIf="page === 'alarmInterlock' && navCount === 2">
+  <div class="row1">
+    <div class="col1">Select Tank * :</div>
+    <div class="col2">
+      <select style="width: 30%"></select>
+    </div>
+  </div>
+  <div class="row1" style="padding-top: 0.5vw">
+    <div class="col1">ATG Communication Lock:</div>
+    <div class="col2">
+      <div style="width: 30%">
+        <div class="switchBtn"></div>
+      </div>
+      <input placeholder="Value" style="width: 30%" />
+      <div style="width: 30%"></div>
+    </div>
+  </div>
+  <div class="row1">
+    <div class="col1">TT Receipt Lock :</div>
+    <div class="col2">
+      <div style="width: 30%">
+        <div class="switchBtn"></div>
+      </div>
+      <input placeholder="Value" style="width: 30%" />
+      <div style="width: 30%"></div>
+    </div>
+  </div>
+  <div class="row1">
+    <div class="col1">Decantation Start Lock :</div>
+    <div class="col2">
+      <div style="width: 30%">
+        <div class="switchBtn_"></div>
+      </div>
+      <input placeholder="Value" style="width: 30%" />
+      <div style="width: 30%"></div>
+    </div>
+  </div>
+  <div class="row1">
+    <div class="col1">Tabk Product Low level Lock :</div>
+    <div class="col2">
+      <div style="width: 30%">
+        <div class="switchBtn_"></div>
+      </div>
+      <input placeholder="Value" style="width: 30%" />
+      <div style="width: 30%"></div>
+    </div>
+  </div>
+  <div class="row1">
+    <div class="col1">Tank Water High Level Lock :</div>
+    <div class="col2">
+      <div style="width: 30%">
+        <div class="switchBtn_"></div>
+      </div>
+      <input placeholder="Value" style="width: 30%" />
+      <div style="width: 30%"></div>
+    </div>
+  </div>
+  <div class="row2">
+    <div class="actionBlueButton1">Save Interlock</div>
+  </div>
+</div>

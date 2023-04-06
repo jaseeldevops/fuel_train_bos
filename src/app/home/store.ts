@@ -37,6 +37,8 @@ export const drowerIconList = [
       { title: 'Customer Configuration', path: 'customerConfiguration' },
       { title: 'Supplier Configuration', path: 'supplierConfiguration' },
       { title: 'C-Store Transation', path: 'cStoreTransation' },
+      { title: 'Local Account', path: 'localAccount' },
+      { title: 'Discount Configuration', path: 'discountConfiguration' },
     ],
   },
   {
@@ -89,6 +91,10 @@ export const drowerIconList = [
       { title: 'Alarm & Interlock', path: 'alarmInterlock' },
       { title: 'Maintenance', path: 'maintenance' },
       { title: 'Log Viewer', path: 'logViewer' },
+      { title: 'Master Settings', path: 'masterSettings' },
+      { title: 'Other Settings', path: 'otherSettings' },
+      { title: 'Auditing Information', path: 'auditingInformation' },
+      { title: 'Document Prefix', path: 'documentPrefix' },
     ],
   },
 ];

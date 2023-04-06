@@ -10,6 +10,8 @@ export class HomeStaffMasterComponent implements OnInit {
   constructor() {}
 
   allStaff: any = allDummyEmployee;
+  allSalartMaster: any = allDummyEmployee;
+  allPayrun: any = allDummyEmployee;
   page: number = 0;
 
   onclickAllStaffMaster = () => {
@@ -18,7 +20,11 @@ export class HomeStaffMasterComponent implements OnInit {
   };
   onclickAllSalaryMaster = () => {
     this.page = 1;
-    this.allStaff = allDummyEmployee;
+    this.allSalartMaster = allDummyEmployee;
+  };
+  onclickAllPayrun = () => {
+    this.page = 2;
+    this.allPayrun = allDummyEmployee;
   };
 
   ngOnInit(): void {}
