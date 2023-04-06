@@ -218,7 +218,7 @@
       </div>
     </div>
   </div>
-    <!-- ///////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ///////////////////////////////////////////////////////////////////////////////// -->
   <!-- //////////////////////////// SUPPLIER Configuration ///////////////////////////// -->
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
   <div *ngIf="page === 'cStoreTransation'" class="header">
@@ -229,6 +229,44 @@
       <div class="navBar">
         <div class="eachButton_">
           Invoice List
+          <div class="buttonBottom_"></div>
+        </div>
+      </div>
+      <div style="display: flex">
+        <input placeholder="Search an invoice" class="defaultInput" />
+        <div class="downloadButton"></div>
+      </div>
+    </div>
+  </div>
+  <!-- ///////////////////////////////////////////////////////////////////////////////// -->
+  <!-- //////////////////////////// SUPPLIER Configuration ///////////////////////////// -->
+  <!-- ///////////////////////////////////////////////////////////////////////////////// -->
+  <div *ngIf="page === 'localAccount'" class="header">
+    <div class="titile" (click)="page = ''">Operations > Local Account</div>
+    <div class="navRow">
+      <div class="navBar">
+        <div class="eachButton_">
+          Customers
+          <div class="buttonBottom_"></div>
+        </div>
+      </div>
+      <div style="display: flex">
+        <input placeholder="Search an invoice" class="defaultInput" />
+        <div class="downloadButton"></div>
+      </div>
+    </div>
+  </div>
+  <!-- ///////////////////////////////////////////////////////////////////////////////// -->
+  <!-- //////////////////////////// SUPPLIER Configuration ///////////////////////////// -->
+  <!-- ///////////////////////////////////////////////////////////////////////////////// -->
+  <div *ngIf="page === 'discountConfiguration'" class="header">
+    <div class="titile" (click)="page = ''">
+      Operations > Discount Configuration
+    </div>
+    <div class="navRow">
+      <div class="navBar">
+        <div class="eachButton_">
+          Promotion
           <div class="buttonBottom_"></div>
         </div>
       </div>
