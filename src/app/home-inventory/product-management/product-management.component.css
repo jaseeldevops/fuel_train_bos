@@ -124,3 +124,61 @@ input {
   padding: 0.5vw 2.5vw;
   cursor: pointer;
 }
+.imageContainer {
+  width: 45vw;
+  background-color: white;
+  border: 0.08vw solid #d5d9dd;
+  border-radius: 0.4vw;
+}
+.imagePlayGround {
+  height: 12vw;
+  background-image: url(../../../assets/imgFileUpload.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 75%;
+}
+.imageControler {
+  padding: 0.6vw;
+  font-size: 0.8vw;
+  background-color: #dcdede;
+  border-bottom-left-radius: 0.4vw;
+  border-bottom-right-radius: 0.4vw;
+  cursor: pointer;
+}
+.imageControler span {
+  color: var(--myColor);
+}
+.imageList {
+  height: 12vw;
+  display: flex;
+  flex-wrap: wrap;
+  overflow: scroll;
+}
+.imageListItem {
+  height: 6vw;
+  width: 6vw;
+  border-radius: 0.3vw;
+  margin: 0.2vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  padding: 0.3vw;
+  box-sizing: border-box;
+}
+.dltImgBtn {
+  width: 1.6vw;
+  height: 1.6vw;
+  cursor: pointer;
+  background-image: url(../../../assets/ic_bin.svg);
+  background-position: center;
+  background-size: 0.8vw;
+  background-repeat: no-repeat;
+  border-radius: 50%;
+  background-color: #ffffff80;
+}
+.dltImgBtn:hover {
+  background-color: #ffffff ;
+}

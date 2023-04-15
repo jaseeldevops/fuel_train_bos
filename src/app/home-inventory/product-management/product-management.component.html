@@ -315,10 +315,36 @@
       <div class="formSide">
         <div class="formRow">
           <div class="fieldTitle">Upload Images</div>
+          <div class="imageContainer">
+            <div
+              class="imagePlayGround"
+              (click)="imgLoader.click()"
+              *ngIf="uploadedImages.length < 1"
+            ></div>
+            <div class="imageList" *ngIf="uploadedImages.length > 0">
+              <div
+                class="imageListItem"
+                *ngFor="let it of uploadedImages; let k = index"
+                [ngStyle]="{ backgroundImage: getImageLocalUrl(it) }"
+              >
+                <div
+                  class="dltImgBtn"
+                  (click)="uploadedImages.splice(k, 1)"
+                ></div>
+              </div>
+            </div>
+            <div class="imageControler" (click)="imgLoader.click()">
+              DRAG images here or
+              <span>BROWSE</span> to upload
+            </div>
+          </div>
           <input
-            class="input"
-            style="width: 40vw; height: 12vw; background: white"
+            #imgLoader
+            style="display: none"
             type="file"
+            accept="image/*"
+            multiple
+            (change)="uploadImageSelected($event)"
           />
         </div>
         <div style="display: flex">

@@ -18,6 +18,7 @@ export class ProductManagementComponent implements OnInit {
   allPromotions = allDummyPromotions;
 
   constructor() {}
+  ngOnInit(): void {}
 
   onClickNewProduct = () => {
     this.onBack('addNewProduct');
@@ -35,5 +36,14 @@ export class ProductManagementComponent implements OnInit {
     this.onBack('addProduct');
   };
 
-  ngOnInit(): void {}
+  uploadedImages: any = [];
+  uploadImageSelected = (e: any) => {
+    console.log(URL.createObjectURL(e.target.files[0]));
+    const joined: any = Array.from(this.uploadedImages).concat(
+      Array.from(e.target.files)
+    );
+    this.uploadedImages = joined;
+  };
+
+  getImageLocalUrl = (img: any) => `url(${URL.createObjectURL(img)})`;
 }
