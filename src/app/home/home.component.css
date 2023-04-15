@@ -87,6 +87,7 @@
   background-color: var(--myColor);
   padding-top: 0.5vw;
   overflow: hidden;
+  z-index: -1;
 }
 .c:hover {
   transition: 0.3s;

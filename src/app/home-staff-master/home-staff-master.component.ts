@@ -12,20 +12,26 @@ export class HomeStaffMasterComponent implements OnInit {
   allStaff: any = allDummyEmployee;
   allSalartMaster: any = allDummyEmployee;
   allPayrun: any = allDummyEmployee;
-  page: number = 0;
+  page: string = 'employeeForm';
 
   onclickAllStaffMaster = () => {
-    this.page = 0;
+    this.page = 'staffMaster';
     this.allStaff = allDummyEmployee;
   };
   onclickAllSalaryMaster = () => {
-    this.page = 1;
+    this.page = 'salaryMaster';
     this.allSalartMaster = allDummyEmployee;
   };
   onclickAllPayrun = () => {
-    this.page = 2;
+    this.page = 'payRun';
     this.allPayrun = allDummyEmployee;
   };
+
+  onClickAddEmloyee = () => {
+    this.page = 'employeeForm';
+  };
+
+  onClickSaveEmployeeForm = () => {};
 
   ngOnInit(): void {}
 }

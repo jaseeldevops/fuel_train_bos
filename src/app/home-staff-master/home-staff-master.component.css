@@ -7,39 +7,102 @@
   display: flex;
   align-items: center;
 }
-/* //////////////////////////////////////////////////////////////////////////// */
-/* //////////////////////////////////////////////////////////////////////////// */
-/* //////////////////////////////////////////////////////////////////////////// */
-/* //////////////////////////////////////////////////////////////////////////// */
-/* //////////////////////////////////////////////////////////////////////////// */
-.tableNavBar {
-  height: 3.2vw;
-  border-bottom: 0.1vw solid #7070705d;
+/* ///////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////// */
+.tableFilterHeader {
   display: flex;
-  align-items: flex-end;
+  justify-content: flex-end;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 1vw;
+  height: 3.4vw;
+  border-bottom: 0.08vw solid rgb(181, 181, 181);
 }
-.tableNavBarEach,
-.tableNavBarEach_ {
-  color: #888888;
+.tableFilterHeader .input {
+  font-size: 0.8vw;
+  background-color: white;
+  border: none;
+  outline: none;
+  padding: 0.5vw 0.8vw;
+  margin: 0.4vw 0.8vw;
+  border-radius: 0.3vw;
+  box-sizing: border-box;
+  min-width: 14vw;
+}
+.tableFilterHeader .categoryTitle {
   font-size: 1vw;
-  padding: 0 0.3vw;
+  margin-left: 2vw;
+  color: #0001207d;
+}
+.tableFilterHeader .addButton {
+  min-width: 9vw;
+  background-color: var(--myColor);
+  padding: 0.4vw 2vw;
+  border-radius: 0.3vw;
+  font-size: 1.2vw;
+  font-weight: 500;
+  color: white;
+  margin: 0.4vw 0.8vw;
   cursor: pointer;
   text-align: center;
 }
-.tableNavBarEach_ {
+.tableFilterHeader .navTab {
+  width: 48%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  color: var(--myColor);
+  font-size: 1.1vw;
+}
+.tableFilterHeader .navTabEach {
+  padding: 0.5vw;
+  margin: 0 0.4vw;
+  border-bottom: 0.2vw solid transparent;
+  cursor: pointer;
+}
+.tableFilterHeader .navTabEach_ {
+  padding: 0.5vw;
+  margin: 0 0.4vw;
+  border-bottom: 0.2vw solid var(--myColor);
+}
+/* ///////////////////////////////////////////////////////////////// */
+.tableFilterHeader .navBar {
+  height: 3.2vw;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+}
+.tableFilterHeader .navBarEach,
+.tableFilterHeader .navBarEach_ {
+  color: #888888;
+  font-size: 1vw;
+  padding: 0 0.2vw;
+  cursor: pointer;
+  text-align: center;
+}
+.tableFilterHeader .navBarEach_ {
   color: #00649e;
 }
-.tableNavBarEachBottonLine,
-.tableNavBarEachBottonLine_ {
+.tableFilterHeader .navBarLine,
+.tableFilterHeader .navBarLine_ {
   height: 0.3vw;
   border-top-left-radius: 0.5vw;
   border-top-right-radius: 0.5vw;
-  margin-top: 0.6vw;
-  min-width: 7vw;
+  margin-top: 0.5vw;
+  min-width: 6.5vw;
 }
-.tableNavBarEachBottonLine_ {
+.tableFilterHeader .navBarLine_ {
   background-color: #069bf2;
 }
+/* //////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////////// */
+/* //////////////////////////////////////////////////////////////////////////////// */
 .tableBody {
   height: calc(100vh - 13.4vw);
   background-color: white;
@@ -77,3 +140,137 @@
 /* ///////////////////////////////////////////////////////////////////////// */
 /* ///////////////////////////////////////////////////////////////////////// */
 /* ///////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////// */
+.formBlankScreen1 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #00000088;
+}
+.employeeForm,
+.employeeForm_ {
+  transition: 0.3s;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 45vw;
+  background-color: white;
+}
+.employeeForm_ {
+  right: -45vw;
+}
+.employeeForm .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2vw;
+  background-color: #e1e2e5;
+  padding: 0.7vw 1.2vw;
+  font-weight: bold;
+}
+.employeeForm .closeBtn {
+  width: 1.4vw;
+  height: 1.4vw;
+  cursor: pointer;
+  background-image: url(../../assets/ic_x.svg);
+  background-position: center;
+  background-size: 1.2vw;
+  background-repeat: no-repeat;
+}
+/* //////////////////////////////////////////////// */
+.employeeForm .body {
+  height: calc(100vh - 6.4vw);
+  overflow: auto;
+  display: flex;
+}
+.employeeForm .leftBody {
+  width: 38%;
+  border-right: 0.08vw solid #7070706a;
+}
+.employeeForm .rightBody {
+  width: 62%;
+}
+.employeeForm .profileContainer {
+  display: flex;
+  justify-content: center;
+  padding: 1vw;
+}
+.employeeForm .profile {
+  width: 11vw;
+  height: 11vw;
+  border-radius: 50%;
+  background-color: #00000011;
+}
+.employeeForm .rightTitle,
+.employeeForm .rightTitle_ {
+  font-size: 0.9vw;
+  padding: 0.3vw 2vw;
+  box-sizing: border-box;
+}
+.employeeForm .rightTitle_ {
+  background-color: #c9d5f8;
+}
+.employeeForm .leftTitle {
+  font-size: 1vw;
+  padding: 0.8vw 1.5vw;
+  box-sizing: border-box;
+  font-weight: 500;
+  background-color: #eeeeee;
+}
+.employeeForm .formSubBody {
+  padding: 1vw;
+  font-size: 1vw;
+}
+.employeeForm .input {
+  border: 0.08vw solid #d5d5d5;
+  border-radius: 0.2vw;
+  padding: 0.4vw 0.6vw;
+  margin: 0.2vw 0;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 0.8vw;
+}
+/* //////////////////////////////////////////////// */
+.employeeForm .footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.8vw 1.2vw;
+  background-color: #eceff4;
+}
+.employeeForm .errorMsg {
+  color: #ce4d24;
+  background-color: #f9d7d4;
+  border-radius: 0.4vw;
+  padding: 0.4vw 1.5vw;
+  font-size: 1vw;
+  cursor: pointer;
+  font-weight: 500;
+}
+.employeeForm .btns {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 1vw;
+}
+.employeeForm .cancelBtn {
+  margin: 0 0.5vw;
+  border-radius: 0.3vw;
+  padding: 0.4vw 1.5vw;
+  background-color: #c9e1ff;
+  color: var(--myColor);
+  cursor: pointer;
+  font-weight: 500;
+}
+.employeeForm .saveBtn {
+  margin: 0 0.5vw;
+  background-color: var(--myColor);
+  border-radius: 0.3vw;
+  padding: 0.4vw 1.5vw;
+  cursor: pointer;
+  font-weight: 500;
+}
