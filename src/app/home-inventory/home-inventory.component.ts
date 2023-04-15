@@ -15,7 +15,7 @@ export class HomeInventoryComponent implements OnInit {
 
   // page: any = null;
   // page: any = 'addNewProduct';
-  page: any = 'addNewService';
+  page: any = 'newStockReturn';
 
   onBack = (p: string) => (this.page = p);
 

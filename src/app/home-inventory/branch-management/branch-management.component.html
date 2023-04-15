@@ -110,3 +110,130 @@
   </div>
   <app-table-paging [paging]="allStocks?.paging"></app-table-paging>
 </div>
+
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="formLayout" *ngIf="page === 'addStockTransfer'">
+  <div
+    class="formHeaderBox"
+    style="display: flex; justify-content: space-between; align-items: center"
+  >
+    <div style="width: 22%">
+      <div>Transfer from Branch*</div>
+      <select class="defaultInput" style="width: 100%">
+        <option>Select Branch</option>
+      </select>
+    </div>
+    <div style="width: 12%">
+      <div>Date</div>
+      <input
+        class="defaultInput"
+        placeholder="Search for a supplier"
+        style="width: 100%"
+        type="date"
+      />
+    </div>
+    <div style="width: 22%">
+      <div>Transfer to Branch*</div>
+      <select class="defaultInput" style="width: 100%">
+        <option>Select Account</option>
+      </select>
+    </div>
+    <div style="width: 22%">
+      <div>Discription</div>
+      <input class="defaultInput" style="width: 100%" />
+    </div>
+    <div style="width: 10%"></div>
+  </div>
+  <div class="formTableHeader">
+    <div class="value" style="width: 3%"></div>
+    <div class="value" style="width: 30%">Product / Service</div>
+    <div class="value" style="width: 10%">Qty</div>
+    <div class="value" style="width: 10%">Cost*</div>
+    <div class="value" style="width: 15%">Branch Price</div>
+    <div class="value" style="width: 10%">Tax Slab</div>
+    <div class="value" style="width: 10%; text-align: right">Tax Amount</div>
+    <div class="value" style="width: 10%; text-align: right">Total</div>
+  </div>
+  <div class="formTableBody">
+    <div class="formTableRow" *ngFor="let it of [{}, {}]">
+      <div class="value" style="width: 3%"></div>
+      <div class="value" style="width: 30%">
+        <select class="defaultSelect" style="width: 100%">
+          <option>SELECT PRODUCT</option>
+        </select>
+      </div>
+      <div class="value" style="width: 10%">
+        <input
+          class="defaultInput"
+          placeholder="0.00"
+          style="width: 100%; text-align: right"
+        />
+      </div>
+      <div class="value" style="width: 10%">
+        <input
+          class="defaultInput"
+          placeholder="0.00"
+          style="width: 100%; text-align: right"
+        />
+      </div>
+      <div class="value" style="width: 15%">
+        <input placeholder="0.00" class="defaultSelect" style="width: 100%" />
+      </div>
+      <div class="value" style="width: 10%">
+        <select class="defaultSelect" style="width: 100%">
+          <option>No Tax</option>
+        </select>
+      </div>
+      <div class="value" style="width: 10%; padding: 0.5vw; text-align: right">
+        89,800.00
+      </div>
+      <div class="value" style="width: 10%; padding: 0.5vw; text-align: right">
+        89,800.00
+      </div>
+    </div>
+  </div>
+  <div
+    class="formHeaderBox"
+    style="display: flex; justify-content: space-between"
+  >
+    <div style="width: 44%">
+      <div style="width: 100%">
+        <div>Delevery Address</div>
+        <textarea
+          class="defaultInput"
+          style="width: 100%"
+          placeholder="Adress..."
+        ></textarea>
+      </div>
+    </div>
+    <div style="width: 35%; line-height: 3vw">
+      <div style="width: 100%; display: flex; justify-content: space-between">
+        <div>Subtotal</div>
+        <div>1,19,700.00</div>
+      </div>
+      <div style="width: 100%; display: flex; justify-content: space-between">
+        <div>Tax</div>
+        <div>1,19,700.00</div>
+      </div>
+      <div
+        style="
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          font-size: 1vw;
+        "
+      >
+        <div>Total</div>
+        <div>1,19,700.00</div>
+      </div>
+    </div>
+  </div>
+  <div class="formFooterBar">
+    <div class="blueButton">SAVE & PRINT</div>
+    <div class="blueButton">CLOSE</div>
+  </div>
+</div>
