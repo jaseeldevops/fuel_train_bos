@@ -1,0 +1,90 @@
+<div class="pageTitle">
+  <div class="arrowBack" (click)="onBack()"></div>
+  {{ page === "priceLookup" ? "PRICE LOOKUP" : "PRICE CHANGE" }}
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'priceLookup'">
+  <div class="table">
+    <div class="header">
+      <div style="width: 6%"></div>
+      <div style="width: 28%">Service Name</div>
+      <div style="width: 14%">CODE</div>
+      <div style="width: 14%">CATEGORY</div>
+      <div style="width: 10%">TYPE</div>
+      <div style="width: 14%">PURCHASE PRICE</div>
+      <div style="width: 10%">MRP</div>
+      <div style="width: 8%">RRP</div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allProduct?.content">
+        <div class="content" style="width: 6%">
+          <img
+            [src]="it?.image"
+            style="
+              object-fit: cover;
+              border-radius: 50%;
+              width: 1.5vw;
+              height: 1.5vw;
+              margin-left: 1vw;
+            "
+          />
+        </div>
+        <div class="content" style="width: 28%">{{ it?.name }}</div>
+        <div class="content" style="width: 14%">{{ it?.code }}</div>
+        <div class="content" style="width: 14%">{{ it?.category }}</div>
+        <div class="content" style="width: 10%">{{ it?.type }}</div>
+        <div class="content" style="width: 14%">{{ it?.purchasePrice }}</div>
+        <div class="content" style="width: 10%">{{ it?.mrp }}</div>
+        <div class="content" style="width: 8%">{{ it?.rrp }}</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allProduct?.paging"></app-table-paging>
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'priceChange'">
+  <div class="table">
+    <div class="header">
+      <div style="width: 6%"></div>
+      <div style="width: 28%">Service Name</div>
+      <div style="width: 14%">CODE</div>
+      <div style="width: 14%">CATEGORY</div>
+      <div style="width: 14%">PURCHASE PRICE</div>
+      <div style="width: 10%">MRP</div>
+      <div style="width: 8%">RRP</div>
+      <div style="width: 8%">TAX</div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allProduct?.content">
+        <div class="content" style="width: 6%">
+          <img
+            [src]="it?.image"
+            style="
+              object-fit: cover;
+              border-radius: 50%;
+              width: 1.5vw;
+              height: 1.5vw;
+              margin-left: 1vw;
+            "
+          />
+        </div>
+        <div class="content" style="width: 28%">{{ it?.name }}</div>
+        <div class="content" style="width: 14%">{{ it?.code }}</div>
+        <div class="content" style="width: 14%">{{ it?.category }}</div>
+        <div class="content" style="width: 14%">{{ it?.purchasePrice }}</div>
+        <div class="content" style="width: 10%">{{ it?.mrp }}</div>
+        <div class="content" style="width: 8%">{{ it?.rrp }}</div>
+        <div class="content" style="width: 8%">{{ it?.tax }}</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allProduct?.paging"></app-table-paging>
+</div>

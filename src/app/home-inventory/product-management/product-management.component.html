@@ -1,0 +1,143 @@
+<div class="pageTitle">
+  <div class="arrowBack" (click)="onBack()"></div>
+  {{
+    page === "addProduct"
+      ? "ADD PRODUCT"
+      : page === "addService"
+      ? "ADD SERVICE"
+      : "PROMOTIONS"
+  }}
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'addProduct'">
+  <div class="table">
+    <div class="header">
+      <div style="width: 6%"></div>
+      <div style="width: 20%">Prodect Name</div>
+      <div style="width: 10%">CODE</div>
+      <div style="width: 12%">CATEGORY</div>
+      <div style="width: 10%">TYPE</div>
+      <div style="width: 10%">COST</div>
+      <div style="width: 10%">SELLING</div>
+      <div style="width: 10%">MRP</div>
+      <div style="width: 8%">TAX</div>
+      <div style="width: 8%">STOCK</div>
+      <div style="width: 8%">MSL</div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allProduct?.content">
+        <div class="content" style="width: 6%">
+          <img
+            [src]="it?.image"
+            style="
+              object-fit: cover;
+              border-radius: 50%;
+              width: 1.5vw;
+              height: 1.5vw;
+              margin-left: 1vw;
+            "
+          />
+        </div>
+        <div class="content" style="width: 20%">{{ it?.name }}</div>
+        <div class="content" style="width: 10%">{{ it?.code }}</div>
+        <div class="content" style="width: 12%">{{ it?.category }}</div>
+        <div class="content" style="width: 10%">{{ it?.type }}</div>
+        <div class="content" style="width: 10%">{{ it?.cost }}</div>
+        <div class="content" style="width: 10%">{{ it?.selling }}</div>
+        <div class="content" style="width: 10%">{{ it?.mrp }}</div>
+        <div class="content" style="width: 8%">{{ it?.tax }}</div>
+        <div class="content" style="width: 8%">{{ it?.stock }}</div>
+        <div class="content" style="width: 8%">{{ it?.msl }}</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allProduct?.paging"></app-table-paging>
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'addService'">
+  <div class="table">
+    <div class="header">
+      <div style="width: 6%"></div>
+      <div style="width: 22%">Service Name</div>
+      <div style="width: 14%">CODE</div>
+      <div style="width: 14%">CATEGORY</div>
+      <div style="width: 14%">COST</div>
+      <div style="width: 14%">SELLING</div>
+      <div style="width: 10%">TAX</div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allProduct?.content">
+        <div class="content" style="width: 6%">
+          <img
+            [src]="it?.image"
+            style="
+              object-fit: cover;
+              border-radius: 50%;
+              width: 1.5vw;
+              height: 1.5vw;
+              margin-left: 1vw;
+            "
+          />
+        </div>
+        <div class="content" style="width: 22%">{{ it?.name }}</div>
+        <div class="content" style="width: 14%">{{ it?.code }}</div>
+        <div class="content" style="width: 14%">{{ it?.category }}</div>
+        <div class="content" style="width: 14%">{{ it?.cost }}</div>
+        <div class="content" style="width: 14%">{{ it?.selling }}</div>
+        <div class="content" style="width: 10%">{{ it?.tax }}</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allProduct?.paging"></app-table-paging>
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'promotions'">
+  <div class="table">
+    <div class="header">
+      <div style="width: 2%"></div>
+      <div style="width: 18%">Promotion Name</div>
+      <div style="width: 18%">COUNTRY</div>
+      <div style="width: 18%">STARTING DATE</div>
+      <div style="width: 18%">END DATE</div>
+      <div style="width: 8%">STATUS</div>
+      <div style="width: 4.4vw"></div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allPromotions?.content">
+        <div style="width: 2%"></div>
+        <div style="width: 18%">{{ it?.name }}</div>
+        <div style="width: 18%">{{ it?.country }}</div>
+        <div style="width: 18%">{{ it?.startDate }}</div>
+        <div style="width: 18%">{{ it?.endDate }}</div>
+        <div style="width: 8%; display: flex; align-items: center">
+          <div
+            style="
+              width: 0.8vw;
+              height: 0.8vw;
+              border-radius: 50%;
+              margin-right: 0.6vw;
+            "
+            [ngStyle]="{
+              'background-color': it?.status == 'Active' ? '#B14848' : '#03b271'
+            }"
+          ></div>
+          {{ it?.status }}
+        </div>
+        <div class="nextArrow"></div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allPromotions?.paging"></app-table-paging>
+</div>

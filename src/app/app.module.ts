@@ -35,6 +35,10 @@ import { HomeStaffMasterComponent } from './home-staff-master/home-staff-master.
 import { HomeInventoryComponent } from './home-inventory/home-inventory.component';
 import { CStoreComponent } from './home-dashboard/c-store/c-store.component';
 import { ForecortComponent } from './home-dashboard/forecort/forecort.component';
+import { ProductManagementComponent } from './home-inventory/product-management/product-management.component';
+import { PriceManagementComponent } from './home-inventory/price-management/price-management.component';
+import { BranchManagementComponent } from './home-inventory/branch-management/branch-management.component';
+import { StockManagementComponent } from './home-inventory/stock-management/stock-management.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +71,10 @@ import { ForecortComponent } from './home-dashboard/forecort/forecort.component'
     HomeInventoryComponent,
     CStoreComponent,
     ForecortComponent,
+    ProductManagementComponent,
+    PriceManagementComponent,
+    BranchManagementComponent,
+    StockManagementComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,203 @@
+
+<div class="pageTitle" *ngIf="page === 'stockReturn'">
+  <div class="arrowBack" (click)="onBack()"></div>
+  STOCK RETURN
+</div>
+<div class="pageTitle" *ngIf="page === 'stockTaking'">
+  <div class="arrowBack" (click)="onBack()"></div>
+  STOCK TAKING
+</div>
+<div class="pageTitle" *ngIf="page === 'stockTrail'">
+  <div class="arrowBack" (click)="onBack()"></div>
+  STOCK TRAIL
+</div>
+<div class="pageTitle" *ngIf="page === 'stockAdjestment'">
+  <div class="arrowBack" (click)="onBack()"></div>
+  STOCK ADJESTMENT
+</div>
+<div class="pageTitle" *ngIf="page === 'stockLookup'">
+  <div class="arrowBack" (click)="onBack()"></div>
+  STOCK LOOKUP
+</div>
+<div class="pageTitle" *ngIf="page === 'mslLookup'">
+  <div class="arrowBack" (click)="onBack()"></div>
+  MSL LOOKUP
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'stockReturn'">
+    <div class="table">
+      <div class="header">
+        <div></div>
+        <div style="width: 12%">TRANSACTION</div>
+        <div style="width: 12%">DATE</div>
+        <div style="width: 12%">TRANSFER FROM</div>
+        <div style="width: 12%">TRANSFER TO</div>
+        <div style="width: 12%">DISCRIPTION</div>
+        <div style="width: 8%">COUNT</div>
+        <div style="width: 8%; text-align: right">Amount</div>
+        <div style="width: 8%">Status</div>
+        <div></div>
+      </div>
+      <div class="body">
+        <div class="row" *ngFor="let it of allStocks?.content">
+          <div></div>
+          <div class="content" style="width: 12%">{{ it?.transaction }}</div>
+          <div class="content" style="width: 12%">{{ it?.date }}</div>
+          <div class="content" style="width: 12%">{{ it?.transferFrom }}</div>
+          <div class="content" style="width: 12%">{{ it?.transferTo }}</div>
+          <div class="content" style="width: 12%">{{ it?.desc }}</div>
+          <div class="content" style="width: 8%">{{ it?.count }}</div>
+          <div class="content" style="width: 8%; text-align: right">
+            {{ it?.amount }}
+          </div>
+          <div class="content" style="width: 8%">{{ it?.status }}</div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <app-table-paging [paging]="allStocks?.paging"></app-table-paging>
+  </div>
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <!--  -->
+  <!--  -->
+  <div class="tableBody" *ngIf="page === 'stockAdjestment'">
+    <div class="table">
+      <div class="header">
+        <div></div>
+        <div style="width: 6%"></div>
+        <div style="width: 22%">Product Name</div>
+        <div style="width: 10%">CODE</div>
+        <div style="width: 16%">PARENT CATEGORY</div>
+        <div style="width: 16%">CATEGORY</div>
+        <div style="width: 10%">MSL</div>
+        <div style="width: 10%">STOCK</div>
+        <div></div>
+      </div>
+      <div class="body">
+        <div class="row" *ngFor="let it of allProduct?.content">
+          <div></div>
+          <div class="content" style="width: 6%">
+            <img
+              [src]="it?.image"
+              style="
+                object-fit: cover;
+                border-radius: 50%;
+                width: 1.5vw;
+                height: 1.5vw;
+                margin-left: 1vw;
+              "
+            />
+          </div>
+          <div class="content" style="width: 22%">{{ it?.name }}</div>
+          <div class="content" style="width: 10%">{{ it?.code }}</div>
+          <div class="content" style="width: 16%">{{ it?.parentCategory }}</div>
+          <div class="content" style="width: 16%">{{ it?.category }}</div>
+          <div class="content" style="width: 10%">{{ it?.msl }}</div>
+          <div class="content" style="width: 10%">{{ it?.stock }}</div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <app-table-paging [paging]="allProduct?.paging"></app-table-paging>
+  </div>
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <div class="tableBody" *ngIf="page === 'stockLookup'">
+    <div class="table">
+      <div class="header">
+        <div></div>
+        <div style="width: 4%"></div>
+        <div style="width: 30%">Product Name</div>
+        <div style="width: 13%">CODE</div>
+        <div style="width: 18%">CATEGORY</div>
+        <div style="width: 13%">TYPE</div>
+        <div style="width: 13%">STOCK</div>
+        <div></div>
+      </div>
+      <div class="body">
+        <div class="row" *ngFor="let it of allProduct?.content">
+          <div></div>
+          <div class="content" style="width: 4%">
+            <img
+              [src]="it?.image"
+              style="
+                object-fit: cover;
+                border-radius: 50%;
+                width: 1.5vw;
+                height: 1.5vw;
+                margin-left: 1vw;
+              "
+            />
+          </div>
+          <div class="content" style="width: 30%">{{ it?.name }}</div>
+          <div class="content" style="width: 13%">{{ it?.code }}</div>
+          <div class="content" style="width: 18%">{{ it?.category }}</div>
+          <div class="content" style="width: 13%">{{ it?.type }}</div>
+          <div class="content" style="width: 13%">{{ it?.stock }}</div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <app-table-paging [paging]="allProduct?.paging"></app-table-paging>
+  </div>
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+  <div class="tableBody" *ngIf="page === 'mslLookup'">
+    <div class="table">
+      <div class="header">
+        <div></div>
+        <div style="width: 6%"></div>
+        <div style="width: 22%">Product Name</div>
+        <div style="width: 10%">CODE</div>
+        <div style="width: 12%">CATEGORY</div>
+        <div style="width: 10%">TYPE</div>
+        <div style="width: 10%">MSL</div>
+        <div style="width: 10%">STOCK</div>
+        <div style="width: 10%; text-align: center">DEFFERENCE</div>
+        <div></div>
+      </div>
+      <div class="body">
+        <div class="row" *ngFor="let it of allProduct?.content">
+          <div></div>
+          <div class="content" style="width: 6%">
+            <img
+              [src]="it?.image"
+              style="
+                object-fit: cover;
+                border-radius: 50%;
+                width: 1.5vw;
+                height: 1.5vw;
+                margin-left: 1vw;
+              "
+            />
+          </div>
+          <div class="content" style="width: 22%">{{ it?.name }}</div>
+          <div class="content" style="width: 10%">{{ it?.code }}</div>
+          <div class="content" style="width: 12%">{{ it?.category }}</div>
+          <div class="content" style="width: 10%">{{ it?.type }}</div>
+          <div class="content" style="width: 10%">{{ it?.msl }}</div>
+          <div class="content" style="width: 10%">{{ it?.stock }}</div>
+          <div class="content" style="width: 10%; text-align: center">
+            {{ it?.difference }}
+          </div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+    <app-table-paging [paging]="allProduct?.paging"></app-table-paging>
+  </div>
+  
