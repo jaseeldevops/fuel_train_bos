@@ -2,7 +2,10 @@
   <div class="arrowBack" (click)="onBack(null)"></div>
   STOCK RETURN
 </div>
-<div class="pageTitle" *ngIf="page === 'stockTaking'">
+<div
+  class="pageTitle"
+  *ngIf="page === 'stockTaking' || page === 'inventoryCountPopup'"
+>
   <div class="arrowBack" (click)="onBack(null)"></div>
   STOCK TAKING
 </div>
@@ -34,10 +37,14 @@
     page === 'stockTrail' ||
     page === 'stockAdjestment' ||
     page === 'stockLookup' ||
-    page === 'mslLookup'
+    page === 'mslLookup' ||
+    page === 'inventoryCountPopup'
   "
 >
-  <div class="navTab" *ngIf="page === 'stockTaking'">
+  <div
+    class="navTab"
+    *ngIf="page === 'stockTaking' || page === 'inventoryCountPopup'"
+  >
     <div
       [ngClass]="subPage === 0 ? 'navTabEach_' : 'navTabEach'"
       (click)="subPage = 0"
@@ -71,7 +78,7 @@
   </div>
   <div
     class="addButton"
-    *ngIf="page === 'stockTaking'"
+    *ngIf="page === 'stockTaking' || page === 'inventoryCountPopup'"
     (click)="onClickStockTaking()"
   >
     + New Count
@@ -120,8 +127,75 @@
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
-<!--  -->
-<!--  -->
+<div
+  class="tableBody"
+  *ngIf="page === 'stockTaking' || page === 'inventoryCountPopup'"
+>
+  <div class="table">
+    <div class="header">
+      <div></div>
+      <div style="width: 15%">COUNT DETAILS</div>
+      <div style="width: 15%">START DATE</div>
+      <div style="width: 15%">COUNT TYPE</div>
+      <div style="width: 15%">END BEFORE</div>
+      <div style="width: 15%">COUNTING STATUS</div>
+      <div style="width: 15%">REVIEW STATUS</div>
+      <div></div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allStocks?.content">
+        <div></div>
+        <div class="content" style="width: 15%">{{ it?.transaction }}</div>
+        <div class="content" style="width: 15%">{{ it?.date }}</div>
+        <div class="content" style="width: 15%">{{ it?.transferFrom }}</div>
+        <div class="content" style="width: 15%">{{ it?.transferTo }}</div>
+        <div class="content" style="width: 15%">{{ it?.desc }}</div>
+        <div class="content" style="width: 15%">{{ it?.count }}</div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allStocks?.paging"></app-table-paging>
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'stockTrail'">
+  <div class="table">
+    <div class="header">
+      <div></div>
+      <div style="width: 22%">DATE</div>
+      <div style="width: 12%">PARTY</div>
+      <div style="width: 12%">TYPE</div>
+      <div style="width: 12%">QTY</div>
+      <div style="width: 12%">AMOUNT</div>
+      <div style="width: 12%">COST</div>
+      <div style="width: 12%">STOCK</div>
+      <div></div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allProduct?.content">
+        <div></div>
+        <div class="content" style="width: 22%">{{ it?.name }}</div>
+        <div class="content" style="width: 12%">{{ it?.code }}</div>
+        <div class="content" style="width: 12%">{{ it?.parentCategory }}</div>
+        <div class="content" style="width: 12%">{{ it?.category }}</div>
+        <div class="content" style="width: 12%">{{ it?.msl }}</div>
+        <div class="content" style="width: 12%">{{ it?.stock }}</div>
+        <div class="content" style="width: 12%">{{ it?.stock }}</div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allProduct?.paging"></app-table-paging>
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <div class="tableBody" *ngIf="page === 'stockAdjestment'">
   <div class="table">
     <div class="header">
@@ -381,6 +455,94 @@
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <div class="popup1" *ngIf="page === 'inventoryCountPopup'">
   <div class="body">
-    <div class="body">New Inventory Count</div>
+    <div class="header">
+      New Inventory Count
+      <div class="closeBtn" (click)="onBack('stockTaking')"></div>
+    </div>
+    <div class="desc">Initiate a new inventory count in your branch</div>
+    <div class="bodyRow">
+      <div class="contentBody">
+        <div>Inventory Count Title*</div>
+        <input class="input" placeholder="Inventory count name here" />
+      </div>
+      <div class="contentBody">
+        <div>Start date</div>
+        <input class="input" style="width: 11vw" type="date" />
+      </div>
+      <div class="contentBody">
+        <div>End Date</div>
+        <input class="input" style="width: 11vw" type="date" />
+      </div>
+    </div>
+    <div class="bodyRow">
+      <div class="contentBody">
+        <div>Inventory Count Type*</div>
+        <select class="input"></select>
+      </div>
+      <div class="contentBody">
+        <div>Select Category</div>
+        <select class="input">
+          <option>Select categories for this inventory count</option>
+        </select>
+        <div class="selectedList">
+          <div class="selectedItem">
+            ACCESSORIES
+            <div class="selectedItemDlt"></div>
+          </div>
+          <div class="selectedItem">
+            MOBILES
+            <div class="selectedItemDlt"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="errorMsg">Errro on page</div>
+      <div class="btns">
+        <div class="cancelBtn" (click)="onBack('stockTaking')">CANCEL</div>
+        <div class="saveBtn" (click)="onClickSaveOnInventoryCountPopup()">
+          SAVE
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="popup1" *ngIf="page === 'stockTrailPopup'">
+  <div class="body">
+    <div class="header">
+      Select Product
+      <div class="closeBtn" (click)="onBack(null)"></div>
+    </div>
+    <div class="desc">Select the product to track its journay</div>
+    <div class="bodyRow">
+      <div class="contentBody">
+        <div>Select Product*</div>
+        <select class="input">
+          <option>Select Product</option>
+        </select>
+      </div>
+    </div>
+    <div class="bodyRow">
+      <div class="contentBody">
+        <div>From Date*</div>
+        <input class="input" type="date" />
+      </div>
+      <div class="contentBody">
+        <div>To Date*</div>
+        <input class="input" type="date" />
+      </div>
+    </div>
+    <div class="footer">
+      <div class="errorMsg">Errro on page</div>
+      <div class="btns">
+        <div class="cancelBtn" (click)="onBack(null)">CANCEL</div>
+        <div class="saveBtn" (click)="onClickNextOnStockTrailPopup()">NEXT</div>
+      </div>
+    </div>
   </div>
 </div>

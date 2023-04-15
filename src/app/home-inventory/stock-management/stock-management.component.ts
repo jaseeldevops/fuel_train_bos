@@ -28,4 +28,12 @@ export class StockManagementComponent implements OnInit {
   onClickStockTaking = () => {
     this.onBack('inventoryCountPopup');
   };
+
+  onClickSaveOnInventoryCountPopup = () => {
+    this.onBack('stockTaking');
+  };
+
+  onClickNextOnStockTrailPopup = () => {
+    this.onBack('stockTrail');
+  };
 }

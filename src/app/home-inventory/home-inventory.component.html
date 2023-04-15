@@ -1,9 +1,11 @@
-<div class="pageTitle" *ngIf="page === null">INVENTORY</div>
+<div class="pageTitle" *ngIf="page === null || page === 'stockTrailPopup'">
+  INVENTORY
+</div>
 <!-- /////////////////////////////////////////////////////////////////////////// -->
 <!-- /////////////////////////////////////////////////////////////////////////// -->
 <!-- /////////////////////////////////////////////////////////////////////////// -->
 <!-- /////////////////////////////////////////////////////////////////////////// -->
-<div class="homeMenuList" *ngIf="page === null">
+<div class="homeMenuList" *ngIf="page === null || page === 'stockTrailPopup'">
   <div style="margin: 1vw">
     <div class="subTitle">Product managemet</div>
     <div class="subDesc">
@@ -142,44 +144,18 @@
     </div>
   </div>
 </div>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////// -->
 <app-product-management
-  *ngIf="
-    page === 'addProduct' ||
-    page === 'addService' ||
-    page === 'promotions' ||
-    page === 'addNewProduct' ||
-    page === 'addNewService'
-  "
-  [page]="page"
-  [onBack]="onBack"
+[page]="page"
+[onBack]="onBack"
 ></app-product-management>
-<app-price-management
-  *ngIf="page === 'priceLookup' || page === 'priceChange'"
-  [page]="page"
-  [onBack]="onBack"
-></app-price-management>
-<app-branch-management
-  *ngIf="
-    page === 'stockRecived' ||
-    page === 'stockTransfer' ||
-    page === 'addStockRecived' ||
-    page === 'addStockTransfer'
-  "
-  [page]="page"
-  [onBack]="onBack"
-></app-branch-management>
-<app-stock-management
-  *ngIf="
-    page === 'stockRecived' ||
-    page === 'stockTransfer' ||
-    page === 'stockReturn' ||
-    page === 'stockTaking' ||
-    page === 'stockTrail' ||
-    page === 'stockAdjestment' ||
-    page === 'stockLookup' ||
-    page === 'newStockReturn' ||
-    page === 'inventoryCountPopup'
-  "
-  [page]="page"
-  [onBack]="onBack"
-></app-stock-management>
+<app-price-management [page]="page" [onBack]="onBack"></app-price-management>
+<app-branch-management [page]="page" [onBack]="onBack"></app-branch-management>
+<app-stock-management [page]="page" [onBack]="onBack"></app-stock-management>
+<!-- /////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////// -->

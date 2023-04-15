@@ -1,8 +1,15 @@
-<div class="pageTitle">
+<div class="pageTitle" *ngIf="page === 'priceLookup'">
   <div class="arrowBack" (click)="onBack(null)"></div>
-  {{ page === "priceLookup" ? "PRICE LOOKUP" : "PRICE CHANGE" }}
+  PRICE LOOKUP
 </div>
-<div class="tableFilterHeader">
+<div class="pageTitle" *ngIf="page === 'priceChange'">
+  <div class="arrowBack" (click)="onBack(null)"></div>
+  PRICE CHANGE
+</div>
+<div
+  class="tableFilterHeader"
+  *ngIf="page === 'priceLookup' || page === 'priceChange'"
+>
   <input class="input" placeholder="Search a product" />
   <div class="categoryTitle">SHOWING:</div>
   <select class="input">
