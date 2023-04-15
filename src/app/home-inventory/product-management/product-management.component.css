@@ -1,5 +1,7 @@
 .addForm {
   padding: 2vw;
+  max-height: calc(100vh - 15vw);
+  overflow: auto;
 }
 .contentBody {
   display: flex;
@@ -28,7 +30,7 @@
 }
 .formRow {
   display: flex;
-  margin-bottom: 0.5vw;
+  margin-bottom: 01vw;
 }
 .fieldTitle {
   font-size: 0.9vw;
@@ -66,4 +68,59 @@ input {
   color: #3d424e8a;
   font-size: 0.7vw;
   padding-left: 0.2vw;
+}
+.switchButton,
+.switchButton_ {
+  width: 3.2vw;
+  height: 2vw;
+  cursor: pointer;
+  background-image: url(../../../assets/ic_switch1.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.switchButton_ {
+  background-image: url(../../../assets/ic_switch1_on.svg);
+}
+.switchDesc {
+  font-size: 0.7vw;
+  color: #40455185;
+  padding: 0.55vw;
+}
+/* //////////////////////////////////////////////// */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.2vw;
+  border-top: 0.1vw solid #7070705a;
+}
+.errorMsg {
+  color: #ce4d24;
+  background-color: #f9d7d4;
+  border-radius: 0.4vw;
+  padding: 0.4vw 1vw;
+  border: 0.05vw solid #ce4d24;
+  font-size: 0.9vw;
+}
+.btns {
+  display: flex;
+  align-items: center;
+  color: white;
+  font-size: 0.9vw;
+}
+.cancelBtn {
+  margin: 0 0.5vw;
+  border-radius: 0.3vw;
+  padding: 0.5vw 2.5vw;
+  background-color: #c9e1ff;
+  color: var(--myColor);
+  cursor: pointer;
+}
+.saveBtn {
+  margin: 0 0.5vw;
+  background-color: var(--myColor);
+  border-radius: 0.3vw;
+  padding: 0.5vw 2.5vw;
+  cursor: pointer;
 }

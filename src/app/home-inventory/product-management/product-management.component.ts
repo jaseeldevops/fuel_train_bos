@@ -31,5 +31,9 @@ export class ProductManagementComponent implements OnInit {
     this.onBack('addNewPromotion');
   };
 
+  onClickSaveOnNewProdect = () => {
+    this.onBack('addProduct');
+  };
+
   ngOnInit(): void {}
 }
