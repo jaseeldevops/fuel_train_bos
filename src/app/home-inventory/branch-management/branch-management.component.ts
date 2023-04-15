@@ -18,5 +18,13 @@ export class BranchManagementComponent implements OnInit {
   allProduct: any = allDummyProdects;
   allStocks: any = allDummyStocks;
 
+  onClickNewStockRecived = () => {
+    this.onBack('addStockRecived');
+  };
+
+  onClicksNewStockTransfer = () => {
+    this.onBack('addStockTransfer');
+  };
+
   ngOnInit(): void {}
 }

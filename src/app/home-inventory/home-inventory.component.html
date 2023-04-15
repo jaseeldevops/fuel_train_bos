@@ -144,7 +144,11 @@
 </div>
 <app-product-management
   *ngIf="
-    page === 'addProduct' || page === 'addService' || page === 'promotions'
+    page === 'addProduct' ||
+    page === 'addService' ||
+    page === 'promotions' ||
+    page === 'addNewProduct' ||
+    page === 'addNewService'
   "
   [page]="page"
   [onBack]="onBack"
@@ -155,7 +159,12 @@
   [onBack]="onBack"
 ></app-price-management>
 <app-branch-management
-  *ngIf="page === 'stockRecived' || page === 'stockTransfer'"
+  *ngIf="
+    page === 'stockRecived' ||
+    page === 'stockTransfer' ||
+    page === 'addStockRecived' ||
+    page === 'addStockTransfer'
+  "
   [page]="page"
   [onBack]="onBack"
 ></app-branch-management>

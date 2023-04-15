@@ -1,22 +1,43 @@
 <div class="pageTitle">
-  <div class="arrowBack" (click)="onBack()"></div>
-  {{
-    page === "addProduct"
-      ? "ADD PRODUCT"
-      : page === "addService"
-      ? "ADD SERVICE"
-      : "PROMOTIONS"
-  }}
+  <div class="arrowBack" (click)="onBack(null)"></div>
+  {{ page === "addProduct" ? "ADD PRODUCT" : "" }}
+  {{ page === "addService" ? "ADD SERVICE" : "" }}
+  {{ page === "promotions" ? "PROMOTIONS" : "" }}
+  {{ page === "addNewProduct" ? "ADD NEW PRODUCTS" : "" }}
+  {{ page === "addNewService" ? "ADD NEW SERVICE" : "" }}
 </div>
-<div class="tableFilterHeader">
+<div
+  class="tableFilterHeader"
+  *ngIf="
+    page === 'addProduct' || page === 'addService' || page === 'promotions'
+  "
+>
   <input class="input" placeholder="Search a product" />
   <div class="categoryTitle">SHOWING:</div>
   <select class="input">
     <option hidden>Select Category</option>
   </select>
-  <div class="addButton" *ngIf="page === 'addProduct'">+ New Product</div>
-  <div class="addButton" *ngIf="page === 'addService'">+ New Service</div>
-  <div class="addButton" *ngIf="page === 'promotions'">+ New Promotions</div>
+  <div
+    class="addButton"
+    *ngIf="page === 'addProduct'"
+    (click)="onClickNewProduct()"
+  >
+    + New Product
+  </div>
+  <div
+    class="addButton"
+    *ngIf="page === 'addService'"
+    (click)="onClickNewService()"
+  >
+    + New Service
+  </div>
+  <div
+    class="addButton"
+    *ngIf="page === 'promotions'"
+    (click)="onClickNewPromotions()"
+  >
+    + New Promotions
+  </div>
 </div>
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -151,3 +172,12 @@
   </div>
   <app-table-paging [paging]="allPromotions?.paging"></app-table-paging>
 </div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- <div
+  class="addForm"
+  *ngIf="page === 'addNewProduct' || page === 'addNewService'"
+></div> -->

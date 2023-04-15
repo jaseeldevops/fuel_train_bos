@@ -19,5 +19,15 @@ export class ProductManagementComponent implements OnInit {
 
   constructor() {}
 
+  onClickNewProduct = () => {
+    this.onBack('addNewProduct');
+  };
+
+  onClickNewService = () => {
+    this.onBack('addNewService');
+  };
+
+  onClickNewPromotions = () => {};
+
   ngOnInit(): void {}
 }

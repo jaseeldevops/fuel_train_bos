@@ -1,19 +1,42 @@
 <div class="pageTitle" *ngIf="page === 'stockRecived'">
-  <div class="arrowBack" (click)="onBack()"></div>
+  <div class="arrowBack" (click)="onBack(null)"></div>
   STOCK RECIVED
 </div>
 <div class="pageTitle" *ngIf="page === 'stockTransfer'">
-  <div class="arrowBack" (click)="onBack()"></div>
+  <div class="arrowBack" (click)="onBack(null)"></div>
   STOCK TRANSFER
 </div>
-<div class="tableFilterHeader">
+<div class="pageTitle" *ngIf="page === 'addStockRecived'">
+  <div class="arrowBack" (click)="onBack('stockRecived')"></div>
+  NEW STOCK RECIVED
+</div>
+<div class="pageTitle" *ngIf="page === 'addStockTransfer'">
+  <div class="arrowBack" (click)="onBack('stockTransfer')"></div>
+  STOCK TRANSFER
+</div>
+<div
+  class="tableFilterHeader"
+  *ngIf="page === 'stockRecived' || page === 'stockTransfer'"
+>
   <input class="input" placeholder="Search a product" />
   <div class="categoryTitle">SHOWING:</div>
   <select class="input">
     <option hidden>Select Category</option>
   </select>
-  <div class="addButton" *ngIf="page === 'stockRecived'">Stock Receive</div>
-  <div class="addButton" *ngIf="page === 'stockTransfer'">+ Transfer Stock</div>
+  <div
+    class="addButton"
+    *ngIf="page === 'stockRecived'"
+    (click)="onClickNewStockRecived()"
+  >
+    Stock Receive
+  </div>
+  <div
+    class="addButton"
+    *ngIf="page === 'stockTransfer'"
+    (click)="onClicksNewStockTransfer()"
+  >
+    + Transfer Stock
+  </div>
 </div>
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -21,70 +44,69 @@
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <div class="tableBody" *ngIf="page === 'stockRecived'">
-    <div class="table">
-      <div class="header">
-        <div style="width: 2%"></div>
-        <div style="width: 18%">TRANSACTION</div>
-        <div style="width: 18%">DATE</div>
-        <div style="width: 18%">TRANSFER FROM</div>
-        <div style="width: 18%">DISCRIPTION</div>
-        <div style="width: 12%">COUNT</div>
-        <div style="width: 12%; text-align: right">Amount</div>
-        <div style="width: 1%"></div>
-      </div>
-      <div class="body">
-        <div class="row" *ngFor="let it of allStocks?.content">
-          <div class="content" style="width: 2%"></div>
-          <div class="content" style="width: 18%">{{ it?.transaction }}</div>
-          <div class="content" style="width: 18%">{{ it?.date }}</div>
-          <div class="content" style="width: 18%">{{ it?.transferFrom }}</div>
-          <div class="content" style="width: 18%">{{ it?.desc }}</div>
-          <div class="content" style="width: 12%">{{ it?.count }}</div>
-          <div class="content" style="width: 12%; text-align: right">
-            {{ it?.amount }}
-          </div>
-          <div class="content" style="width: 1%"></div>
+  <div class="table">
+    <div class="header">
+      <div style="width: 2%"></div>
+      <div style="width: 18%">TRANSACTION</div>
+      <div style="width: 18%">DATE</div>
+      <div style="width: 18%">TRANSFER FROM</div>
+      <div style="width: 18%">DISCRIPTION</div>
+      <div style="width: 12%">COUNT</div>
+      <div style="width: 12%; text-align: right">Amount</div>
+      <div style="width: 1%"></div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allStocks?.content">
+        <div class="content" style="width: 2%"></div>
+        <div class="content" style="width: 18%">{{ it?.transaction }}</div>
+        <div class="content" style="width: 18%">{{ it?.date }}</div>
+        <div class="content" style="width: 18%">{{ it?.transferFrom }}</div>
+        <div class="content" style="width: 18%">{{ it?.desc }}</div>
+        <div class="content" style="width: 12%">{{ it?.count }}</div>
+        <div class="content" style="width: 12%; text-align: right">
+          {{ it?.amount }}
         </div>
+        <div class="content" style="width: 1%"></div>
       </div>
     </div>
-    <app-table-paging [paging]="allStocks?.paging"></app-table-paging>
   </div>
-  <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
-  <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
-  <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
-  <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
-  <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
-  <div class="tableBody" *ngIf="page === 'stockTransfer'">
-    <div class="table">
-      <div class="header">
+  <app-table-paging [paging]="allStocks?.paging"></app-table-paging>
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'stockTransfer'">
+  <div class="table">
+    <div class="header">
+      <div></div>
+      <div style="width: 12%">TRANSACTION</div>
+      <div style="width: 12%">DATE</div>
+      <div style="width: 12%">TRANSFER FROM</div>
+      <div style="width: 12%">TRANSFER TO</div>
+      <div style="width: 12%">DISCRIPTION</div>
+      <div style="width: 8%">COUNT</div>
+      <div style="width: 8%; text-align: right">Amount</div>
+      <div style="width: 8%">Status</div>
+      <div></div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allStocks?.content">
         <div></div>
-        <div style="width: 12%">TRANSACTION</div>
-        <div style="width: 12%">DATE</div>
-        <div style="width: 12%">TRANSFER FROM</div>
-        <div style="width: 12%">TRANSFER TO</div>
-        <div style="width: 12%">DISCRIPTION</div>
-        <div style="width: 8%">COUNT</div>
-        <div style="width: 8%; text-align: right">Amount</div>
-        <div style="width: 8%">Status</div>
-        <div></div>
-      </div>
-      <div class="body">
-        <div class="row" *ngFor="let it of allStocks?.content">
-          <div></div>
-          <div class="content" style="width: 12%">{{ it?.transaction }}</div>
-          <div class="content" style="width: 12%">{{ it?.date }}</div>
-          <div class="content" style="width: 12%">{{ it?.transferFrom }}</div>
-          <div class="content" style="width: 12%">{{ it?.transferTo }}</div>
-          <div class="content" style="width: 12%">{{ it?.desc }}</div>
-          <div class="content" style="width: 8%">{{ it?.count }}</div>
-          <div class="content" style="width: 8%; text-align: right">
-            {{ it?.amount }}
-          </div>
-          <div class="content" style="width: 8%">{{ it?.status }}</div>
-          <div></div>
+        <div class="content" style="width: 12%">{{ it?.transaction }}</div>
+        <div class="content" style="width: 12%">{{ it?.date }}</div>
+        <div class="content" style="width: 12%">{{ it?.transferFrom }}</div>
+        <div class="content" style="width: 12%">{{ it?.transferTo }}</div>
+        <div class="content" style="width: 12%">{{ it?.desc }}</div>
+        <div class="content" style="width: 8%">{{ it?.count }}</div>
+        <div class="content" style="width: 8%; text-align: right">
+          {{ it?.amount }}
         </div>
+        <div class="content" style="width: 8%">{{ it?.status }}</div>
+        <div></div>
       </div>
     </div>
-    <app-table-paging [paging]="allStocks?.paging"></app-table-paging>
   </div>
-  
+  <app-table-paging [paging]="allStocks?.paging"></app-table-paging>
+</div>
