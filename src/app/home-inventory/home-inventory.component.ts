@@ -13,7 +13,8 @@ import {
 export class HomeInventoryComponent implements OnInit {
   constructor() {}
 
-  page: any = null;
+  // page: any = null;
+  page: any = 'addProduct';
 
   onBack = () => (this.page = null);
 

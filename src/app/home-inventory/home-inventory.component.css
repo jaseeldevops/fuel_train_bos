@@ -1,7 +1,7 @@
 .pageTitle {
   background-color: white;
   border-bottom: 0.1vw solid #7070705d;
-  padding: 0.5vw 1vw;
+  padding: 0.6vw 1vw;
   font-size: 1.4vw;
   font-weight: 500;
   display: flex;
@@ -116,3 +116,43 @@
 /* ///////////////////////////////////////////////////////////////////////// */
 /* ///////////////////////////////////////////////////////////////////////// */
 /* ///////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////// */
+.tableFilterHeader {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 0 1vw;
+  height: 3.4vw;
+  border-bottom: 0.08vw solid rgb(181, 181, 181);
+}
+.tableFilterHeader .input {
+  font-size: 0.8vw;
+  background-color: white;
+  border: none;
+  outline: none;
+  padding: 0.5vw 0.8vw;
+  margin: 0.4vw 0.8vw;
+  border-radius: 0.3vw;
+  box-sizing: border-box;
+  min-width: 14vw;
+}
+.tableFilterHeader .categoryTitle {
+  font-size: 1vw;
+  margin-left: 2vw;
+  color: #0001207d;
+}
+.tableFilterHeader .addButton {
+  background-color: var(--myColor);
+  padding: 0.4vw 2vw;
+  border-radius: 0.3vw;
+  font-size: 1.2vw;
+  font-weight: 500;
+  color: white;
+  margin: 0.4vw 0.8vw;
+  cursor: pointer;
+}

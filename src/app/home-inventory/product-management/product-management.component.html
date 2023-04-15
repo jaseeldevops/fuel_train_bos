@@ -8,6 +8,16 @@
       : "PROMOTIONS"
   }}
 </div>
+<div class="tableFilterHeader">
+  <input class="input" placeholder="Search a product" />
+  <div class="categoryTitle">SHOWING:</div>
+  <select class="input">
+    <option hidden>Select Category</option>
+  </select>
+  <div class="addButton" *ngIf="page === 'addProduct'">+ New Product</div>
+  <div class="addButton" *ngIf="page === 'addService'">+ New Service</div>
+  <div class="addButton" *ngIf="page === 'promotions'">+ New Promotions</div>
+</div>
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->

@@ -6,6 +6,15 @@
   <div class="arrowBack" (click)="onBack()"></div>
   STOCK TRANSFER
 </div>
+<div class="tableFilterHeader">
+  <input class="input" placeholder="Search a product" />
+  <div class="categoryTitle">SHOWING:</div>
+  <select class="input">
+    <option hidden>Select Category</option>
+  </select>
+  <div class="addButton" *ngIf="page === 'stockRecived'">Stock Receive</div>
+  <div class="addButton" *ngIf="page === 'stockTransfer'">+ Transfer Stock</div>
+</div>
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
