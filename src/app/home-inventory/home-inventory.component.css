@@ -156,3 +156,22 @@
   margin: 0.4vw 0.8vw;
   cursor: pointer;
 }
+.tableFilterHeader .navTab {
+  width: 48%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  color: var(--myColor);
+  font-size: 1.1vw;
+}
+.tableFilterHeader .navTabEach {
+  padding: 0.5vw;
+  margin: 0 0.4vw;
+  border-bottom: 0.2vw solid transparent;
+  cursor: pointer;
+}
+.tableFilterHeader .navTabEach_ {
+  padding: 0.5vw;
+  margin: 0 0.4vw;
+  border-bottom: 0.2vw solid var(--myColor);
+}

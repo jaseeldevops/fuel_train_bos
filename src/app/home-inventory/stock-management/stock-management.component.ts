@@ -13,6 +13,8 @@ export class StockManagementComponent implements OnInit {
   @Input() page: any;
   @Input() onBack: any;
 
+  subPage = 0;
+
   constructor() {}
 
   allProduct: any = allDummyProdects;
@@ -21,9 +23,9 @@ export class StockManagementComponent implements OnInit {
   ngOnInit(): void {}
 
   onClickStockReturn = () => {
-    this.onBack('newStockReturn')
+    this.onBack('newStockReturn');
   };
   onClickStockTaking = () => {
-    this.onBack('newStockTaking')
+    this.onBack('inventoryCountPopup');
   };
 }
