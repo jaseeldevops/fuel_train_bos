@@ -1,0 +1,336 @@
+<div class="header">
+  <div class="titile" (click)="onChangePage('')">
+    Configurations > Master Settings
+  </div>
+  <div class="navRow">
+    <div class="navBar">
+      <div
+        [ngClass]="navCount === 0 ? 'eachButton_' : 'eachButton'"
+        (click)="navCount = 0"
+      >
+        Bank Settings
+        <div
+          [ngClass]="navCount === 0 ? 'buttonBottom_' : 'buttonBottom'"
+        ></div>
+      </div>
+      <div
+        [ngClass]="navCount === 1 ? 'eachButton_' : 'eachButton'"
+        (click)="navCount = 1"
+      >
+        Mode of payment
+        <div
+          [ngClass]="navCount === 1 ? 'buttonBottom_' : 'buttonBottom'"
+        ></div>
+      </div>
+      <div
+        [ngClass]="navCount === 2 ? 'eachButton_' : 'eachButton'"
+        (click)="navCount = 2"
+      >
+        Tax Settings
+        <div
+          [ngClass]="navCount === 2 ? 'buttonBottom_' : 'buttonBottom'"
+        ></div>
+      </div>
+      <div
+        [ngClass]="navCount === 3 ? 'eachButton_' : 'eachButton'"
+        (click)="navCount = 3"
+      >
+        Prodect Caregory
+        <div
+          [ngClass]="navCount === 3 ? 'buttonBottom_' : 'buttonBottom'"
+        ></div>
+      </div>
+      <div
+        [ngClass]="navCount === 4 ? 'eachButton_' : 'eachButton'"
+        (click)="navCount = 4"
+      >
+        Expense Category
+        <div
+          [ngClass]="navCount === 4 ? 'buttonBottom_' : 'buttonBottom'"
+        ></div>
+      </div>
+      <div
+        [ngClass]="navCount === 5 ? 'eachButton_' : 'eachButton'"
+        (click)="navCount = 5"
+      >
+        Denominations
+        <div
+          [ngClass]="navCount === 5 ? 'buttonBottom_' : 'buttonBottom'"
+        ></div>
+      </div>
+      <div
+        [ngClass]="navCount === 6 ? 'eachButton_' : 'eachButton'"
+        (click)="navCount = 6"
+      >
+        Allowances & Incentives
+        <div
+          [ngClass]="navCount === 6 ? 'buttonBottom_' : 'buttonBottom'"
+        ></div>
+      </div>
+      <div
+        [ngClass]="navCount === 7 ? 'eachButton_' : 'eachButton'"
+        (click)="navCount = 7"
+      >
+        Branch
+        <div
+          [ngClass]="navCount === 7 ? 'buttonBottom_' : 'buttonBottom'"
+        ></div>
+      </div>
+      <div
+        [ngClass]="navCount === 8 ? 'eachButton_' : 'eachButton'"
+        (click)="navCount = 8"
+      >
+        Vehicle type
+        <div
+          [ngClass]="navCount === 8 ? 'buttonBottom_' : 'buttonBottom'"
+        ></div>
+      </div>
+    </div>
+    <div class="options">
+      <div class="grrenButton" *ngIf="navCount === 0">+ Add New Bank</div>
+      <div class="grrenButton" *ngIf="navCount === 1">+ Add New MOP</div>
+      <div class="grrenButton" *ngIf="navCount === 2">+ Add New Tax</div>
+      <div class="grrenButton" *ngIf="navCount === 3">
+        + Add Prodect Category
+      </div>
+      <div class="grrenButton" *ngIf="navCount === 4">
+        + Add Expence Category
+      </div>
+      <div class="grrenButton" *ngIf="navCount === 6">
+        + Allowances & Incentives
+      </div>
+      <div class="grrenButton" *ngIf="navCount === 7">+ Add Branchs</div>
+      <div class="grrenButton" *ngIf="navCount === 8">+ Add Vehcile</div>
+    </div>
+  </div>
+</div>
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="navCount === 0">
+  <div class="table">
+    <div class="header">
+      <div style="width: 8%"></div>
+      <div style="width: 75%">BANK</div>
+      <div style="width: 15%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allBanks?.content">
+        <div style="width: 8%">{{ it.logo }}</div>
+        <div style="width: 75%">{{ it.name }}</div>
+        <div style="width: 15%; display: flex; justify-content: center">
+          <div class="actionTextButton" (click)="onClickEditBank(it)">Edit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allBanks?.paging"></app-table-paging>
+</div>
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="navCount === 1">
+  <div class="table">
+    <div class="header">
+      <div style="width: 8%"></div>
+      <div style="width: 75%">MODE OF PAYMENT</div>
+      <div style="width: 15%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allModeOfPayments?.content">
+        <div style="width: 8%">{{ it.logo }}</div>
+        <div style="width: 75%">{{ it.name }}</div>
+        <div style="width: 15%; display: flex; justify-content: center">
+          <div class="actionTextButton" (click)="onClickEditModeofPayment(it)">
+            Edit
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allModeOfPayments?.paging"></app-table-paging>
+</div>
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="navCount === 2">
+  <div class="table">
+    <div class="header">
+      <div style="width: 75%">TAX HEAD</div>
+      <div style="width: 15%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allTaxs?.content">
+        <div style="width: 75%">{{ it.name }}</div>
+        <div style="width: 15%; display: flex; justify-content: center">
+          <div class="actionTextButton" (click)="onClickEditBank(it)">Edit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allTaxs?.paging"></app-table-paging>
+</div>
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="navCount === 3">
+  <div class="table">
+    <div class="header">
+      <div style="width: 40%">PRODUCT CATEGORY</div>
+      <div style="width: 40%">DESCRIPTION</div>
+      <div style="width: 20%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allBanks?.content">
+        <div style="width: 40%">{{ it.logo }}</div>
+        <div style="width: 40%">{{ it.name }}</div>
+        <div style="width: 20%; display: flex; justify-content: center">
+          <div class="actionTextButton" (click)="onClickEditBank(it)">Edit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allBanks?.paging"></app-table-paging>
+</div>
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="navCount === 4">
+  <div class="table">
+    <div class="header">
+      <div style="width: 40%">PRODUCT CATEGORY</div>
+      <div style="width: 40%">DESCRIPTION</div>
+      <div style="width: 20%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allBanks?.content">
+        <div style="width: 40%">{{ it.logo }}</div>
+        <div style="width: 40%">{{ it.name }}</div>
+        <div style="width: 20%; display: flex; justify-content: center">
+          <div class="actionTextButton" (click)="onClickEditBank(it)">Edit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allBanks?.paging"></app-table-paging>
+</div>
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="navCount === 6">
+  <div class="table">
+    <div class="header">
+      <div style="width: 40%">ALLOWANCES & INCENTIVES</div>
+      <div style="width: 40%">DESCRIPTION</div>
+      <div style="width: 20%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allBanks?.content">
+        <div style="width: 40%">{{ it.logo }}</div>
+        <div style="width: 40%">{{ it.name }}</div>
+        <div style="width: 20%; display: flex; justify-content: center">
+          <div class="actionTextButton" (click)="onClickEditBank(it)">Edit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allBanks?.paging"></app-table-paging>
+</div>
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="navCount === 7">
+  <div class="table">
+    <div class="header">
+      <div style="width: 40%">BRANCH</div>
+      <div style="width: 40%">DELIVERY ADDRESS</div>
+      <div style="width: 20%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allBanks?.content">
+        <div style="width: 40%">{{ it.logo }}</div>
+        <div style="width: 40%">{{ it.name }}</div>
+        <div style="width: 20%; display: flex; justify-content: center">
+          <div class="actionTextButton" (click)="onClickEditBank(it)">Edit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allBanks?.paging"></app-table-paging>
+</div>
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="navCount === 8">
+  <div class="table">
+    <div class="header">
+      <div style="width: 75%">BRANCH</div>
+      <div style="width: 15%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allBanks?.content">
+        <div style="width: 75%">{{ it.name }}</div>
+        <div style="width: 15%; display: flex; justify-content: center">
+          <div class="actionTextButton" (click)="onClickEditBank(it)">Edit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allBanks?.paging"></app-table-paging>
+</div>
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<div class="denominationBody" *ngIf="navCount === 5">
+  <div class="leftBody">Denominations</div>
+  <div class="rightBody">
+    <div class="adderContainer">
+      <input
+        class="defaultInput"
+        style="width: 70%"
+        placeholder="Enter Value"
+      />
+      <div class="addButton">ADD</div>
+    </div>
+    <div class="addedList">
+      <div class="addedEach" *ngFor="let it of allDenomination">
+        {{ it?.value }}
+        <div class="addedEachDlt"></div>
+      </div>
+    </div>
+  </div>
+</div>

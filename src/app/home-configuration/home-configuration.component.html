@@ -488,98 +488,15 @@
       </div>
     </div>
   </div>
-  <!-- /////////////////////////////////////////////////////////////////////////////////// -->
-  <!-- //////////////////////////////// Alarm & Interlock //////////////////////////////// -->
-  <!-- /////////////////////////////////////////////////////////////////////////////////// -->
-  <div *ngIf="page === 'masterSettings'" class="header">
-    <div class="titile" (click)="page = ''">
-      Configurations > Master Settings
-    </div>
-    <div class="navRow">
-      <div class="navBar">
-        <div
-          [ngClass]="navCount === 0 ? 'eachButton_' : 'eachButton'"
-          (click)="navCount = 0"
-        >
-          Bank Settings
-          <div
-            [ngClass]="navCount === 0 ? 'buttonBottom_' : 'buttonBottom'"
-          ></div>
-        </div>
-        <div
-          [ngClass]="navCount === 1 ? 'eachButton_' : 'eachButton'"
-          (click)="navCount = 1"
-        >
-          Mode of payment
-          <div
-            [ngClass]="navCount === 1 ? 'buttonBottom_' : 'buttonBottom'"
-          ></div>
-        </div>
-        <div
-          [ngClass]="navCount === 2 ? 'eachButton_' : 'eachButton'"
-          (click)="navCount = 2"
-        >
-          Tax Settings
-          <div
-            [ngClass]="navCount === 2 ? 'buttonBottom_' : 'buttonBottom'"
-          ></div>
-        </div>
-        <div
-          [ngClass]="navCount === 3 ? 'eachButton_' : 'eachButton'"
-          (click)="navCount = 3"
-        >
-          Prodect Caregory
-          <div
-            [ngClass]="navCount === 3 ? 'buttonBottom_' : 'buttonBottom'"
-          ></div>
-        </div>
-        <div
-          [ngClass]="navCount === 4 ? 'eachButton_' : 'eachButton'"
-          (click)="navCount = 4"
-        >
-          Expense Category
-          <div
-            [ngClass]="navCount === 4 ? 'buttonBottom_' : 'buttonBottom'"
-          ></div>
-        </div>
-        <div
-          [ngClass]="navCount === 5 ? 'eachButton_' : 'eachButton'"
-          (click)="navCount = 5"
-        >
-          Demoninations
-          <div
-            [ngClass]="navCount === 5 ? 'buttonBottom_' : 'buttonBottom'"
-          ></div>
-        </div>
-        <div
-          [ngClass]="navCount === 6 ? 'eachButton_' : 'eachButton'"
-          (click)="navCount = 6"
-        >
-          Allowances & Incentives
-          <div
-            [ngClass]="navCount === 6 ? 'buttonBottom_' : 'buttonBottom'"
-          ></div>
-        </div>
-        <div
-          [ngClass]="navCount === 7 ? 'eachButton_' : 'eachButton'"
-          (click)="navCount = 7"
-        >
-          Branch
-          <div
-            [ngClass]="navCount === 7 ? 'buttonBottom_' : 'buttonBottom'"
-          ></div>
-        </div>
-      </div>
-      <div class="options">
-        <div class="grrenButton" *ngIf="navCount === 0">Send Configuration</div>
-      </div>
-    </div>
-  </div>
   <app-home-configuration-body
     [page]="page"
     [navCount]="navCount"
     [data]="data"
   ></app-home-configuration-body>
+  <app-master-settings
+    *ngIf="page === 'masterSettings'"
+    onChangePage="onChangePage"
+  ></app-master-settings>
 </div>
 <app-home-configuration-popups
   [popup]="popup"

@@ -1258,42 +1258,6 @@
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<div class="tableBody" *ngIf="page === 'masterSettings' && navCount === 0">
-  <div class="table">
-    <div class="header">
-      <div style="width: 8%">ALARM ID</div>
-      <div style="width: 15%">ALARM PRIORITY</div>
-      <div style="width: 20%">DESCRIPTION</div>
-      <div style="width: 10%">ALARM ENABLE</div>
-      <div style="width: 10%">ALARM VALUE</div>
-      <div style="width: 10%">EQUIPMENT ID</div>
-      <div style="width: 10%">ALARM ALERT</div>
-      <div style="width: 8%; display: flex; justify-content: center">
-        ACTION
-      </div>
-    </div>
-    <div class="body">
-      <div class="row" *ngFor="let it of data?.alarm?.content">
-        <div style="width: 8%">{{ it?.alarmId }}</div>
-        <div style="width: 15%">{{ it?.alarmPriority }}</div>
-        <div style="width: 20%">{{ it?.description }}</div>
-        <div style="width: 10%">{{ it?.alarmEnable }}</div>
-        <div style="width: 10%">{{ it?.alarmValue }}</div>
-        <div style="width: 10%">{{ it?.equipmentId }}</div>
-        <div style="width: 10%">{{ it?.alarmAlert }}</div>
-        <div style="width: 8%; display: flex; justify-content: center">
-          <div
-            class="actionTextButton"
-            (click)="onClickalarmInterlockAlarmEdit(it)"
-          >
-            Edit
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <app-table-paging [paging]="data?.alarm?.paging"></app-table-paging>
-</div>
 <div class="form3" *ngIf="page === 'alarmInterlock' && navCount === 1">
   <div class="row1">
     <div class="col1">Select Pump * :</div>

@@ -22,17 +22,19 @@ export class HomeStaffMasterComponent implements OnInit {
     this.page = 'staffMaster';
     this.allStaff = allDummyEmployee;
   };
+
   onclickAllSalaryMaster = () => {
     this.page = 'salaryMaster';
     this.allSalartMaster = allDummyEmployee;
   };
+
   onclickAllPayrun = () => {
     this.page = 'payRun';
     this.allPayrun = allDummyEmployee;
   };
 
   onClickAddEmloyee = () => {
-    this.popUp = 'employeeForm';
+    this.popUp = 'employeeForm';  
   };
 
   onClickAddPayRun = () => {
@@ -47,6 +49,7 @@ export class HomeStaffMasterComponent implements OnInit {
   uploadImageSelected = (e: any) => {
     if (e.target.files.length > 0) this.uploadedImage = e.target.files[0];
   };
+
   getImageLocalUrl = () => {
     if (this.uploadedImage)
       return `url(${URL.createObjectURL(this.uploadedImage)})`;

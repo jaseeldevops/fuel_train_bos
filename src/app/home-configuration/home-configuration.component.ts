@@ -53,6 +53,8 @@ export class HomeConfigurationComponent implements OnInit {
     this.getData(it.path);
   };
 
+  onChangePage = (p:any) => (this.page = p);
+
   getData = (s: any) => {
     this.isLoading = true;
     // API calls are called from here based on which button thay are clicked

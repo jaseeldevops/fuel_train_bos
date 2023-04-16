@@ -1,0 +1,53 @@
+.denominationBody {
+  padding: 2vw;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+.denominationBody .leftBody {
+  font-size: 1.4vw;
+}
+.denominationBody .rightBody {
+  width: 40vw;
+}
+
+.denominationBody .adderContainer {
+  border-radius: 0.5vw;
+  background-color: var(--myColor);
+  padding: 1vw;
+  display: flex;
+  justify-content: space-between;
+}
+.denominationBody .addButton {
+  border-radius: 0.3vw;
+  background-color: rgb(196, 196, 196);
+  padding: 0.5vw 4vw;
+  cursor: pointer;
+  box-shadow: 0.2vw 0.2vw 0.4vw rgba(0, 0, 0, 0.266);
+  font-size: 1vw;
+}
+.denominationBody .addedList {
+  padding: 1vw 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+.denominationBody .addedEach {
+  background-color: var(--myColor);
+  border-radius: 0.2vw;
+  padding: 0.3vw 0.6vw;
+  font-size: 0.9vw;
+  color: white;
+  display: flex;
+  align-items: center;
+  margin: 0.3vw;
+}
+.denominationBody .addedEachDlt {
+  width: 0.8vw;
+  height: 0.8vw;
+  background-image: url(../../../assets/ic_bin12.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-left: 1vw;
+  cursor: pointer;
+}

@@ -39,6 +39,7 @@ import { ProductManagementComponent } from './home-inventory/product-management/
 import { PriceManagementComponent } from './home-inventory/price-management/price-management.component';
 import { BranchManagementComponent } from './home-inventory/branch-management/branch-management.component';
 import { StockManagementComponent } from './home-inventory/stock-management/stock-management.component';
+import { MasterSettingsComponent } from './home-configuration/master-settings/master-settings.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { StockManagementComponent } from './home-inventory/stock-management/stoc
     PriceManagementComponent,
     BranchManagementComponent,
     StockManagementComponent,
+    MasterSettingsComponent,
   ],
   imports: [
     BrowserModule,

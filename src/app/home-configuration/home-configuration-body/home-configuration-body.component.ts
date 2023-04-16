@@ -3,7 +3,10 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-home-configuration-body',
   templateUrl: './home-configuration-body.component.html',
-  styleUrls: ['./home-configuration-body.component.css'],
+  styleUrls: [
+    './home-configuration-body.component.css',
+    '../home-configuration.component.css',
+  ],
 })
 export class HomeConfigurationBodyComponent implements OnInit {
   @Input() page: any;
