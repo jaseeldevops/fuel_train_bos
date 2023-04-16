@@ -381,25 +381,25 @@
 .empDetailsContainer {
   font-size: 1vw;
 }
-.header {
+.empDetailsContainer .header {
   display: flex;
   border-top-right-radius: 0.3vw;
   border-top-left-radius: 0.3vw;
   background: #707070;
   color: white;
 }
-.row {
+.empDetailsContainer .row {
   display: flex;
   border: 0.08vw solid #70707074;
   background-color: white;
 }
-.headerEach {
+.empDetailsContainer .headerEach {
   padding: 0.5vw 1vw;
   box-sizing: border-box;
   border-right: 0.08vw solid rgba(255, 255, 255, 0.6);
   width: 50%;
 }
-.rowEach {
+.empDetailsContainer .rowEach {
   padding: 0.5vw 1vw;
   box-sizing: border-box;
   width: 50%;

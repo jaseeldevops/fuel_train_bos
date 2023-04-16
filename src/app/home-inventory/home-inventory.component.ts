@@ -8,8 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class HomeInventoryComponent implements OnInit {
   constructor() {}
 
-  // page: any = null;
-  page: any = 'addNewProduct';
+  page: any = null;
 
   onBack = (p: string) => (this.page = p);
 
