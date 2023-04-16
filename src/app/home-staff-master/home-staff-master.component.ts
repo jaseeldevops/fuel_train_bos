@@ -14,7 +14,7 @@ export class HomeStaffMasterComponent implements OnInit {
   allPayrun: any = allDummyEmployee;
   allPayrunEmploye: any = allDummyPayrunEmployee;
 
-  page: string = 'staffMaster';
+  page: string = 'addPayRun';
   popUp: String = '';
   isSystemUser: boolean = false;
 

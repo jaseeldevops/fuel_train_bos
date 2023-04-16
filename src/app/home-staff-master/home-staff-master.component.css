@@ -404,3 +404,77 @@
   box-sizing: border-box;
   width: 50%;
 }
+.itemsTable {
+  padding: 0.5vw 0;
+}
+.itemsTable .header {
+  display: flex;
+  border-top-right-radius: 0.3vw;
+  border-top-left-radius: 0.3vw;
+  background: #707070;
+  color: white;
+  font-size: 1vw;
+  padding: 0.4vw 0;
+}
+.itemsTable .row {
+  display: flex;
+  align-items: center;
+  font-size: 1vw;
+  border: 0.08vw solid #b8b8b899;
+}
+.itemsTable .dltBtn {
+  width: 1.5vw;
+  height: 1.5vw;
+  cursor: pointer;
+  background-image: url(../../assets/ic_bin12.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.itemsTable div {
+  padding: 0.2vw;
+  box-sizing: border-box;
+}
+.itemsTable input {
+  margin: 0.2vw;
+  border: 0.08vw solid #d5d5d5;
+  border-radius: 0.2vw;
+  padding: 0.48vw 0.6vw;
+  width: 98%;
+  box-sizing: border-box;
+  font-size: 0.8vw;
+}
+.itemsTable select {
+  margin: 0.2vw;
+  border: 0.08vw solid #d5d5d5;
+  border-radius: 0.2vw;
+  padding: 0.4vw 0.6vw;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 0.8vw;
+}
+.totalRow {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  font-size: 1vw;
+  margin: 0.5vw;
+}
+.totalName {
+  width: 20vw;
+}
+.totalValue {
+  width: 10vw;
+  display: flex;
+  justify-content: flex-end;
+}
+.blueButton {
+  background-color: #00649e;
+  color: white;
+  font-weight: 500;
+  font-size: 1vw;
+  border-radius: 0.3vw;
+  padding: 0.5vw 1vw;
+  cursor: pointer;
+  margin: 0 0.5vw;
+}
