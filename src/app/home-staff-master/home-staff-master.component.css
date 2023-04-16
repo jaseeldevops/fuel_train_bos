@@ -1,11 +1,20 @@
 .pageTitle {
   background-color: white;
   border-bottom: 0.1vw solid #7070705d;
-  padding: 0.5vw 1vw;
+  padding: 0.6vw 1vw;
   font-size: 1.4vw;
   font-weight: 500;
   display: flex;
   align-items: center;
+}
+.arrowBack {
+  width: 1.2vw;
+  height: 1.2vw;
+  background-size: contain;
+  background-image: url(../../assets/ic_arrow1.svg);
+  background-position: center;
+  cursor: pointer;
+  margin-right: 0.6vw;
 }
 /* ///////////////////////////////////////////////////////////////////////////////// */
 /* ///////////////////////////////////////////////////////////////////////////////// */
@@ -189,10 +198,11 @@
 }
 .employeeForm .leftBody {
   width: 38%;
-  border-right: 0.08vw solid #7070706a;
 }
 .employeeForm .rightBody {
   width: 62%;
+  height: 100vh;
+  border-left: 0.08vw solid #7070706a;
 }
 .employeeForm .profileContainer {
   display: flex;
@@ -204,6 +214,11 @@
   height: 11vw;
   border-radius: 50%;
   background-color: #00000011;
+  cursor: pointer;
+  background-image: url(../../assets/imgUser.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 .employeeForm .rightTitle,
 .employeeForm .rightTitle_ {
@@ -220,6 +235,9 @@
   box-sizing: border-box;
   font-weight: 500;
   background-color: #eeeeee;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .employeeForm .formSubBody {
   padding: 1vw;
@@ -230,6 +248,7 @@
   border-radius: 0.2vw;
   padding: 0.4vw 0.6vw;
   margin: 0.2vw 0;
+  margin-bottom: 1vw;
   width: 100%;
   box-sizing: border-box;
   font-size: 0.8vw;
@@ -273,4 +292,115 @@
   padding: 0.4vw 1.5vw;
   cursor: pointer;
   font-weight: 500;
+}
+.switchButton,
+.switchButton_ {
+  width: 3vw;
+  height: 1.6vw;
+  cursor: pointer;
+  background-image: url(../../assets/ic_switch1.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.switchButton_ {
+  background-image: url(../../assets/ic_switch1_on.svg);
+}
+/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+.formLayout {
+  height: calc(100vh - 6.2vw);
+  overflow: scroll;
+}
+.formHeaderBox {
+  margin: 1vw;
+  padding: 1vw;
+  border-radius: 0.3vw;
+  border: 0.1vw solid #ced0d3;
+  background-color: white;
+  font-weight: 500;
+  font-size: 0.85vw;
+  line-height: 1.4vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.blueButton {
+  background-color: #2d4c86;
+  border-radius: 0.3vw;
+  padding: 0.4vw 0;
+  color: white;
+  font-size: 1vw;
+  text-align: center;
+  cursor: pointer;
+}
+.formContentBox {
+  display: flex;
+  padding: 0 1vw;
+}
+.leftContent {
+  width: 20%;
+  margin-right: 1vw;
+  border-radius: 0.3vw;
+  background-color: white;
+  box-shadow: 0 0 0.3vw #70707066;
+  font-size: 1vw;
+  font-weight: 400;
+}
+.leftContentTitle {
+  border-top-right-radius: 0.3vw;
+  border-top-left-radius: 0.3vw;
+  background: #707070;
+  color: white;
+  padding: 0.6vw 0.8vw;
+}
+.leftContentEach,
+.leftContentEach_ {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.6vw 0.8vw;
+  cursor: pointer;
+}
+.leftContentEach_ {
+  color: white;
+  background-color: #2d4c86;
+}
+.leftContentEach:hover {
+  background-color: #70707043;
+}
+.paidStatus {
+  color: #255dc5;
+  font-weight: 500;
+}
+.rightContent {
+  width: 80%;
+}
+.empDetailsContainer {
+  font-size: 1vw;
+}
+.header {
+  display: flex;
+  border-top-right-radius: 0.3vw;
+  border-top-left-radius: 0.3vw;
+  background: #707070;
+  color: white;
+}
+.row {
+  display: flex;
+  border: 0.08vw solid #70707074;
+  background-color: white;
+}
+.headerEach {
+  padding: 0.5vw 1vw;
+  box-sizing: border-box;
+  border-right: 0.08vw solid rgba(255, 255, 255, 0.6);
+  width: 50%;
+}
+.rowEach {
+  padding: 0.5vw 1vw;
+  box-sizing: border-box;
+  width: 50%;
 }

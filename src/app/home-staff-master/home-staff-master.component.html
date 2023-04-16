@@ -1,3 +1,7 @@
+<div class="pageTitle" *ngIf="page === 'addPayRun'">
+  <div class="arrowBack" (click)="page = 'payRun'"></div>
+  PAYRUN
+</div>
 <div *ngIf="page === 'staffMaster'">
   <div class="pageTitle">STAFF MASTER</div>
   <div class="tableFilterHeader">
@@ -69,7 +73,7 @@
     <select class="input">
       <option hidden>Select Category</option>
     </select>
-    <div class="addButton">+ Pay Run</div>
+    <div class="addButton" (click)="onClickAddPayRun()">+ Pay Run</div>
   </div>
 </div>
 <!-- ////////////////////////////////////////////////////////////////////////////// -->
@@ -220,16 +224,27 @@
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<div class="formBlankScreen1" *ngIf="page === 'employeeForm'"></div>
-<div [ngClass]="page === 'employeeForm' ? 'employeeForm' : 'employeeForm_'">
+<div class="formBlankScreen1" *ngIf="popUp === 'employeeForm'"></div>
+<div [ngClass]="popUp === 'employeeForm' ? 'employeeForm' : 'employeeForm_'">
   <div class="header">
     NEW EMPLOYEE
-    <div class="closeBtn" (click)="page = 'staffMaster'"></div>
+    <div class="closeBtn" (click)="popUp = ''"></div>
   </div>
   <div class="body">
     <div class="leftBody">
       <div class="profileContainer">
-        <div class="profile"></div>
+        <div
+          class="profile"
+          (click)="imgLoader.click()"
+          [ngStyle]="{ backgroundImage: getImageLocalUrl() }"
+        ></div>
+        <input
+          #imgLoader
+          style="display: none"
+          type="file"
+          accept="image/*"
+          (change)="uploadImageSelected($event)"
+        />
       </div>
       <div class="rightTitle_">Basic Information</div>
       <div class="rightTitle">System Information</div>
@@ -240,16 +255,140 @@
       <div class="formSubBody">
         <div>User Name*</div>
         <input class="input" placeholder="Enter name" />
+        <div>Mobile Number *</div>
+        <input class="input" placeholder="Enter mobile number" />
+        <div>Email Address</div>
+        <input class="input" placeholder="Enter email address" />
+        <div>Full Address</div>
+        <textarea class="input" placeholder="Enter address"></textarea>
       </div>
       <div class="leftTitle">SYSTEM INFORMATION</div>
-      <div class="leftTitle">CREDENTIALS</div>
+      <div class="formSubBody">
+        <div>Designation</div>
+        <input class="input" placeholder="Enter designation" />
+        <div>Role</div>
+        <select class="input">
+          <option hidden>Select role</option>
+        </select>
+        <div>RFID Tag Number</div>
+        <input class="input" placeholder="0101xxxx01" />
+      </div>
+      <div class="leftTitle">
+        CREDENTIALS
+        <div style="display: flex; font-size: 0.7vw; align-items: center">
+          System User
+          <div
+            (click)="isSystemUser = !isSystemUser"
+            [ngClass]="isSystemUser ? 'switchButton_' : 'switchButton'"
+          ></div>
+        </div>
+      </div>
+      <div class="formSubBody">
+        <div style="display: flex; justify-content: space-between">
+          <div style="width: 48%">User ID</div>
+          <div style="width: 48%">Password</div>
+        </div>
+        <div style="display: flex; justify-content: space-between">
+          <input style="width: 48%" class="input" placeholder="User Id" />
+          <input
+            style="width: 48%"
+            class="input"
+            type="password"
+            placeholder="*****"
+          />
+        </div>
+        <div>Status</div>
+        <select class="input">
+          <option>Active</option>
+        </select>
+      </div>
     </div>
   </div>
   <div class="footer">
     <div class="errorMsg">Delete</div>
     <div class="btns">
-      <div class="cancelBtn" (click)="page = 'staffMaster'">CANCEL</div>
+      <div class="cancelBtn" (click)="popUp = ''">CANCEL</div>
       <div class="saveBtn" (click)="onClickSaveEmployeeForm()">SAVE</div>
+    </div>
+  </div>
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////// -->
+<div class="formLayout" *ngIf="page === 'addPayRun'">
+  <div class="formHeaderBox">
+    <div style="width: 14%">
+      <div>Month*</div>
+      <select class="defaultInput" style="width: 100%">
+        <option>Select Branch</option>
+      </select>
+    </div>
+    <div style="width: 8%">
+      <div>&nbsp;</div>
+      <div class="blueButton">LOAD ALL</div>
+    </div>
+    <div style="width: 14%">
+      <div>Date</div>
+      <input
+        class="defaultInput"
+        placeholder="Search for a supplier"
+        style="width: 100%"
+        type="date"
+      />
+    </div>
+    <div style="width: 14%">
+      <div>Paid From Account*</div>
+      <select class="defaultInput" style="width: 100%">
+        <option>Select Account</option>
+      </select>
+    </div>
+    <div style="width: 14%">
+      <div>Payment Method*</div>
+      <select class="defaultInput" style="width: 100%">
+        <option>Select Account</option>
+      </select>
+    </div>
+    <div style="width: 32%">
+      <div>Reference</div>
+      <input
+        class="defaultInput"
+        style="width: 100%"
+        placeholder="Enter transaction referance here"
+      />
+    </div>
+  </div>
+  <div class="formContentBox">
+    <div class="leftContent">
+      <div class="leftContentTitle">Employee list (9)</div>
+      <div
+        [ngClass]="k === 0 ? 'leftContentEach_' : 'leftContentEach'"
+        *ngFor="let it of allPayrunEmploye; let k = index"
+      >
+        {{ it?.name }}
+        <div class="paidStatus">{{ it?.status }}</div>
+      </div>
+    </div>
+    <div class="rightContent">
+      <div class="empDetailsContainer">
+        <div class="header">
+          <div class="headerEach" style="width: 80%">Employee name</div>
+          <div class="headerEach" style="width: 80%">Designation</div>
+          <div class="headerEach">Regular daily pay</div>
+          <div class="headerEach">Days/Month</div>
+          <div class="headerEach">Basic salary</div>
+          <div class="headerEach">Drawings</div>
+        </div>
+        <div class="row">
+          <div class="rowEach" style="width: 80%">Afras Muhammed</div>
+          <div class="rowEach" style="width: 80%">Finance assistant</div>
+          <div class="rowEach">150.00</div>
+          <div class="rowEach">30</div>
+          <div class="rowEach">4,500.00</div>
+          <div class="rowEach">500.00</div>
+        </div>
+      </div>
     </div>
   </div>
 </div>

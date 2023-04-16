@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { allDummyEmployee } from './dummy_data';
+import { allDummyEmployee, allDummyPayrunEmployee } from './dummy_data';
 
 @Component({
   selector: 'app-home-staff-master',
@@ -12,7 +12,11 @@ export class HomeStaffMasterComponent implements OnInit {
   allStaff: any = allDummyEmployee;
   allSalartMaster: any = allDummyEmployee;
   allPayrun: any = allDummyEmployee;
-  page: string = 'employeeForm';
+  allPayrunEmploye: any = allDummyPayrunEmployee;
+
+  page: string = 'addPayRun';
+  popUp: String = '';
+  isSystemUser: boolean = false;
 
   onclickAllStaffMaster = () => {
     this.page = 'staffMaster';
@@ -28,10 +32,26 @@ export class HomeStaffMasterComponent implements OnInit {
   };
 
   onClickAddEmloyee = () => {
-    this.page = 'employeeForm';
+    this.popUp = 'employeeForm';
   };
 
-  onClickSaveEmployeeForm = () => {};
+  onClickAddPayRun = () => {
+    this.page = 'addPayRun';
+  };
+
+  onClickSaveEmployeeForm = () => {
+    this.popUp = '';
+  };
+
+  uploadedImage: any;
+  uploadImageSelected = (e: any) => {
+    if (e.target.files.length > 0) this.uploadedImage = e.target.files[0];
+  };
+  getImageLocalUrl = () => {
+    if (this.uploadedImage)
+      return `url(${URL.createObjectURL(this.uploadedImage)})`;
+    else return '';
+  };
 
   ngOnInit(): void {}
 }

@@ -16,7 +16,7 @@ export const allDummyEmployee = {
       phone: '1212121212',
       email: 'testdcd@ddf.com',
       isSystemUser: false,
-      status: 'GST @ 18%',
+      status: '',
     },
     {
       image:
@@ -28,7 +28,7 @@ export const allDummyEmployee = {
       phone: '1212121212',
       email: 'testdcd@ddf.com',
       isSystemUser: false,
-      status: 'GST @ 18%',
+      status: 'PAID',
     },
     {
       image:
@@ -40,7 +40,7 @@ export const allDummyEmployee = {
       phone: '1212121212',
       email: 'testdcd@ddf.com',
       isSystemUser: false,
-      status: 'GST @ 18%',
+      status: '',
     },
     {
       image:
@@ -52,7 +52,7 @@ export const allDummyEmployee = {
       phone: '1212121212',
       email: 'testdcd@ddf.com',
       isSystemUser: false,
-      status: 'GST @ 18%',
+      status: 'PAID',
     },
     {
       image:
@@ -64,7 +64,35 @@ export const allDummyEmployee = {
       phone: '1212121212',
       email: 'testdcd@ddf.com',
       isSystemUser: false,
-      status: 'GST @ 18%',
+      status: '',
     },
   ],
 };
+
+export const allDummyPayrunEmployee = [
+  {
+    name: "Alan Adams",
+    empId: '1234',
+    status: '',
+  },
+  {
+    name: "Sara Porter",
+    empId: '1234',
+    status: 'PAID',
+  },
+  {
+    name: "Ethan Diaz",
+    empId: '1234',
+    status: '',
+  },
+  {
+    name: "Sandra Mendoza",
+    empId: '1234',
+    status: 'PAID',
+  },
+  {
+    name: "Terry Meyer",
+    empId: '1234',
+    status: '',
+  },
+];
