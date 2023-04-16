@@ -14,7 +14,7 @@ export class MasterSettingsComponent implements OnInit {
 
   constructor() {}
 
-  navCount = 8;
+  navCount = 0;
   popUp: any = '';
 
   allBanks: any = allBAnksDummy;
