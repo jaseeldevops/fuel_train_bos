@@ -14,12 +14,13 @@ export class MasterSettingsComponent implements OnInit {
 
   constructor() {}
 
-  navCount = 5;
+  navCount = 8;
+  popUp: any = '';
 
   allBanks: any = allBAnksDummy;
   allModeOfPayments: any = allBAnksDummy;
   allTaxs: any = allBAnksDummy;
-  
+
   allDenomination: any = allDenominationDummy;
 
   ngOnInit(): void {}

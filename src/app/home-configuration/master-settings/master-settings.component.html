@@ -96,11 +96,27 @@
       <div class="grrenButton" *ngIf="navCount === 4">
         + Add Expence Category
       </div>
-      <div class="grrenButton" *ngIf="navCount === 6">
+      <div
+        class="grrenButton"
+        *ngIf="navCount === 6"
+        (click)="popUp = 'allowanceAndIncentives'"
+      >
         + Allowances & Incentives
       </div>
-      <div class="grrenButton" *ngIf="navCount === 7">+ Add Branchs</div>
-      <div class="grrenButton" *ngIf="navCount === 8">+ Add Vehcile</div>
+      <div
+        class="grrenButton"
+        *ngIf="navCount === 7"
+        (click)="popUp = 'addBranch'"
+      >
+        + Add Branchs
+      </div>
+      <div
+        class="grrenButton"
+        *ngIf="navCount === 8"
+        (click)="popUp = 'addVehicle'"
+      >
+        + Add Vehcile
+      </div>
     </div>
   </div>
 </div>
@@ -332,5 +348,73 @@
         <div class="addedEachDlt"></div>
       </div>
     </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="formBlankScreen1" *ngIf="popUp === 'allowanceAndIncentives'"></div>
+<div
+  [ngClass]="popUp === 'allowanceAndIncentives' ? 'drowerForm' : 'drowerForm_'"
+>
+  <div class="header">
+    Allowances & Incentives
+    <div class="closeBtn" (click)="popUp = ''"></div>
+  </div>
+  <div class="body">
+    <div class="formTitle">Allowances & Incentives</div>
+    <input placeholder="Type here" />
+    <div class="formTitle">Description</div>
+    <input placeholder="Type here" />
+  </div>
+  <div class="footer">
+    <div class="cancelBtn" (click)="popUp = ''">CLOSE</div>
+    <div class="saveBtn">ADD</div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="formBlankScreen1" *ngIf="popUp === 'addBranch'"></div>
+<div [ngClass]="popUp === 'addBranch' ? 'drowerForm' : 'drowerForm_'">
+  <div class="header">
+    Add Branchs
+    <div class="closeBtn" (click)="popUp = ''"></div>
+  </div>
+  <div class="body">
+    <div class="formTitle">Branch Name</div>
+    <input placeholder="Branch Name" />
+    <div class="formTitle">Delivery Address</div>
+    <textarea placeholder="Address..."></textarea>
+  </div>
+  <div class="footer">
+    <div class="cancelBtn" (click)="popUp = ''">CLOSE</div>
+    <div class="saveBtn">ADD</div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="formBlankScreen1" *ngIf="popUp === 'addVehicle'"></div>
+<div [ngClass]="popUp === 'addVehicle' ? 'drowerForm' : 'drowerForm_'">
+  <div class="header">
+    Add Vehicle Type
+    <div class="closeBtn" (click)="popUp = ''"></div>
+  </div>
+  <div class="body">
+    <div class="formTitle">Vehicle Type</div>
+    <input placeholder="Vehicle Type" />
+    <div class="formTitle">Delivery Address</div>
+    <textarea placeholder="Address..."></textarea>
+  </div>
+  <div class="footer">
+    <div class="cancelBtn" (click)="popUp = ''">CLOSE</div>
+    <div class="saveBtn">ADD</div>
   </div>
 </div>
