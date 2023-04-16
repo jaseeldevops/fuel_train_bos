@@ -40,6 +40,9 @@ import { PriceManagementComponent } from './home-inventory/price-management/pric
 import { BranchManagementComponent } from './home-inventory/branch-management/branch-management.component';
 import { StockManagementComponent } from './home-inventory/stock-management/stock-management.component';
 import { MasterSettingsComponent } from './home-configuration/master-settings/master-settings.component';
+import { OtherSettingsComponent } from './home-configuration/other-settings/other-settings.component';
+import { AuditingInformationComponent } from './home-configuration/auditing-information/auditing-information.component';
+import { DocumentPrefixComponent } from './home-configuration/document-prefix/document-prefix.component';
 
 @NgModule({
   declarations: [
@@ -77,6 +80,9 @@ import { MasterSettingsComponent } from './home-configuration/master-settings/ma
     BranchManagementComponent,
     StockManagementComponent,
     MasterSettingsComponent,
+    OtherSettingsComponent,
+    AuditingInformationComponent,
+    DocumentPrefixComponent,
   ],
   imports: [
     BrowserModule,

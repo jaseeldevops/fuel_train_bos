@@ -495,8 +495,20 @@
   ></app-home-configuration-body>
   <app-master-settings
     *ngIf="page === 'masterSettings'"
-    onChangePage="onChangePage"
+    [onChangePage]="onChangePage"
   ></app-master-settings>
+  <app-other-settings
+    *ngIf="page === 'otherSettings'"
+    [onChangePage]="onChangePage"
+  ></app-other-settings>
+  <app-auditing-information
+    *ngIf="page === 'auditingInformation'"
+    [onChangePage]="onChangePage"
+  ></app-auditing-information>
+  <app-document-prefix
+    *ngIf="page === 'documentPrefix'"
+    [onChangePage]="onChangePage"
+  ></app-document-prefix>
 </div>
 <app-home-configuration-popups
   [popup]="popup"

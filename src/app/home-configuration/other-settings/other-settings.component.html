@@ -1,0 +1,80 @@
+<div class="header">
+  <div class="titile" (click)="onChangePage('')">
+    Configurations > Master Settings
+  </div>
+  <div class="navRow">
+    <div class="navBar">
+      <div
+        [ngClass]="navCount === 0 ? 'eachButton_' : 'eachButton'"
+        (click)="navCount = 0"
+      >
+        FCC Settings
+        <div
+          [ngClass]="navCount === 0 ? 'buttonBottom_' : 'buttonBottom'"
+        ></div>
+      </div>
+      <div
+        [ngClass]="navCount === 1 ? 'eachButton_' : 'eachButton'"
+        (click)="navCount = 1"
+      >
+        POS Settings
+        <div
+          [ngClass]="navCount === 1 ? 'buttonBottom_' : 'buttonBottom'"
+        ></div>
+      </div>
+      <div
+        [ngClass]="navCount === 2 ? 'eachButton_' : 'eachButton'"
+        (click)="navCount = 2"
+      >
+        HHT Settings
+        <div
+          [ngClass]="navCount === 2 ? 'buttonBottom_' : 'buttonBottom'"
+        ></div>
+      </div>
+      <div
+        [ngClass]="navCount === 3 ? 'eachButton_' : 'eachButton'"
+        (click)="navCount = 3"
+      >
+        API Settings
+        <div
+          [ngClass]="navCount === 3 ? 'buttonBottom_' : 'buttonBottom'"
+        ></div>
+      </div>
+    </div>
+    <div class="options">
+      <div class="grrenButton" *ngIf="navCount === 1">+ Export Config</div>
+    </div>
+  </div>
+</div>
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<div class="denominationBody" *ngIf="navCount === 1">
+  <div class="leftBody">
+    POS Settings
+    <div style="font-size: 1vw;">You can enter site id, address sap code, delear name and pincode details here</div>
+  </div>
+  <div class="rightBody">
+    <div class="adderContainer">
+      <input
+        class="defaultInput"
+        style="width: 50%"
+        placeholder="00.00.00.00"
+      />
+      <input
+        class="defaultInput"
+        style="width: 20%"
+        placeholder="8080"
+      />
+      <div class="addButton">ADD</div>
+    </div>
+    <div class="addedList">
+      <div class="addedEach" *ngFor="let it of allPosIp">
+        {{ it?.value }}
+        <div class="addedEachDlt"></div>
+      </div>
+    </div>
+  </div>
+</div>

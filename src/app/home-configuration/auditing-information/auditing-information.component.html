@@ -1,0 +1,26 @@
+<div class="header">
+  <div class="titile" (click)="onChangePage('')">
+    Configurations > Auditing Information
+  </div>
+</div>
+<div class="tableBody" style="height: 82%">
+  <div class="table">
+    <div class="header">
+      <div style="width: 20%">DATE</div>
+      <div style="width: 20%">PROCESS</div>
+      <div style="width: 20%">MODULE</div>
+      <div style="width: 20%">USER</div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allAuditingInformation?.content">
+        <div style="width: 20%">{{ it?.date }}</div>
+        <div style="width: 20%">{{ it?.process }}</div>
+        <div style="width: 20%">{{ it?.module }}</div>
+        <div style="width: 20%">{{ it?.user }}</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging
+    [paging]="allAuditingInformation?.paging"
+  ></app-table-paging>
+</div>
