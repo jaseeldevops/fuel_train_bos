@@ -43,6 +43,8 @@ import { MasterSettingsComponent } from './home-configuration/master-settings/ma
 import { OtherSettingsComponent } from './home-configuration/other-settings/other-settings.component';
 import { AuditingInformationComponent } from './home-configuration/auditing-information/auditing-information.component';
 import { DocumentPrefixComponent } from './home-configuration/document-prefix/document-prefix.component';
+import { LocalAccountComponent } from './home-operations/local-account/local-account.component';
+import { DiscountConfigurationsComponent } from './home-operations/discount-configurations/discount-configurations.component';
 
 @NgModule({
   declarations: [
@@ -83,6 +85,8 @@ import { DocumentPrefixComponent } from './home-configuration/document-prefix/do
     OtherSettingsComponent,
     AuditingInformationComponent,
     DocumentPrefixComponent,
+    LocalAccountComponent,
+    DiscountConfigurationsComponent,
   ],
   imports: [
     BrowserModule,

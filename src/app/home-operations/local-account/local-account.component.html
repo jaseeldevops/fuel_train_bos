@@ -1,0 +1,130 @@
+<div class="header">
+  <div class="titile" (click)="onChangePage('')">
+    Operations > Local Account
+  </div>
+  <div class="navRow">
+    <div class="navBar">
+      <div class="eachButton_">
+        Customers
+        <div class="buttonBottom_"></div>
+      </div>
+    </div>
+    <div style="display: flex">
+      <input placeholder="Search an invoice" class="defaultInput" />
+      <div class="downloadButton"></div>
+      <div class="grrenButton" (click)="popUp = 'addCustomer'">
+        Add Customer
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody">
+  <div class="table">
+    <div class="header">
+      <div style="width: 8%">AC NO</div>
+      <div style="width: 10%">NAME</div>
+      <div style="width: 10%">CONTACT NUMBER</div>
+      <div style="width: 10%">DISCOUNT%</div>
+      <div style="width: 20%">ADDRESS</div>
+      <div style="width: 10%">CREDIT LIMIT</div>
+      <div style="width: 8%">STATUS</div>
+      <div style="width: 8%">ACTION</div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allLocalAccount?.content">
+        <div style="width: 8%">{{ it?.acNo }}</div>
+        <div style="width: 10%">{{ it?.name }}</div>
+        <div style="width: 10%">{{ it?.phone }}</div>
+        <div style="width: 10%">{{ it?.discount }}</div>
+        <div style="width: 20%">{{ it?.address }}</div>
+        <div style="width: 10%">{{ it?.creditLimit }}</div>
+        <div style="width: 8%">{{ it?.status }}</div>
+        <div style="width: 8%">Edit</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allLocalAccount?.paging"></app-table-paging>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="formBlankScreen1" *ngIf="popUp === 'addCustomer'"></div>
+<div [ngClass]="popUp === 'addCustomer' ? 'drowerForm' : 'drowerForm_'">
+  <div class="header">
+    Add Customer
+    <div class="closeBtn" (click)="popUp = ''"></div>
+  </div>
+  <div class="body">
+    <div class="contentHeader">BASIC INFORMATION</div>
+    <div class="formTitle">Account Number</div>
+    <input placeholder="Enter account number here" />
+    <div class="formTitle">Customer Name</div>
+    <input placeholder="Enter customer name here" />
+    <div class="formTitle">Contact Number</div>
+    <input placeholder="Enter contact number here" />
+    <div class="formTitle">Email address</div>
+    <input placeholder="Enter email address here" />
+    <div class="formTitle">Address</div>
+    <textarea placeholder="Address..."></textarea>
+    <div class="formTitle">Pin Code</div>
+    <input placeholder="Pin Code" />
+    <br />
+    <br />
+    <div class="contentHeader">OTHER INFORMATION</div>
+    <div class="formTitle">Discount</div>
+    <div style="display: flex; align-items: center">
+      <input type="number" placeholder="0.00" style="width: 45%" />
+      <div style="display: flex; font-size: 0.9vw">Block all cards</div>
+    </div>
+    <div style="display: flex; align-items: center">
+      <div class="formTitle" style="width: 48%">Credit limit</div>
+      <div class="formTitle" style="width: 48%">Credit Duration</div>
+    </div>
+    <div style="display: flex; align-items: center">
+      <input type="number" placeholder="0.00" style="width: 48%" />
+      <input type="number" placeholder="0.00" style="width: 48%" />
+    </div>
+    <br />
+    <br />
+    <div class="contentHeader">CARD HOLDER INFORMATION</div>
+    <div style="display: flex; align-items: center">
+      <div class="formTitle" style="width: 15%">Holder Number</div>
+      <div class="formTitle" style="padding-left: 0.3vw; width: 19%">
+        Holder Name
+      </div>
+      <div class="formTitle" style="padding-left: 0.3vw; width: 19%">
+        Card Number
+      </div>
+      <div class="formTitle" style="padding-left: 0.3vw; width: 19%">Note</div>
+      <div class="formTitle" style="padding-left: 0.3vw; width: 19%">
+        Status
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; margin: 0 2vw">
+      <input type="number" placeholder="0" style="margin: 0.3vw; width: 15%" />
+      <input placeholder="Card holder name" style="margin: 0.3vw; width: 19%" />
+      <input
+        type="number"
+        placeholder="Card number"
+        style="margin: 0.3vw; width: 19%"
+      />
+      <input placeholder="Note" style="margin: 0.3vw; width: 19%" />
+      <select style="margin: 0.3vw; width: 19%">
+        <option hidden>Select Status</option>
+      </select>
+    </div>
+    <br />
+    <br />
+  </div>
+  <div class="footer">
+    <div class="cancelBtn" (click)="popUp = ''">CANCEL</div>
+    <div class="saveBtn">ADD</div>
+  </div>
+</div>

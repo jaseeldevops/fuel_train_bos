@@ -30,6 +30,8 @@ export class HomeOperationsComponent implements OnInit {
     this.setPage();
   }
 
+  onChangePage = (p: any) => (this.page = p);
+
   navCount = 0;
   data: any = null;
   isLoading = false;

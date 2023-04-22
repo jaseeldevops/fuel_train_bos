@@ -1,0 +1,93 @@
+.formBlankScreen1 {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #00000088;
+}
+.drowerForm,
+.drowerForm_ {
+  transition: 0.3s;
+  position: fixed;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  width: 70vw;
+  background-color: white;
+}
+.drowerForm_ {
+  right: -70vw;
+}
+.drowerForm .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2vw;
+  background-color: #e1e2e5;
+  padding: 0.7vw 1.2vw;
+  font-weight: bold;
+  color: var(--myColor);
+}
+.drowerForm .closeBtn {
+  width: 1.4vw;
+  height: 1.4vw;
+  cursor: pointer;
+  background-image: url(../../../assets/ic_x.svg);
+  background-position: center;
+  background-size: 1.2vw;
+  background-repeat: no-repeat;
+}
+/* //////////////////////////////////////////////// */
+.drowerForm .contentHeader {
+  font-size: 1vw;
+  padding: 0.8vw 1.5vw;
+  background-color: #d9e8ff;
+  margin-bottom: 1.5vw;
+}
+.drowerForm .body {
+  height: calc(100vh - 6.4vw);
+  overflow: auto;
+  background-color: #f5f6f9;
+  box-sizing: border-box;
+}
+.drowerForm .formTitle {
+  font-size: 0.9vw;
+  margin: 0.1vw 0.26vw;
+}
+.drowerForm input,
+textarea,
+select {
+  margin: 0.1vw 0.2vw;
+  padding: 0.5vw 0.8vw;
+  background-color: white;
+  border-radius: 0.3vw;
+  border: none;
+  box-sizing: border-box;
+}
+/* //////////////////////////////////////////////// */
+.drowerForm .footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0.8vw 1.2vw;
+  background-color: #eceff4;
+}
+.drowerForm .cancelBtn {
+  margin: 0 0.5vw;
+  border-radius: 0.3vw;
+  padding: 0.4vw 1.5vw;
+  background-color: #c9e1ff;
+  color: var(--myColor);
+  cursor: pointer;
+  font-weight: 500;
+}
+.drowerForm .saveBtn {
+  margin: 0 0.5vw;
+  background-color: var(--myColor);
+  border-radius: 0.3vw;
+  padding: 0.4vw 1.5vw;
+  cursor: pointer;
+  font-weight: 500;
+  color: white;
+}

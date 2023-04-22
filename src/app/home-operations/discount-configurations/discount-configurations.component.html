@@ -1,0 +1,139 @@
+<div class="header">
+  <div class="titile" (click)="onChangePage('')">
+    Operations > Discount Configuration
+  </div>
+  <div class="navRow">
+    <div class="navBar">
+      <div class="eachButton_">
+        Promotion
+        <div class="buttonBottom_"></div>
+      </div>
+    </div>
+    <div style="display: flex">
+      <input placeholder="Search an invoice" class="defaultInput" />
+      <div class="downloadButton"></div>
+      <div class="grrenButton" (click)="popUp = 'addDiscount'">
+        Add Customer
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody">
+  <div class="table">
+    <div class="header">
+      <div style="width: 10%">SCHEME NAME</div>
+      <div style="width: 10%">SCHEME TYPE</div>
+      <div style="width: 20%">DISCOUNT TYPE</div>
+      <div style="width: 15%">START DATE</div>
+      <div style="width: 15%">END DATE</div>
+      <div style="width: 10%">STATUS</div>
+      <div style="width: 10%">ACTION</div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allDiscountConfiguration?.content">
+        <div style="width: 10%">{{ it?.schemeName }}</div>
+        <div style="width: 10%">{{ it?.schemeType }}</div>
+        <div style="width: 20%">{{ it?.discountType }}</div>
+        <div style="width: 15%">{{ it?.startDate }}</div>
+        <div style="width: 15%">{{ it?.endDate }}</div>
+        <div style="width: 10%">{{ it?.status }}</div>
+        <div style="width: 10%">Edit</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging
+    [paging]="allDiscountConfiguration?.paging"
+  ></app-table-paging>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="formBlankScreen1" *ngIf="popUp === 'addDiscount'"></div>
+<div [ngClass]="popUp === 'addDiscount' ? 'drowerForm' : 'drowerForm_'">
+  <div class="header">
+    New Discount
+    <div class="closeBtn" (click)="popUp = ''"></div>
+  </div>
+  <div class="body">
+    <div class="contentHeader">DISCOUNT INFORMATION</div>
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <div class="formTitle" style="width: 48%">Scheme name</div>
+      <div class="formTitle" style="width: 24%">Scheme type</div>
+      <div class="formTitle" style="width: 24%">Scheme status</div>
+    </div>
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <input style="width: 48%" />
+      <select style="width: 24%"></select>
+      <select style="width: 24%"></select>
+    </div>
+    <br />
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <div class="formTitle" style="width: 48%">Scheme duration</div>
+    </div>
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <input style="width: 18%" type="date" />
+      <input style="width: 18%" type="date" />
+    </div>
+    <br />
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <div class="formTitle" style="width: 48%">Select MOP</div>
+    </div>
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <div class="blueButton">Cash</div>
+      <div class="lightBlueButton">UPI</div>
+      <div class="lightBlueButton">CARD</div>
+      <div class="lightBlueButton">Fleetcard</div>
+      <div class="lightBlueButton">Local Account</div>
+    </div>
+    <br />
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <div class="formTitle" style="width: 48%">Select Dispenser</div>
+    </div>
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <div class="lightBlueButton">Pump 01</div>
+      <div class="lightBlueButton">Pump 02</div>
+    </div>
+    <br />
+    <br />
+    <div class="contentHeader">PRODUCT INFORMATION</div>
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <div class="formTitle" style="width: 5%">No</div>
+      <div class="formTitle" style="width: 15%">Type</div>
+      <div class="formTitle" style="width: 15%">Note</div>
+      <div class="formTitle" style="width: 10%">Min Value</div>
+      <div class="formTitle" style="width: 10%">Max Value</div>
+      <div class="formTitle" style="width: 13%">Discount type</div>
+      <div class="formTitle" style="width: 13%">Value</div>
+      <div class="formTitle" style="width: 10%">Max Discount</div>
+    </div>
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <input type="number" placeholder="0" style="width: 5%" />
+      <select style="margin: 0.3vw; width: 15%">
+        <option hidden>Select type</option>
+      </select>
+      <select style="margin: 0.3vw; width: 15%">
+        <option hidden>Search SKU</option>
+      </select>
+      <input type="number" placeholder="0" style="width: 10%" />
+      <input type="number" placeholder="0" style="width: 10%" />
+      <select style="margin: 0.3vw; width: 13%">
+        <option hidden>Discount type</option>
+      </select>
+      <input type="number" placeholder="0.00" style="width: 13%" />
+      <input type="number" placeholder="0.00" style="width: 10%" />
+    </div>
+    <br />
+    <br />
+  </div>
+  <div class="footer">
+    <div class="cancelBtn" (click)="popUp = ''">CANCEL</div>
+    <div class="saveBtn">ADD</div>
+  </div>
+</div>

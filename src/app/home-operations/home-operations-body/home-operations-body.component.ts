@@ -3,7 +3,10 @@ import { Component, Input, OnInit } from '@angular/core';
 @Component({
   selector: 'app-home-operations-body',
   templateUrl: './home-operations-body.component.html',
-  styleUrls: ['./home-operations-body.component.css'],
+  styleUrls: [
+    './home-operations-body.component.css',
+    '../home-operations.component.css',
+  ],
 })
 export class HomeOperationsBodyComponent implements OnInit {
   @Input() page: any;
