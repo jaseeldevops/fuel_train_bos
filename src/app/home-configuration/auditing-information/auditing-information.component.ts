@@ -12,7 +12,7 @@ import { allAuditingInformationDummy } from './dummy_data';
 export class AuditingInformationComponent implements OnInit {
   @Input() onChangePage: any;
 
-  allAuditingInformation = allAuditingInformationDummy;
+  allAuditingInformation:any = allAuditingInformationDummy;
 
   constructor() {}
 

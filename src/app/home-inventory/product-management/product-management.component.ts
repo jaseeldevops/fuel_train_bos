@@ -15,7 +15,7 @@ export class ProductManagementComponent implements OnInit {
 
   allProduct: any = allDummyProdects;
 
-  allPromotions = allDummyPromotions;
+  allPromotions: any = allDummyPromotions;
 
   constructor() {}
   ngOnInit(): void {}
