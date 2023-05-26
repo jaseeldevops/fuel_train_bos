@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="57" height="58" viewBox="0 0 57 58">
-  <defs>
-    <pattern id="pattern" preserveAspectRatio="none" width="100%" height="100%" viewBox="0 0 27 27">
-      <image width="27" height="27" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABsAAAAbCAYAAACN1PRVAAAABHNCSVQICAgIfAhkiAAAAgRJREFUSEu1ls0rBVEYh0n5SiEfGyx8ZYHshJIUC5LykWJlhYUs7Cz8A8qCvbolRZSvKCRJWNixYEFZsFFkgSi6np9mNE1nmHvn3reezH3PnPdxzpxzZhLD4XACkQqT0AQTcKRkrCPRko1ReApS4AI64TYeMolmXIXP+d0NNwGF5fQvgS941cieuMg2FL0i1xFAWEzfTSgDPaskyRq52IAsg1BT2RKlsIF+O5Bh17WfWTOJJcgzCK+tZ3gZ4ZTWWrLfQdgy1amDdcg3FL0n1w56ln7jT5ktXOGiwFDxjlwfnPq0/StTnSrYhiJD0QdyXXDiQ+hLpjqV1pSWegg1wsN/hL5lqlMBWrraK+54JNEPe38II5KpjvaKlq9J+EJeJ82BhzBimepoU2rR1BiKPpMbtKbc3RyVTEW0WLag2iB8JzcAq662qGWqUwjLoP3ojjcSQ7DgaAgkU51c0NFWbxB+kBuBkNUWWKY6OrQ1ZXr3uePTEs7xV7JdyLRvch5Xhr6eqRxaFkGHtDs0wlHYhzPQvT8RrUx902ENWj3+pVnyWjia+sAyFdCUhkD7zR0/3xsaUKxkqpMG89DjMcLfdJBpdNbWB9M0DEOSl9QpU4dx0H7SqookdL8k2muqYwynrI079GqJWzhlvVh0QsQtnDK9o/QdErdwyvQ1dAzalPayjaU4+RswC6blPOwG0gAAAABJRU5ErkJggg=="/>
-    </pattern>
-  </defs>
-  <ellipse id="Ellipse_5459_copy_3" data-name="Ellipse 5459 copy 3" cx="28.5" cy="29" rx="28.5" ry="29" fill="#8bbc8c"/>
-  <rect id="Layer_1103" data-name="Layer 1103" width="18" height="17" transform="translate(20 21)" fill="url(#pattern)"/>
-</svg>
