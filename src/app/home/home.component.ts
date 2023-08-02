@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { drowerIconList } from './store';
-
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
