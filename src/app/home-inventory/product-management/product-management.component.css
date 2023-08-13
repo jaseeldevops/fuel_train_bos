@@ -183,3 +183,17 @@ input {
 .dltImgBtn:hover {
   background-color: #ffffff;
 }
+
+/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+.downloadButton {
+  width: 2vw;
+  height: 2vw;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../../../assets/icDownload.svg);
+  margin: 0 0vw;
+  cursor: pointer;
+}

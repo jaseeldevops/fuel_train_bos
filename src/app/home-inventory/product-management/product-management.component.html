@@ -33,6 +33,7 @@
   <select class="input">
     <option hidden>Select Category</option>
   </select>
+  <div class="downloadButton"></div>
   <div
     class="addButton"
     *ngIf="page === 'addProduct'"
@@ -90,11 +91,15 @@
           />
         </div>
         <div class="content" style="width: 20%">{{ it?.name }}</div>
-        <div class="content" style="width: 10%">{{ it?.code }}</div>
+        <div class="content" style="width: 10%; color: #406ca5">
+          {{ it?.code }}
+        </div>
         <div class="content" style="width: 12%">{{ it?.category }}</div>
         <div class="content" style="width: 10%">{{ it?.type }}</div>
         <div class="content" style="width: 10%">{{ it?.cost }}</div>
-        <div class="content" style="width: 10%">{{ it?.selling }}</div>
+        <div class="content" style="width: 10%; color: #406ca5">
+          {{ it?.selling }}
+        </div>
         <div class="content" style="width: 10%">{{ it?.mrp }}</div>
         <div class="content" style="width: 8%">{{ it?.tax }}</div>
         <div class="content" style="width: 8%">{{ it?.stock }}</div>
@@ -135,10 +140,14 @@
           />
         </div>
         <div class="content" style="width: 22%">{{ it?.name }}</div>
-        <div class="content" style="width: 14%">{{ it?.code }}</div>
+        <div class="content" style="width: 14%; color: #406ca5">
+          {{ it?.code }}
+        </div>
         <div class="content" style="width: 14%">{{ it?.category }}</div>
         <div class="content" style="width: 14%">{{ it?.cost }}</div>
-        <div class="content" style="width: 14%">{{ it?.selling }}</div>
+        <div class="content" style="width: 14%; color: #406ca5">
+          {{ it?.selling }}
+        </div>
         <div class="content" style="width: 10%">{{ it?.tax }}</div>
       </div>
     </div>
@@ -193,7 +202,7 @@
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
-<div *ngIf="page === 'addNewProduct' || page === 'addNewService'">
+<div *ngIf="page === 'addNewProduct'">
   <div class="addForm">
     <div class="contentBody">
       <div class="detailsSide">
@@ -234,7 +243,9 @@
           <textarea
             class="input"
             style="width: 32.4vw; min-height: 5vw"
-            placeholder="Enter a brief description for your product, this will be shown on all the linked selling channels for your customers."
+            [placeholder]="
+              'Enter a brief description for your product, this will be shown on all the linked selling channels for your customers.'
+            "
           ></textarea>
         </div>
         <div class="formRow">
@@ -439,6 +450,263 @@
     <div class="errorMsg">Errro on page</div>
     <div class="btns">
       <div class="cancelBtn" (click)="onBack('addProduct')">CANCEL</div>
+      <div class="saveBtn" (click)="onClickSaveOnNewProdect()">SAVE</div>
+    </div>
+  </div>
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<div *ngIf="page === 'addNewService'">
+  <div class="addForm">
+    <div class="contentBody">
+      <div class="detailsSide">
+        <div class="detailsTitle">GENERAL DETAILS</div>
+        <div class="titleUnderLine"></div>
+        <div class="detailsDesc">
+          What all are the general information about your new product?
+        </div>
+        <div class="detailsDesc">
+          Add product name, supplier info, tags, product description and images
+          for your new product in this section.
+        </div>
+      </div>
+      <div class="formSide">
+        <div class="formRow">
+          <div class="fieldTitle">Service Name *</div>
+          <input
+            class="input"
+            style="width: 32.4vw"
+            placeholder="Enter a name for your service"
+          />
+        </div>
+        <div style="display: flex">
+          <div class="fieldTitle"></div>
+          <div class="topTitle" style="width: 16vw">
+            Select Parent Category*
+          </div>
+          <div class="topTitle" style="width: 16vw">Category *</div>
+        </div>
+        <!-- ///////////////////////////////////////////////////////////////// -->
+        <div class="formRow">
+          <div class="fieldTitle">Parent Category</div>
+          <select class="input" style="width: 16vw"></select>
+          <select class="input" style="width: 16vw"></select>
+        </div>
+        <div class="formRow">
+          <div class="fieldTitle">Service Description</div>
+          <textarea
+            class="input"
+            style="width: 32.4vw; min-height: 5vw"
+            [placeholder]="
+              'Enter a brief description for your service, this will be shown on all the linked selling channels for your customers.'
+            "
+          ></textarea>
+        </div>
+        <div class="formRow">
+          <div class="fieldTitle">Manage Stock</div>
+          <div class="switchButton"></div>
+        </div>
+        <!-- ///////////////////////////////////////////////////////////////// -->
+        <div style="display: flex">
+          <div class="fieldTitle"></div>
+          <div class="topTitle" style="width: 16vw">Selling unit *</div>
+          <div class="topTitle" style="width: 16vw">Alternate unit</div>
+        </div>
+        <div class="formRow">
+          <div class="fieldTitle">Units *</div>
+          <select class="input" style="width: 16vw"></select>
+          <select class="input" style="width: 16vw"></select>
+        </div>
+        <!-- ///////////////////////////////////////////////////////////////// -->
+        <div style="display: flex">
+          <div class="fieldTitle"></div>
+          <div class="topTitle" style="width: 16vw">Tax slab</div>
+          <div class="topTitle" style="width: 16vw">Tax treatment</div>
+          <div class="topTitle" style="width: 16vw">
+            HSN
+            <div>will be used for GST reports</div>
+          </div>
+        </div>
+        <div class="formRow">
+          <div class="fieldTitle">Tax Info *</div>
+          <select class="input" style="width: 16vw"></select>
+          <select class="input" style="width: 16vw"></select>
+          <input
+            class="input"
+            style="width: 14vw"
+            placeholder="Only numeric characters"
+          />
+        </div>
+        <div class="formRow">
+          <div class="fieldTitle">Sell Online</div>
+          <div class="switchButton"></div>
+          <div class="switchDesc">
+            Make this service active and available for sale on all linked online
+            channels
+          </div>
+        </div>
+        <div class="formRow">
+          <div class="fieldTitle">Featuring on POS</div>
+          <div class="switchButton_"></div>
+          <div class="switchDesc">
+            Make this service Featuring on POS home page
+          </div>
+        </div>
+        <div class="formRow">
+          <div class="fieldTitle">Add to Hot Selling Item</div>
+          <div class="switchButton"></div>
+          <div class="switchDesc">
+            Make this service active and available for sale on all linked online
+            channels
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ///////////////////////////////////////////////////////////////// -->
+    <!-- ///////////////////////////////////////////////////////////////// -->
+    <!-- ///////////////////////////////////////////////////////////////// -->
+    <div class="contentBody">
+      <div class="detailsSide">
+        <div class="detailsTitle">INVENTORY INFORMATION</div>
+        <div class="titleUnderLine"></div>
+        <div class="detailsDesc">
+          How you want to store, list, track and sell your new service?
+        </div>
+        <div class="detailsDesc">
+          You can set service supply details, suppliers, selling channels,
+          supply & sales details in this section.
+        </div>
+      </div>
+      <div class="formSide">
+        <div class="formRow">
+          <div class="fieldTitle">Upload Images</div>
+          <div class="imageContainer">
+            <div
+              class="imagePlayGround"
+              (click)="imgLoader.click()"
+              *ngIf="uploadedImages.length < 1"
+            ></div>
+            <div class="imageList" *ngIf="uploadedImages.length > 0">
+              <div
+                class="imageListItem"
+                *ngFor="let it of uploadedImages; let k = index"
+                [ngStyle]="{ backgroundImage: getImageLocalUrl(it) }"
+              >
+                <div
+                  class="dltImgBtn"
+                  (click)="uploadedImages.splice(k, 1)"
+                ></div>
+              </div>
+            </div>
+            <div class="imageControler" (click)="imgLoader.click()">
+              DRAG images here or
+              <span>BROWSE</span> to upload
+            </div>
+          </div>
+          <input
+            #imgLoader
+            style="display: none"
+            type="file"
+            accept="image/*"
+            multiple
+            (change)="uploadImageSelected($event)"
+          />
+        </div>
+        <div style="display: flex">
+          <div class="fieldTitle"></div>
+          <div class="topTitle" style="width: 16vw">
+            SKU
+            <div>will be auto generated once left blank</div>
+          </div>
+          <div class="topTitle" style="width: 16vw">
+            EAN
+            <div>will be used for integrations</div>
+          </div>
+        </div>
+        <div class="formRow">
+          <div class="fieldTitle">Service Barcode (SKU)</div>
+          <input
+            class="input"
+            style="width: 16vw"
+            placeholder="Only uppercase letters and numbers"
+          />
+          <input
+            class="input"
+            style="width: 16vw"
+            placeholder="Only numeric characters"
+          />
+        </div>
+        <!-- ///////////////////////////////////////////////////////////////// -->
+        <div style="display: flex">
+          <div class="fieldTitle"></div>
+          <div class="topTitle" style="width: 16vw">Supplier / Cost*</div>
+          <div class="topTitle" style="width: 16vw">Purchase unit</div>
+        </div>
+        <div class="formRow">
+          <div class="fieldTitle">Purchase Info *</div>
+          <input
+            class="input"
+            style="width: 16vw"
+            placeholder="Enter cost / purchase price"
+          />
+          <select class="input" style="width: 16vw">
+            <option>PCS</option>
+          </select>
+        </div>
+        <!-- ///////////////////////////////////////////////////////////////// -->
+        <div style="display: flex">
+          <div class="fieldTitle"></div>
+          <div class="topTitle" style="width: 16vw">
+            MRP *
+            <div>Maximum Retail Price</div>
+          </div>
+          <div class="topTitle" style="width: 16vw">
+            RRP
+            <div>Recommended Retail Price</div>
+          </div>
+          <div class="topTitle" style="width: 16vw">Online price</div>
+        </div>
+        <div class="formRow">
+          <div class="fieldTitle">Selling Info *</div>
+          <input class="input" style="width: 16vw" placeholder="Enter MRP" />
+          <input
+            class="input"
+            style="width: 16vw"
+            placeholder="Enter selling price"
+          />
+          <input
+            class="input"
+            style="width: 16vw"
+            placeholder="Enter online price"
+          />
+        </div>
+        <!-- ///////////////////////////////////////////////////////////////// -->
+        <div style="display: flex">
+          <div class="fieldTitle"></div>
+          <div class="topTitle" style="width: 16vw">
+            MSL
+            <div>enter a reorder level for this service</div>
+          </div>
+        </div>
+        <div class="formRow">
+          <div class="fieldTitle">Enter minimum stock level</div>
+          <input
+            class="input"
+            style="width: 16vw"
+            placeholder="Only uppercase letters and numbers"
+          />
+        </div>
+        <!-- ///////////////////////////////////////////////////////////////// -->
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="errorMsg">Errro on page</div>
+    <div class="btns">
+      <div class="cancelBtn" (click)="onBack('addService')">CANCEL</div>
       <div class="saveBtn" (click)="onClickSaveOnNewProdect()">SAVE</div>
     </div>
   </div>

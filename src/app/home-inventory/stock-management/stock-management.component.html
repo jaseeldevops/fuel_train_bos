@@ -69,6 +69,7 @@
   <select class="input">
     <option hidden>Select Category</option>
   </select>
+  <div class="downloadButton"></div>
   <div
     class="addButton"
     *ngIf="page === 'stockReturn'"
@@ -106,7 +107,9 @@
     <div class="body">
       <div class="row" *ngFor="let it of allStocks?.content">
         <div></div>
-        <div class="content" style="width: 12%">{{ it?.transaction }}</div>
+        <div class="content" style="width: 12%; color: #406ca5">
+          {{ it?.transaction }}
+        </div>
         <div class="content" style="width: 12%">{{ it?.date }}</div>
         <div class="content" style="width: 12%">{{ it?.transferFrom }}</div>
         <div class="content" style="width: 12%">{{ it?.transferTo }}</div>
@@ -145,7 +148,9 @@
     <div class="body">
       <div class="row" *ngFor="let it of allStocks?.content">
         <div></div>
-        <div class="content" style="width: 15%">{{ it?.transaction }}</div>
+        <div class="content" style="width: 15%; color: #406ca5">
+          {{ it?.transaction }}
+        </div>
         <div class="content" style="width: 15%">{{ it?.date }}</div>
         <div class="content" style="width: 15%">{{ it?.transferFrom }}</div>
         <div class="content" style="width: 15%">{{ it?.transferTo }}</div>
@@ -201,8 +206,8 @@
     <div class="header">
       <div></div>
       <div style="width: 6%"></div>
-      <div style="width: 22%">Product Name</div>
-      <div style="width: 10%">CODE</div>
+      <div style="width: 22%; color: #406ca5">Product Name</div>
+      <div style="width: 10%; color: #406ca5">CODE</div>
       <div style="width: 16%">PARENT CATEGORY</div>
       <div style="width: 16%">CATEGORY</div>
       <div style="width: 10%">MSL</div>
@@ -225,7 +230,9 @@
           />
         </div>
         <div class="content" style="width: 22%">{{ it?.name }}</div>
-        <div class="content" style="width: 10%">{{ it?.code }}</div>
+        <div class="content" style="width: 10%; color: #406ca5">
+          {{ it?.code }}
+        </div>
         <div class="content" style="width: 16%">{{ it?.parentCategory }}</div>
         <div class="content" style="width: 16%">{{ it?.category }}</div>
         <div class="content" style="width: 10%">{{ it?.msl }}</div>
@@ -247,7 +254,7 @@
       <div></div>
       <div style="width: 4%"></div>
       <div style="width: 30%">Product Name</div>
-      <div style="width: 13%">CODE</div>
+      <div style="width: 13%; color: #406ca5">CODE</div>
       <div style="width: 18%">CATEGORY</div>
       <div style="width: 13%">TYPE</div>
       <div style="width: 13%">STOCK</div>
@@ -314,7 +321,9 @@
           />
         </div>
         <div class="content" style="width: 22%">{{ it?.name }}</div>
-        <div class="content" style="width: 10%">{{ it?.code }}</div>
+        <div class="content" style="width: 10%; color: #406ca5">
+          {{ it?.code }}
+        </div>
         <div class="content" style="width: 12%">{{ it?.category }}</div>
         <div class="content" style="width: 10%">{{ it?.type }}</div>
         <div class="content" style="width: 10%">{{ it?.msl }}</div>

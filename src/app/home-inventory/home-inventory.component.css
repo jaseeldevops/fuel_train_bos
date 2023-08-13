@@ -155,6 +155,7 @@
   color: white;
   margin: 0.4vw 0.8vw;
   cursor: pointer;
+  white-space: nowrap;
 }
 .tableFilterHeader .navTab {
   width: 48%;

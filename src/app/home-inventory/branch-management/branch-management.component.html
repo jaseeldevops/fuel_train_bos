@@ -23,6 +23,7 @@
   <select class="input">
     <option hidden>Select Category</option>
   </select>
+  <div class="downloadButton"></div>
   <div
     class="addButton"
     *ngIf="page === 'stockRecived'"
@@ -58,7 +59,9 @@
     <div class="body">
       <div class="row" *ngFor="let it of allStocks?.content">
         <div class="content" style="width: 2%"></div>
-        <div class="content" style="width: 18%">{{ it?.transaction }}</div>
+        <div class="content" style="width: 18%; color: #406ca5">
+          {{ it?.transaction }}
+        </div>
         <div class="content" style="width: 18%">{{ it?.date }}</div>
         <div class="content" style="width: 18%">{{ it?.transferFrom }}</div>
         <div class="content" style="width: 18%">{{ it?.desc }}</div>
@@ -94,7 +97,9 @@
     <div class="body">
       <div class="row" *ngFor="let it of allStocks?.content">
         <div></div>
-        <div class="content" style="width: 12%">{{ it?.transaction }}</div>
+        <div class="content" style="width: 12%; color: #406ca5">
+          {{ it?.transaction }}
+        </div>
         <div class="content" style="width: 12%">{{ it?.date }}</div>
         <div class="content" style="width: 12%">{{ it?.transferFrom }}</div>
         <div class="content" style="width: 12%">{{ it?.transferTo }}</div>

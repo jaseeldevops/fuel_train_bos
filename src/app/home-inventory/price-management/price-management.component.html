@@ -15,6 +15,7 @@
   <select class="input">
     <option hidden>Select Category</option>
   </select>
+  <div class="downloadButton"></div>
 </div>
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -48,11 +49,15 @@
           />
         </div>
         <div class="content" style="width: 28%">{{ it?.name }}</div>
-        <div class="content" style="width: 14%">{{ it?.code }}</div>
+        <div class="content" style="width: 14%; color: #406ca5">
+          {{ it?.code }}
+        </div>
         <div class="content" style="width: 14%">{{ it?.category }}</div>
         <div class="content" style="width: 10%">{{ it?.type }}</div>
         <div class="content" style="width: 14%">{{ it?.purchasePrice }}</div>
-        <div class="content" style="width: 10%">{{ it?.mrp }}</div>
+        <div class="content" style="width: 10%; color: #406ca5">
+          {{ it?.mrp }}
+        </div>
         <div class="content" style="width: 8%">{{ it?.rrp }}</div>
       </div>
     </div>
@@ -91,10 +96,14 @@
           />
         </div>
         <div class="content" style="width: 28%">{{ it?.name }}</div>
-        <div class="content" style="width: 14%">{{ it?.code }}</div>
+        <div class="content" style="width: 14%; color: #406ca5">
+          {{ it?.code }}
+        </div>
         <div class="content" style="width: 14%">{{ it?.category }}</div>
         <div class="content" style="width: 14%">{{ it?.purchasePrice }}</div>
-        <div class="content" style="width: 10%">{{ it?.mrp }}</div>
+        <div class="content" style="width: 10%; color: #406ca5">
+          {{ it?.mrp }}
+        </div>
         <div class="content" style="width: 8%">{{ it?.rrp }}</div>
         <div class="content" style="width: 8%">{{ it?.tax }}</div>
       </div>
