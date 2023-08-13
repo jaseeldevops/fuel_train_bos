@@ -31,6 +31,19 @@
       </div>
     </div>
     <div class="navButtonBar">
+      <input
+        placeholder="Search an invoice"
+        class="defaultInput"
+        style="margin-right: 1vw"
+      />Showing: &nbsp;
+      <select class="defaultInput">
+        <option>All Entries</option>
+      </select>
+      <input style="margin-left: 1vw" type="date" class="defaultInput" />&nbsp;
+      to &nbsp; <input type="date" class="defaultInput" />
+      <select class="defaultInput" style="margin: 0 1vw">
+        <option>Today</option>
+      </select>
       <div class="downloadButton"></div>
       <div class="blueButton" (click)="onClickNewPurchase()">
         {{ page === 0 ? "+ Purchase Order" : "+ New Purchase" }}
@@ -47,7 +60,12 @@
         <div style="width: 12%; text-align: right">ACTION</div>
       </div>
       <div class="body">
-        <div class="row" *ngFor="let it of allPurchaseOrder?.content">
+        <div
+          class="row"
+          *ngFor="let it of allPurchaseOrder?.content"
+          style="cursor: pointer"
+          (click)="setPopup({ path: 'purchaseOrderView' })"
+        >
           <div class="content" style="width: 8%">{{ it?.pon }}</div>
           <div class="content" style="width: 10%">{{ it?.date }}</div>
           <div class="content" style="width: 30%">{{ it?.supplier }}</div>
@@ -74,7 +92,12 @@
         <div style="width: 8%; text-align: right">STATUS</div>
       </div>
       <div class="body">
-        <div class="row" *ngFor="let it of allGoodsNotes?.content">
+        <div
+          class="row"
+          *ngFor="let it of allGoodsNotes?.content"
+          style="cursor: pointer"
+          (click)="setPopup({ path: 'goodsRecivedView' })"
+        >
           <div class="content" style="width: 10%">{{ it?.grn }}</div>
           <div class="content" style="width: 10%">{{ it?.date }}</div>
           <div class="content" style="width: 22%">{{ it?.supplier }}</div>
@@ -396,5 +419,316 @@
   <div class="formFooterBar">
     <div class="blueButton">SAVE & PRINT</div>
     <div class="blueButton">CLOSE</div>
+  </div>
+</div>
+
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////// Purchase Orders View //////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div
+  class="drawer"
+  [style]="
+    !(popup?.path === 'purchaseOrderView') ? { visibility: 'hidden' } : {}
+  "
+>
+  <div class="dummyBody" (click)="closePopUp()"></div>
+  <div
+    [ngClass]="popup?.path === 'purchaseOrderView' ? 'body_' : 'body'"
+    style="min-width: 62%"
+  >
+    <div class="header1">
+      <div style="display: flex; align-items: center">
+        {{ "INV656" }}&nbsp;
+        <div class="cStorePopPaid">PAID</div>
+      </div>
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="listBody cStorePop">
+      <div class="addresDiv">
+        <div style="display: flex">
+          <div style="color: #999999; padding-right: 0.5vw">To</div>
+          <div style="width: 20vw">
+            <div style="font-size: 1.2vw">Shaji Muhammed</div>
+            <div style="color: #999999">
+              Ozole Digital Pvt Ltd, #4, IKP Knowledge Park Saraswathipuram,
+              Mysuru Karnataka, 675 006
+            </div>
+          </div>
+        </div>
+        <div
+          style="display: flex; flex-direction: column; align-items: flex-end"
+        >
+          <div style="display: flex">
+            <div style="color: #999999">Invoice Date:</div>
+            <div style="width: 7vw; text-align: right">Apr 12, 2022</div>
+          </div>
+          <br />
+          <div style="display: flex">
+            <div style="color: #999999">Due Date:</div>
+            <div style="width: 7vw; text-align: right">Apr 12, 2022</div>
+          </div>
+        </div>
+      </div>
+      <div class="cStorePopTableTop">
+        <div style="width: 25%">Product</div>
+        <div style="width: 10%">Qty</div>
+        <div style="width: 10%; text-align: right">Price</div>
+        <div style="width: 10%; text-align: right">Discount</div>
+        <div style="width: 10%">Tax Slab</div>
+        <div style="width: 10%; text-align: right">Tax Amount</div>
+        <div style="width: 10%; text-align: right">Total</div>
+      </div>
+      <div class="cStorePopTableRow" *ngFor="let it of [1, 2, 3, 3]">
+        <div style="width: 25%">Product</div>
+        <div style="width: 10%">Qty</div>
+        <div style="width: 10%; text-align: right">Price</div>
+        <div style="width: 10%; text-align: right">Discount</div>
+        <div style="width: 10%">Tax Slab</div>
+        <div style="width: 10%; text-align: right">Tax Amount</div>
+        <div style="width: 10%; text-align: right">Total</div>
+      </div>
+      <div style="display: flex; justify-content: space-between; padding: 2vw">
+        <div style="width: 30vw">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              background: #f3f6f6;
+              border-radius: 0.5vw;
+              padding: 1vw;
+            "
+          >
+            <div>
+              <div style="font-size: 0.8vw; color: #999999">Amount Paid</div>
+              <div style="font-size: 1vw">4,00,000.00</div>
+            </div>
+            <div>
+              <div style="font-size: 0.8vw; color: #999999">PO Amount</div>
+              <div style="font-size: 1vw">INR 46,760.00</div>
+            </div>
+          </div>
+          <br />
+          <div style="font-size: 0.8vw; color: #2d4c86">
+            Paid 3,00,000.00 on Apr 12, 2022 by UPI
+          </div>
+          <div style="font-size: 0.8vw; color: #2d4c86">
+            Paid 1,00,000.00 on Apr 25, 2022 by Cash
+          </div>
+        </div>
+        <div style="width: 15vw">
+          <div style="display: flex; justify-content: space-between">
+            <div style="font-size: 0.8vw; color: #999999">Subtotal:</div>
+            <div style="font-size: 1vw">4,46,760.00</div>
+          </div>
+          <div style="font-size: 0.8vw">Tax Breakdown</div>
+          <div style="display: flex; justify-content: space-between">
+            <div style="font-size: 0.8vw; color: #999999">Subtotal:</div>
+            <div style="font-size: 0.8vw">4,46,760.00</div>
+          </div>
+          <div style="display: flex; justify-content: space-between">
+            <div style="font-size: 0.8vw; color: #999999">Subtotal:</div>
+            <div style="font-size: 0.8vw">4,46,760.00</div>
+          </div>
+          <hr />
+          <div style="display: flex; justify-content: space-between">
+            <div style="font-size: 0.8vw; color: #999999">Total:</div>
+            <div style="font-size: 1vw">4,46,760.00</div>
+          </div>
+          <hr />
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="createBtn" (click)="closePopUp()">OK</div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////// Goods Recived Notes View ////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div
+  class="drawer"
+  [style]="
+    !(popup?.path === 'goodsRecivedView') ? { visibility: 'hidden' } : {}
+  "
+>
+  <div class="dummyBody" (click)="closePopUp()"></div>
+  <div
+    [ngClass]="popup?.path === 'goodsRecivedView' ? 'body_' : 'body'"
+    style="min-width: 62%"
+  >
+    <div class="header1">
+      <div style="display: flex; align-items: center">
+        {{ "GRN22-0653" }}&nbsp;
+        <div class="cStorePopPaid" style="background-color: #f28416">
+          PARTIALLY PAID
+        </div>
+      </div>
+      <div class="closeBtn" (click)="closePopUp()"></div>
+    </div>
+    <div class="listBody cStorePop">
+      <div class="addresDiv">
+        <div style="display: flex">
+          <div style="color: #999999; padding-right: 0.5vw">From</div>
+          <div style="width: 20vw">
+            <div style="font-size: 1.2vw">Conquer Technologies Pvt Ltd</div>
+            <div style="color: #999999">
+              Ozole Digital Pvt Ltd, #4, IKP Knowledge Park Saraswathipuram,
+              Mysuru Karnataka, 675 006
+            </div>
+          </div>
+        </div>
+        <div
+          style="display: flex; flex-direction: column; align-items: flex-end"
+        >
+          <div style="display: flex">
+            <div style="color: #999999">Invoice Date:</div>
+            <div style="width: 7vw; text-align: right">Apr 12, 2022</div>
+          </div>
+          <br />
+          <div style="display: flex">
+            <div style="color: #999999">Due Date:</div>
+            <div style="width: 7vw; text-align: right">Apr 12, 2022</div>
+          </div>
+        </div>
+      </div>
+      <div class="cStorePopTableTop">
+        <div style="width: 25%">Product</div>
+        <div style="width: 10%">Qty</div>
+        <div style="width: 10%; text-align: right">Price</div>
+        <div style="width: 10%; text-align: right">Discount</div>
+        <div style="width: 10%">Tax Slab</div>
+        <div style="width: 10%; text-align: right">Tax Amount</div>
+        <div style="width: 10%; text-align: right">Total</div>
+      </div>
+      <div class="cStorePopTableRow" *ngFor="let it of [1, 2, 3, 3]">
+        <div style="width: 25%">Product</div>
+        <div style="width: 10%">Qty</div>
+        <div style="width: 10%; text-align: right">Price</div>
+        <div style="width: 10%; text-align: right">Discount</div>
+        <div style="width: 10%">Tax Slab</div>
+        <div style="width: 10%; text-align: right">Tax Amount</div>
+        <div style="width: 10%; text-align: right">Total</div>
+      </div>
+      <div style="display: flex; justify-content: space-between; padding: 2vw">
+        <div style="width: 30vw">
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              background: #f3f6f6;
+              border-radius: 0.5vw;
+              padding: 1vw;
+            "
+          >
+            <div>
+              <div style="font-size: 0.8vw; color: #999999">
+                Amount Received
+              </div>
+              <div style="font-size: 1vw">4,00,000.00</div>
+            </div>
+            <div>
+              <div style="font-size: 0.8vw; color: #999999">
+                Amount Outstanding
+              </div>
+              <div style="font-size: 1vw">INR 46,760.00</div>
+            </div>
+          </div>
+          <br />
+          <div style="font-size: 0.8vw; color: #2d4c86">
+            Paid 3,00,000.00 on Apr 12, 2022 by UPI
+          </div>
+          <div style="font-size: 0.8vw; color: #2d4c86">
+            Paid 1,00,000.00 on Apr 25, 2022 by Cash
+          </div>
+        </div>
+        <div style="width: 15vw">
+          <div style="display: flex; justify-content: space-between">
+            <div style="font-size: 0.8vw; color: #999999">Subtotal:</div>
+            <div style="font-size: 1vw">4,46,760.00</div>
+          </div>
+          <div style="font-size: 0.8vw">Tax Breakdown</div>
+          <div style="display: flex; justify-content: space-between">
+            <div style="font-size: 0.8vw; color: #999999">Subtotal:</div>
+            <div style="font-size: 0.8vw">4,46,760.00</div>
+          </div>
+          <div style="display: flex; justify-content: space-between">
+            <div style="font-size: 0.8vw; color: #999999">Subtotal:</div>
+            <div style="font-size: 0.8vw">4,46,760.00</div>
+          </div>
+          <hr />
+          <div style="display: flex; justify-content: space-between">
+            <div style="font-size: 0.8vw; color: #999999">Total:</div>
+            <div style="font-size: 1vw">4,46,760.00</div>
+          </div>
+          <hr />
+        </div>
+      </div>
+      <div style="padding: 1vw">
+        <div style="font-size: 1.1vw; padding-bottom: 0.3vw">
+          Record Payment
+        </div>
+        <div
+          style="
+            border: 0.1vw solid #c6d5fb;
+            border-radius: 0.5vw;
+            background-color: #f3f6f6;
+            padding: 1vw;
+          "
+        >
+          <div
+            style="
+              display: flex;
+              justify-content: space-between;
+              font-size: 0.8vw;
+            "
+          >
+            <div style="width: 19%">
+              <div style="font-size: 0.8vw">Amount paying*</div>
+              <input style="width: 100%" placeholder="0.00" type="number" />
+            </div>
+
+            <div style="width: 19%">
+              <div style="font-size: 0.8vw">Account*</div>
+              <select style="width: 100%" placeholder="0.00">
+                <option>Select Account</option>
+              </select>
+            </div>
+
+            <div style="width: 19%">
+              <div style="font-size: 0.8vw">Payment mode*</div>
+              <select style="width: 100%" placeholder="0.00">
+                <option>Cheque</option>
+              </select>
+            </div>
+            <div style="width: 19%">
+              <div style="font-size: 0.8vw">Payment Due</div>
+              <input style="width: 100%" type="date" />
+            </div>
+            <div style="width: 19%">
+              <div style="font-size: 0.8vw">Reference</div>
+              <input style="width: 100%" placeholder="0.00" />
+            </div>
+          </div>
+          <div
+            style="display: flex; justify-content: flex-end; padding-top: 0.6vw"
+          >
+            <div style="padding: 0.3vw 1vw; font-size: 0.8vw" class="canceBtn">
+              CANCEL
+            </div>
+            <div style="padding: 0.3vw 1vw; font-size: 0.8vw" class="createBtn">
+              SAVE
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="createBtn" (click)="closePopUp()">OK</div>
+    </div>
   </div>
 </div>

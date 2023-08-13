@@ -194,3 +194,184 @@
   cursor: pointer;
 }
 /* <--END--> ADD PURCHASE FORM */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+.drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  background-color: #00000066;
+}
+.drawer .listBody {
+  height: 100%;
+  overflow: auto;
+}
+.drawer .dummyBody {
+  width: 100%;
+  height: 100%;
+}
+.drawer .body,
+.body_ {
+  transition: 0.4s;
+  margin-right: -45%;
+  min-width: 45%;
+  height: 100%;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+.drawer .body_ {
+  margin-right: 0;
+}
+select {
+  border: 0.08vw solid #949494af;
+  border-radius: 0.3vw;
+  padding: 0.3vw 1vw;
+  font-size: 1vw;
+  box-sizing: border-box;
+  font-size: 1vw;
+}
+input {
+  border: 0.08vw solid #949494af;
+  border-radius: 0.3vw;
+  padding: 0.38vw 1vw;
+  font-size: 1vw;
+  box-sizing: border-box;
+  font-size: 1vw;
+}
+textarea {
+  border: 0.08vw solid #949494af;
+  border-radius: 0.3vw;
+  padding: 0.38vw 1vw;
+  font-size: 1vw;
+  box-sizing: border-box;
+  font-size: 1vw;
+}
+.switchBtn1 {
+  background-color: #b6b9c1;
+  border-radius: 1vw;
+  height: 2vw;
+  display: flex;
+  color: white;
+  font-size: 0.9vw;
+  align-items: center;
+  cursor: pointer;
+}
+.switchBtn1 .selected {
+  border-radius: 1vw;
+  background-color: #00649e;
+  height: 2vw;
+  display: flex;
+  align-items: center;
+  padding: 0 0.8vw;
+}
+.switchBtn1 ._selected {
+  padding: 0 0.8vw;
+}
+/* ///////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////// */
+.closeBtn {
+  width: 1vw;
+  height: 1vw;
+  background-image: url(../../assets/ic_x.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  cursor: pointer;
+}
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #f5f6f9;
+  padding: 0.6vw 2vw;
+  font-size: 1vw;
+  font-weight: 500;
+  border-top: 0.06vw solid #d4d4d4;
+}
+.canceBtn {
+  border-radius: 0.3vw;
+  background-color: #abd6ef;
+  color: #00649e;
+  padding: 0.5vw 2vw;
+  cursor: pointer;
+  margin-right: 1vw;
+}
+.createBtn {
+  border-radius: 0.3vw;
+  background-color: #00649e;
+  color: white;
+  padding: 0.5vw 2vw;
+  cursor: pointer;
+}
+.header1 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6vw 1vw;
+  background-color: #e1e2e5;
+  color: #415365;
+  font-weight: 500;
+  font-size: 1.4vw;
+}
+.label1 {
+  font-size: 1vw;
+  color: #00649e;
+  padding-bottom: 0.3vw;
+  padding-left: 0.3vw;
+  white-space: nowrap;
+}
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////// VIEW POPUP ///////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////////////////// */
+
+.cStorePopPaid {
+  border-radius: 0.5vw;
+  padding: 0.1vw 0.3vw;
+  color: white;
+  background: #249e00;
+  font-size: 0.8vw;
+}
+.cStorePop .addresDiv {
+  padding: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1vw;
+}
+.cStorePopTableTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #c6d5fb;
+  font-size: 0.8vw;
+}
+.cStorePopTableTop div {
+  padding: 0.5vw 0.8vw;
+}
+.cStorePopTableRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8vw;
+  color: #999;
+  background-color: white;
+}
+.cStorePopTableRow:nth-child(even) {
+  background-color: #f3f6f6;
+}
+.cStorePopTableRow div {
+  padding: 0.5vw 0.8vw;
+}

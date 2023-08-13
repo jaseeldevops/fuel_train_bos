@@ -18,8 +18,12 @@ export class HomePurchaseComponent implements OnInit {
   addPurchase: any = null;
   addPurchaseOrder: any = null;
 
+  popup: any = null;
+  closePopUp: any = () => (this.popup = null);
+  setPopup: any = (it: any) => (this.popup = it);
+
   onClickNewPurchase = () => {
-    if (this.page === 0) this.addPurchase = {};
-    else this.addPurchaseOrder = {};
+    if (this.page === 0) this.addPurchaseOrder = {};
+    else this.addPurchase = {};
   };
 }
