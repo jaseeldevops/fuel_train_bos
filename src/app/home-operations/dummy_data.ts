@@ -281,12 +281,20 @@ export const allSupplierConfigurationDummy = {
   },
   content: [
     {
-      id: 'test',
-      name: 'test',
-      contactPerson: 'test',
-      contactNumber: 'test',
-      gstNumber: 'test',
-      status: 'test',
+      id: '123',
+      name: 'Arya Stark',
+      contactPerson: 'Net Stark',
+      contactNumber: '9898989898',
+      gstNumber: 'GST!@#',
+      status: 'Active',
+    },
+    {
+      id: '456',
+      name: 'Jon Snow',
+      contactPerson: 'Net Stark',
+      contactNumber: '9898989898',
+      gstNumber: 'GST!@#',
+      status: 'Blocked',
     },
   ],
 };
@@ -305,6 +313,34 @@ export const allcStoreTransationDummy = {
       contactNumber: '95125412542',
       total: 'USD 1,21,323',
       status: 'PAID',
+    },
+  ],
+};
+export const allAttendandAssign = {
+  paging: {
+    page: 1,
+    totalItems: 3000,
+    showingItemsCount: 10,
+    totalPage: 10,
+  },
+  content: [
+    {
+      shiftNo: '1',
+      shiftName: 'First',
+      startTime: '00:01:00',
+      endTime: '08:00:00',
+    },
+    {
+      shiftNo: '2',
+      shiftName: 'First',
+      startTime: '00:01:00',
+      endTime: '08:00:00',
+    },
+    {
+      shiftNo: '1',
+      shiftName: 'First',
+      startTime: '00:01:00',
+      endTime: '08:00:00',
     },
   ],
 };

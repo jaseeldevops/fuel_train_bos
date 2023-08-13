@@ -39,6 +39,7 @@ export const drowerIconList = [
       { title: 'C-Store Transation', path: 'cStoreTransation' },
       { title: 'Local Account', path: 'localAccount' },
       { title: 'Discount Configuration', path: 'discountConfiguration' },
+      { title: 'Attendand Assign', path: 'attendandAssign' },
     ],
   },
   {

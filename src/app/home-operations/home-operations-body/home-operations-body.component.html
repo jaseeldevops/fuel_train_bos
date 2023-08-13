@@ -560,7 +560,11 @@
         <div style="width: 15%">{{ it?.contactPerson }}</div>
         <div style="width: 15%">{{ it?.contactNumber }}</div>
         <div style="width: 15%">{{ it?.gstNumber }}</div>
-        <div style="width: 10%">{{ it?.status }}</div>
+        <div style="width: 10%; display: flex; align-items: center">
+          <div class="statusDot green" *ngIf="it?.status === 'Active'"></div>
+          <div class="statusDot red" *ngIf="it?.status !== 'Active'"></div>
+          {{ it?.status }}
+        </div>
         <div style="width: 6%; display: flex; justify-content: center">
           <div
             class="actionTextButton"
@@ -592,7 +596,12 @@
       <div style="width: 10%">STATUS</div>
     </div>
     <div class="body">
-      <div class="row" *ngFor="let it of data?.content">
+      <div
+        class="row"
+        *ngFor="let it of data?.content"
+        style="cursor: pointer"
+        (click)="setPopup({ path: 'cStoreTransPopup' })"
+      >
         <div style="width: 10%">{{ it?.transactionId }}</div>
         <div style="width: 10%">{{ it?.date }}</div>
         <div style="width: 20%">{{ it?.customer }}</div>
@@ -603,4 +612,34 @@
     </div>
   </div>
   <app-table-paging [paging]="data?.paging"></app-table-paging>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'attendandAssign' && navCount === 0">
+  <div class="table">
+    <div class="header">
+      <div style="width: 10%">SHIFT NO</div>
+      <div style="width: 10%">SHIFT NAME</div>
+      <div style="width: 20%">START TIME</div>
+      <div style="width: 35%">END TIME</div>
+      <div style="width: 10%">ACTION</div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of data?.content">
+        <div style="width: 10%">{{ it?.shiftNo }}</div>
+        <div style="width: 10%">{{ it?.shiftName }}</div>
+        <div style="width: 20%">{{ it?.startTime }}</div>
+        <div style="width: 30%">{{ it?.endTime }}</div>
+        <div style="width: 10%">
+          <div
+            class="actionTextButton"
+            (click)="setPopup({ path: 'addAttendandAssign' })"
+          >
+            Edit
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

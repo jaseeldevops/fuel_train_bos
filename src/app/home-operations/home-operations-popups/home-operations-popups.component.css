@@ -46,6 +46,7 @@
   color: #00649e;
   padding-bottom: 0.3vw;
   padding-left: 0.3vw;
+  white-space: nowrap;
 }
 /* ////////////////////////////////////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////////////////////////////////// */
@@ -200,4 +201,48 @@ textarea {
 }
 .popup .content {
   padding: 1.2vw;
+}
+
+/* ///////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////// C-STORE POPUP ///////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////////////// */
+.cStorePopPaid {
+  border-radius: 0.5vw;
+  padding: 0.1vw 0.3vw;
+  color: white;
+  background: #249e00;
+  font-size: 0.8vw;
+}
+.cStorePop .addresDiv {
+  padding: 2vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1vw;
+}
+.cStorePopTableTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #c6d5fb;
+  font-size: 0.8vw;
+}
+.cStorePopTableTop div {
+  padding: 0.5vw 0.8vw;
+}
+.cStorePopTableRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.8vw;
+  color: #999;
+  background-color: white;
+}
+.cStorePopTableRow:nth-child(even) {
+  background-color: #f3f6f6;
+}
+.cStorePopTableRow div {
+  padding: 0.5vw 0.8vw;
 }

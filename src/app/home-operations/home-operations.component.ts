@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { allMaintenanceDummy } from '../home-configuration/dummy_data';
 import { drowerIconList } from '../home/store';
 import {
+  allAttendandAssign,
   allControlsDummy,
   allcStoreTransationDummy,
   allCustomerConfigurationDummy,
@@ -90,6 +91,9 @@ export class HomeOperationsComponent implements OnInit {
         break;
       case 'cStoreTransation':
         this.data = allcStoreTransationDummy;
+        break;
+      case 'attendandAssign':
+        this.data = allAttendandAssign;
         break;
       default:
         break;

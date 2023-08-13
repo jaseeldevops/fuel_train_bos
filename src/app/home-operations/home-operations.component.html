@@ -232,11 +232,39 @@
           <div class="buttonBottom_"></div>
         </div>
       </div>
-      <div style="display: flex">
-        <input placeholder="Search an invoice" class="defaultInput" />
+      <div
+        style="
+          display: flex;
+          align-items: center;
+          color: gray;
+          font-size: 0.9vw;
+        "
+      >
+        <input
+          placeholder="Search an invoice"
+          class="defaultInput"
+          style="margin-right: 1vw"
+        />Showing: &nbsp;
+        <select class="defaultInput">
+          <option>All Entries</option>
+        </select>
+        <input
+          style="margin-left: 1vw"
+          type="date"
+          class="defaultInput"
+        />&nbsp; to &nbsp; <input type="date" class="defaultInput" />
+        <select class="defaultInput" style="margin-left: 1vw">
+          <option>Today</option>
+        </select>
         <div class="downloadButton"></div>
       </div>
     </div>
+  </div>
+  <!-- ///////////////////////////////////////////////////////////////////////////////// -->
+  <!-- //////////////////////////// ATTENDAND ASSIGN ///////////////////////////// -->
+  <!-- ///////////////////////////////////////////////////////////////////////////////// -->
+  <div *ngIf="page === 'attendandAssign'" class="header">
+    <div class="titile" (click)="page = ''">Operations > Attendand Assign</div>
   </div>
   <!-- /////////////////////////////////////////////////////////////////////////////////// -->
   <!-- /////////////////////////////////////////////////////////////////////////////////// -->
