@@ -142,8 +142,8 @@
   min-width: 14vw;
 }
 .tableFilterHeader .categoryTitle {
-  font-size: 1vw;
-  margin-left: 2vw;
+  font-size: 0.8vw;
+  margin-left: 1vw;
   color: #0001207d;
 }
 .tableFilterHeader .addButton {

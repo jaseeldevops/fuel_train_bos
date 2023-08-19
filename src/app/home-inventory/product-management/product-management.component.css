@@ -2,6 +2,7 @@
   padding: 2vw;
   max-height: calc(100vh - 15vw);
   overflow: auto;
+  background-color: white;
 }
 .contentBody {
   display: flex;

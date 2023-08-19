@@ -18,4 +18,12 @@ export class PriceManagementComponent implements OnInit {
   allProduct: any = allDummyProdects;
 
   ngOnInit(): void {}
+
+  onClickDownloadTemplate = () => {};
+  onClickUploadTemplate = () => {};
+
+  onClickUploadInput = () => {
+    const upInput = document.getElementById('exlUpldInput');
+    upInput?.click();
+  };
 }
