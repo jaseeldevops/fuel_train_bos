@@ -45,6 +45,8 @@ import { AuditingInformationComponent } from './home-configuration/auditing-info
 import { DocumentPrefixComponent } from './home-configuration/document-prefix/document-prefix.component';
 import { LocalAccountComponent } from './home-operations/local-account/local-account.component';
 import { DiscountConfigurationsComponent } from './home-operations/discount-configurations/discount-configurations.component';
+import { ColorPickerComponent } from './widget/color-picker/color-picker.component';
+import { MyButtonsComponent } from './widget/my-buttons/my-buttons.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +89,8 @@ import { DiscountConfigurationsComponent } from './home-operations/discount-conf
     DocumentPrefixComponent,
     LocalAccountComponent,
     DiscountConfigurationsComponent,
+    ColorPickerComponent,
+    MyButtonsComponent,
   ],
   imports: [
     BrowserModule,

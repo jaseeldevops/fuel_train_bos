@@ -26,7 +26,7 @@
 .header .navBar {
   display: flex;
   color: #888888;
-  font-size: 1vw;
+  font-size: 0.98vw;
   text-align: center;
   margin-left: 0.6vw;
   margin-top: 0.5vw;
@@ -132,7 +132,7 @@ select {
   box-sizing: border-box;
 }
 .tableBody .body {
-  height: calc(96.53%);
+  height: calc(100vh - 13vw);
   overflow: auto;
 }
 .tableBody .row {

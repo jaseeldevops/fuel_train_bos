@@ -8,7 +8,63 @@ export const allDummyEmployee = {
   content: [
     {
       image:
+        'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+      name: 'Jon Snow',
+      type: 'Admin',
+      empId: '1234',
+      joiningDate: 'May 19 2023',
+      phone: '1212121212',
+      email: 'testdcd@ddf.com',
+      isSystemUser: false,
+      allowence: '5,000',
+      advance: '0.00',
+      status: 'ACTIVE',
+    },
+    {
+      image:
         'https://www.jiomart.com/images/product/600x600/491696350/lays-american-style-potato-chips-78-g-product-images-o491696350-p590122121-0-202203151405.jpg',
+      name: 'Arya Stark',
+      type: 'Admin',
+      empId: '1234',
+      joiningDate: 'May 19 2023',
+      phone: '1212121212',
+      email: 'testdcd@ddf.com',
+      isSystemUser: true,
+      allowence: '5,000PAID',
+      advance: '0.00',
+      status: 'SUSPENDED',
+    },
+    {
+      image:
+        'https://www.jiomart.com/images/product/600x600/491696350/lays-american-style-potato-chips-78-g-product-images-o491696350-p590122121-0-202203151405.jpg',
+      name: 'Net Stark',
+      type: 'Stock',
+      empId: '1234',
+      joiningDate: 'May 19 2023',
+      phone: '1212121212',
+      email: 'testdcd@ddf.com',
+      isSystemUser: false,
+      allowence: '5,000',
+      advance: '0.00',
+      status: 'ACTIVE',
+    },
+    {
+      image:
+        'https://www.jiomart.com/images/product/600x600/491696350/lays-american-style-potato-chips-78-g-product-images-o491696350-p590122121-0-202203151405.jpg',
+      name: 'Sansa',
+      type: 'Stock',
+      empId: '1234',
+      joiningDate: 'May 19 2023',
+      phone: '1212121212',
+      email: 'testdcd@ddf.com',
+      isSystemUser: false,
+      allowence: '5,000PAID',
+      advance: '0.00',
+      status: 'SUSPENDED',
+    },
+    {
+      image:
+        'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
       name: "Lay's Potato Chips - American Style American Style",
       type: 'Stock',
       empId: '1234',
@@ -16,7 +72,23 @@ export const allDummyEmployee = {
       phone: '1212121212',
       email: 'testdcd@ddf.com',
       isSystemUser: false,
-      status: '',
+      allowence: '5,000',
+      advance: '0.00',
+      status: 'ACTIVE',
+    },
+    {
+      image:
+        'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
+      name: "Lay's Potato Chips - American Style American Style",
+      type: 'Stock',
+      empId: '1234',
+      joiningDate: 'May 19 2023',
+      phone: '1212121212',
+      email: 'testdcd@ddf.com',
+      isSystemUser: false,
+      allowence: '5,000',
+      advance: '0.00',
+      status: 'ACTIVE',
     },
     {
       image:
@@ -28,7 +100,9 @@ export const allDummyEmployee = {
       phone: '1212121212',
       email: 'testdcd@ddf.com',
       isSystemUser: false,
-      status: 'PAID',
+      allowence: '5,000PAID',
+      advance: '0.00',
+      status: 'SUSPENDED',
     },
     {
       image:
@@ -40,7 +114,9 @@ export const allDummyEmployee = {
       phone: '1212121212',
       email: 'testdcd@ddf.com',
       isSystemUser: false,
-      status: '',
+      allowence: '5,000',
+      advance: '0.00',
+      status: 'ACTIVE',
     },
     {
       image:
@@ -52,11 +128,13 @@ export const allDummyEmployee = {
       phone: '1212121212',
       email: 'testdcd@ddf.com',
       isSystemUser: false,
-      status: 'PAID',
+      allowence: '5,000PAID',
+      advance: '0.00',
+      status: 'SUSPENDED',
     },
     {
       image:
-        'https://www.jiomart.com/images/product/600x600/491696350/lays-american-style-potato-chips-78-g-product-images-o491696350-p590122121-0-202203151405.jpg',
+        'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg',
       name: "Lay's Potato Chips - American Style American Style",
       type: 'Stock',
       empId: '1234',
@@ -64,34 +142,36 @@ export const allDummyEmployee = {
       phone: '1212121212',
       email: 'testdcd@ddf.com',
       isSystemUser: false,
-      status: '',
+      allowence: '5,000',
+      advance: '0.00',
+      status: 'ACTIVE',
     },
   ],
 };
 
 export const allDummyPayrunEmployee = [
   {
-    name: "Alan Adams",
+    name: 'Alan Adams',
     empId: '1234',
     status: '',
   },
   {
-    name: "Sara Porter",
+    name: 'Sara Porter',
     empId: '1234',
     status: 'PAID',
   },
   {
-    name: "Ethan Diaz",
+    name: 'Ethan Diaz',
     empId: '1234',
     status: '',
   },
   {
-    name: "Sandra Mendoza",
+    name: 'Sandra Mendoza',
     empId: '1234',
     status: 'PAID',
   },
   {
-    name: "Terry Meyer",
+    name: 'Terry Meyer',
     empId: '1234',
     status: '',
   },

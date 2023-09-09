@@ -35,7 +35,7 @@
         [ngClass]="navCount === 3 ? 'eachButton_' : 'eachButton'"
         (click)="navCount = 3"
       >
-        Prodect Caregory
+        Parent Category
         <div
           [ngClass]="navCount === 3 ? 'buttonBottom_' : 'buttonBottom'"
         ></div>
@@ -44,7 +44,7 @@
         [ngClass]="navCount === 4 ? 'eachButton_' : 'eachButton'"
         (click)="navCount = 4"
       >
-        Expense Category
+        Product Category
         <div
           [ngClass]="navCount === 4 ? 'buttonBottom_' : 'buttonBottom'"
         ></div>
@@ -53,7 +53,7 @@
         [ngClass]="navCount === 5 ? 'eachButton_' : 'eachButton'"
         (click)="navCount = 5"
       >
-        Denominations
+        Expense Category
         <div
           [ngClass]="navCount === 5 ? 'buttonBottom_' : 'buttonBottom'"
         ></div>
@@ -62,7 +62,7 @@
         [ngClass]="navCount === 6 ? 'eachButton_' : 'eachButton'"
         (click)="navCount = 6"
       >
-        Allowances & Incentives
+        Denominations
         <div
           [ngClass]="navCount === 6 ? 'buttonBottom_' : 'buttonBottom'"
         ></div>
@@ -71,7 +71,7 @@
         [ngClass]="navCount === 7 ? 'eachButton_' : 'eachButton'"
         (click)="navCount = 7"
       >
-        Branch
+        Allowances & Incentives
         <div
           [ngClass]="navCount === 7 ? 'buttonBottom_' : 'buttonBottom'"
         ></div>
@@ -80,40 +80,74 @@
         [ngClass]="navCount === 8 ? 'eachButton_' : 'eachButton'"
         (click)="navCount = 8"
       >
-        Vehicle type
+        Branch
         <div
           [ngClass]="navCount === 8 ? 'buttonBottom_' : 'buttonBottom'"
         ></div>
       </div>
+      <div
+        [ngClass]="navCount === 9 ? 'eachButton_' : 'eachButton'"
+        (click)="navCount = 9"
+      >
+        Vehicle type
+        <div
+          [ngClass]="navCount === 9 ? 'buttonBottom_' : 'buttonBottom'"
+        ></div>
+      </div>
     </div>
     <div class="options">
-      <div class="grrenButton" *ngIf="navCount === 0">+ Add New Bank</div>
-      <div class="grrenButton" *ngIf="navCount === 1">+ Add New MOP</div>
-      <div class="grrenButton" *ngIf="navCount === 2">+ Add New Tax</div>
-      <div class="grrenButton" *ngIf="navCount === 3">
-        + Add Prodect Category
+      <div
+        class="grrenButton"
+        *ngIf="navCount === 0"
+        (click)="onClickAddBank()"
+      >
+        + Add New Bank
       </div>
-      <div class="grrenButton" *ngIf="navCount === 4">
+      <div class="grrenButton" *ngIf="navCount === 1" (click)="onClickAddMOP()">
+        + Add New MOP
+      </div>
+      <div class="grrenButton" *ngIf="navCount === 2" (click)="onClickAddTax()">
+        + Add New Tax
+      </div>
+      <div
+        class="grrenButton"
+        *ngIf="navCount === 3"
+        (click)="onClickAddParentCategory()"
+      >
+        + Add Parent Category
+      </div>
+      <div
+        class="grrenButton"
+        *ngIf="navCount === 4"
+        (click)="onClickAddProductCategory()"
+      >
+        + Add Product Category
+      </div>
+      <div
+        class="grrenButton"
+        *ngIf="navCount === 5"
+        (click)="onClickAddExpenseCategory()"
+      >
         + Add Expence Category
       </div>
       <div
         class="grrenButton"
-        *ngIf="navCount === 6"
-        (click)="popUp = 'allowanceAndIncentives'"
+        *ngIf="navCount === 7"
+        (click)="onClickAddAllowancesIncentives()"
       >
         + Allowances & Incentives
       </div>
       <div
         class="grrenButton"
-        *ngIf="navCount === 7"
-        (click)="popUp = 'addBranch'"
+        *ngIf="navCount === 8"
+        (click)="onClickAddBranch()"
       >
         + Add Branchs
       </div>
       <div
         class="grrenButton"
-        *ngIf="navCount === 8"
-        (click)="popUp = 'addVehicle'"
+        *ngIf="navCount === 9"
+        (click)="onClickAddVehicleType()"
       >
         + Add Vehcile
       </div>
@@ -135,16 +169,23 @@
       </div>
     </div>
     <div class="body">
-      <div class="row" *ngFor="let it of allBanks?.content">
-        <div style="width: 8%">{{ it.logo }}</div>
+      <div
+        class="row"
+        style="align-items: center"
+        *ngFor="let it of allBanks?.content"
+      >
+        <div style="width: 8%">
+          <img class="tableLogoDispplay" [src]="it.logo" />
+        </div>
         <div style="width: 75%">{{ it.name }}</div>
         <div style="width: 15%; display: flex; justify-content: center">
-          <div class="actionTextButton" (click)="onClickEditBank(it)">Edit</div>
+          <div class="tableEditIcon" (click)="onClickEditBank(it)">Edit</div>
+          <div class="tableDeleteIcon" (click)="onClickDeleteBank(it)"></div>
         </div>
       </div>
     </div>
   </div>
-  <app-table-paging [paging]="allBanks?.paging"></app-table-paging>
+  <!-- <app-table-paging [paging]="allBanks?.paging"></app-table-paging> -->
 </div>
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
@@ -161,18 +202,23 @@
       </div>
     </div>
     <div class="body">
-      <div class="row" *ngFor="let it of allModeOfPayments?.content">
-        <div style="width: 8%">{{ it.logo }}</div>
-        <div style="width: 75%">{{ it.name }}</div>
+      <div
+        class="row"
+        style="align-items: center"
+        *ngFor="let it of allBanks?.content"
+      >
+        <div style="width: 8%">
+          <img class="tableLogoDispplay" [src]="it.logo" />
+        </div>
+        <div style="width: 75%">{{ it.mop }}</div>
         <div style="width: 15%; display: flex; justify-content: center">
-          <div class="actionTextButton" (click)="onClickEditModeofPayment(it)">
-            Edit
-          </div>
+          <div class="tableEditIcon" (click)="onClickEditMOP(it)">Edit</div>
+          <div class="tableDeleteIcon" (click)="onClickDeleteMOP(it)"></div>
         </div>
       </div>
     </div>
   </div>
-  <app-table-paging [paging]="allModeOfPayments?.paging"></app-table-paging>
+  <!-- <app-table-paging [paging]="allModeOfPayments?.paging"></app-table-paging> -->
 </div>
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
@@ -189,14 +235,15 @@
     </div>
     <div class="body">
       <div class="row" *ngFor="let it of allTaxs?.content">
-        <div style="width: 75%">{{ it.name }}</div>
+        <div style="width: 75%">{{ it.taxhead }}</div>
         <div style="width: 15%; display: flex; justify-content: center">
-          <div class="actionTextButton" (click)="onClickEditBank(it)">Edit</div>
+          <div class="tableEditIcon" (click)="onClickEditTax(it)">Edit</div>
+          <div class="tableDeleteIcon" (click)="onClickDeleteTax(it)"></div>
         </div>
       </div>
     </div>
   </div>
-  <app-table-paging [paging]="allTaxs?.paging"></app-table-paging>
+  <!-- <app-table-paging [paging]="allTaxs?.paging"></app-table-paging> -->
 </div>
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
@@ -206,23 +253,36 @@
 <div class="tableBody" *ngIf="navCount === 3">
   <div class="table">
     <div class="header">
-      <div style="width: 40%">PRODUCT CATEGORY</div>
-      <div style="width: 40%">DESCRIPTION</div>
+      <div style="width: 30%">PARENT CATEGORY</div>
+      <div style="width: 50%">DESCRIPTION</div>
       <div style="width: 20%; display: flex; justify-content: center">
         ACTION
       </div>
     </div>
     <div class="body">
       <div class="row" *ngFor="let it of allBanks?.content">
-        <div style="width: 40%">{{ it.logo }}</div>
-        <div style="width: 40%">{{ it.name }}</div>
-        <div style="width: 20%; display: flex; justify-content: center">
-          <div class="actionTextButton" (click)="onClickEditBank(it)">Edit</div>
+        <div style="width: 30%">{{ it.category }}</div>
+        <div style="width: 50%">{{ it.desc }}</div>
+        <div
+          style="
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            color: #2d4c86;
+          "
+        >
+          <div class="tableEditIcon" (click)="onClickEditParentCategory(it)">
+            Edit
+          </div>
+          <div
+            class="tableDeleteIcon"
+            (click)="onClickDeleteParentCategory(it)"
+          ></div>
         </div>
       </div>
     </div>
   </div>
-  <app-table-paging [paging]="allBanks?.paging"></app-table-paging>
+  <!-- <app-table-paging [paging]="allBanks?.paging"></app-table-paging> -->
 </div>
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
@@ -232,30 +292,75 @@
 <div class="tableBody" *ngIf="navCount === 4">
   <div class="table">
     <div class="header">
-      <div style="width: 40%">PRODUCT CATEGORY</div>
-      <div style="width: 40%">DESCRIPTION</div>
+      <div style="width: 30%">PRODUCT CATEGORY</div>
+      <div style="width: 50%">DESCRIPTION</div>
       <div style="width: 20%; display: flex; justify-content: center">
         ACTION
       </div>
     </div>
     <div class="body">
       <div class="row" *ngFor="let it of allBanks?.content">
-        <div style="width: 40%">{{ it.logo }}</div>
-        <div style="width: 40%">{{ it.name }}</div>
-        <div style="width: 20%; display: flex; justify-content: center">
-          <div class="actionTextButton" (click)="onClickEditBank(it)">Edit</div>
+        <div style="width: 30%">{{ it.category }}</div>
+        <div style="width: 50%">{{ it.desc }}</div>
+        <div
+          style="
+            width: 20%;
+            display: flex;
+            justify-content: center;
+            color: #2d4c86;
+          "
+        >
+          <div class="tableEditIcon" (click)="onClickEditProductCategory(it)">
+            Edit
+          </div>
+          <div
+            class="tableDeleteIcon"
+            (click)="onClickDeleteProductCategory(it)"
+          ></div>
         </div>
       </div>
     </div>
   </div>
-  <app-table-paging [paging]="allBanks?.paging"></app-table-paging>
+  <!-- <app-table-paging [paging]="allBanks?.paging"></app-table-paging> -->
 </div>
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
-<div class="tableBody" *ngIf="navCount === 6">
+<div class="tableBody" *ngIf="navCount === 5">
+  <div class="table">
+    <div class="header">
+      <div style="width: 30%">PRODUCT CATEGORY</div>
+      <div style="width: 50%">DESCRIPTION</div>
+      <div style="width: 20%; display: flex; justify-content: center">
+        ACTION
+      </div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allBanks?.content">
+        <div style="width: 30%">{{ it.category }}</div>
+        <div style="width: 50%">{{ it.desc }}</div>
+        <div style="width: 20%; display: flex; justify-content: center">
+          <div class="tableEditIcon" (click)="onClickEditExpenseCategory(it)">
+            Edit
+          </div>
+          <div
+            class="tableDeleteIcon"
+            (click)="onClickDeleteExpenseCategory(it)"
+          ></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- <app-table-paging [paging]="allBanks?.paging"></app-table-paging> -->
+</div>
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<!-- //////////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="navCount === 7">
   <div class="table">
     <div class="header">
       <div style="width: 40%">ALLOWANCES & INCENTIVES</div>
@@ -266,22 +371,31 @@
     </div>
     <div class="body">
       <div class="row" *ngFor="let it of allBanks?.content">
-        <div style="width: 40%">{{ it.logo }}</div>
-        <div style="width: 40%">{{ it.name }}</div>
+        <div style="width: 40%">{{ it.allowansesIncentives }}</div>
+        <div style="width: 40%">{{ it.desc }}</div>
         <div style="width: 20%; display: flex; justify-content: center">
-          <div class="actionTextButton" (click)="onClickEditBank(it)">Edit</div>
+          <div
+            class="tableEditIcon"
+            (click)="onClickEditAllowancesIncentives(it)"
+          >
+            Edit
+          </div>
+          <div
+            class="tableDeleteIcon"
+            (click)="onClickDeleteAllowancesIncentives(it)"
+          ></div>
         </div>
       </div>
     </div>
   </div>
-  <app-table-paging [paging]="allBanks?.paging"></app-table-paging>
+  <!-- <app-table-paging [paging]="allBanks?.paging"></app-table-paging> -->
 </div>
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
-<div class="tableBody" *ngIf="navCount === 7">
+<div class="tableBody" *ngIf="navCount === 8">
   <div class="table">
     <div class="header">
       <div style="width: 40%">BRANCH</div>
@@ -292,46 +406,55 @@
     </div>
     <div class="body">
       <div class="row" *ngFor="let it of allBanks?.content">
-        <div style="width: 40%">{{ it.logo }}</div>
-        <div style="width: 40%">{{ it.name }}</div>
+        <div style="width: 40%">{{ it.branch }}</div>
+        <div style="width: 40%">{{ it.address }}</div>
         <div style="width: 20%; display: flex; justify-content: center">
-          <div class="actionTextButton" (click)="onClickEditBank(it)">Edit</div>
+          <div class="tableEditIcon" (click)="onClickEditBranch(it)">Edit</div>
+          <div class="tableDeleteIcon" (click)="onClickDeleteBranch(it)"></div>
         </div>
       </div>
     </div>
   </div>
-  <app-table-paging [paging]="allBanks?.paging"></app-table-paging>
+  <!-- <app-table-paging [paging]="allBanks?.paging"></app-table-paging> -->
 </div>
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
-<div class="tableBody" *ngIf="navCount === 8">
+<div class="tableBody" *ngIf="navCount === 9">
   <div class="table">
     <div class="header">
-      <div style="width: 75%">BRANCH</div>
+      <div style="width: 40%">VECHILE TYPE</div>
+      <div style="width: 40%">DESCRIPTION</div>
       <div style="width: 15%; display: flex; justify-content: center">
         ACTION
       </div>
     </div>
     <div class="body">
       <div class="row" *ngFor="let it of allBanks?.content">
-        <div style="width: 75%">{{ it.name }}</div>
+        <div style="width: 40%">{{ it.type }}</div>
+        <div style="width: 40%">{{ it.desc }}</div>
         <div style="width: 15%; display: flex; justify-content: center">
-          <div class="actionTextButton" (click)="onClickEditBank(it)">Edit</div>
+          <div class="tableEditIcon" (click)="onClickEditVehicleType(it)">
+            Edit
+          </div>
+          <div
+            class="tableDeleteIcon"
+            (click)="onClickDeleteVehicleType(it)"
+          ></div>
         </div>
       </div>
     </div>
   </div>
-  <app-table-paging [paging]="allBanks?.paging"></app-table-paging>
+  <!-- <app-table-paging [paging]="allBanks?.paging"></app-table-paging> -->
 </div>
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
 <!-- //////////////////////////////////////////////////////////////////////////////////// -->
-<div class="denominationBody" *ngIf="navCount === 5">
+<div class="denominationBody" *ngIf="navCount === 6">
   <div class="leftBody">Denominations</div>
   <div class="rightBody">
     <div class="adderContainer">
@@ -355,9 +478,179 @@
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<div class="formBlankScreen1" *ngIf="popUp === 'allowanceAndIncentives'"></div>
+<div class="formBlankScreen1" *ngIf="popUp === 'addBank'"></div>
+<div [ngClass]="popUp === 'addBank' ? 'drowerForm' : 'drowerForm_'">
+  <div class="header">
+    {{ isEdit ? "Edit" : "Add" }} Bank
+    <div class="closeBtn" (click)="popUp = ''"></div>
+  </div>
+  <div class="body">
+    <div class="formTitle">Bank Name</div>
+    <input placeholder="Type here" />
+    <div class="formTitle">Logo</div>
+    <div class="logoFileUploader">
+      <input type="file" id="picUpldInput" />
+      <div class="uploadArea" (click)="onClickUploadInput()">
+        <div>+ Add Logo Here</div>
+        <div>1:1 aspect ratio</div>
+        <div>Transparent PNG, 256 X 256 Pixel</div>
+      </div>
+      <img
+        [src]="
+          'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg'
+        "
+      />
+    </div>
+  </div>
+  <div class="footer">
+    <div class="cancelBtn" (click)="popUp = ''">CLOSE</div>
+    <div class="saveBtn">{{ isEdit ? "UPDATE" : "ADD" }}</div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="formBlankScreen1" *ngIf="popUp === 'addMOP'"></div>
+<div [ngClass]="popUp === 'addMOP' ? 'drowerForm' : 'drowerForm_'">
+  <div class="header">
+    {{ isEdit ? "Edit" : "Add" }} MOP
+    <div class="closeBtn" (click)="popUp = ''"></div>
+  </div>
+  <div class="body">
+    <div class="formTitle">Linked Account</div>
+    <select></select>
+    <div class="formTitle">MOP Name</div>
+    <input placeholder="Type here" />
+    <div class="formTitle">Logo</div>
+    <div class="logoFileUploader">
+      <input type="file" id="picUpldInput" />
+      <div class="uploadArea" (click)="onClickUploadInput()">
+        <div>+ Add Logo Here</div>
+        <div>1:1 aspect ratio</div>
+        <div>Transparent PNG, 256 X 256 Pixel</div>
+      </div>
+      <img
+        [src]="
+          'https://cdn.pixabay.com/photo/2014/11/30/14/11/cat-551554_640.jpg'
+        "
+      />
+    </div>
+  </div>
+  <div class="footer">
+    <div class="cancelBtn" (click)="popUp = ''">CLOSE</div>
+    <div class="saveBtn">{{ isEdit ? "UPDATE" : "ADD" }}</div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="formBlankScreen1" *ngIf="popUp === 'addTax'"></div>
+<div [ngClass]="popUp === 'addTax' ? 'drowerForm' : 'drowerForm_'">
+  <div class="header">
+    {{ isEdit ? "Edit" : "Add" }} Tax
+    <div class="closeBtn" (click)="popUp = ''"></div>
+  </div>
+  <div class="body">
+    <div class="formTitle">Tax Head</div>
+    <input placeholder="Type here" />
+    <div class="formTitle">GST %</div>
+    <input placeholder="Type here" />
+    <div class="formTitle">CESS %</div>
+    <input placeholder="Type here" />
+  </div>
+  <div class="footer">
+    <div class="cancelBtn" (click)="popUp = ''">CLOSE</div>
+    <div class="saveBtn">{{ isEdit ? "UPDATE" : "ADD" }}</div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="formBlankScreen1" *ngIf="popUp === 'addParentCategory'"></div>
+<div [ngClass]="popUp === 'addParentCategory' ? 'drowerForm' : 'drowerForm_'">
+  <div class="header">
+    {{ isEdit ? "Edit" : "Add" }} Parent Category
+    <div class="closeBtn" (click)="popUp = ''"></div>
+  </div>
+  <div class="body">
+    <div class="formTitle">Parent Category Name*</div>
+    <input placeholder="Type here" />
+    <div class="formTitle">Description</div>
+    <input placeholder="Type here" />
+  </div>
+  <div class="footer">
+    <div class="cancelBtn" (click)="popUp = ''">CLOSE</div>
+    <div class="saveBtn">{{ isEdit ? "UPDATE" : "ADD" }}</div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="formBlankScreen1" *ngIf="popUp === 'addProductCategory'"></div>
+<div [ngClass]="popUp === 'addProductCategory' ? 'drowerForm' : 'drowerForm_'">
+  <div class="header">
+    {{ isEdit ? "Edit" : "Add" }} Product Category
+    <div class="closeBtn" (click)="popUp = ''"></div>
+  </div>
+  <div class="body">
+    <div class="formTitle">Parent Category*</div>
+    <select></select>
+    <div class="formTitle">Product Category*</div>
+    <input placeholder="Type here" />
+    <div class="formTitle">Description</div>
+    <input placeholder="Type here" />
+    <div class="formTitle">
+      Featuring Color
+      <ColorPicker [onSelect]="onChangeProdectColor"></ColorPicker>
+    </div>
+    <div class="formTitle">
+      Featuring in POS
+      <MyButtons [type]="'switch'" [onSelect]=""></MyButtons>
+    </div>
+  </div>
+  <div class="footer">
+    <div class="cancelBtn" (click)="popUp = ''">CLOSE</div>
+    <div class="saveBtn">{{ isEdit ? "UPDATE" : "ADD" }}</div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="formBlankScreen1" *ngIf="popUp === 'addExpenseCategory'"></div>
+<div [ngClass]="popUp === 'addExpenseCategory' ? 'drowerForm' : 'drowerForm_'">
+  <div class="header">
+    {{ isEdit ? "Edit" : "Add" }} Expense Category
+    <div class="closeBtn" (click)="popUp = ''"></div>
+  </div>
+  <div class="body">
+    <div class="formTitle">Expense Category*</div>
+    <input placeholder="Type here" />
+    <div class="formTitle">Description</div>
+    <input placeholder="Type here" />
+  </div>
+  <div class="footer">
+    <div class="cancelBtn" (click)="popUp = ''">CLOSE</div>
+    <div class="saveBtn">{{ isEdit ? "UPDATE" : "ADD" }}</div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="formBlankScreen1" *ngIf="popUp === 'addAllowancesIncentives'"></div>
 <div
-  [ngClass]="popUp === 'allowanceAndIncentives' ? 'drowerForm' : 'drowerForm_'"
+  [ngClass]="popUp === 'addAllowancesIncentives' ? 'drowerForm' : 'drowerForm_'"
 >
   <div class="header">
     Allowances & Incentives
@@ -371,7 +664,7 @@
   </div>
   <div class="footer">
     <div class="cancelBtn" (click)="popUp = ''">CLOSE</div>
-    <div class="saveBtn">ADD</div>
+    <div class="saveBtn">{{ isEdit ? "UPDATE" : "ADD" }}</div>
   </div>
 </div>
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
@@ -382,7 +675,7 @@
 <div class="formBlankScreen1" *ngIf="popUp === 'addBranch'"></div>
 <div [ngClass]="popUp === 'addBranch' ? 'drowerForm' : 'drowerForm_'">
   <div class="header">
-    Add Branchs
+    {{ isEdit ? "Edit" : "Add" }} Branchs
     <div class="closeBtn" (click)="popUp = ''"></div>
   </div>
   <div class="body">
@@ -393,7 +686,7 @@
   </div>
   <div class="footer">
     <div class="cancelBtn" (click)="popUp = ''">CLOSE</div>
-    <div class="saveBtn">ADD</div>
+    <div class="saveBtn">{{ isEdit ? "UPDATE" : "ADD" }}</div>
   </div>
 </div>
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
@@ -401,10 +694,10 @@
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<div class="formBlankScreen1" *ngIf="popUp === 'addVehicle'"></div>
-<div [ngClass]="popUp === 'addVehicle' ? 'drowerForm' : 'drowerForm_'">
+<div class="formBlankScreen1" *ngIf="popUp === 'addVehicleType'"></div>
+<div [ngClass]="popUp === 'addVehicleType' ? 'drowerForm' : 'drowerForm_'">
   <div class="header">
-    Add Vehicle Type
+    {{ isEdit ? "Edit" : "Add" }} Vehicle Type
     <div class="closeBtn" (click)="popUp = ''"></div>
   </div>
   <div class="body">
@@ -415,6 +708,6 @@
   </div>
   <div class="footer">
     <div class="cancelBtn" (click)="popUp = ''">CLOSE</div>
-    <div class="saveBtn">ADD</div>
+    <div class="saveBtn">{{ isEdit ? "UPDATE" : "ADD" }}</div>
   </div>
 </div>

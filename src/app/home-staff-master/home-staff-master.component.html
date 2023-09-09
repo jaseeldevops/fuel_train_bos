@@ -89,13 +89,17 @@
       <div style="width: 12%">EMPLOYEE#</div>
       <div style="width: 12%">JOINING DATE</div>
       <div style="width: 8%">PHONE NUMBER</div>
-      <div style="width: 12%">EMAIL</div>
+      <div style="width: 15%">EMAIL</div>
       <div style="width: 10%">SYSTEM USER</div>
       <div style="width: 8%">STATUS</div>
       <div></div>
     </div>
     <div class="body">
-      <div class="row" *ngFor="let it of allStaff?.content">
+      <div
+        class="row"
+        *ngFor="let it of allStaff?.content"
+        (click)="onSelectAnyStaf(it)"
+      >
         <div></div>
         <div class="content" style="width: 5%">
           <img
@@ -110,15 +114,31 @@
           />
         </div>
         <div class="content" style="width: 20%">
-          {{ it?.name }}
+          <div style="color: #2d4c86">{{ it?.name }}</div>
           <div style="font-size: 0.8vw; color: gray">{{ it?.type }}</div>
         </div>
-        <div class="content" style="width: 12%">{{ it?.empId }}</div>
+        <div class="content" style="width: 12%; color: #2d4c86">
+          {{ it?.empId }}
+        </div>
         <div class="content" style="width: 12%">{{ it?.joiningDate }}</div>
         <div class="content" style="width: 8%">{{ it?.phone }}</div>
-        <div class="content" style="width: 12%">{{ it?.email }}</div>
-        <div class="content" style="width: 10%">{{ it?.isSystemUser }}</div>
-        <div class="content" style="width: 8%">{{ it?.status }}</div>
+        <div class="content" style="width: 15%; color: #2d4c86">
+          {{ it?.email }}
+        </div>
+        <div class="content" style="width: 10%; color: #2d4c86; display: flex">
+          <div
+            class="dotRedGreen"
+            [ngStyle]="{ background: !it?.isSystemUser ? 'red' : '' }"
+          ></div>
+          {{ it?.isSystemUser ? "Yes" : "No" }}
+        </div>
+        <div class="content" style="width: 8%; display: flex">
+          <div
+            class="dotRedGreen"
+            [ngStyle]="{ background: it?.status === 'ACTIVE' ? '' : 'red' }"
+          ></div>
+          {{ it?.status }}
+        </div>
         <div></div>
       </div>
     </div>
@@ -134,16 +154,20 @@
     <div class="header">
       <div></div>
       <div style="width: 6%"></div>
-      <div style="width: 20%">STAF NAME</div>
+      <div style="width: 25%">STAF NAME</div>
       <div style="width: 12%">EMPLOYEE#</div>
       <div style="width: 12%">JOINING DATE</div>
       <div style="width: 12%">SALARY</div>
-      <div style="width: 12%">ALLOWANCE</div>
-      <div style="width: 12%">ACTION</div>
+      <div style="width: 15%">ALLOWANCE</div>
+      <div style="width: 10%">ACTION</div>
       <div></div>
     </div>
     <div class="body">
-      <div class="row" *ngFor="let it of allStaff?.content">
+      <div
+        class="row"
+        *ngFor="let it of allStaff?.content"
+        (click)="popupSelected = 'salaryDetails'"
+      >
         <div></div>
         <div class="content" style="width: 6%">
           <img
@@ -157,15 +181,17 @@
             "
           />
         </div>
-        <div class="content" style="width: 20%">
-          {{ it?.name }}
+        <div class="content" style="width: 25%">
+          <div style="color: #2d4c86">{{ it?.name }}</div>
           <div style="font-size: 0.8vw; color: gray">{{ it?.type }}</div>
         </div>
-        <div class="content" style="width: 12%">{{ it?.empId }}</div>
+        <div class="content" style="width: 12%; color: #2d4c86">
+          {{ it?.empId }}
+        </div>
         <div class="content" style="width: 12%">{{ it?.joiningDate }}</div>
         <div class="content" style="width: 12%">{{ it?.phone }}</div>
-        <div class="content" style="width: 12%">{{ it?.email }}</div>
-        <div class="content" style="width: 12%">{{ it?.isSystemUser }}</div>
+        <div class="content" style="width: 15%">{{ it?.allowence }}</div>
+        <div class="content" style="width: 10%; color: #2d4c86">Edit</div>
         <div></div>
       </div>
     </div>
@@ -180,19 +206,23 @@
   <div class="table">
     <div class="header">
       <div></div>
-      <div style="width: 6%"></div>
-      <div style="width: 20%">STAF NAME</div>
+      <div style="width: 4%"></div>
+      <div style="width: 25%">STAF NAME</div>
       <div style="width: 12%">EMPLOYEE#</div>
       <div style="width: 12%">JOINING DATE</div>
-      <div style="width: 8%">PHONE NUMBER</div>
-      <div style="width: 12%">EMAIL</div>
-      <div style="width: 12%">ADVANCE</div>
+      <div style="width: 10%">PHONE NUMBER</div>
+      <div style="width: 15%">EMAIL</div>
+      <div style="width: 10%; text-align: center">ADVANCE</div>
       <div></div>
     </div>
     <div class="body">
-      <div class="row" *ngFor="let it of allStaff?.content">
+      <div
+        class="row"
+        *ngFor="let it of allStaff?.content"
+        (click)="popupSelected = 'payRunAdvance'"
+      >
         <div></div>
-        <div class="content" style="width: 6%">
+        <div class="content" style="width: 4%">
           <img
             [src]="it?.image"
             style="
@@ -204,15 +234,24 @@
             "
           />
         </div>
-        <div class="content" style="width: 20%">
-          {{ it?.name }}
+        <div class="content" style="width: 25%">
+          <div style="color: #2d4c86">{{ it?.name }}</div>
           <div style="font-size: 0.8vw; color: gray">{{ it?.type }}</div>
         </div>
-        <div class="content" style="width: 12%">{{ it?.empId }}</div>
+        <div class="content" style="width: 12%; color: #2d4c86">
+          {{ it?.empId }}
+        </div>
         <div class="content" style="width: 12%">{{ it?.joiningDate }}</div>
-        <div class="content" style="width: 8%">{{ it?.phone }}</div>
-        <div class="content" style="width: 12%">{{ it?.email }}</div>
-        <div class="content" style="width: 12%">{{ it?.status }}</div>
+        <div class="content" style="width: 10%">{{ it?.phone }}</div>
+        <div class="content" style="width: 15%; color: #2d4c86">
+          {{ it?.email }}
+        </div>
+        <div
+          class="content"
+          style="width: 10%; color: #2d4c86; text-align: center"
+        >
+          {{ it?.advance }}
+        </div>
         <div></div>
       </div>
     </div>
@@ -224,11 +263,15 @@
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<div class="formBlankScreen1" *ngIf="popUp === 'employeeForm'"></div>
-<div [ngClass]="popUp === 'employeeForm' ? 'employeeForm' : 'employeeForm_'">
+<div class="formBlankScreen1" *ngIf="popupSelected === 'employeeForm'"></div>
+<div
+  [ngClass]="
+    popupSelected === 'employeeForm' ? 'employeeForm' : 'employeeForm_'
+  "
+>
   <div class="header">
-    NEW EMPLOYEE
-    <div class="closeBtn" (click)="popUp = ''"></div>
+    {{ isEdit ? "EDIT" : "NEW" }} EMPLOYEE
+    <div class="closeBtn" (click)="popupSelected = ''"></div>
   </div>
   <div class="body">
     <div class="leftBody">
@@ -305,9 +348,10 @@
     </div>
   </div>
   <div class="footer">
-    <div class="errorMsg">Delete</div>
+    <div class="errorMsg" *ngIf="isEdit">Delete</div>
+    <div *ngIf="!isEdit"></div>
     <div class="btns">
-      <div class="cancelBtn" (click)="popUp = ''">CANCEL</div>
+      <div class="cancelBtn" (click)="popupSelected = ''">CANCEL</div>
       <div class="saveBtn" (click)="onClickSaveEmployeeForm()">SAVE</div>
     </div>
   </div>
@@ -397,9 +441,23 @@
           <div style="width: 20%">&nbsp;Unit Wage*</div>
           <div style="width: 20%">&nbsp;Total</div>
         </div>
-        <div class="row">
-          <div class="dltBtn" style="width: 5%"></div>
-          <select style="width: 40%"></select>
+        <div class="row" *ngFor="let it of addPayrunForm?.items; let k = index">
+          <div
+            class="dltBtn"
+            style="width: 5%"
+            (click)="onClickPayLoadDltItem(k)"
+          ></div>
+          <select
+            style="width: 40%"
+            [ngModel]="null"
+            (ngModelChange)="onChangeItemInPayloadForm($event)"
+          >
+            <option value="null">Select item</option>
+            <option>Reguler working days</option>
+            <option>Partial working days</option>
+            <option>Overtime</option>
+            <option>Accommodation allowance</option>
+          </select>
           <input style="width: 16%" />
           <input style="width: 20%" />
           <div style="width: 20%">3,300.00</div>
@@ -429,6 +487,131 @@
       <div class="totalRow">
         <div class="blueButton">SAVE & PRINT</div>
         <div class="blueButton">CLOSE</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+<div class="popup1" *ngIf="popupSelected === 'salaryDetails'">
+  <div class="popup1Body">
+    <div class="popup1Header">
+      Salary Details
+      <div class="popup1Close" (click)="popupSelected = ''"></div>
+    </div>
+    <div class="popup1Desc">Update salary details</div>
+    <div class="popup1ContentBody">
+      <div class="popup1ContentRow">
+        <div class="popup1InputLabel">Staff Name</div>
+        <div style="display: flex; margin: 0; width: 112%">
+          <div class="popup1InputLabel">&nbsp;&nbsp;Staff ID</div>
+          <div class="popup1InputLabel">Role</div>
+        </div>
+      </div>
+      <div class="popup1ContentRow">
+        <input class="popup1Input" placeholder="Enter name" />
+        <div style="display: flex; margin: 0; width: 112%">
+          <input class="popup1Input" />
+          <input class="popup1Input" />
+        </div>
+      </div>
+      <div class="popup1ContentRow">
+        <div style="display: flex; margin: 0; width: 112%">
+          <div class="popup1InputLabel">Date of Join</div>
+          <div class="popup1InputLabel">Date of Birth</div>
+        </div>
+        <div style="display: flex; margin: 0; width: 112%">
+          <div class="popup1InputLabel">Salary</div>
+          <div class="popup1InputLabel">Alavances</div>
+        </div>
+      </div>
+      <div class="popup1ContentRow">
+        <div style="display: flex; margin: 0; width: 112%">
+          <input class="popup1Input" type="date" />
+          <input class="popup1Input" type="date" />
+        </div>
+        <div style="display: flex; margin: 0; width: 112%">
+          <input class="popup1Input" placeholder="0.00" type="number" />
+          <input class="popup1Input" placeholder="0.00" type="number" />
+        </div>
+      </div>
+    </div>
+    <div class="popup1Footer">
+      <div class="popup1errorMsg">Errro on page</div>
+      <div style="display: flex">
+        <div class="popup1CancelBtn" (click)="popupSelected = ''">CANCEL</div>
+        <div class="popup1SaveBtn" (click)="onClickSaveAdvancePayroll()">
+          SAVE
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+
+<div class="popup1" *ngIf="popupSelected === 'payRunAdvance'">
+  <div class="popup1Body">
+    <div class="popup1Header">
+      Payroll Advance
+      <div class="popup1Close" (click)="popupSelected = ''"></div>
+    </div>
+    <div class="popup1Desc">Update cheque status</div>
+    <div class="popup1ContentBody">
+      <div class="popup1ContentRow">
+        <div class="popup1InputLabel">Select the employee*</div>
+        <div class="popup1InputLabel">
+          Select a cash or bank account to send money*
+        </div>
+      </div>
+      <div class="popup1ContentRow">
+        <select class="popup1Input">
+          <option>Select account type</option>
+        </select>
+        <select class="popup1Input"></select>
+      </div>
+      <div class="popup1ContentRow">
+        <div style="display: flex; margin: 0; width: 112%">
+          <div class="popup1InputLabel">Amount paying*</div>
+          <div class="popup1InputLabel">Mode of payment*</div>
+        </div>
+        <div class="popup1InputLabel">Description</div>
+      </div>
+      <div class="popup1ContentRow">
+        <div style="display: flex; margin: 0; width: 112%">
+          <input class="popup1Input" placeholder="0.00" type="number" />
+          <select class="popup1Input">
+            <option>Select payment mode</option>
+          </select>
+        </div>
+        <input
+          class="popup1Input"
+          placeholder="Enter the description for this transaction"
+        />
+      </div>
+      <div class="popup1ContentRow">
+        <div class="popup1InputLabel">Reference</div>
+        <div class="popup1InputLabel"></div>
+      </div>
+      <div class="popup1ContentRow">
+        <input class="popup1Input" placeholder="Enter payment reference" />
+        <div class="popup1InputLabel"></div>
+      </div>
+    </div>
+    <div class="popup1Footer">
+      <div class="popup1errorMsg">Errro on page</div>
+      <div style="display: flex">
+        <div class="popup1CancelBtn" (click)="popupSelected = ''">CANCEL</div>
+        <div class="popup1SaveBtn" (click)="onClickSaveAdvancePayroll()">
+          SAVE
+        </div>
       </div>
     </div>
   </div>

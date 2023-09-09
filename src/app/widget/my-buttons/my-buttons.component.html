@@ -1,0 +1,11 @@
+<div *ngIf="type === 'switch'">
+  <div (click)="onClickSwitch()" class="switchOn" *ngIf="isSwitchOn"></div>
+  <div (click)="onClickSwitch()" class="switchOff" *ngIf="!isSwitchOn"></div>
+</div>
+<div *ngIf="type === 'listButton'" class="listButton">
+  <button class="blueButton" (click)="onSelectItem(label)">{{ label }}</button>
+  <button class="arrowDown" (click)="selected = !selected"></button>
+  <div class="dropList" *ngIf="selected">
+    <div *ngFor="let it of dropList" (click)="onSelectItem(it)">{{ it }}</div>
+  </div>
+</div>

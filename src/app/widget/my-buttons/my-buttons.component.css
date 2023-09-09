@@ -1,0 +1,60 @@
+.switchOn,
+.switchOff {
+  height: 2vw;
+  width: 4vw;
+  background-image: url(../../../assets/ic_switch.svg);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.switchOn {
+  background-image: url(../../../assets/ic_switch_on.svg);
+}
+
+.listButton {
+  display: flex;
+  position: relative;
+  margin: 0 0.5vw;
+}
+.listButton .blueButton {
+  background-color: #00649e;
+  color: white;
+  white-space: nowrap;
+  font-weight: 500;
+  font-size: 1vw;
+  border-top-left-radius: 0.3vw;
+  border-bottom-left-radius: 0.3vw;
+  padding: 0.5vw 1vw;
+  cursor: pointer;
+}
+.listButton .arrowDown {
+  min-width: 2vw;
+  border-top-right-radius: 0.3vw;
+  border-bottom-right-radius: 0.3vw;
+  background-color: #00649e;
+  border: 0.1vw solid #00649e;
+  margin-left: 0.1vw;
+  background-image: url(../../../assets/ic_arrow_down.svg);
+  background-position: center;
+  background-size: 1.5vw;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+.listButton .dropList {
+  position: absolute;
+  top: 110%;
+  background-color: white;
+  right: 0;
+  padding: 0.3vw;
+  border-radius: 0.4vw;
+  box-shadow: 0 0 1vw rgba(0, 0, 0, 0.3);
+  font-size: 0.9vw;
+}
+.listButton .dropList div {
+  cursor: pointer;
+  padding: 0.3vw 0.5vw;
+}
+.listButton .dropList div:hover {
+  background-color: #00649e3c;
+}

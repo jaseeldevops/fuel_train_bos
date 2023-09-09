@@ -225,6 +225,115 @@
 /* ////////////////////////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+.stockTakingEach {
+  height: calc(100vh - 10vw);
+  overflow: auto;
+  box-sizing: border-box;
+  padding: 1vw 2vw;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+}
+.stockTakingEach .leftSide {
+  width: 70%;
+}
+.stockTakingEach .eachArea {
+  background-color: white;
+  border-radius: 0.5vw;
+  box-shadow: 0 0 0.8vw rgba(128, 128, 128, 0.3);
+  box-sizing: border-box;
+}
+.stockTakingEach .searchArea {
+  width: 100%;
+  padding: 1vw;
+  font-size: 0.9vw;
+}
+.stockTakingEach .listArea {
+  margin-top: 1vw;
+  overflow: auto;
+  height: 86%;
+}
+.stockTakingEach .tableHead {
+  background-color: #c6d5fb;
+  border-top-left-radius: 0.5vw;
+  border-top-right-radius: 0.5vw;
+  padding: 0.8vw;
+  font-size: 0.9vw;
+  display: flex;
+  justify-content: space-between;
+}
+.stockTakingEach .tableRow {
+  font-size: 0.9vw;
+  padding: 0.8vw;
+  display: flex;
+  justify-content: space-between;
+}
+.stockTakingEach .tableRow div {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.stockTakingEach .tableRow:nth-child(even) {
+  background-color: #f3f6f6;
+}
+.stockTakingEach .rightSide {
+  width: 28%;
+}
+.stockTakingEach .historyArea {
+  overflow: auto;
+  height: 89%;
+  padding: 0.8vw 1vw;
+  box-sizing: border-box;
+  overflow: auto;
+}
+.stockTakingEach .saveBtnArea {
+  padding: 0.5vw 1vw;
+  margin-top: 1vw;
+}
+.stockTakingEach .saveBtnArea button {
+  width: 100%;
+  background-color: #37a172;
+  color: white;
+  font-size: 1.2vw;
+  text-align: center;
+  padding: 0.8vw;
+  font-weight: 600;
+  border-radius: 0.3vw;
+}
+.stockTakingEach .historyProdect {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5vw;
+  margin: 0.3vw 0;
+}
+.stockTakingEach .historyProdect div {
+  padding: 0.3vw;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.stockTakingEach .historyProdect .dltIcon {
+  background-image: url(../../../assets/ic_bin12.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 1vw;
+  cursor: pointer;
+}
+.stockTakingEach .historyTitle {
+  font-size: 0.88vw;
+  font-weight: 500;
+  margin-bottom: 0.8vw;
+}
+.stockTakingEach .historyTitle span {
+  font-size: 0.8vw;
+  color: #7e7e7e74;
+  margin-left: 0.2vw;
+}
+/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////////////////// */
 .downloadButton {
   width: 2vw;
   height: 2vw;

@@ -26,4 +26,49 @@ export class HomePurchaseComponent implements OnInit {
     if (this.page === 0) this.addPurchaseOrder = {};
     else this.addPurchase = {};
   };
+
+  addPurchaseOrderForm: any = {
+    items: [{}],
+  };
+
+  onChangePurchaseOrderItem = (e: any) => {
+    this.addPurchaseOrderForm.items.push({});
+  };
+
+  onClickPurchaseOrderDltItem = (k: any) => {
+    if (this.addPurchaseOrderForm.items?.length > 1)
+      this.addPurchaseOrderForm.items.splice(k, 1);
+  };
+
+  onClickSavePurchaseOrder = (type: any) => {
+    if (type === 'SAVE & PRINT') {
+    } else if (type === 'Save & Add') {
+    } else if (type === 'Save') {
+    }
+  };
+
+  // //////////////////////////////////////////////
+  // //////////////////////////////////////////////
+  // //////////////////////////////////////////////
+
+  addPurchaseForm: any = {
+    items: [{}],
+  };
+
+  onChangePurchaseItem = (e: any) => {
+    this.addPurchaseForm.items.push({});
+  };
+
+  onClickPurchaseDltItem = (k: any) => {
+    if (this.addPurchaseForm.items?.length > 1)
+      this.addPurchaseForm.items.splice(k, 1);
+  };
+
+  onClickSavePurchase = (type: any) => {
+    if (type === 'SAVE & PRINT') {
+    } else if (type === 'Save & Add New') {
+    } else if (type === 'Save & Payment') {
+      this.addPurchaseForm.saved = true;
+    }
+  };
 }

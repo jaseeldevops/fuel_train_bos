@@ -82,6 +82,15 @@
 .formTableRow:nth-child(even) {
   background-color: white;
 }
+.formTableRow .dltIcon {
+  width: 1.5vw;
+  height: 1.5vw;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-image: url(../../../assets/ic_bin12.svg);
+  cursor: pointer;
+}
 .formFooterBar {
   margin: 1vw;
   display: flex;

@@ -15,7 +15,7 @@
         [ngClass]="page === 0 ? 'navBarEach_' : 'navBarEach'"
         (click)="page = 0"
       >
-        Purchase Orders
+        <div style="padding: 0 0.8vw">Purchase Orders</div>
         <div
           [ngClass]="page === 0 ? 'navBarEachLine_' : 'navBarEachLine'"
         ></div>
@@ -24,7 +24,7 @@
         [ngClass]="page === 1 ? 'navBarEach_' : 'navBarEach'"
         (click)="page = 1"
       >
-        Goods Received Note
+        <div style="padding: 0 0.8vw">Goods Received Note</div>
         <div
           [ngClass]="page === 1 ? 'navBarEachLine_' : 'navBarEachLine'"
         ></div>
@@ -53,11 +53,13 @@
   <div class="tableBody" *ngIf="page === 0">
     <div class="table">
       <div class="header">
-        <div style="width: 8%">PON#</div>
+        <div></div>
+        <div style="width: 10%">PON#</div>
         <div style="width: 10%">DATE</div>
-        <div style="width: 30%">SUPPLIER</div>
+        <div style="width: 35%">SUPPLIER</div>
         <div style="width: 15%; text-align: right">TOTAL</div>
-        <div style="width: 12%; text-align: right">ACTION</div>
+        <div style="width: 15%; text-align: right">ACTION</div>
+        <div></div>
       </div>
       <div class="body">
         <div
@@ -66,15 +68,24 @@
           style="cursor: pointer"
           (click)="setPopup({ path: 'purchaseOrderView' })"
         >
-          <div class="content" style="width: 8%">{{ it?.pon }}</div>
+          <div></div>
+          <div class="content" style="width: 10%; color: var(--myColor)">
+            {{ it?.pon }}
+          </div>
           <div class="content" style="width: 10%">{{ it?.date }}</div>
-          <div class="content" style="width: 30%">{{ it?.supplier }}</div>
+          <div class="content" style="width: 35%; color: var(--myColor)">
+            {{ it?.supplier }}
+          </div>
           <div class="content" style="width: 15%; text-align: right">
             {{ it?.total }}
           </div>
-          <div class="content" style="width: 12%; text-align: right">
+          <div
+            class="content"
+            style="width: 15%; text-align: right; color: var(--myColor)"
+          >
             {{ it?.action }}
           </div>
+          <div></div>
         </div>
       </div>
     </div>
@@ -170,7 +181,7 @@
       <div>Reference*</div>
       <input
         class="defaultInput"
-        placeholder="Search for a supplier"
+        placeholder="Reference"
         style="width: 100%"
       />
     </div>
@@ -185,11 +196,27 @@
     <div class="value" style="width: 15%">Total</div>
   </div>
   <div class="formTableBody">
-    <div class="formTableRow" *ngFor="let it of [{}, {}]">
-      <div class="value formDelete" style="width: 3%"></div>
+    <div
+      class="formTableRow"
+      *ngFor="let it of addPurchaseOrderForm?.items; let k = index"
+    >
+      <div
+        class="value formDelete"
+        style="width: 3%"
+        (click)="onClickPurchaseOrderDltItem(k)"
+      ></div>
       <div class="value" style="width: 40%">
-        <select class="defaultSelect" style="width: 100%">
-          <option>SELECT PRODUCT</option>
+        <select
+          class="defaultSelect"
+          style="width: 100%"
+          [ngModel]="null"
+          (ngModelChange)="onChangePurchaseOrderItem(it)"
+        >
+          <option value="null" hidden>SELECT PRODUCT</option>
+          <option>Product 1</option>
+          <option>Product 12</option>
+          <option>Product 13</option>
+          <option>Product 14</option>
         </select>
       </div>
       <div class="value" style="width: 10%">
@@ -268,8 +295,13 @@
     </div>
   </div>
   <div class="formFooterBar">
-    <div class="blueButton">SAVE & PRINT</div>
-    <div class="blueButton">CLOSE</div>
+    <MyButtons
+      [type]="'listButton'"
+      [label]="'SAVE & PRINT'"
+      [dropList]="['Save & New', 'Save']"
+      [onSelect]="onClickSavePurchaseOrder"
+    ></MyButtons>
+    <button class="blueButton">CLOSE</button>
   </div>
 </div>
 
@@ -334,11 +366,27 @@
     <div class="value" style="width: 15%">Total</div>
   </div>
   <div class="formTableBody">
-    <div class="formTableRow" *ngFor="let it of [{}, {}]">
-      <div class="value" style="width: 3%"></div>
+    <div
+      class="formTableRow"
+      *ngFor="let it of addPurchaseForm?.items; let k = index"
+    >
+      <div
+        class="value formDelete"
+        style="width: 3%"
+        (click)="onClickPurchaseDltItem(k)"
+      ></div>
       <div class="value" style="width: 40%">
-        <select class="defaultSelect" style="width: 100%">
-          <option>SELECT PRODUCT</option>
+        <select
+          class="defaultSelect"
+          style="width: 100%"
+          [ngModel]="null"
+          (ngModelChange)="onChangePurchaseItem(it)"
+        >
+          <option value="null" hidden>SELECT PRODUCT</option>
+          <option>Product 1</option>
+          <option>Product 12</option>
+          <option>Product 13</option>
+          <option>Product 14</option>
         </select>
       </div>
       <div class="value" style="width: 10%">
@@ -417,8 +465,51 @@
     </div>
   </div>
   <div class="formFooterBar">
-    <div class="blueButton">SAVE & PRINT</div>
-    <div class="blueButton">CLOSE</div>
+    <MyButtons
+      [type]="'listButton'"
+      [label]="'SAVE & PRINT'"
+      [dropList]="['Save & Add New', 'Save & Payment']"
+      [onSelect]="onClickSavePurchase"
+    ></MyButtons>
+    <button class="blueButton">CLOSE</button>
+  </div>
+  <div
+    *ngIf="addPurchaseForm?.saved"
+    class="formHeaderBox"
+    style="display: flex; justify-content: space-between; align-items: center"
+  >
+    <div style="width: 13%">
+      <div>Amount Paying*</div>
+      <input
+        class="defaultInput"
+        placeholder="0.00"
+        type="number"
+        style="width: 100%"
+      />
+    </div>
+    <div style="width: 13%">
+      <div>Account*</div>
+      <select class="defaultInput" style="width: 100%"></select>
+    </div>
+    <div style="width: 13%">
+      <div>Payment Mode*</div>
+      <select class="defaultInput" style="width: 100%"></select>
+    </div>
+
+    <div style="width: 10%">
+      <div>Payment Due*</div>
+      <input class="defaultInput" type="date" style="width: 100%" />
+    </div>
+    <div style="width: 16%">
+      <div>Reference*</div>
+      <input
+        class="defaultInput"
+        placeholder="ENter reference / note"
+        style="width: 100%"
+      />
+    </div>
+    <button class="blueButton">CANCEL</button>
+    <button class="blueButton">SAVE PAYMENT</button>
   </div>
 </div>
 

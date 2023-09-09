@@ -109,8 +109,12 @@
   padding-top: 1.2vw;
   padding-left: 0.3vw;
   padding-bottom: 0.3vw;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .drowerForm input,
+.drowerForm select,
 textarea {
   width: 100%;
   padding: 0.5vw 0.8vw;
@@ -145,3 +149,66 @@ textarea {
   font-weight: 500;
   color: white;
 }
+/* ////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////// */
+.tableEditIcon {
+  font-size: 0.9vw;
+  color: #3f6ca5;
+  cursor: pointer;
+  font-weight: 500;
+}
+.tableDeleteIcon {
+  width: 0.9vw;
+  height: 0.9vw;
+  background-image: url(../../../assets/ic_bin.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  margin-left: 1vw;
+  cursor: pointer;
+}
+.tableLogoDispplay {
+  width: 1.8vw;
+  height: 1.8vw;
+  border-radius: 50%;
+}
+/* /////////////////////////////////////// */
+/* /////////////////////////////////////// */
+/* /////////////////////////////////////// */
+.logoFileUploader {
+  display: flex;
+  justify-content: space-between;
+}
+.logoFileUploader input {
+  display: none;
+}
+.logoFileUploader img {
+  width: 5vw;
+  height: 5vw;
+  border-radius: 0.5vw;
+}
+.logoFileUploader .uploadArea {
+  background-color: #d7dfe9;
+  border: 0.15vw dashed #274885;
+  border-radius: 0.3vw;
+  padding: 0.8vw 3vw;
+  text-align: center;
+  cursor: pointer;
+}
+.logoFileUploader .uploadArea div:nth-child(1) {
+  font-size: 0.8vw;
+  font-weight: 600;
+}
+.logoFileUploader .uploadArea div:nth-child(2) {
+  font-size: 0.75vw;
+  padding: 0.2vw;
+}
+.logoFileUploader .uploadArea div:nth-child(3) {
+  font-size: 0.6vw;
+  color: #15161876;
+}
+
+/* ////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////// */
+/* ////////////////////////////////////////////////////////////// */

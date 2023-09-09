@@ -23,6 +23,7 @@ export const allDummyProdects = {
       rrp: '100.00',
       defference: '10.00',
       parentCategory: 'Orange Mango',
+      date: '14 APR 2022',
     },
     {
       image:
@@ -41,6 +42,7 @@ export const allDummyProdects = {
       rrp: '100.00',
       defference: '10.00',
       parentCategory: 'Orange Mango',
+      date: '14 APR 2022',
     },
     {
       image:
@@ -59,6 +61,7 @@ export const allDummyProdects = {
       rrp: '100.00',
       defference: '10.00',
       parentCategory: 'Orange Mango',
+      date: '14 APR 2022',
     },
     {
       image:
@@ -77,6 +80,7 @@ export const allDummyProdects = {
       rrp: '100.00',
       defference: '10.00',
       parentCategory: 'Orange Mango',
+      date: '14 APR 2022',
     },
     {
       image:
@@ -95,6 +99,7 @@ export const allDummyProdects = {
       rrp: '100.00',
       defference: '10.00',
       parentCategory: 'Orange Mango',
+      date: '14 APR 2022',
     },
   ],
 };
@@ -113,6 +118,7 @@ export const allDummyPromotions = {
       startDate: '12 May 2022',
       endDate: '18 May 2022',
       status: 'Active',
+      branchName: 'Phonix mall, test Location',
     },
     {
       name: 'Buy 1 get 1 free',
@@ -120,6 +126,7 @@ export const allDummyPromotions = {
       startDate: '12 May 2022',
       endDate: '18 May 2022',
       status: 'Expired',
+      branchName: 'Phonix hyper market, Mark Location',
     },
     {
       name: '5000 Bonus',
@@ -127,6 +134,7 @@ export const allDummyPromotions = {
       startDate: '12 May 2022',
       endDate: '18 May 2022',
       status: 'Active',
+      branchName: 'Orion mall, Mark2 Location',
     },
   ],
 };
@@ -147,7 +155,13 @@ export const allDummyStocks = {
       desc: 'Hallow world',
       count: '12',
       amount: '12.00',
-      status: '12.00',
+      branchName: 'Phonix mall, test Location',
+      status: 'Review',
+      all: 45,
+      counted: 10,
+      unCounted: 35,
+      unMatched: 45,
+      matched: 5,
     },
     {
       transaction: 'Buy 1 get 1 free',
@@ -157,7 +171,13 @@ export const allDummyStocks = {
       desc: 'Hallow world',
       count: '12',
       amount: '12.00',
-      status: '12.00',
+      branchName: 'Phonix mall, test Location',
+      status: 'Review',
+      all: 10,
+      counted: 10,
+      unCounted: 10,
+      unMatched: 45,
+      matched: 5,
     },
     {
       transaction: '5000 Bonus',
@@ -167,7 +187,89 @@ export const allDummyStocks = {
       desc: 'Hallow world',
       count: '12',
       amount: '12.00',
-      status: '12.00',
+      branchName: 'Phonix mall, test Location',
+      status: 'Pending',
+      all: 10,
+      counted: 10,
+      unCounted: 10,
+      unMatched: 45,
+      matched: 5,
+    },
+  ],
+};
+
+export const selectedDummyStockTrail = {
+  name: 'IPHONE 13 PRO / 256GB / BLACK',
+  content: [
+    {
+      date: '12 May 2022',
+      party: 'Phonex mall, India',
+      type: 'Hallow world',
+      qty: '12',
+      amount: '12.00',
+      cost: '12.00',
+      stock: '12.00',
+    },
+    {
+      date: '12 May 2022',
+      party: 'Phonex mall, India',
+      type: 'Hallow world',
+      qty: '12',
+      amount: '12.00',
+      cost: '12.00',
+      stock: '12.00',
+    },
+    {
+      date: '12 May 2022',
+      party: 'Phonex mall, India',
+      type: 'Hallow world',
+      qty: '12',
+      amount: '12.00',
+      cost: '12.00',
+      stock: '12.00',
+    },
+  ],
+};
+
+export const allDummyStocksTakingReviewList = {
+  paging: {
+    page: 1,
+    totalItems: 3000,
+    showingItemsCount: 10,
+    totalPage: 10,
+  },
+  totalExpected: '132',
+  totalCounted: '0',
+  totalDifferenceCounted: '-8',
+  totalDifferenceValue: '-11,830.00',
+  content: [
+    {
+      name: 'Lives, Rocket Jeans/BLUE/33 - 1234677',
+      expected: '1',
+      counted: '0',
+      differenceCounted: '-1',
+      differenceValue: '-1,990.00',
+    },
+    {
+      name: 'Lives, Rocket Jeans/BLUE/33 - 1234677',
+      expected: '1',
+      counted: '0',
+      differenceCounted: '-1',
+      differenceValue: '-1,990.00',
+    },
+    {
+      name: 'Lives, Rocket Jeans/BLUE/33 - 1234677',
+      expected: '0',
+      counted: '0',
+      differenceCounted: '1',
+      differenceValue: '0.00',
+    },
+    {
+      name: 'Lives, Rocket Jeans/BLUE/33 - 1234677',
+      expected: '0',
+      counted: '0',
+      differenceCounted: '1',
+      differenceValue: '0.00',
     },
   ],
 };

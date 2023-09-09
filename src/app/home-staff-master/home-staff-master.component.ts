@@ -15,8 +15,10 @@ export class HomeStaffMasterComponent implements OnInit {
   allPayrunEmploye: any = allDummyPayrunEmployee;
 
   page: string = 'staffMaster';
-  popUp: String = '';
+  popupSelected: string = '';
   isSystemUser: boolean = false;
+
+  isEdit: boolean = false;
 
   onclickAllStaffMaster = () => {
     this.page = 'staffMaster';
@@ -34,7 +36,8 @@ export class HomeStaffMasterComponent implements OnInit {
   };
 
   onClickAddEmloyee = () => {
-    this.popUp = 'employeeForm';  
+    this.isEdit = false;
+    this.popupSelected = 'employeeForm';
   };
 
   onClickAddPayRun = () => {
@@ -42,7 +45,7 @@ export class HomeStaffMasterComponent implements OnInit {
   };
 
   onClickSaveEmployeeForm = () => {
-    this.popUp = '';
+    this.popupSelected = '';
   };
 
   uploadedImage: any;
@@ -57,4 +60,24 @@ export class HomeStaffMasterComponent implements OnInit {
   };
 
   ngOnInit(): void {}
+
+  onSelectAnyStaf = (it: any) => {
+    this.isEdit = true;
+    this.popupSelected = 'employeeForm';
+  };
+
+  addPayrunForm = {
+    items: [{}],
+  };
+
+  onChangeItemInPayloadForm = (e: any) => {
+    this.addPayrunForm.items.push({});
+  };
+
+  onClickPayLoadDltItem = (k: any) => {
+    if (this.addPayrunForm.items?.length > 1)
+      this.addPayrunForm.items.splice(k, 1);
+  };
+
+  onClickSaveAdvancePayroll = () => {};
 }

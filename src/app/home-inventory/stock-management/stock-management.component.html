@@ -2,16 +2,24 @@
   <div class="arrowBack" (click)="onBack(null)"></div>
   STOCK RETURN
 </div>
-<div
-  class="pageTitle"
-  *ngIf="page === 'stockTaking' || page === 'inventoryCountPopup'"
->
+<div class="pageTitle" *ngIf="page === 'stockTaking'">
   <div class="arrowBack" (click)="onBack(null)"></div>
-  STOCK TAKING
+  INVENTORY COUNT
+</div>
+<div class="pageTitle" *ngIf="page === 'stockTakingEach'">
+  <div class="arrowBack" (click)="onBack('stockTaking')"></div>
+  {{ selctedStockTakingBanch?.branchName }}
+</div>
+<div class="pageTitle" *ngIf="page === 'stockTakingReview'">
+  <div class="arrowBack" (click)="onBack('stockTaking')"></div>
+  INVENTORY REVIEV&nbsp;
+  <span style="font-size: 1vw">{{ selctedStockTakingReview?.branchName }}</span>
 </div>
 <div class="pageTitle" *ngIf="page === 'stockTrail'">
   <div class="arrowBack" (click)="onBack(null)"></div>
-  STOCK TRAIL
+  STOCK TRAIL &nbsp;<span style="color: #406ca5; font-size: 1vw">{{
+    selectedStockTrail?.name
+  }}</span>
 </div>
 <div class="pageTitle" *ngIf="page === 'stockAdjestment'">
   <div class="arrowBack" (click)="onBack(null)"></div>
@@ -37,29 +45,25 @@
     page === 'stockTrail' ||
     page === 'stockAdjestment' ||
     page === 'stockLookup' ||
-    page === 'mslLookup' ||
-    page === 'inventoryCountPopup'
+    page === 'mslLookup'
   "
 >
-  <div
-    class="navTab"
-    *ngIf="page === 'stockTaking' || page === 'inventoryCountPopup'"
-  >
+  <div class="navTab" *ngIf="page === 'stockTaking'">
     <div
-      [ngClass]="subPage === 0 ? 'navTabEach_' : 'navTabEach'"
-      (click)="subPage = 0"
+      [ngClass]="stockTakingSubPage === 0 ? 'navTabEach_' : 'navTabEach'"
+      (click)="onClickStockTakingSubPage(0)"
     >
       Due (10)
     </div>
     <div
-      [ngClass]="subPage === 1 ? 'navTabEach_' : 'navTabEach'"
-      (click)="subPage = 1"
+      [ngClass]="stockTakingSubPage === 1 ? 'navTabEach_' : 'navTabEach'"
+      (click)="onClickStockTakingSubPage(1)"
     >
       Complated (10)
     </div>
     <div
-      [ngClass]="subPage === 2 ? 'navTabEach_' : 'navTabEach'"
-      (click)="subPage = 2"
+      [ngClass]="stockTakingSubPage === 2 ? 'navTabEach_' : 'navTabEach'"
+      (click)="onClickStockTakingSubPage(2)"
     >
       Cancelled (10)
     </div>
@@ -79,11 +83,80 @@
   </div>
   <div
     class="addButton"
-    *ngIf="page === 'stockTaking' || page === 'inventoryCountPopup'"
+    *ngIf="page === 'stockTaking'"
     (click)="onClickStockTaking()"
   >
     + New Count
   </div>
+</div>
+<div class="tableFilterHeader" *ngIf="page === 'stockTakingEach'">
+  <div class="navTab" style="width: 100%">
+    <div
+      [ngClass]="stockTakingEachSubPage === 0 ? 'navTabEach_' : 'navTabEach'"
+      (click)="onClickStockTakingEachSubPage(0)"
+    >
+      All ({{ selctedStockTakingBanch?.all }})
+    </div>
+    <div
+      [ngClass]="stockTakingEachSubPage === 1 ? 'navTabEach_' : 'navTabEach'"
+      (click)="onClickStockTakingEachSubPage(1)"
+    >
+      Counted ( {{ selctedStockTakingBanch?.counted }} )
+    </div>
+    <div
+      [ngClass]="stockTakingEachSubPage === 2 ? 'navTabEach_' : 'navTabEach'"
+      (click)="onClickStockTakingEachSubPage(2)"
+    >
+      Uncounted ( {{ selctedStockTakingBanch?.unCounted }} )
+    </div>
+  </div>
+  <div class="addButton" (click)="onClickStartCount()">
+    {{
+      selctedStockTakingBanch?.status === "started"
+        ? "SUBMIT FOR REVIEW"
+        : "START COUNT"
+    }}
+  </div>
+</div>
+<div class="tableFilterHeader" *ngIf="page === 'stockTakingReview'">
+  <div class="navTab" style="width: 100%">
+    <div
+      [ngClass]="stockReviewSubPage === 0 ? 'navTabEach_' : 'navTabEach'"
+      (click)="onClickStockReviewSubPage(0)"
+    >
+      Uncounted ( {{ selctedStockTakingReview?.unCounted }} )
+    </div>
+    <div
+      [ngClass]="stockReviewSubPage === 1 ? 'navTabEach_' : 'navTabEach'"
+      (click)="onClickStockReviewSubPage(1)"
+    >
+      Counted ( {{ selctedStockTakingReview?.counted }} )
+    </div>
+    <div
+      [ngClass]="stockReviewSubPage === 2 ? 'navTabEach_' : 'navTabEach'"
+      (click)="onClickStockReviewSubPage(2)"
+    >
+      Unmatched ({{ selctedStockTakingReview?.unMatched }})
+    </div>
+    <div
+      [ngClass]="stockReviewSubPage === 3 ? 'navTabEach_' : 'navTabEach'"
+      (click)="onClickStockReviewSubPage(3)"
+    >
+      Matched ({{ selctedStockTakingReview?.matched }})
+    </div>
+    <div
+      [ngClass]="stockReviewSubPage === 4 ? 'navTabEach_' : 'navTabEach'"
+      (click)="onClickStockReviewSubPage(4)"
+    >
+      All ({{ selctedStockTakingReview?.all }})
+    </div>
+  </div>
+  <MyButtons
+    [type]="'listButton'"
+    [dropList]="['Reject Stocktake', 'Reopen Stocktake']"
+    [onSelect]="onDropSrockTakingReviewBtn"
+    label="MARK COMPLATE"
+  ></MyButtons>
 </div>
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -101,7 +174,6 @@
       <div style="width: 12%">DISCRIPTION</div>
       <div style="width: 8%">COUNT</div>
       <div style="width: 8%; text-align: right">Amount</div>
-      <div style="width: 8%">Status</div>
       <div></div>
     </div>
     <div class="body">
@@ -118,7 +190,53 @@
         <div class="content" style="width: 8%; text-align: right">
           {{ it?.amount }}
         </div>
-        <div class="content" style="width: 8%">{{ it?.status }}</div>
+        <div></div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allStocks?.paging"></app-table-paging>
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="tableBody" *ngIf="page === 'stockTaking'">
+  <div class="table">
+    <div class="header">
+      <div></div>
+      <div style="width: 25%">COUNT DETAILS</div>
+      <div style="width: 15%">START DATE</div>
+      <div style="width: 15%">COUNT TYPE</div>
+      <div style="width: 15%">END BEFORE</div>
+      <div style="width: 15%">COUNTING STATUS</div>
+      <div style="width: 8%">REVIEW STATUS</div>
+      <div></div>
+    </div>
+    <div class="body">
+      <div
+        class="row"
+        *ngFor="let it of allStocks?.content"
+        (click)="onClickStockTakingEach(it)"
+      >
+        <div></div>
+        <div
+          class="content"
+          style="width: 25%; color: #406ca5; font-weight: 500"
+        >
+          {{ it?.branchName }}
+        </div>
+        <div class="content" style="width: 15%">{{ it?.date }}</div>
+        <div class="content" style="width: 15%">{{ it?.transferFrom }}</div>
+        <div class="content" style="width: 15%">{{ it?.transferTo }}</div>
+        <div class="content" style="width: 15%">{{ it?.desc }}</div>
+        <div
+          class="content"
+          style="width: 8%; color: #406ca5; padding: 0.2vw 1vw"
+          (click)="onClickReviewInStockTaking(it)"
+        >
+          {{ it?.status }}
+        </div>
         <div></div>
       </div>
     </div>
@@ -132,33 +250,100 @@
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <div
   class="tableBody"
-  *ngIf="page === 'stockTaking' || page === 'inventoryCountPopup'"
+  *ngIf="page === 'stockTakingReview'"
+  style="height: calc(100vh - 17vw)"
 >
   <div class="table">
     <div class="header">
       <div></div>
-      <div style="width: 15%">COUNT DETAILS</div>
-      <div style="width: 15%">START DATE</div>
-      <div style="width: 15%">COUNT TYPE</div>
-      <div style="width: 15%">END BEFORE</div>
-      <div style="width: 15%">COUNTING STATUS</div>
-      <div style="width: 15%">REVIEW STATUS</div>
+      <div style="width: 30%">PRODUCT</div>
+      <div style="width: 15%">EXPECTED</div>
+      <div style="width: 15%">COUNTED</div>
+      <div style="width: 15%">DIFFERENCE(COUNTED)</div>
+      <div style="width: 15%; text-align: right">DIFFERENCE(VALUE)</div>
       <div></div>
     </div>
-    <div class="body">
-      <div class="row" *ngFor="let it of allStocks?.content">
+    <div class="body" style="height: calc(94%)">
+      <div class="row" *ngFor="let it of allStocksTakingReviewList?.content">
         <div></div>
-        <div class="content" style="width: 15%; color: #406ca5">
-          {{ it?.transaction }}
+        <div
+          class="content"
+          style="width: 30%; color: #406ca5; font-weight: 500"
+        >
+          {{ it?.name }}
         </div>
-        <div class="content" style="width: 15%">{{ it?.date }}</div>
-        <div class="content" style="width: 15%">{{ it?.transferFrom }}</div>
-        <div class="content" style="width: 15%">{{ it?.transferTo }}</div>
-        <div class="content" style="width: 15%">{{ it?.desc }}</div>
-        <div class="content" style="width: 15%">{{ it?.count }}</div>
+        <div
+          class="content"
+          style="width: 15%"
+          [ngStyle]="{ color: it?.expected < 0 && 'red' }"
+        >
+          {{ it?.expected }} PSC
+        </div>
+        <div
+          class="content"
+          style="width: 15%"
+          [ngStyle]="{ color: it?.counted < 0 && 'red' }"
+        >
+          {{ it?.counted }} PSC
+        </div>
+        <div
+          class="content"
+          style="width: 15%"
+          [ngStyle]="{ color: it?.differenceCounted < 0 && 'red' }"
+        >
+          {{ it?.differenceCounted }} PSC
+        </div>
+        <div
+          class="content"
+          style="width: 15%; text-align: right"
+          [ngStyle]="{ color: it?.differenceValue < 0 && 'red' }"
+        >
+          {{ it?.differenceValue }}
+        </div>
         <div></div>
       </div>
     </div>
+  </div>
+  <div class="row" style="font-size: 1.2vw">
+    <div></div>
+    <div style="width: 30%"></div>
+    <div
+      class="content"
+      style="width: 15%"
+      [ngStyle]="{
+        color: allStocksTakingReviewList?.totalExpected < 0 && 'red'
+      }"
+    >
+      {{ allStocksTakingReviewList?.totalExpected }} COUNT
+    </div>
+    <div
+      class="content"
+      style="width: 15%"
+      [ngStyle]="{
+        color: allStocksTakingReviewList?.totalCounted < 0 && 'red'
+      }"
+    >
+      {{ allStocksTakingReviewList?.totalCounted }} COUNT
+    </div>
+    <div
+      class="content"
+      style="width: 15%"
+      [ngStyle]="{
+        color: allStocksTakingReviewList?.totalDifferenceCounted < 0 && 'red'
+      }"
+    >
+      {{ allStocksTakingReviewList?.totalDifferenceCounted }} COUNT
+    </div>
+    <div
+      class="content"
+      style="width: 15%; text-align: right"
+      [ngStyle]="{
+        color: allStocksTakingReviewList?.totalDifferenceValue < 0 && 'red'
+      }"
+    >
+      INR {{ allStocksTakingReviewList?.totalDifferenceValue }}
+    </div>
+    <div></div>
   </div>
   <app-table-paging [paging]="allStocks?.paging"></app-table-paging>
 </div>
@@ -167,7 +352,11 @@
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
-<div class="tableBody" *ngIf="page === 'stockTrail'">
+<div
+  class="tableBody"
+  style="height: calc(100vh - 10vw)"
+  *ngIf="page === 'stockTrail'"
+>
   <div class="table">
     <div class="header">
       <div></div>
@@ -181,20 +370,22 @@
       <div></div>
     </div>
     <div class="body">
-      <div class="row" *ngFor="let it of allProduct?.content">
+      <div class="row" *ngFor="let it of selectedStockTrail?.content">
         <div></div>
-        <div class="content" style="width: 22%">{{ it?.name }}</div>
-        <div class="content" style="width: 12%">{{ it?.code }}</div>
-        <div class="content" style="width: 12%">{{ it?.parentCategory }}</div>
-        <div class="content" style="width: 12%">{{ it?.category }}</div>
-        <div class="content" style="width: 12%">{{ it?.msl }}</div>
-        <div class="content" style="width: 12%">{{ it?.stock }}</div>
+        <div class="content" style="width: 22%; color: #406ca5">
+          {{ it?.date }}
+        </div>
+        <div class="content" style="width: 12%">{{ it?.party }}</div>
+        <div class="content" style="width: 12%">{{ it?.type }}</div>
+        <div class="content" style="width: 12%">{{ it?.qty }}</div>
+        <div class="content" style="width: 12%">{{ it?.amount }}</div>
+        <div class="content" style="width: 12%">{{ it?.cost }}</div>
         <div class="content" style="width: 12%">{{ it?.stock }}</div>
         <div></div>
       </div>
     </div>
   </div>
-  <app-table-paging [paging]="allProduct?.paging"></app-table-paging>
+  <!-- <app-table-paging [paging]="allProduct?.paging"></app-table-paging> -->
 </div>
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
@@ -381,7 +572,7 @@
     <div class="formTableRow" *ngFor="let it of [{}, {}]">
       <div class="value" style="width: 3%"></div>
       <div class="value" style="width: 35%">
-        <select class="defaultSelect" style="width: 100%">
+        <select class="defaultInput" style="width: 100%">
           <option>SELECT PRODUCT</option>
         </select>
       </div>
@@ -400,7 +591,7 @@
         />
       </div>
       <div class="value" style="width: 12%">
-        <input placeholder="0.00" class="defaultSelect" style="width: 100%" />
+        <input placeholder="0.00" class="defaultInput" style="width: 100%" />
       </div>
       <div class="value" style="width: 10%; padding: 0.5vw; text-align: right">
         89,800.00
@@ -462,11 +653,11 @@
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
 <!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
-<div class="popup1" *ngIf="page === 'inventoryCountPopup'">
+<div class="popup1" *ngIf="selectedPopUp === 'inventoryCountPopup'">
   <div class="body">
     <div class="header">
       New Inventory Count
-      <div class="closeBtn" (click)="onBack('stockTaking')"></div>
+      <div class="closeBtn" (click)="selectedPopUp = ''"></div>
     </div>
     <div class="desc">Initiate a new inventory count in your branch</div>
     <div class="bodyRow">
@@ -508,10 +699,76 @@
     <div class="footer">
       <div class="errorMsg">Errro on page</div>
       <div class="btns">
-        <div class="cancelBtn" (click)="onBack('stockTaking')">CANCEL</div>
+        <div class="cancelBtn" (click)="selectedPopUp = ''">CANCEL</div>
         <div class="saveBtn" (click)="onClickSaveOnInventoryCountPopup()">
           SAVE
         </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="popup1" *ngIf="selectedPopUp === 'rejectStovkTakePopup'">
+  <div class="body">
+    <div class="header">
+      <span>
+        Reject Stocktake
+        <span style="font-size: 0.9vw; color: gray"
+          >Obron Mall 13 April 2022-Men's Jeans</span
+        >
+      </span>
+      <div class="closeBtn" (click)="selectedPopUp = ''"></div>
+    </div>
+    <div class="desc">
+      You have chosen to reject this inventory count. FuelTrans will not record
+      this stock count and marked as rejected.
+    </div>
+    <div class="desc">
+      A record of this count will be saved, but you no longer will be able to
+      edit it.
+    </div>
+    <div class="footer">
+      <div class="errorMsg">Errro on page</div>
+      <div class="btns">
+        <div class="cancelBtn" (click)="selectedPopUp = ''">CANCEL</div>
+        <div class="saveBtn">REJECT</div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////////////////////////////////////////////////////////////////// -->
+<div class="popup1" *ngIf="selectedPopUp === 'reopenStovkTakePopup'">
+  <div class="body">
+    <div class="header">
+      <span>
+        Reject Stocktake
+        <span style="font-size: 0.9vw; color: gray"
+          >Obron Mall 13 April 2022-Men's Jeans</span
+        > 
+      </span>
+      <div class="closeBtn" (click)="selectedPopUp = ''"></div>
+    </div>
+    <div class="desc">
+      You have chosen to reopen this inventory count. FuelTrans will not record
+      this stock count and marked as reopened.
+    </div>
+    <div class="desc">
+      This will remain open for recount, but all the data recorded will be
+      cleared for a fresh count.
+    </div>
+    <div class="footer">
+      <div class="errorMsg">Errro on page</div>
+      <div class="btns">
+        <div class="cancelBtn" (click)="selectedPopUp = ''">CANCEL</div>
+        <div class="saveBtn">REOPEN</div>
       </div>
     </div>
   </div>
@@ -552,6 +809,75 @@
         <div class="cancelBtn" (click)="onBack(null)">CANCEL</div>
         <div class="saveBtn" (click)="onClickNextOnStockTrailPopup()">NEXT</div>
       </div>
+    </div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////// STOCK TAKING PAGE ///////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////// -->
+<div class="stockTakingEach" *ngIf="page === 'stockTakingEach'">
+  <div class="leftSide">
+    <div class="eachArea searchArea">
+      <div style="display: flex">
+        <div style="width: 58%">Scan or search an item to count</div>
+        <div style="width: 40%">Record Count</div>
+      </div>
+      <div style="display: flex; align-items: center">
+        <input
+          class="defaultInput"
+          placeholder="Type here"
+          style="width: 55.5%"
+        />
+        &nbsp; &nbsp; &nbsp; &nbsp;
+        <input
+          class="defaultInput"
+          placeholder="Type here"
+          style="width: 20%"
+        />
+        <div class="blueButton">COUNT</div>
+        <span style="text-align: right; font-size: 0.7vw"
+          >Enable<br />quick scan</span
+        >
+        &nbsp;
+        <MyButtons [type]="'switch'" [onSelect]=""></MyButtons>
+      </div>
+    </div>
+    <div class="eachArea listArea">
+      <div class="tableHead">
+        <div style="width: 60%">Product</div>
+        <div style="width: 15%">Counted</div>
+        <div style="width: 15%">Action</div>
+      </div>
+      <div
+        class="tableRow"
+        *ngFor="let it of allStocksTakingReviewList?.content"
+      >
+        <div style="width: 60%">{{ it?.name }}</div>
+        <div style="width: 15%">{{ it?.counted }}PCS</div>
+        <div style="width: 15%; cursor: pointer">Clear</div>
+      </div>
+    </div>
+  </div>
+  <div class="rightSide">
+    <div class="eachArea historyArea">
+      <div class="historyTitle">
+        History
+        <span>You can cancel a recent count in case of a mistake</span>
+      </div>
+      <div
+        class="eachArea historyProdect"
+        *ngFor="let it of [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]"
+      >
+        <div style="width: 10%">1</div>
+        <div style="width: 70%">Leves Rocker Jeans/BLUE/32 - 125</div>
+        <div style="width: 15%">2 PCS</div>
+        <div style="width: 10%" class="dltIcon"></div>
+      </div>
+    </div>
+    <div class="eachArea saveBtnArea">
+      <button>SAVE COUNT</button>
     </div>
   </div>
 </div>

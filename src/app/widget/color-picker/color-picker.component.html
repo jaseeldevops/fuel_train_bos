@@ -1,0 +1,22 @@
+<div class="colorPicker">
+  <div class="shower" [ngStyle]="{ background: selected }">{{ selected }}</div>
+  <div class="btn" (click)="showColors = !showColors"></div>
+  <div class="showColors" *ngIf="showColors">
+    <span style="width: 100%">Select color</span>
+    <div style="background: #b26c02" (click)="onClickColor('#b26c02')"></div>
+    <div style="background: #506db1" (click)="onClickColor('#506db1')"></div>
+    <div style="background: #a17322" (click)="onClickColor('#a17322')"></div>
+    <div style="background: #058cb7" (click)="onClickColor('#058cb7')"></div>
+    <div style="background: #98109c" (click)="onClickColor('#98109c')"></div>
+    <div style="background: #1e109c" (click)="onClickColor('#1e109c')"></div>
+    <div style="background: #0f9280" (click)="onClickColor('#0f9280')"></div>
+    <div style="background: #819c10" (click)="onClickColor('#819c10')"></div>
+    <div style="background: #9c5110" (click)="onClickColor('#9c5110')"></div>
+    <div style="background: #773f0e" (click)="onClickColor('#773f0e')"></div>
+    <div style="background: #7a0606" (click)="onClickColor('#7a0606')"></div>
+    <div style="background: #cf7d01" (click)="onClickColor('#cf7d01')"></div>
+    <div style="background: #1c346b" (click)="onClickColor('#1c346b')"></div>
+    <div style="background: #8e8e2c" (click)="onClickColor('#8e8e2c')"></div>
+    <div style="background: #d54b75" (click)="onClickColor('#d54b75')"></div>
+  </div>
+</div>
