@@ -17,7 +17,7 @@ import {
   styleUrls: ['./home-configuration.component.css'],
 })
 export class HomeConfigurationComponent implements OnInit {
-  @Input() page: any;
+  @Input() page: any = 'documentPrefix';
   constructor() {}
 
   subTitles: any =

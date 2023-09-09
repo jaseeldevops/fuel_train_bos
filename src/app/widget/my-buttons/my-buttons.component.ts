@@ -10,9 +10,13 @@ export class MyButtonsComponent implements OnInit {
   @Input() type: any;
   @Input() label: any;
   @Input() dropList: any;
+  @Input() onClickDownload: any;
+  @Input() onClickUpload: any;
 
   isSwitchOn: boolean = false;
   selected: boolean = false;
+  isExlConfirmPopup: boolean = false;
+  uploadedFile: any;
 
   onClickSwitch = () => {
     this.isSwitchOn = !this.isSwitchOn;
@@ -27,4 +31,18 @@ export class MyButtonsComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  onClickUploadInput = () => {
+    const upInput = document.getElementById('exlUpldInput');
+    upInput?.click();
+  };
+  onSelectFile = (event: any) => {    
+    this.uploadedFile = event.target.files[0]
+  };
+  onUploadFile = () => {
+    this.isExlConfirmPopup = true;
+  };
+  onClickConfirmFile = () => {
+    this.onClickUpload(this.uploadedFile);
+  };
 }

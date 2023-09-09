@@ -20,10 +20,5 @@ export class PriceManagementComponent implements OnInit {
   ngOnInit(): void {}
 
   onClickDownloadTemplate = () => {};
-  onClickUploadTemplate = () => {};
-
-  onClickUploadInput = () => {
-    const upInput = document.getElementById('exlUpldInput');
-    upInput?.click();
-  };
+  onClickUploadTemplate = (e: any) => {};
 }

@@ -10,31 +10,12 @@
   class="tableFilterHeader"
   *ngIf="page === 'priceLookup' || page === 'priceChange'"
 >
-  <div class="exlDwnld" *ngIf="page === 'priceChange'">
-    Download Excel Template
-    <div style="font-size: 0.7vw; color: #949494">
-      Download Excel file for bulk update data entry
-    </div>
-  </div>
-  <div
-    class="exlDwnldBtn"
+  <MyButtons
+    type="exlDownUp"
     *ngIf="page === 'priceChange'"
-    (click)="onClickDownloadTemplate()"
-  ></div>
-  <div
-    class="exlUpld"
-    *ngIf="page === 'priceChange'"
-    (click)="onClickUploadInput()"
-  >
-    Drop your file here or browse file from directory
-    <div style="color: #113d77">Browse</div>
-    <input type="file" id="exlUpldInput" />
-  </div>
-  <div
-    class="exlUpldBtn"
-    *ngIf="page === 'priceChange'"
-    (click)="onClickUploadTemplate()"
-  ></div>
+    [onClickDownload]="onClickDownloadTemplate"
+    [onClickUpload]="onClickDownloadTemplate"
+  ></MyButtons>
   <input class="input" placeholder="Search a product" />
   <div class="categoryTitle">SHOWING:</div>
   <select class="input">

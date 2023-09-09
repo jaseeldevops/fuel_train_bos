@@ -24,7 +24,7 @@ export class HomeComponent implements OnInit {
   drowerPath = 'inventory';
   // This is varible is indicate which sidebar option is acive.(Note:- if you change to ops then default ops will shoe in home)
   // drowerIndex = 0;
-  drowerIndex = 7;
+  drowerIndex = 10;
   subPath: any = '';
 
   ngOnInit(): void {

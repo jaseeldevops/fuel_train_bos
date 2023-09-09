@@ -1,54 +1,25 @@
 .formBody {
-  padding: 2vw;
+  padding: 1vw;
   height: calc(100vh - 15.2vw);
   overflow: auto;
 }
 .row {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
-  font-size: 1vw;
-  padding: 0.5vw 0;
-}
-.title {
-  width: 10vw;
-  margin: 0.5vw 2vw;
-  text-align: right;
-}
-/* //////////////////////////////////////////////// */
-.footer {
-  display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 1.2vw;
-  border-top: 0.1vw solid #7070705a;
+  font-size: 1vw;
+  padding: 0.5vw 2vw;
 }
-.errorMsg {
-  color: #ce4d24;
-  background-color: #f9d7d4;
-  border-radius: 0.4vw;
-  padding: 0.4vw 1vw;
-  border: 0.05vw solid #ce4d24;
-  font-size: 0.9vw;
+.row:nth-child(odd) {
+  background-color: #f3f6f9;
 }
-.btns {
-  display: flex;
-  align-items: center;
-  color: white;
-  font-size: 0.9vw;
-}
-.cancelBtn {
-  margin: 0 0.5vw;
-  border-radius: 0.3vw;
-  padding: 0.5vw 2.5vw;
-  background-color: #c9e1ff;
-  color: var(--myColor);
-  cursor: pointer;
-}
-.saveBtn {
+.updateBtn {
   margin: 0 0.5vw;
   background-color: var(--myColor);
   border-radius: 0.3vw;
   padding: 0.5vw 2.5vw;
   cursor: pointer;
+  color: white;
+  font-size: 1vw;
+  margin-left: 5vw;
 }

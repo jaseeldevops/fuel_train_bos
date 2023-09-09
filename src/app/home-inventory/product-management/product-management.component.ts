@@ -48,10 +48,5 @@ export class ProductManagementComponent implements OnInit {
   getImageLocalUrl = (img: any) => `url(${URL.createObjectURL(img)})`;
 
   onClickDownloadTemplate = () => {};
-  onClickUploadTemplate = () => {};
-
-  onClickUploadInput = () => {
-    const upInput = document.getElementById('exlUpldInput');
-    upInput?.click();
-  };
+  onClickUploadTemplate = (e: any) => {};
 }

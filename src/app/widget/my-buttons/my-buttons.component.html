@@ -2,10 +2,59 @@
   <div (click)="onClickSwitch()" class="switchOn" *ngIf="isSwitchOn"></div>
   <div (click)="onClickSwitch()" class="switchOff" *ngIf="!isSwitchOn"></div>
 </div>
+<!-- /////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////// -->
 <div *ngIf="type === 'listButton'" class="listButton">
   <button class="blueButton" (click)="onSelectItem(label)">{{ label }}</button>
   <button class="arrowDown" (click)="selected = !selected"></button>
   <div class="dropList" *ngIf="selected">
     <div *ngFor="let it of dropList" (click)="onSelectItem(it)">{{ it }}</div>
+  </div>
+</div>
+<!-- /////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////// -->
+<div *ngIf="type === 'exlDownUp'" class="exlDownUp">
+  <div class="exlDwnld">
+    Download Excel Template
+    <div style="font-size: 0.7vw; color: #949494">
+      Download Excel file for bulk update data entry
+    </div>
+  </div>
+  <div class="exlDwnldBtn" (click)="onClickDownload()"></div>
+  <div class="exlUpld" (click)="onClickUploadInput()">
+    {{
+      uploadedFile?.name || "Drop your file here or browse file from directory"
+    }}
+    <div style="color: #113d77">Browse</div>
+    <input
+      type="file"
+      id="exlUpldInput"
+      [value]="'foo'"
+      (change)="onSelectFile($event)"
+    />
+  </div>
+  <div class="exlUpldBtn" (click)="onUploadFile()"></div>
+  <div class="popup1" *ngIf="isExlConfirmPopup">
+    <div class="body">
+      <div class="header">
+        Upload Confirm
+        <div class="closeBtn" (click)="isExlConfirmPopup = false"></div>
+      </div>
+      <div class="desc">Do you want to add product from uploaded file?</div>
+      <div class="desc" style="color: #d83c0b">this action cannot undo!</div>
+      <div class="footer">
+        <div class="errorMsg">Errro on page</div>
+        <div class="btns">
+          <div class="cancelBtn" (click)="isExlConfirmPopup = false">
+            CANCEL
+          </div>
+          <div class="saveBtn" (click)="onClickConfirmFile()">CONFIRM</div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
