@@ -19,6 +19,15 @@ export class PriceManagementComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  exlTemlateLoading = false;
+  exlTemlateProccesing = false;
   onClickDownloadTemplate = () => {};
-  onClickUploadTemplate = (e: any) => {};
+  onClickUploadTemplate = (e: any) => {
+    this.exlTemlateLoading = true;
+    setTimeout(() => (this.exlTemlateLoading = false), 2000);
+  };
+  onClickConfirmTemplate = () => {
+    this.exlTemlateProccesing = true;
+    setTimeout(() => (this.exlTemlateProccesing = false), 2000);
+  };
 }

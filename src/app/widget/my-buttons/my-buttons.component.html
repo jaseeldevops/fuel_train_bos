@@ -33,15 +33,15 @@
     <input
       type="file"
       id="exlUpldInput"
-      [value]="'foo'"
+      [value]="null"
       (change)="onSelectFile($event)"
     />
   </div>
   <div class="exlUpldBtn" (click)="onUploadFile()"></div>
-  <div class="popup1" *ngIf="isExlConfirmPopup">
+  <div class="popup1" *ngIf="isExlConfirmPopup && !loading">
     <div class="body">
       <div class="header">
-        Upload Confirm
+        Upload Complated
         <div class="closeBtn" (click)="isExlConfirmPopup = false"></div>
       </div>
       <div class="desc">Do you want to add product from uploaded file?</div>
@@ -55,6 +55,21 @@
           <div class="saveBtn" (click)="onClickConfirmFile()">CONFIRM</div>
         </div>
       </div>
+    </div>
+  </div>
+  <div class="lodingPop" *ngIf="loading">
+    <div class="lodingBody">
+      <span style="color: #113d77"> Uploading</span>
+      <span>Exl file is uploading</span>
+    </div>
+  </div>
+  <div class="lodingPop" *ngIf="proccesing">
+    <div
+      class="lodingBody"
+      style="background-image: url(../../../assets/processing.gif)"
+    >
+      <span style="color: #113d77">Processing</span>
+      <span>Prosess is adding from the file</span>
     </div>
   </div>
 </div>

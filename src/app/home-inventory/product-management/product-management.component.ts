@@ -47,6 +47,20 @@ export class ProductManagementComponent implements OnInit {
 
   getImageLocalUrl = (img: any) => `url(${URL.createObjectURL(img)})`;
 
+  exlTemlateLoading = false;
+  exlTemlateProccesing = false;
   onClickDownloadTemplate = () => {};
-  onClickUploadTemplate = (e: any) => {};
+  onClickUploadTemplate = (e: any) => {
+    this.exlTemlateLoading = true;
+    console.log(this.exlTemlateLoading);
+    setTimeout(() => {
+      this.exlTemlateLoading = false;
+    }, 2000);
+  };
+  onClickConfirmTemplate = () => {
+    this.exlTemlateProccesing = true;
+    setTimeout(() => {
+      this.exlTemlateProccesing = false;
+    }, 2000);
+  };
 }

@@ -14,7 +14,11 @@
     type="exlDownUp"
     *ngIf="page === 'priceChange'"
     [onClickDownload]="onClickDownloadTemplate"
-    [onClickUpload]="onClickDownloadTemplate"
+    [onClickUpload]="onClickUploadTemplate"
+    [onClickConfirm]="onClickConfirmTemplate"
+    [loading]="exlTemlateLoading"
+    [proccesing]="exlTemlateProccesing"
+
   ></MyButtons>
   <input class="input" placeholder="Search a product" />
   <div class="categoryTitle">SHOWING:</div>

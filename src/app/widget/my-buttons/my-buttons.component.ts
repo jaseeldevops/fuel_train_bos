@@ -6,12 +6,15 @@ import { Component, Input, OnInit } from '@angular/core';
   styleUrls: ['./my-buttons.component.css'],
 })
 export class MyButtonsComponent implements OnInit {
-  @Input() onSelect: any;
-  @Input() type: any;
-  @Input() label: any;
-  @Input() dropList: any;
-  @Input() onClickDownload: any;
-  @Input() onClickUpload: any;
+  @Input() onSelect?: any;
+  @Input() type?: any;
+  @Input() label?: any;
+  @Input() dropList?: any;
+  @Input() onClickDownload?: any;
+  @Input() onClickUpload?: any;
+  @Input() onClickConfirm?: any;
+  @Input() loading?: any;
+  @Input() proccesing?: any;
 
   isSwitchOn: boolean = false;
   selected: boolean = false;
@@ -33,16 +36,20 @@ export class MyButtonsComponent implements OnInit {
   ngOnInit(): void {}
 
   onClickUploadInput = () => {
-    const upInput = document.getElementById('exlUpldInput');
+    const upInput = document?.getElementById('exlUpldInput');
     upInput?.click();
   };
-  onSelectFile = (event: any) => {    
-    this.uploadedFile = event.target.files[0]
+  onSelectFile = (event: any) => {
+    this.uploadedFile = event.target.files[0];
   };
   onUploadFile = () => {
-    this.isExlConfirmPopup = true;
+    if (this.uploadedFile) {
+      this.onClickUpload(this.uploadedFile);
+      this.isExlConfirmPopup = true;
+    }
   };
   onClickConfirmFile = () => {
-    this.onClickUpload(this.uploadedFile);
+    this.isExlConfirmPopup = false;
+    this.onClickConfirm();
   };
 }

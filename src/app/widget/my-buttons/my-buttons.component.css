@@ -77,6 +77,7 @@
   padding: 0.2vw 0.6vw;
   cursor: pointer;
   max-width: 14vw;
+  width: 14vw;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -101,77 +102,34 @@
 .exlDownUp .exlUpldBtn {
   background-image: url(../../../assets/ic_upload.svg);
 }
-/* ///////////////////////////////////////////////////////////////////////// */
-/* ///////////////////////////////////////////////////////////////////////// */
-/* ///////////////////////////////////////////////////////////////////////// */
-/* ///////////////////////////////////////////////////////////////////////// */
-/* ///////////////////////////////////////////////////////////////////////// */
-/* <--STRT--> ADD EXPENSE FORM */
-.formLayout {
-  height: calc(100vh - 6.2vw);
-  overflow: scroll;
-}
-.formHeaderBox {
-  margin: 1vw;
-  padding: 1vw;
-  border-radius: 0.3vw;
-  border: 0.1vw solid #ced0d3;
-  background-color: white;
-  font-weight: 500;
-  font-size: 0.85vw;
-  line-height: 1.4vw;
-}
-.formTableHeader {
+.exlDownUp .lodingPop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   display: flex;
-  justify-content: space-between;
-  font-size: 0.9vw;
-  color: white;
-  margin: 1vw;
-  margin-bottom: 0;
-  background-color: #636771;
-  border-top-left-radius: 0.5vw;
-  border-top-right-radius: 0.5vw;
-}
-.formTableHeader .value {
-  border-right: 0.05vw solid white;
-  padding: 0.6vw;
-  box-sizing: border-box;
-}
-.formTableBody {
-  margin: 1vw;
-  margin-top: 0;
-}
-.formTableRow {
-  display: flex;
-  justify-content: space-between;
   align-items: center;
-  font-size: 0.9vw;
-  border: 0.05vw solid #cfcfcf;
+  justify-content: center;
+  background-color: #00000076;
 }
-.formTableRow .value {
-  border-right: 0.05vw solid white;
-  padding: 0.2vw;
-  box-sizing: border-box;
-}
-.formTableRow:nth-child(even) {
+.exlDownUp .lodingBody {
+  border-radius: 0.8vw;
   background-color: white;
-}
-.formFooterBar {
-  margin: 1vw;
+  width: 24vw;
+  height: 20vw;
+  font-size: 1vw;
+  font-weight: 500;
+  box-sizing: border-box;
+  padding: 3vw;
   display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: flex-end;
-}
-.formDelete {
-  width: 2vw;
-  height: 2vw;
-  background-position: center;
-  background-size: 1.2vw;
+  background-image: url(../../../assets/Uploading.gif);
+  background-position: center 3vw;
   background-repeat: no-repeat;
-  background-image: url(../../../assets/ic_bin12.svg);
-  cursor: pointer;
 }
-/* <--END--> ADD EXPENSE FORM */
-
 /* ///////////////////////////////////////////////////////////////////////// */
 /* ///////////////////////////////////////////////////////////////////////// */
 /* ///////////////////////////////////////////////////////////////////////// */
