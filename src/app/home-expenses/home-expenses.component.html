@@ -15,6 +15,19 @@
       </div>
     </div>
     <div class="navButtonBar">
+      <input
+        placeholder="Search an invoice"
+        class="defaultInput"
+        style="margin-right: 1vw"
+      />Showing: &nbsp;
+      <select class="defaultInput">
+        <option>All Entries</option>
+      </select>
+      <input style="margin-left: 1vw" type="date" class="defaultInput" />&nbsp;
+      to &nbsp; <input type="date" class="defaultInput" />
+      <select class="defaultInput" style="margin: 0 1vw">
+        <option>Today</option>
+      </select>
       <div class="downloadButton"></div>
       <div class="blueButton" (click)="addExpense = {}">+ New Expense</div>
     </div>
@@ -111,11 +124,27 @@
     <div class="value" style="width: 10%; text-align: right">Total</div>
   </div>
   <div class="formTableBody">
-    <div class="formTableRow" *ngFor="let it of [{}, {}]">
-      <div class="value" style="width: 3%"></div>
+    <div
+      class="formTableRow"
+      *ngFor="let it of addExpenseForm?.items; let k = index"
+    >
+      <div
+        class="value formDelete"
+        style="width: 3%"
+        (click)="onClickExpenseDltItem(k)"
+      ></div>
       <div class="value" style="width: 30%">
-        <select class="defaultSelect" style="width: 100%">
-          <option>SELECT PRODUCT</option>
+        <select
+          class="defaultInput"
+          style="width: 100%"
+          [ngModel]="null"
+          (ngModelChange)="onChangeExpenseItem(it)"
+        >
+          <option value="null" hidden>SELECT PRODUCT</option>
+          <option>Product 1</option>
+          <option>Product 12</option>
+          <option>Product 13</option>
+          <option>Product 14</option>
         </select>
       </div>
       <div class="value" style="width: 10%">
@@ -133,18 +162,18 @@
         />
       </div>
       <div class="value" style="width: 10%">
-        <select class="defaultSelect" style="width: 100%">
+        <select class="defaultInput" style="width: 100%">
           <option>No Tax</option>
         </select>
       </div>
       <div class="value" style="width: 10%">
-        <select class="defaultSelect" style="width: 100%">
+        <select class="defaultInput" style="width: 100%">
           <option>Inclusive</option>
           <option>Exclusive</option>
         </select>
       </div>
       <div class="value" style="width: 10%; padding: 0.5vw">
-        <select class="defaultSelect" style="width: 100%">
+        <select class="defaultInput" style="width: 100%">
           <option>No Tax</option>
         </select>
       </div>
@@ -193,7 +222,12 @@
     </div>
   </div>
   <div class="formFooterBar">
-    <div class="blueButton">SAVE & PRINT</div>
+    <MyButtons
+      [type]="'listButton'"
+      [label]="'SAVE & PRINT'"
+      [dropList]="['Save & Add New', 'Save']"
+      [onSelect]="onClickSaveExpense"
+    ></MyButtons>
     <div class="blueButton">CLOSE</div>
   </div>
 </div>

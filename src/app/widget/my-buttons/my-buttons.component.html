@@ -6,9 +6,31 @@
 <!-- /////////////////////////////////////////////////////////////////////////////// -->
 <!-- /////////////////////////////////////////////////////////////////////////////// -->
 <!-- /////////////////////////////////////////////////////////////////////////////// -->
+<div (click)="onClickSwitch()" *ngIf="type === 'textSwitch'" class="textSwitch">
+  <div [ngClass]="!isSwitchOn ? 'textSwitchOff' : 'textSwitch_'">
+    {{ offText }}
+  </div>
+  <div [ngClass]="isSwitchOn ? 'textSwitchOn' : 'textSwitch_'">
+    {{ onText }}
+  </div>
+</div>
+<!-- /////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////////////////////////////////////////////////// -->
 <div *ngIf="type === 'listButton'" class="listButton">
-  <button class="blueButton" (click)="onSelectItem(label)">{{ label }}</button>
-  <button class="arrowDown" (click)="selected = !selected"></button>
+  <button
+    class="blueButton"
+    (click)="onSelectItem(label)"
+    [ngStyle]="{ backgroundColor: bg }"
+  >
+    {{ label }}
+  </button>
+  <button
+    class="arrowDown"
+    (click)="selected = !selected"
+    [ngStyle]="{ backgroundColor: bg }"
+  ></button>
   <div class="dropList" *ngIf="selected">
     <div *ngFor="let it of dropList" (click)="onSelectItem(it)">{{ it }}</div>
   </div>

@@ -14,4 +14,24 @@ export class HomeExpensesComponent implements OnInit {
   addExpense: any = null;
 
   ngOnInit(): void {}
+
+  addExpenseForm: any = {
+    items: [{}],
+  };
+
+  onChangeExpenseItem = (e: any) => {
+    this.addExpenseForm.items.push({});
+  };
+
+  onClickExpenseDltItem = (k: any) => {
+    if (this.addExpenseForm.items?.length > 1)
+      this.addExpenseForm.items.splice(k, 1);
+  };
+
+  onClickSaveExpense = (type: any) => {
+    if (type === 'SAVE & PRINT') {
+    } else if (type === 'Save & Add New') {
+    } else if (type === 'Save') {
+    }
+  };
 }

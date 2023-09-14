@@ -179,14 +179,14 @@
   <div class="dummyBody" (click)="closePopUp()"></div>
   <div
     [ngClass]="popup?.path === 'addCustomer' ? 'body_' : 'body'"
-    style="min-width: 32%"
+    style="min-width: 50%"
   >
     <div class="header1">
       Add Customer
       <div class="closeBtn" (click)="closePopUp()"></div>
     </div>
     <div class="listBody">
-      <div style="background: #eeeeee; padding: 0.3vw 1vw">
+      <div style="background: #d9e8ff; padding: 0.3vw 1vw">
         BASIC INFORMATION
       </div>
       <div style="padding: 1vw 1.5vw">
@@ -206,7 +206,7 @@
           placeholder="Enter Customer Name"
         />
       </div>
-      <div style="background: #eeeeee; padding: 0.3vw 1vw">
+      <div style="background: #d9e8ff; padding: 0.3vw 1vw">
         OTHER INFORMATION
       </div>
       <div style="padding: 1vw 1.5vw">
@@ -230,6 +230,79 @@
           style="width: 100%; margin-bottom: 1vw"
           placeholder="Enter address here"
         ></textarea>
+        <div style="display: flex; justify-content: space-between">
+          <div style="width: 48%" class="label1">PIN Code</div>
+          <div style="width: 48%" class="label1">State</div>
+        </div>
+        <div style="display: flex; justify-content: space-between">
+          <input
+            style="width: 48%; margin-bottom: 1vw"
+            placeholder="PIN Code"
+          />
+          <select style="width: 48%; margin-bottom: 1vw">
+            <option>Select State</option>
+          </select>
+        </div>
+      </div>
+      <div
+        style="
+          background: #d9e8ff;
+          padding: 0.3vw 1vw;
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+        "
+      >
+        LOCAL ACCOUNT
+        <div style="display: flex; align-items: center">
+          Enable&nbsp;
+          <MyButtons type="switch" [onSelect]=""> </MyButtons>
+        </div>
+      </div>
+      <div style="padding: 1vw 1.5vw">
+        <div style="display: flex; justify-content: space-between">
+          <div style="width: 48%" class="label1">Joining Date</div>
+          <div style="width: 48%" class="label1">Discount</div>
+        </div>
+        <div style="display: flex; justify-content: space-between">
+          <input style="width: 48%; margin-bottom: 1vw" type="date" />
+          <input
+            style="width: 48%; margin-bottom: 1vw"
+            placeholder="0.00"
+            type="number"
+          />
+        </div>
+        <div class="label1">Discount</div>
+        <div style="display: flex; align-items: center; margin-bottom: 1vw">
+          <input style="width: 25%" type="date" />
+          <div style="display: flex; align-items: center; margin: 0 1.5vw">
+            <span style="font-size: 0.9vw; padding-right: 0.5vw">Enable</span>
+            <MyButtons type="switch" [onSelect]=""> </MyButtons>
+          </div>
+          <MyButtons
+            type="textSwitch"
+            [onSelect]=""
+            onText="To Get"
+            offText="To Give"
+          >
+          </MyButtons>
+        </div>
+        <div style="display: flex; justify-content: space-between">
+          <div style="width: 48%" class="label1">Credit Limit</div>
+          <div style="width: 48%" class="label1">Credit Duration</div>
+        </div>
+        <div style="display: flex; justify-content: space-between">
+          <input
+            style="width: 48%; margin-bottom: 1vw"
+            placeholder="Enter crdit limit amount"
+            type="number"
+          />
+          <input
+            style="width: 48%; margin-bottom: 1vw"
+            placeholder="0.00"
+            type="number"
+          />
+        </div>
       </div>
     </div>
     <div class="footer">
@@ -298,7 +371,7 @@
       <div class="closeBtn" (click)="closePopUp()"></div>
     </div>
     <div class="listBody">
-      <div style="background: #eeeeee; padding: 0.3vw 1vw">
+      <div style="background: #d9e8ff; padding: 0.3vw 1vw">
         BASIC INFORMATION
       </div>
       <div style="padding: 1vw 1.5vw">
@@ -313,7 +386,7 @@
           placeholder="Enter Supplier Name"
         />
       </div>
-      <div style="background: #eeeeee; padding: 0.3vw 1vw">
+      <div style="background: #d9e8ff; padding: 0.3vw 1vw">
         OTHER INFORMATION
       </div>
       <div style="padding: 1vw 1.5vw">
@@ -350,6 +423,42 @@
             <option hidden>Select status</option>
             <option>Online</option>
           </select>
+        </div>
+      </div>
+      <div style="background: #d9e8ff; padding: 0.3vw 1vw">
+        FINANCIAL INFORMATION
+      </div>
+      <div style="padding: 1vw 1.5vw">
+        <div class="label1">Opening Balance</div>
+        <div style="display: flex; justify-content: space-between">
+          <input
+            style="width: 48%; margin-bottom: 1vw"
+            placeholder="0.00"
+            type="number"
+          />
+          <MyButtons
+            type="textSwitch"
+            [onSelect]=""
+            onText="To Receive"
+            offText="To Pay"
+          >
+          </MyButtons>
+        </div>
+        <div style="display: flex; justify-content: space-between">
+          <div style="width: 48%" class="label1">Credit Limit</div>
+          <div style="width: 48%" class="label1">Credit Duration</div>
+        </div>
+        <div style="display: flex; justify-content: space-between">
+          <input
+            style="width: 48%; margin-bottom: 1vw"
+            placeholder="Enter crdit limit amount"
+            type="number"
+          />
+          <input
+            style="width: 48%; margin-bottom: 1vw"
+            placeholder="0.00"
+            type="number"
+          />
         </div>
       </div>
     </div>

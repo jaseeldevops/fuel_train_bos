@@ -9,16 +9,43 @@ import { allDummyCashAndBank, allDummyCheckList } from './dummy_data';
 export class HomeCashAndBankComponent implements OnInit {
   constructor() {}
 
+  page = 'cashAndBank'; // chequeList, bankHistory
+  popup = ''; // addAccount, addFundTransfer, selectedCheque
+  isEdit = false;
+
   allBanks: any = allDummyCashAndBank;
-  addAccount: any = null;
-  addFundTransfer: any = null;
-  chequeList: any = null;
+  addAccount: any = {};
+  addFundTransfer: any = {};
+  chequeList: any = {};
   chequeListPage: any = 0;
   selectedCheque: any = null;
 
+  selectedBank: any = null;
+
+  onClickAnyBank = (it: any) => {
+    this.page = 'bankHistory';
+    this.selectedBank = it;
+  };
+
   ngOnInit(): void {}
 
+  onClickAddFundTransfer = () => {
+    this.popup = 'addFundTransfer';
+  };
+  onClickAddAccount = () => {
+    this.isEdit = false;
+    this.popup = 'addAccount';
+  };
+  onClickEditAccount = (item: any) => {
+    this.isEdit = true;
+    this.popup = 'addAccount';
+  };
+  onClickDeleteAccount = (item: any) => {
+    alert('Account Deleted');
+  };
+
   onclickAllcheck = () => {
+    this.page = 'chequeList';
     this.chequeListPage = 0;
     this.chequeList = {};
     this.chequeList = allDummyCheckList;

@@ -15,6 +15,10 @@ export class MyButtonsComponent implements OnInit {
   @Input() onClickConfirm?: any;
   @Input() loading?: any;
   @Input() proccesing?: any;
+  @Input() onText?: any;
+  @Input() offText?: any;
+  @Input() bg?: any;
+
 
   isSwitchOn: boolean = false;
   selected: boolean = false;

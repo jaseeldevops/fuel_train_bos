@@ -59,6 +59,7 @@
   background-color: white;
   border: 0.1vw solid #7070705d;
   border-radius: 0.5vw;
+  cursor: pointer;
 }
 .card:hover {
   box-shadow: 0 0 1vw #57a0ffbf;
@@ -234,6 +235,22 @@
 /* ////////////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////////// */
 /* ////////////////////////////////////////////////////////////// */
+.navBarLayout {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 0.1vw solid #a5a5a542;
+  box-sizing: border-box;
+  padding: 0 0.8vw;
+  height: 3.4vw;
+  font-size: 1.3vw;
+}
+.navButtonBar {
+  display: flex;
+  align-items: center;
+  font-size: 1vw;
+}
+/* /////////////////// */
 .tableNavBar {
   height: 3.2vw;
   border-bottom: 0.1vw solid #7070705d;

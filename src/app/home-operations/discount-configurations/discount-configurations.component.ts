@@ -17,5 +17,17 @@ export class DiscountConfigurationsComponent implements OnInit {
 
   allDiscountConfiguration: any = allDiscountConfigurationDummy;
 
+  onClickNewButton = (v: any) => {
+    if (v === 'New Discount') {
+      this.popUp = 'addDiscount';
+    }
+    if (v === 'Forcount') {
+    }
+    if (v === 'C-Store') {
+    }
+    if (v === 'Unifiled') {
+    }
+  };
+
   ngOnInit(): void {}
 }

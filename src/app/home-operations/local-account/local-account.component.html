@@ -12,9 +12,9 @@
     <div style="display: flex">
       <input placeholder="Search an invoice" class="defaultInput" />
       <div class="downloadButton"></div>
-      <div class="grrenButton" (click)="popUp = 'addCustomer'">
+      <!-- <div class="grrenButton" (click)="popUp = 'addCustomer'">
         Add Customer
-      </div>
+      </div> -->
     </div>
   </div>
 </div>
@@ -29,22 +29,32 @@
       <div style="width: 8%">AC NO</div>
       <div style="width: 10%">NAME</div>
       <div style="width: 10%">CONTACT NUMBER</div>
-      <div style="width: 10%">DISCOUNT%</div>
       <div style="width: 20%">ADDRESS</div>
+      <div style="width: 10%">DISCOUNT%</div>
       <div style="width: 10%">CREDIT LIMIT</div>
+      <div style="width: 8%">BALANCE</div>
       <div style="width: 8%">STATUS</div>
-      <div style="width: 8%">ACTION</div>
     </div>
     <div class="body">
       <div class="row" *ngFor="let it of allLocalAccount?.content">
         <div style="width: 8%">{{ it?.acNo }}</div>
-        <div style="width: 10%">{{ it?.name }}</div>
+        <div style="width: 10%; color: var(--myColor)">{{ it?.name }}</div>
         <div style="width: 10%">{{ it?.phone }}</div>
-        <div style="width: 10%">{{ it?.discount }}</div>
         <div style="width: 20%">{{ it?.address }}</div>
+        <div style="width: 10%">{{ it?.discount }}</div>
         <div style="width: 10%">{{ it?.creditLimit }}</div>
-        <div style="width: 8%">{{ it?.status }}</div>
-        <div style="width: 8%">Edit</div>
+        <div
+          style="width: 8%"
+          [ngStyle]="{ color: it?.balance < 0 ? 'red' : 'green' }"
+        >
+          {{ it?.balance }}
+        </div>
+        <div
+          style="width: 8%"
+          [ngStyle]="{ color: it?.status === 'Blocked' ? 'red' : 'green' }"
+        >
+          {{ it?.status }}
+        </div>
       </div>
     </div>
   </div>
@@ -55,7 +65,7 @@
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<div class="formBlankScreen1" *ngIf="popUp === 'addCustomer'"></div>
+<!-- <div class="formBlankScreen1" *ngIf="popUp === 'addCustomer'"></div>
 <div [ngClass]="popUp === 'addCustomer' ? 'drowerForm' : 'drowerForm_'">
   <div class="header">
     Add Customer
@@ -127,4 +137,4 @@
     <div class="cancelBtn" (click)="popUp = ''">CANCEL</div>
     <div class="saveBtn">ADD</div>
   </div>
-</div>
+</div> -->

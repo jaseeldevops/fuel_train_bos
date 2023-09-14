@@ -12,9 +12,13 @@
     <div style="display: flex">
       <input placeholder="Search an invoice" class="defaultInput" />
       <div class="downloadButton"></div>
-      <div class="grrenButton" (click)="popUp = 'addDiscount'">
-        Add Customer
-      </div>
+      <MyButtons
+        type="listButton"
+        label="New Discount"
+        [dropList]="['Forcount', 'C-Store', 'Unifiled']"
+        [onSelect]="onClickNewButton"
+        bg="green"
+      ></MyButtons>
     </div>
   </div>
 </div>
@@ -32,7 +36,7 @@
       <div style="width: 15%">START DATE</div>
       <div style="width: 15%">END DATE</div>
       <div style="width: 10%">STATUS</div>
-      <div style="width: 10%">ACTION</div>
+      <div style="width: 10%; text-align: center">ACTION</div>
     </div>
     <div class="body">
       <div class="row" *ngFor="let it of allDiscountConfiguration?.content">
@@ -42,7 +46,11 @@
         <div style="width: 15%">{{ it?.startDate }}</div>
         <div style="width: 15%">{{ it?.endDate }}</div>
         <div style="width: 10%">{{ it?.status }}</div>
-        <div style="width: 10%">Edit</div>
+        <!-- <div style="width: 10%">Edit</div> -->
+        <div style="width: 10%; display: flex; justify-content: center">
+          <div class="actionTextButton">Edit</div>
+          <div class="actionBin"></div>
+        </div>
       </div>
     </div>
   </div>
