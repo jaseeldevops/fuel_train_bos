@@ -43,7 +43,7 @@
 }
 .label1 {
   font-size: 1vw;
-  color: #00649e;
+  color: #31363f;
   padding-bottom: 0.3vw;
   padding-left: 0.3vw;
   white-space: nowrap;
@@ -80,7 +80,7 @@
   margin-right: 0;
 }
 select {
-  border: 0.08vw solid #949494af;
+  border: 0.08vw solid #9494946d;
   border-radius: 0.3vw;
   padding: 0.3vw 1vw;
   font-size: 1vw;
@@ -88,7 +88,7 @@ select {
   font-size: 1vw;
 }
 input {
-  border: 0.08vw solid #949494af;
+  border: 0.08vw solid #9494946d;
   border-radius: 0.3vw;
   padding: 0.38vw 1vw;
   font-size: 1vw;
@@ -96,7 +96,7 @@ input {
   font-size: 1vw;
 }
 textarea {
-  border: 0.08vw solid #949494af;
+  border: 0.08vw solid #9494946d;
   border-radius: 0.3vw;
   padding: 0.38vw 1vw;
   font-size: 1vw;

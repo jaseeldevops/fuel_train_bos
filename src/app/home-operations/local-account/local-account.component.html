@@ -1,4 +1,4 @@
-<div class="header">
+<div class="bodyHeader" *ngIf="page === 'localAccount'">
   <div class="titile" (click)="onChangePage('')">
     Operations > Local Account
   </div>
@@ -18,12 +18,7 @@
     </div>
   </div>
 </div>
-<!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<div class="tableBody">
+<div class="tableBody" *ngIf="page === 'localAccount'">
   <div class="table">
     <div class="header">
       <div style="width: 8%">AC NO</div>
@@ -36,7 +31,11 @@
       <div style="width: 8%">STATUS</div>
     </div>
     <div class="body">
-      <div class="row" *ngFor="let it of allLocalAccount?.content">
+      <div
+        class="row"
+        *ngFor="let it of allLocalAccount?.content"
+        (click)="onClickAnyAccount(it)"
+      >
         <div style="width: 8%">{{ it?.acNo }}</div>
         <div style="width: 10%; color: var(--myColor)">{{ it?.name }}</div>
         <div style="width: 10%">{{ it?.phone }}</div>
@@ -59,6 +58,129 @@
     </div>
   </div>
   <app-table-paging [paging]="allLocalAccount?.paging"></app-table-paging>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div
+  class="pageTitle"
+  (click)="onChangePage('')"
+  *ngIf="page === 'selectedAccount'"
+>
+  <div class="arrowBack" (click)="page = 'localAccount'"></div>
+  {{ selectedAccount?.name }}
+</div>
+<div
+  style="background-color: #f9f9f9; padding-top: 1vw"
+  *ngIf="page === 'selectedAccount'"
+>
+  <div class="loaclAccountDetails">
+    <div class="addressArea">
+      <div class="name">{{ selectedAccount?.name }}</div>
+      <div class="accountNo">Account no: {{ selectedAccount?.name }}</div>
+      <div class="phone">{{ selectedAccount?.phone }}</div>
+      <div class="address">{{ selectedAccount?.address }}</div>
+    </div>
+    <div class="creditArea">
+      <div>Credit Limit</div>
+      <div style="font-size: 2vw; color: #249e00">
+        {{ selectedAccount?.creditLimit?.toLocaleString() }}
+      </div>
+    </div>
+    <div class="balanceArea">
+      <div>Balance</div>
+      <div style="font-size: 2vw; color: #00649e">
+        {{ selectedAccount?.balance?.toLocaleString() }}
+      </div>
+    </div>
+    <div class="blueButton">+ RECORD PAYMENT</div>
+  </div>
+  <div class="bodyHeader">
+    <div class="navRow">
+      <div class="navBar">
+        <div
+          [ngClass]="tab === 0 ? 'eachButton_' : 'eachButton'"
+          (click)="tab = 0"
+        >
+          Transaction
+          <div [ngClass]="tab === 0 ? 'buttonBottom_' : 'buttonBottom'"></div>
+        </div>
+        <div
+          [ngClass]="tab === 1 ? 'eachButton_' : 'eachButton'"
+          (click)="tab = 1"
+        >
+          Vehicle Details
+          <div [ngClass]="tab === 1 ? 'buttonBottom_' : 'buttonBottom'"></div>
+        </div>
+      </div>
+      <div style="display: flex">
+        <input placeholder="Search an invoice" class="defaultInput" />
+        <div class="downloadButton"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="tableBody" *ngIf="page === 'selectedAccount' && tab == 0">
+  <div class="table" style="height: calc(100vh - 26vw)">
+    <div class="header">
+      <div style="width: 8%">DATE</div>
+      <div style="width: 10%">REFERENCE</div>
+      <div style="width: 10%">NOTE</div>
+      <div style="width: 20%; text-align: right">AMOUNT</div>
+      <div style="width: 10%; text-align: right">PAYMENT</div>
+      <div style="width: 10%; text-align: right">BALANCE</div>
+    </div>
+    <div class="body">
+      <div class="row" *ngFor="let it of allTransation?.content">
+        <div style="width: 8%">{{ it?.date }}</div>
+        <div style="width: 10%; color: #054468">{{ it?.reference }}</div>
+        <div style="width: 10%; color: #054468">{{ it?.note }}</div>
+        <div style="width: 20%; text-align: right">{{ it?.amount }}</div>
+        <div style="width: 10%; text-align: right">{{ it?.payment }}</div>
+        <div style="width: 10%; text-align: right">{{ it?.balance }}</div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allTransation?.paging"></app-table-paging>
+</div>
+<div class="tableBody" *ngIf="page === 'selectedAccount' && tab == 1">
+  <div class="table" style="height: calc(100vh - 26vw)">
+    <div class="header">
+      <div style="width: 8%">SR NO</div>
+      <div style="width: 20%">AC NO</div>
+      <div style="width: 20%">NAME</div>
+      <div style="width: 10%">CONTACT NUMBER</div>
+      <div style="width: 12%; text-align: center">STATUS</div>
+    </div>
+    <div class="body">
+      <div
+        class="row"
+        *ngFor="let it of allVechileDetails?.content; let k = index"
+      >
+        <div style="width: 8%">{{ k + 1 }}</div>
+        <div style="width: 20%">{{ it?.vechileNumber }}</div>
+        <div style="width: 20%">
+          {{ it?.vechileType }}
+        </div>
+        <div style="width: 10%">{{ it?.RFIDTagNumber }}</div>
+        <div style="width: 12%">
+          <select
+            name=""
+            id=""
+            [value]="it?.status"
+            [ngStyle]="{ color: it?.status === 'Suspended' ? 'red' : 'green' }"
+            (change)="onChangeStatus($event, k)"
+          >
+            <option>Active</option>
+            <option>Suspended</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-table-paging [paging]="allVechileDetails?.paging"></app-table-paging>
 </div>
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->

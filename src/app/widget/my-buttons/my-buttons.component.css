@@ -70,7 +70,6 @@
   border-top-right-radius: 0.3vw;
   border-bottom-right-radius: 0.3vw;
   background-color: #00649e;
-  border: 0.1vw solid #00649e;
   margin-left: 0.1vw;
   background-image: url(../../../assets/ic_arrow_down.svg);
   background-position: center;
@@ -81,12 +80,14 @@
 .listButton .dropList {
   position: absolute;
   top: 110%;
+  width: 100%;
   background-color: white;
   right: 0;
   padding: 0.3vw;
   border-radius: 0.4vw;
   box-shadow: 0 0 1vw rgba(0, 0, 0, 0.3);
   font-size: 0.9vw;
+  box-sizing: border-box;
 }
 .listButton .dropList div {
   cursor: pointer;

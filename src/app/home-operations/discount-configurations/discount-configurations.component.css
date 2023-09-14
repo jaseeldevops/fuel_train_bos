@@ -23,11 +23,11 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 1.2vw;
+  font-size: 1.4vw;
   background-color: #e1e2e5;
-  padding: 0.7vw 1.2vw;
-  font-weight: bold;
-  color: var(--myColor);
+  padding: 0.8vw 1.2vw;
+  font-weight: 500;
+  color: #415365;
 }
 .drowerForm .closeBtn {
   width: 1.4vw;
@@ -46,7 +46,7 @@
   margin-bottom: 1.5vw;
 }
 .drowerForm .body {
-  height: calc(100vh - 6.4vw);
+  height: calc(100vh - 6.8vw);
   overflow: auto;
   background-color: #f5f6f9;
   box-sizing: border-box;
@@ -113,4 +113,22 @@ select {
   background-repeat: no-repeat;
   background-size: contain;
   cursor: pointer;
+}
+.plusIcon,
+.dltIcon {
+  border-radius: 0.3vw;
+  font-size: 1.5vw;
+  padding: 0.2vw 0.6vw;
+  border: 0.1vw solid #bcbcbc6d;
+  background-color: white;
+  margin-left: 0.2vw;
+  color: #215eb1;
+  cursor: pointer;
+}
+.dltIcon {
+  background-position: center;
+  background-size: 1vw;
+  background-image: url(../../../assets/ic_bin3.svg);
+  background-repeat: no-repeat;
+  color: transparent;
 }

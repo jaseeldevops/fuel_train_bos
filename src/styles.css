@@ -37,13 +37,22 @@ body {
 input {
   font-size: 0.88vw;
   font-family: FiraSansCondensed;
+  border: 0.1vw solid #21232776;
+  border-radius: 0.3vw;
 }
 textarea {
   font-size: 0.88vw;
   font-family: FiraSansCondensed;
+  border: 0.1vw solid #21232776;
+  border-radius: 0.3vw;
 }
+textarea::placeholder,
 input::placeholder {
   font-size: 0.88vw;
+  color: #21232776;
+  letter-spacing: 0.05vw;
+  font-family: FiraSansCondensed;
+  font-weight: 300;
 }
 select {
   font-size: 0.88vw;

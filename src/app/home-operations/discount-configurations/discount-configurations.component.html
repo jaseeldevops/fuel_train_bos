@@ -1,4 +1,4 @@
-<div class="header">
+<div class="bodyHeader">
   <div class="titile" (click)="onChangePage('')">
     Operations > Discount Configuration
   </div>
@@ -17,7 +17,7 @@
         label="New Discount"
         [dropList]="['Forcount', 'C-Store', 'Unifiled']"
         [onSelect]="onClickNewButton"
-        bg="green"
+        bg="#0ABB59"
       ></MyButtons>
     </div>
   </div>
@@ -60,11 +60,11 @@
 </div>
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ////////////////////////////////// Forcount Form //////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<!-- ///////////////////////////////////////////////////////////////////////////////// -->
-<div class="formBlankScreen1" *ngIf="popUp === 'addDiscount'"></div>
-<div [ngClass]="popUp === 'addDiscount' ? 'drowerForm' : 'drowerForm_'">
+<div class="formBlankScreen1" *ngIf="popUp === 'addForCount'"></div>
+<div [ngClass]="popUp === 'addForCount' ? 'drowerForm' : 'drowerForm_'">
   <div class="header">
     New Discount
     <div class="closeBtn" (click)="popUp = ''"></div>
@@ -114,14 +114,17 @@
     <div style="display: flex; align-items: center; padding: 0 2vw">
       <div class="formTitle" style="width: 5%">No</div>
       <div class="formTitle" style="width: 15%">Type</div>
-      <div class="formTitle" style="width: 15%">Note</div>
+      <div class="formTitle" style="width: 15%">Product</div>
       <div class="formTitle" style="width: 10%">Min Value</div>
       <div class="formTitle" style="width: 10%">Max Value</div>
       <div class="formTitle" style="width: 13%">Discount type</div>
       <div class="formTitle" style="width: 13%">Value</div>
       <div class="formTitle" style="width: 10%">Max Discount</div>
     </div>
-    <div style="display: flex; align-items: center; padding: 0 2vw">
+    <div
+      style="display: flex; align-items: center; padding: 0 2vw"
+      *ngFor="let it of newDiscountForm?.list; let k = index"
+    >
       <input type="number" placeholder="0" style="width: 5%" />
       <select style="margin: 0.3vw; width: 15%">
         <option hidden>Select type</option>
@@ -129,13 +132,222 @@
       <select style="margin: 0.3vw; width: 15%">
         <option hidden>Search SKU</option>
       </select>
-      <input type="number" placeholder="0" style="width: 10%" />
-      <input type="number" placeholder="0" style="width: 10%" />
+      <input type="number" placeholder="0 Ltr" style="width: 10%" />
+      <input type="number" placeholder="0 Ltr" style="width: 10%" />
       <select style="margin: 0.3vw; width: 13%">
         <option hidden>Discount type</option>
       </select>
-      <input type="number" placeholder="0.00" style="width: 13%" />
-      <input type="number" placeholder="0.00" style="width: 10%" />
+      <input type="number" placeholder="0.00 Rs" style="width: 13%" />
+      <input type="number" placeholder="0.00 Rs" style="width: 10%" />
+      <div
+        [ngClass]="k < newDiscountForm.list.length - 1 ? 'dltIcon' : 'plusIcon'"
+        (click)="onClickAddOrDltItem(k)"
+      >
+        +
+      </div>
+    </div>
+    <br />
+    <br />
+  </div>
+  <div class="footer">
+    <div class="cancelBtn" (click)="popUp = ''">CANCEL</div>
+    <div class="saveBtn">ADD</div>
+  </div>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////// C Store Form //////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="formBlankScreen1" *ngIf="popUp === 'addCStore'"></div>
+<div [ngClass]="popUp === 'addCStore' ? 'drowerForm' : 'drowerForm_'">
+  <div class="header">
+    New Discount
+    <div class="closeBtn" (click)="popUp = ''"></div>
+  </div>
+  <div class="body">
+    <div class="contentHeader">DISCOUNT INFORMATION</div>
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <div class="formTitle" style="width: 48%">Scheme name</div>
+      <div class="formTitle" style="width: 24%">Scheme type</div>
+      <div class="formTitle" style="width: 24%">Scheme status</div>
+    </div>
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <input style="width: 48%" />
+      <select style="width: 24%"></select>
+      <select style="width: 24%"></select>
+    </div>
+    <br />
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <div class="formTitle" style="width: 48%">Scheme duration</div>
+    </div>
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <input style="width: 18%" type="date" />
+      <input style="width: 18%" type="date" />
+    </div>
+    <br />
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <div class="formTitle" style="width: 48%">Select MOP</div>
+    </div>
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <div class="blueButton">Cash</div>
+      <div class="lightBlueButton">UPI</div>
+      <div class="lightBlueButton">CARD</div>
+      <div class="lightBlueButton">Fleetcard</div>
+      <div class="lightBlueButton">Local Account</div>
+    </div>
+    <br />
+    <!-- <div style="display: flex; align-items: center; padding: 0 2vw">
+      <div class="formTitle" style="width: 48%">Select Dispenser</div>
+    </div>
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <div class="lightBlueButton">Pump 01</div>
+      <div class="lightBlueButton">Pump 02</div>
+    </div> -->
+    <br />
+    <br />
+    <div class="contentHeader">PRODUCT INFORMATION</div>
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <div class="formTitle" style="width: 5%">No</div>
+      <div class="formTitle" style="width: 15%">Type</div>
+      <div class="formTitle" style="width: 15%">Product</div>
+      <div class="formTitle" style="width: 10%">Min Value</div>
+      <div class="formTitle" style="width: 10%">Max Value</div>
+      <div class="formTitle" style="width: 13%">Discount type</div>
+      <div class="formTitle" style="width: 15%">Product</div>
+      <div class="formTitle" style="width: 13%">Value</div>
+      <div class="formTitle" style="width: 10%">Max Discount</div>
+      <div class="formTitle" style="width: 3%"></div>
+    </div>
+    <div
+      style="display: flex; align-items: center; padding: 0 2vw"
+      *ngFor="let it of newDiscountForm?.list; let k = index"
+    >
+      <input type="number" placeholder="0" style="width: 5%" />
+      <select style="margin: 0.3vw; width: 15%">
+        <option hidden>Select type</option>
+      </select>
+      <select style="margin: 0.3vw; width: 15%">
+        <option hidden>Search SKU</option>
+      </select>
+      <input type="number" placeholder="0 Ltr" style="width: 10%" />
+      <input type="number" placeholder="0 Ltr" style="width: 10%" />
+      <select style="margin: 0.3vw; width: 13%">
+        <option hidden>Discount type</option>
+      </select>
+      <select style="margin: 0.3vw; width: 15%">
+        <option hidden>Search SKU</option>
+      </select>
+      <input type="number" placeholder="0.00 Rs" style="width: 13%" />
+      <input type="number" placeholder="0.00 Rs" style="width: 10%" />
+      <div
+        [ngClass]="k < newDiscountForm.list.length - 1 ? 'dltIcon' : 'plusIcon'"
+        (click)="onClickAddOrDltItem(k)"
+      >
+        +
+      </div>
+    </div>
+    <br />
+    <br />
+  </div>
+  <div class="footer">
+    <div class="cancelBtn" (click)="popUp = ''">CANCEL</div>
+    <div class="saveBtn">ADD</div>
+  </div>
+</div>
+
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- /////////////////////////////////// Unifilde Form /////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="formBlankScreen1" *ngIf="popUp === 'addUnfiled'"></div>
+<div [ngClass]="popUp === 'addUnfiled' ? 'drowerForm' : 'drowerForm_'">
+  <div class="header">
+    New Discount
+    <div class="closeBtn" (click)="popUp = ''"></div>
+  </div>
+  <div class="body">
+    <div class="contentHeader">DISCOUNT INFORMATION</div>
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <div class="formTitle" style="width: 48%">Scheme name</div>
+      <div class="formTitle" style="width: 24%">Scheme type</div>
+      <div class="formTitle" style="width: 24%">Scheme status</div>
+    </div>
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <input style="width: 48%" />
+      <select style="width: 24%"></select>
+      <select style="width: 24%"></select>
+    </div>
+    <br />
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <div class="formTitle" style="width: 48%">Scheme duration</div>
+    </div>
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <input style="width: 18%" type="date" />
+      <input style="width: 18%" type="date" />
+    </div>
+    <br />
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <div class="formTitle" style="width: 48%">Select MOP</div>
+    </div>
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <div class="blueButton">Cash</div>
+      <div class="lightBlueButton">UPI</div>
+      <div class="lightBlueButton">CARD</div>
+      <div class="lightBlueButton">Fleetcard</div>
+      <div class="lightBlueButton">Local Account</div>
+    </div>
+    <br />
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <div class="formTitle" style="width: 48%">Select Dispenser</div>
+    </div>
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <div class="lightBlueButton">Pump 01</div>
+      <div class="lightBlueButton">Pump 02</div>
+    </div>
+    <br />
+    <br />
+    <div class="contentHeader">PRODUCT INFORMATION</div>
+    <div style="display: flex; align-items: center; padding: 0 2vw">
+      <div class="formTitle" style="width: 5%">No</div>
+      <div class="formTitle" style="width: 15%">Type</div>
+      <div class="formTitle" style="width: 15%">Product</div>
+      <div class="formTitle" style="width: 10%">Min Value</div>
+      <div class="formTitle" style="width: 10%">Max Value</div>
+      <div class="formTitle" style="width: 13%">Discount type</div>
+      <div class="formTitle" style="width: 15%">Product</div>
+      <div class="formTitle" style="width: 13%">Value</div>
+      <div class="formTitle" style="width: 10%">Max Discount</div>
+      <div class="formTitle" style="width: 3%"></div>
+    </div>
+    <div
+      style="display: flex; align-items: center; padding: 0 2vw"
+      *ngFor="let it of newDiscountForm?.list; let k = index"
+    >
+      <input type="number" placeholder="0 Ltr" style="width: 5%" />
+      <select style="margin: 0.3vw; width: 15%">
+        <option hidden>Select type</option>
+      </select>
+      <select style="margin: 0.3vw; width: 15%">
+        <option hidden>Search SKU</option>
+      </select>
+      <input type="number" placeholder="0 Ltr" style="width: 10%" />
+      <input type="number" placeholder="0 Ltr" style="width: 10%" />
+      <select style="margin: 0.3vw; width: 13%">
+        <option hidden>Discount type</option>
+      </select>
+      <select style="margin: 0.3vw; width: 15%">
+        <option hidden>Search SKU</option>
+      </select>
+      <input type="number" placeholder="0.00 Rs" style="width: 13%" />
+      <input type="number" placeholder="0.00 Rs" style="width: 10%" />
+      <div
+        [ngClass]="k < newDiscountForm.list.length - 1 ? 'dltIcon' : 'plusIcon'"
+        (click)="onClickAddOrDltItem(k)"
+      >
+        +
+      </div>
     </div>
     <br />
     <br />

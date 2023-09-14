@@ -20,10 +20,10 @@ export class HomeComponent implements OnInit {
   // This is the flag for showing the popup when the profile is clicked.
   isProfilePopup = false;
   // This is varible is indicate the path of home based on the selected one
-  drowerPath = 'cashAndBank';
-  // drowerPath = 'inventory';
+  // drowerPath = 'cashAndBank';
+  drowerPath = 'dashboard';
   // This is varible is indicate which sidebar option is acive.(Note:- if you change to ops then default ops will shoe in home)
-  drowerIndex = 9;
+  drowerIndex = 0;
   // drowerIndex = 10;
   subPath: any = '';
 

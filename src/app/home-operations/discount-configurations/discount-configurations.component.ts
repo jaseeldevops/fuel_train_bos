@@ -19,13 +19,27 @@ export class DiscountConfigurationsComponent implements OnInit {
 
   onClickNewButton = (v: any) => {
     if (v === 'New Discount') {
-      this.popUp = 'addDiscount';
+      this.popUp = 'addForCount';
     }
     if (v === 'Forcount') {
+      this.popUp = 'addForCount';
     }
     if (v === 'C-Store') {
+      this.popUp = 'addCStore';
     }
     if (v === 'Unifiled') {
+      this.popUp = 'addUnfiled';
+    }
+  };
+
+  newDiscountForm: any = {
+    list: [{}],
+  };
+  onClickAddOrDltItem = (count: any) => {
+    if (count < this.newDiscountForm.list.length - 1) {
+      this.newDiscountForm.list.splice(count, 1);
+    } else {
+      this.newDiscountForm.list.push({});
     }
   };
 

@@ -8,7 +8,7 @@
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
   <!-- ///////////////////////////////////// EOD /////////////////////////////////////// -->
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-  <div *ngIf="page === 'eod'" class="header">
+  <div *ngIf="page === 'eod'" class="bodyHeader">
     <div class="titile" (click)="page = ''">Operations > EOD</div>
     <div class="navRow">
       <div class="navBar">
@@ -37,7 +37,7 @@
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
   <!-- ///////////////////////////////// TT Recipients ///////////////////////////////// -->
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-  <div *ngIf="page === 'ttRecipients'" class="header">
+  <div *ngIf="page === 'ttRecipients'" class="bodyHeader">
     <div class="titile" (click)="page = ''">Operations > TT Recipients</div>
     <div class="navRow">
       <div class="navBar">
@@ -79,9 +79,14 @@
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
   <!-- ///////////////////////////////// Payment Mode ////////////////////////////////// -->
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-  <div *ngIf="page === 'paymentMode'" class="header">
+  <div *ngIf="page === 'paymentMode'" class="bodyHeader">
     <div
-      style="display: flex; justify-content: space-between; align-items: center"
+      style="
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      "
     >
       <div class="titile" (click)="page = ''">Operations > Payment Mode</div>
       <div class="options">
@@ -93,7 +98,7 @@
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
   <!-- /////////////////////////////////// Controls //////////////////////////////////// -->
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-  <div *ngIf="page === 'controls'" class="header">
+  <div *ngIf="page === 'controls'" class="bodyHeader">
     <div class="titile" (click)="page = ''">Operations > Controls</div>
     <div class="navRow">
       <div class="navBar">
@@ -131,9 +136,14 @@
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
   <!-- ///////////////////////////////// Price Change ////////////////////////////////// -->
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-  <div *ngIf="page === 'priceChange'" class="header">
+  <div *ngIf="page === 'priceChange'" class="bodyHeader">
     <div
-      style="display: flex; justify-content: space-between; align-items: center"
+      style="
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      "
     >
       <div class="titile" (click)="page = ''">Operations > Price Change</div>
       <div class="grrenButton" (click)="popup = { path: 'chnageProdectPrice' }">
@@ -144,13 +154,13 @@
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
   <!-- ////////////////////////////////// Tank Density ///////////////////////////////// -->
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-  <div *ngIf="page === 'tankDensity'" class="header">
+  <div *ngIf="page === 'tankDensity'" class="bodyHeader">
     <div class="titile" (click)="page = ''">Operations > Tank Density</div>
   </div>
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
   <!-- //////////////////////////// Monolith Configuration ///////////////////////////// -->
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-  <div *ngIf="page === 'monolithConfiguration'" class="header">
+  <div *ngIf="page === 'monolithConfiguration'" class="bodyHeader">
     <div class="titile" (click)="page = ''">
       Operations > Monolith Configuration
     </div>
@@ -158,7 +168,7 @@
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
   <!-- //////////////////////////// Customer Configuration ///////////////////////////// -->
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-  <div *ngIf="page === 'customerConfiguration'" class="header">
+  <div *ngIf="page === 'customerConfiguration'" class="bodyHeader">
     <div class="titile" (click)="page = ''">
       Operations > Customer Configuration
     </div>
@@ -198,7 +208,7 @@
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
   <!-- //////////////////////////// SUPPLIER Configuration ///////////////////////////// -->
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-  <div *ngIf="page === 'supplierConfiguration'" class="header">
+  <div *ngIf="page === 'supplierConfiguration'" class="bodyHeader">
     <div class="titile" (click)="page = ''">
       Operations > Supplier Configuration
     </div>
@@ -221,7 +231,7 @@
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
   <!-- //////////////////////////// SUPPLIER Configuration ///////////////////////////// -->
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-  <div *ngIf="page === 'cStoreTransation'" class="header">
+  <div *ngIf="page === 'cStoreTransation'" class="bodyHeader">
     <div class="titile" (click)="page = ''">
       Operations > C-Store Transactions
     </div>
@@ -263,7 +273,7 @@
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
   <!-- //////////////////////////// ATTENDAND ASSIGN ///////////////////////////// -->
   <!-- ///////////////////////////////////////////////////////////////////////////////// -->
-  <div *ngIf="page === 'attendandAssign'" class="header">
+  <div *ngIf="page === 'attendandAssign'" class="bodyHeader">
     <div class="titile" (click)="page = ''">Operations > Attendand Assign</div>
   </div>
   <!-- /////////////////////////////////////////////////////////////////////////////////// -->

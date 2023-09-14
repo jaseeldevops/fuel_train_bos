@@ -38,6 +38,25 @@
   background-size: 1.2vw;
   background-repeat: no-repeat;
 }
+
+.pageTitle {
+  background-color: white;
+  border-bottom: 0.1vw solid #7070705d;
+  padding: 0.6vw 1vw;
+  font-size: 1.4vw;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+.arrowBack {
+  width: 1.2vw;
+  height: 1.2vw;
+  background-size: contain;
+  background-image: url(../../../assets/ic_arrow1.svg);
+  background-position: center;
+  cursor: pointer;
+  margin-right: 0.6vw;
+}
 /* //////////////////////////////////////////////// */
 .drowerForm .contentHeader {
   font-size: 1vw;
@@ -92,4 +111,57 @@ select {
   cursor: pointer;
   font-weight: 500;
   color: white;
+}
+/* ///////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////// */
+/* ///////////////////////////////////////////////////////////////////////// */
+.loaclAccountDetails {
+  margin: 1vw;
+  margin-top: 0;
+  padding: 1vw 2vw;
+  box-sizing: border-box;
+  border-radius: 0.6vw;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  background-color: white;
+}
+.loaclAccountDetails .addressArea {
+  width: 20%;
+}
+.loaclAccountDetails .name {
+  font-size: 1.4vw;
+  color: #054468;
+  padding-bottom: 0.3vw;
+  font-weight: 500;
+}
+.loaclAccountDetails .accountNo {
+  font-size: 1.1vw;
+  color: #333333;
+  padding-bottom: 0.3vw;
+}
+.loaclAccountDetails .phone {
+  font-size: 0.8vw;
+  color: #333333;
+  padding-bottom: 0.3vw;
+}
+.loaclAccountDetails .address {
+  font-size: 0.75vw;
+  color: #333333;
+}
+.loaclAccountDetails .creditArea,
+.loaclAccountDetails .balanceArea {
+  margin-top: 1.5vw;
+  padding-left: 5vw;
+  background-image: url(../../../assets/localAcc/credit.svg);
+  background-position: left;
+  background-size: 4vw;
+  background-repeat: no-repeat;
+  font-size: 0.88vw;
+  font-weight: 400;
+  color: #3f4147;
+}
+.loaclAccountDetails .balanceArea {
+  background-image: url(../../../assets/localAcc/balance.svg);
 }

@@ -7,23 +7,30 @@
 /* ////////////////////////////////////////// HEADER /////////////////////////////////////// */
 /* ///////////////////////////////////////////////////////////////////////////////////////// */
 /* ///////////////////////////////////////////////////////////////////////////////////////// */
-.header {
+.bodyHeader {
+  width: 100%;
+  box-sizing: border-box;
   border-bottom: 0.03vw solid #a0b6d2;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-.header .titile {
+.bodyHeader .titile {
   padding: 0.8vw 1.2vw;
   font-weight: 500;
   font-size: 1.5vw;
   color: #415365;
   cursor: pointer;
 }
-.header .navRow {
+.bodyHeader .navRow {
+  width: 100%;
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding: 0 1vw;
 }
-.header .navBar {
+.bodyHeader .navBar {
   display: flex;
   color: #888888;
   font-size: 1vw;
@@ -31,7 +38,7 @@
   margin-left: 0.6vw;
   margin-top: 0.5vw;
 }
-.header .options {
+.bodyHeader .options {
   display: flex;
   color: #888888;
   font-size: 1vw;
@@ -39,25 +46,25 @@
   margin-left: 0.6vw;
   /* margin-top: 0.5vw; */
 }
-.header .eachButton,
-.header .eachButton_ {
+.bodyHeader .eachButton,
+.bodyHeader .eachButton_ {
   cursor: pointer;
   text-align: center;
   margin-right: 1.5vw;
 }
-.header .eachButton_ {
+.bodyHeader .eachButton_ {
   font-weight: 500;
   color: #00649e;
 }
-.header .buttonBottom,
-.header .buttonBottom_ {
+.bodyHeader .buttonBottom,
+.bodyHeader .buttonBottom_ {
   height: 0.25vw;
   min-width: 5vw;
   margin-top: 0.6vw;
   border-top-left-radius: 0.2vw;
   border-top-right-radius: 0.2vw;
 }
-.header .buttonBottom_ {
+.bodyHeader .buttonBottom_ {
   background-color: #069bf2;
 }
 /* .header .submit {
@@ -75,7 +82,7 @@
 /* //////////////////////////////////////////////////////////////////////////// */
 /* //////////////////////////////////////////////////////////////////////////// */
 .tableBody {
-  height: 77%;
+  height: calc(100vh - 16vw);
 }
 .tableBody .table {
   font-size: 1vw;
@@ -98,6 +105,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 0.5vw 1vw;
+  cursor: pointer;
 }
 .tableBody .row:nth-child(even) {
   background-color: #f3f6f9;
