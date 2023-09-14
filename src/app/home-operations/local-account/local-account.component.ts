@@ -32,6 +32,10 @@ export class LocalAccountComponent implements OnInit {
     this.selectedAccount = it;
   };
 
+  recordPaymenForm: any = {
+    paymentMethod: 'cash',
+  };
+
   onChangeStatus = (e: any, k: any) => {
     this.allVechileDetails.content[k].status = e.target.value;
   };

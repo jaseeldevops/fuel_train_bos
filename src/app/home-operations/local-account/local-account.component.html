@@ -95,7 +95,9 @@
         {{ selectedAccount?.balance?.toLocaleString() }}
       </div>
     </div>
-    <div class="blueButton">+ RECORD PAYMENT</div>
+    <div class="blueButton" (click)="popUp = 'recordPayment'">
+      + RECORD PAYMENT
+    </div>
   </div>
   <div class="bodyHeader">
     <div class="navRow">
@@ -181,6 +183,103 @@
     </div>
   </div>
   <app-table-paging [paging]="allVechileDetails?.paging"></app-table-paging>
+</div>
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<!-- ///////////////////////////////////////////////////////////////////////////////// -->
+<div class="formBlankScreen1" *ngIf="popUp === 'recordPayment'"></div>
+<div [ngClass]="popUp === 'recordPayment' ? 'drowerForm' : 'drowerForm_'">
+  <div class="header">
+    Add Customer
+    <div class="closeBtn" (click)="popUp = ''"></div>
+  </div>
+  <div class="body">
+    <div style="display: flex; align-items: center">
+      <div class="formTitle" style="width: 30%">Payment type</div>
+      <div class="formTitle" style="padding-left: 0.3vw; width: 30%">
+        Amount Received *
+      </div>
+      <div class="formTitle" style="padding-left: 0.3vw; width: 30%">
+        Balance Amount
+      </div>
+    </div>
+    <div style="display: flex; align-items: center; margin: 0 2vw">
+      <select type="number" style="margin: 0.3vw; width: 30%">
+        <option>Select payment type</option>
+      </select>
+      <input
+        placeholder="0.00"
+        type="number"
+        style="margin: 0.3vw; width: 30%"
+      />
+      <input
+        type="number"
+        placeholder="0.00"
+        style="margin: 0.3vw; width: 30%"
+      />
+    </div>
+    <div style="margin: 0 2vw">
+      <div class="formTitle" style="padding-left: 0.3vw; width: 100%">Note</div>
+      <textarea
+        placeholder="Enter a note against this transaction"
+        style="margin: 0.3vw; width: 100%"
+      ></textarea>
+    </div>
+    <div style="margin: 0 2vw">
+      <div class="formTitle" style="padding-left: 0.3vw; width: 100%">
+        Payment Method *
+      </div>
+      <div style="display: flex">
+        <div
+          (click)="recordPaymenForm.paymentMethod = 'cash'"
+          [ngClass]="
+            recordPaymenForm?.paymentMethod === 'cash'
+              ? 'blueButton'
+              : 'lightBlueButton'
+          "
+        >
+          CASH
+        </div>
+        <div
+          (click)="recordPaymenForm.paymentMethod = 'upi'"
+          [ngClass]="
+            recordPaymenForm?.paymentMethod === 'upi'
+              ? 'blueButton'
+              : 'lightBlueButton'
+          "
+        >
+          UPI
+        </div>
+        <div
+          (click)="recordPaymenForm.paymentMethod = 'card'"
+          [ngClass]="
+            recordPaymenForm?.paymentMethod === 'card'
+              ? 'blueButton'
+              : 'lightBlueButton'
+          "
+        >
+          CARD
+        </div>
+      </div>
+    </div>
+    <div style="margin: 0 2vw">
+      <div class="formTitle" style="padding-left: 0.3vw; width: 100%">
+        Transaction details
+      </div>
+      <input
+        placeholder="Enter transaction id"
+        style="margin: 0.3vw; width: 100%"
+      />
+    </div>
+    <br />
+    <br />
+  </div>
+  <div class="footer">
+    <div class="cancelBtn" (click)="popUp = ''">CANCEL</div>
+    <div class="saveBtn">CONFIRM</div>
+  </div>
 </div>
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->
 <!-- ///////////////////////////////////////////////////////////////////////////////// -->

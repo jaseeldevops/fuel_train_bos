@@ -153,10 +153,10 @@ select {
 .loaclAccountDetails .creditArea,
 .loaclAccountDetails .balanceArea {
   margin-top: 1.5vw;
-  padding-left: 5vw;
+  padding-left: 3.6vw;
   background-image: url(../../../assets/localAcc/credit.svg);
   background-position: left;
-  background-size: 4vw;
+  background-size: 2.6vw;
   background-repeat: no-repeat;
   font-size: 0.88vw;
   font-weight: 400;
