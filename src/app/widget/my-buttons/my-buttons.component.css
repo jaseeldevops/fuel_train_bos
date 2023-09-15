@@ -24,12 +24,14 @@
   color: #415365;
   cursor: pointer;
   font-size: 1vw;
+  width: 100%;
 }
 .textSwitch_,
 .textSwitchOn,
 .textSwitchOff {
   height: 2vw;
   min-width: 5vw;
+  width: 50%;
   border-radius: 1vw;
   display: flex;
   align-items: center;

@@ -272,13 +272,13 @@
             type="number"
           />
         </div>
-        <div class="label1">Discount</div>
+        <div class="label1">Opening Banlance</div>
         <div style="display: flex; align-items: center; margin-bottom: 1vw">
-          <input style="width: 25%" type="date" />
-          <div style="display: flex; align-items: center; margin: 0 1.5vw">
-            <span style="font-size: 0.9vw; padding-right: 0.5vw">Enable</span>
-            <MyButtons type="switch" [onSelect]=""> </MyButtons>
-          </div>
+          <input
+            style="width: 25%; margin-right: 1.5vw"
+            type="number"
+            placeholder="0.00"
+          />
           <MyButtons
             type="textSwitch"
             [onSelect]=""
@@ -286,6 +286,12 @@
             offText="To Give"
           >
           </MyButtons>
+          <div style="display: flex; align-items: center; margin: 0 1.5vw">
+            <span style="font-size: 0.9vw; padding-right: 0.5vw"
+              >Give Credit</span
+            >
+            <MyButtons type="switch" [onSelect]=""> </MyButtons>
+          </div>
         </div>
         <div style="display: flex; justify-content: space-between">
           <div style="width: 48%" class="label1">Credit Limit</div>
@@ -436,13 +442,15 @@
             placeholder="0.00"
             type="number"
           />
-          <MyButtons
-            type="textSwitch"
-            [onSelect]=""
-            onText="To Receive"
-            offText="To Pay"
-          >
-          </MyButtons>
+          <div style="width: 48%; margin-bottom: 1vw">
+            <MyButtons
+              type="textSwitch"
+              [onSelect]=""
+              onText="To Receive"
+              offText="To Pay"
+            >
+            </MyButtons>
+          </div>
         </div>
         <div style="display: flex; justify-content: space-between">
           <div style="width: 48%" class="label1">Credit Limit</div>

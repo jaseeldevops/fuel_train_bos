@@ -117,8 +117,17 @@
           <div [ngClass]="tab === 1 ? 'buttonBottom_' : 'buttonBottom'"></div>
         </div>
       </div>
-      <div style="display: flex">
-        <input placeholder="Search an invoice" class="defaultInput" />
+      <div style="display: flex; align-items: center; font-size: 1vw">
+        <input placeholder="Search a transaction" class="defaultInput" />
+        <input
+          style="margin-left: 1vw; width: 10vw"
+          type="date"
+          class="defaultInput"
+        />&nbsp; to &nbsp;
+        <input type="date" class="defaultInput" style="width: 10vw" />
+        <select class="defaultInput" style="margin: 0 1vw; width: 10vw">
+          <option>Today</option>
+        </select>
         <div class="downloadButton"></div>
       </div>
     </div>
@@ -154,7 +163,7 @@
       <div style="width: 20%">AC NO</div>
       <div style="width: 20%">NAME</div>
       <div style="width: 10%">CONTACT NUMBER</div>
-      <div style="width: 12%; text-align: center">STATUS</div>
+      <div style="width: 15%; text-align: center">STATUS</div>
     </div>
     <div class="body">
       <div
@@ -167,10 +176,9 @@
           {{ it?.vechileType }}
         </div>
         <div style="width: 10%">{{ it?.RFIDTagNumber }}</div>
-        <div style="width: 12%">
+        <div style="width: 15%">
           <select
-            name=""
-            id=""
+            style="width: 70%; border: 0.1vw solid #ececec; padding: 0.2vw"
             [value]="it?.status"
             [ngStyle]="{ color: it?.status === 'Suspended' ? 'red' : 'green' }"
             (change)="onChangeStatus($event, k)"
@@ -205,7 +213,14 @@
         Balance Amount
       </div>
     </div>
-    <div style="display: flex; align-items: center; margin: 0 2vw">
+    <div
+      style="
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0 2vw;
+      "
+    >
       <select type="number" style="margin: 0.3vw; width: 30%">
         <option>Select payment type</option>
       </select>
@@ -214,11 +229,11 @@
         type="number"
         style="margin: 0.3vw; width: 30%"
       />
-      <input
-        type="number"
-        placeholder="0.00"
-        style="margin: 0.3vw; width: 30%"
-      />
+      <div
+        style="margin: 0.3vw; width: 30%; color: #104002aa; font-size: 1.4vw"
+      >
+        1,40,500.00
+      </div>
     </div>
     <div style="margin: 0 2vw">
       <div class="formTitle" style="padding-left: 0.3vw; width: 100%">Note</div>
