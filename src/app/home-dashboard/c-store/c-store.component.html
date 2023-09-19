@@ -35,11 +35,29 @@
         </div>
       </div>
     </div>
-    <div class="col1_row2">
+    <div class="col1_row2" style="flex-direction: column">
       <div class="title1">Sales Performing (Revenue Vs Transactions)</div>
+      <canvas
+        baseChart
+        style="height: 9.5vw; width: 100%"
+        [type]="'line'"
+        [data]="lineChartSalePerforming"
+        [options]="lineChartOptions"
+        [legend]="false"
+      >
+      </canvas>
     </div>
-    <div class="col1_row3">
+    <div class="col1_row3" style="flex-direction: column">
       <div class="title1">Total Customers & Visitors</div>
+      <canvas
+        baseChart
+        style="height: 5.2vw; width: 100%"
+        [type]="'line'"
+        [data]="lineChartCustomersVisitors"
+        [options]="lineChartOptions"
+        [legend]="false"
+      >
+      </canvas>
     </div>
     <div class="col1_row4">
       <div class="title1">Category wise sales value and volume</div>

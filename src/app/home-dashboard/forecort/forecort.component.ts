@@ -103,7 +103,7 @@ export class ForecortComponent implements OnInit {
   public lineChartOptions: ChartOptions<'line'> = {
     responsive: false,
   };
-  public lineChartLegend = true;
+  public lineChartLegend = false;
   salesInventoryTrendsDays = ['Today', 'Yesterday', 'Past 7 days', 'Month'];
   salesInventoryTrendsSelectedDay: any = 'Today';
   salesInventoryTrendsSelectedType: any = 'Sales';
