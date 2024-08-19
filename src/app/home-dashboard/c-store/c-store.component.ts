@@ -11,6 +11,18 @@ export class CStoreComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  _selectedCatogoryWaysSales = 'Sales';
+  _onClickCatogoryWaysSalesHBtn(btn: string) {
+    this._selectedCatogoryWaysSales = btn;
+    switch (btn) {
+      case 'Revenue':
+        break;
+      case 'Transaction':
+        break;
+      default:
+        break;
+    }
+  }
   catogoryWaysSales = [
     { title: 'Lubricants', value: 100 }, //value in persentage
     { title: 'Grocery', value: 90 },
@@ -157,6 +169,20 @@ export class CStoreComponent implements OnInit {
       },
     ],
   };
+  _selectedSalesPerforming = 'Revenue';
+  _onClickSalesPerformingHBtn(btn: string) {
+    this._selectedSalesPerforming = btn;
+    switch (btn) {
+      case 'Revenue':
+        break;
+      case 'Transaction':
+        break;
+      default:
+        break;
+    }
+  }
+  _onChangeSalesPerformingDate(e: any) {}
+
   public lineChartCustomersVisitors: ChartConfiguration<'line'>['data'] = {
     labels: [
       1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21,
@@ -196,6 +222,25 @@ export class CStoreComponent implements OnInit {
       },
     ],
   };
+  _totalCustomerAndVisitor = 'Today';
+  _onClickTotalCustomerAndVisitorHBtn(btn: string) {
+    this._totalCustomerAndVisitor = btn;
+    switch (btn) {
+      case 'Today':
+        break;
+      case 'Yesterday':
+        break;
+      case 'Past 7 Days':
+        break;
+      case 'MTD':
+        break;
+      case 'YTD':
+        break;
+      default:
+        break;
+    }
+  }
+
   public lineChartOptions: ChartOptions<'line'> = {
     responsive: false,
   };

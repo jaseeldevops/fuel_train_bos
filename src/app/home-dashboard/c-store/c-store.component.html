@@ -36,7 +36,30 @@
       </div>
     </div>
     <div class="col1_row2" style="flex-direction: column">
-      <div class="title1">Sales Performing (Revenue Vs Transactions)</div>
+      <div class="title1" style="display: flex; justify-content: space-between">
+        Sales Performing (Revenue Vs Transactions)
+        <div style="display: flex">
+          <div
+            class="hBtn"
+            [class.hBtnSelected]="_selectedSalesPerforming === 'Revenue'"
+            (click)="_onClickSalesPerformingHBtn('Revenue')"
+          >
+            Revenue
+          </div>
+          <div
+            class="hBtn"
+            [class.hBtnSelected]="_selectedSalesPerforming === 'Transaction'"
+            (click)="_onClickSalesPerformingHBtn('Transaction')"
+          >
+            Transaction
+          </div>
+          <select style="border: none" onchange="_onChangeSalesPerformingDate">
+            <option selected>Today</option>
+            <option>Yesterday</option>
+          </select>
+        </div>
+      </div>
+
       <canvas
         baseChart
         style="height: 9.5vw; width: 100%"
@@ -48,7 +71,48 @@
       </canvas>
     </div>
     <div class="col1_row3" style="flex-direction: column">
-      <div class="title1">Total Customers & Visitors</div>
+      <div class="title1" style="display: flex; justify-content: space-between">
+        Total Customers & Visitors
+        <div style="display: flex">
+          <div
+            class="hTextBtn"
+            [class.hTextBtnSelected]="_totalCustomerAndVisitor === 'Today'"
+            (click)="_onClickTotalCustomerAndVisitorHBtn('Today')"
+          >
+            Today
+          </div>
+          <div
+            class="hTextBtn"
+            [class.hTextBtnSelected]="_totalCustomerAndVisitor === 'Yesterday'"
+            (click)="_onClickTotalCustomerAndVisitorHBtn('Yesterday')"
+          >
+            Yesterday
+          </div>
+          <div
+            class="hTextBtn"
+            [class.hTextBtnSelected]="
+              _totalCustomerAndVisitor === 'Past 7 Days'
+            "
+            (click)="_onClickTotalCustomerAndVisitorHBtn('Past 7 Days')"
+          >
+            Past 7 Days
+          </div>
+          <div
+            class="hTextBtn"
+            [class.hTextBtnSelected]="_totalCustomerAndVisitor === 'MTD'"
+            (click)="_onClickTotalCustomerAndVisitorHBtn('MTD')"
+          >
+            MTD
+          </div>
+          <div
+            class="hTextBtn"
+            [class.hTextBtnSelected]="_totalCustomerAndVisitor === 'YTD'"
+            (click)="_onClickTotalCustomerAndVisitorHBtn('YTD')"
+          >
+            YTD
+          </div>
+        </div>
+      </div>
       <canvas
         baseChart
         style="height: 5.2vw; width: 100%"
@@ -60,8 +124,26 @@
       </canvas>
     </div>
     <div class="col1_row4">
-      <div class="title1">Category wise sales value and volume</div>
-      <div class="vrBarGraph">
+      <div class="title1" style="display: flex; justify-content: space-between">
+        Category wise sales value and volume
+        <div style="display: flex">
+          <div
+            class="hBtn"
+            [class.hBtnSelected]="_selectedCatogoryWaysSales === 'Sales'"
+            (click)="_onClickCatogoryWaysSalesHBtn('Sales')"
+          >
+            Sales
+          </div>
+          <div
+            class="hBtn"
+            [class.hBtnSelected]="_selectedCatogoryWaysSales === 'Volume'"
+            (click)="_onClickCatogoryWaysSalesHBtn('Volume')"
+          >
+            Volume
+          </div>
+        </div>
+      </div>
+      <div class="vrBarGraph" style="height: 10vw">
         <div class="vrBarGraphBg">
           <div class="vrBarGraphRow">
             <div class="vrBarGraphRowValue">18000</div>
